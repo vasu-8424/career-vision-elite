@@ -1,24 +1,840 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef, useState } from "react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Award,
+  BookOpen,
+  Building2,
+  CheckCircle2,
+  Compass,
+  FileCheck,
+  FileText,
+  GraduationCap,
+  HandshakeIcon,
+  Handshake,
+  HeartPulse,
+  Leaf,
+  MapPin,
+  Mail,
+  Microscope,
+  Minus,
+  Phone,
+  Plus,
+  Quote,
+  Route as RouteIcon,
+  ShieldCheck,
+  Sparkles,
+  Star,
+  Stethoscope,
+  UserCheck,
+  Users,
+  Wallet,
+} from "lucide-react";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { Header } from "../components/site/Header";
+import { Footer } from "../components/site/Footer";
+import { Counter, Eyebrow, Reveal } from "../components/site/primitives";
+
+import heroImg from "../assets/hero.jpg";
+import aboutImg from "../assets/about.jpg";
+import progEngineering from "../assets/prog-engineering.jpg";
+import progMbbs from "../assets/prog-mbbs.jpg";
+import progPg from "../assets/prog-pg.jpg";
+import progBams from "../assets/prog-bams.jpg";
+import progBhms from "../assets/prog-bhms.jpg";
+import progBds from "../assets/prog-bds.jpg";
+import progBpt from "../assets/prog-bpt.jpg";
+
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <main id="top" className="bg-background text-foreground">
+      <Header />
+      <Hero />
+      <TrustBar />
+      <About />
+      <Services />
+      <WhyUs />
+      <Process />
+      <Programs />
+      <Stats />
+      <Testimonials />
+      <FAQ />
+      <CTA />
+      <Contact />
+      <Footer />
+    </main>
+  );
+}
+
+/* ================================ HERO ================================ */
+function Hero() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
+
+  return (
+    <section ref={ref} className="relative pt-[72px] overflow-hidden">
+      <div className="container-x pt-16 lg:pt-24 pb-20 lg:pb-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        {/* Copy */}
+        <div className="lg:col-span-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
+          >
+            <Eyebrow>Est. 2010 — Bengaluru</Eyebrow>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.2, 0.7, 0.2, 1] }}
+            className="mt-6 font-display font-semibold text-[44px] sm:text-[56px] lg:text-[68px] leading-[1.02] tracking-[-0.03em] text-ink"
+          >
+            Your future begins<br />
+            with the right <span className="text-primary">guidance</span>.
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.2, 0.7, 0.2, 1] }}
+            className="mt-8 text-lg text-ink-soft leading-relaxed max-w-xl"
+          >
+            Helping students secure admissions into India's top Engineering and
+            Medical colleges through trusted counselling and expert guidance —
+            for over fifteen years.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.2, 0.7, 0.2, 1] }}
+            className="mt-10 flex flex-wrap items-center gap-4"
+          >
+            <a href="#contact" className="btn-primary group">
+              Book Free Counselling
+              <ArrowRight size={16} strokeWidth={2} className="transition-transform group-hover:translate-x-0.5" />
+            </a>
+            <a href="#programs" className="btn-outline">Explore Courses</a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="mt-12 pt-8 border-t border-border grid grid-cols-3 gap-6 max-w-lg"
+          >
+            {[
+              { k: "15+", v: "Years" },
+              { k: "5000+", v: "Admissions" },
+              { k: "100+", v: "Colleges" },
+            ].map((s) => (
+              <div key={s.v}>
+                <p className="font-display text-2xl font-semibold text-ink tabular-nums">{s.k}</p>
+                <p className="text-xs uppercase tracking-[0.14em] text-ink-soft mt-1">{s.v}</p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Image w/ floating cards */}
+        <div className="lg:col-span-6 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.15, ease: [0.2, 0.7, 0.2, 1] }}
+            className="relative aspect-[4/5] overflow-hidden bg-surface"
+          >
+            <motion.img
+              src={heroImg}
+              alt="Educational counsellor guiding students in a career discussion"
+              width={1600}
+              height={2000}
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ y, scale }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-ink/40 via-transparent to-transparent" />
+
+            {/* Floating stat cards */}
+            <motion.div
+              initial={{ opacity: 0, x: -20, y: 20 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.7 }}
+              className="absolute left-5 bottom-5 bg-white border border-border p-5 w-56 shadow-[0_20px_50px_-20px_rgba(15,23,42,0.35)]"
+            >
+              <div className="flex items-center gap-2 text-primary">
+                <Sparkles size={14} strokeWidth={1.75} />
+                <span className="text-[10px] tracking-[0.18em] uppercase font-medium">Success Rate</span>
+              </div>
+              <p className="mt-3 font-display text-3xl font-semibold text-ink">98%</p>
+              <p className="mt-1 text-xs text-ink-soft">Student satisfaction across counselling cohorts</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20, y: -20 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.85 }}
+              className="absolute right-5 top-5 bg-white border border-border p-5 w-52 shadow-[0_20px_50px_-20px_rgba(15,23,42,0.35)]"
+            >
+              <div className="flex items-center gap-2 text-primary">
+                <ShieldCheck size={14} strokeWidth={1.75} />
+                <span className="text-[10px] tracking-[0.18em] uppercase font-medium">Trusted since</span>
+              </div>
+              <p className="mt-3 font-display text-3xl font-semibold text-ink tabular-nums">2010</p>
+              <p className="mt-1 text-xs text-ink-soft">Bengaluru's admissions specialists</p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================================ TRUST BAR ================================ */
+function TrustBar() {
+  const items = ["NEET UG", "JEE Main", "KCET", "COMEDK", "NEET PG", "AIAPGET"];
+  return (
+    <section className="border-y border-border bg-surface">
+      <div className="container-x py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <p className="text-xs uppercase tracking-[0.2em] text-ink-soft">
+          Guidance across every major entrance
+        </p>
+        <div className="flex flex-wrap items-center gap-x-10 gap-y-3">
+          {items.map((n) => (
+            <span key={n} className="font-display text-sm font-medium text-ink/70 tracking-tight">
+              {n}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================================ ABOUT ================================ */
+function About() {
+  return (
+    <section id="about" className="py-24 lg:py-32">
+      <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <Reveal className="lg:col-span-6">
+          <div className="relative">
+            <div className="aspect-[4/5] overflow-hidden bg-surface">
+              <img
+                src={aboutImg}
+                alt="Career Vision consultancy office in Bengaluru"
+                width={1400}
+                height={1750}
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="hidden md:block absolute -bottom-8 -right-8 bg-primary text-white p-8 w-64">
+              <p className="font-display text-5xl font-semibold tabular-nums">15<span className="text-xl align-top">+</span></p>
+              <p className="mt-2 text-xs uppercase tracking-[0.18em] text-white/70">Years guiding<br />India's students</p>
+            </div>
+          </div>
+        </Reveal>
+
+        <div className="lg:col-span-6 lg:pl-4">
+          <Reveal><Eyebrow>About Career Vision</Eyebrow></Reveal>
+          <Reveal delay={0.05}>
+            <h2 className="mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]">
+              A consultancy built on trust,<br />
+              transparency and results.
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-8 text-base lg:text-lg leading-relaxed text-ink-soft">
+              Career Vision Educational Consultancy is a trusted education
+              consultancy dedicated to helping students build successful careers
+              by securing admissions into reputed Engineering, Medical, and
+              Allied Health Science institutions across India.
+            </p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <p className="mt-5 text-base lg:text-lg leading-relaxed text-ink-soft">
+              Our mission is to simplify the admission process while providing
+              honest guidance, personalised counselling, and complete support
+              throughout every step.
+            </p>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <div className="mt-10 grid grid-cols-2 gap-6 max-w-md">
+              {[
+                { icon: ShieldCheck, label: "Transparent process" },
+                { icon: UserCheck, label: "Personalised counsel" },
+                { icon: Building2, label: "100+ partner colleges" },
+                { icon: Award, label: "Since 2010" },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-3">
+                  <Icon size={18} strokeWidth={1.5} className="text-primary shrink-0" />
+                  <span className="text-sm text-ink">{label}</span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================================ SERVICES ================================ */
+function Services() {
+  const services = [
+    { icon: GraduationCap, title: "Engineering Admissions", desc: "B.E. / B.Tech placements across India's leading engineering institutes." },
+    { icon: Stethoscope, title: "MBBS Admissions", desc: "Complete guidance for NEET UG counselling across government and private colleges." },
+    { icon: HeartPulse, title: "Medical PG Admissions", desc: "MD / MS / Diploma placements through NEET PG state and all-India rounds." },
+    { icon: Leaf, title: "BAMS Admissions", desc: "Ayurvedic medicine admissions across recognised universities." },
+    { icon: Microscope, title: "BHMS Admissions", desc: "Homeopathy programmes with a structured, transparent process." },
+    { icon: BookOpen, title: "BDS Admissions", desc: "Dental surgery seats in reputed government and private colleges." },
+    { icon: Handshake, title: "BPT Admissions", desc: "Physiotherapy programmes with allied health specialisation guidance." },
+    { icon: Compass, title: "Career Counselling", desc: "One-to-one aptitude, stream and career-path discovery sessions." },
+    { icon: Building2, title: "College Selection", desc: "Curated shortlists that fit your rank, budget and long-term goals." },
+    { icon: FileCheck, title: "Admission Guidance", desc: "End-to-end handholding through every counselling and allotment round." },
+    { icon: FileText, title: "Documentation Support", desc: "Verification, attestation and submission — handled without stress." },
+    { icon: RouteIcon, title: "Seat Booking Assistance", desc: "On-ground assistance during reporting, seat locking and confirmation." },
+  ];
+
+  return (
+    <section id="services" className="py-24 lg:py-32 bg-surface">
+      <div className="container-x">
+        <div className="max-w-3xl">
+          <Reveal><Eyebrow>Services</Eyebrow></Reveal>
+          <Reveal delay={0.05}>
+            <h2 className="mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]">
+              A complete admissions practice<br className="hidden md:block" /> under one roof.
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-6 text-lg text-ink-soft max-w-2xl">
+              From career discovery to your first day on campus, we provide the
+              expertise, network and diligence a life-defining decision deserves.
+            </p>
+          </Reveal>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
+          {services.map(({ icon: Icon, title, desc }, i) => (
+            <Reveal key={title} delay={i * 0.04}>
+              <div className="group h-full bg-white p-8 transition-colors duration-300 hover:bg-white relative">
+                <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-primary/30" />
+                <div className="w-11 h-11 border border-border flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-colors">
+                  <Icon size={20} strokeWidth={1.5} />
+                </div>
+                <h3 className="mt-6 font-display text-lg font-semibold text-ink tracking-tight">{title}</h3>
+                <p className="mt-3 text-sm text-ink-soft leading-relaxed">{desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================================ WHY US ================================ */
+function WhyUs() {
+  const reasons = [
+    { icon: Award, title: "Expert Counsellors", desc: "A senior team with 15+ years of admissions and academic advisory experience." },
+    { icon: UserCheck, title: "Personalised Guidance", desc: "Every plan is designed around your rank, aspirations and family context." },
+    { icon: ShieldCheck, title: "Trusted Process", desc: "A transparent, documented workflow — no shortcuts, no surprises." },
+    { icon: Building2, title: "Wide College Network", desc: "Direct relationships with 100+ engineering and medical institutions." },
+    { icon: FileCheck, title: "Transparent Consultancy", desc: "Clear fee structures, honest cut-offs, and objective recommendations." },
+    { icon: FileText, title: "Documentation Support", desc: "Every certificate, form and attestation handled by our operations team." },
+    { icon: Wallet, title: "Affordable Consultation", desc: "Premium service without premium overheads — value families can trust." },
+    { icon: Users, title: "Student-First Approach", desc: "Long-term outcomes over short-term commissions. Always." },
+  ];
+
+  return (
+    <section className="py-24 lg:py-32">
+      <div className="container-x">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+          <div className="max-w-2xl">
+            <Reveal><Eyebrow>Why Career Vision</Eyebrow></Reveal>
+            <Reveal delay={0.05}>
+              <h2 className="mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]">
+                Eight reasons families<br /> choose us — and stay.
+              </h2>
+            </Reveal>
+          </div>
+          <Reveal delay={0.1}>
+            <p className="text-ink-soft max-w-md">
+              Every recommendation we make is one we would make for our own
+              children. That single principle shapes everything below.
+            </p>
+          </Reveal>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {reasons.map(({ icon: Icon, title, desc }, i) => (
+            <Reveal key={title} delay={i * 0.05}>
+              <div className="card-elevated card-elevated-hover h-full p-7">
+                <div className="flex items-start justify-between">
+                  <div className="w-10 h-10 bg-surface flex items-center justify-center text-primary">
+                    <Icon size={18} strokeWidth={1.5} />
+                  </div>
+                  <span className="font-display text-xs text-ink-soft tabular-nums">0{i + 1}</span>
+                </div>
+                <h3 className="mt-8 font-display text-base font-semibold text-ink">{title}</h3>
+                <p className="mt-3 text-sm text-ink-soft leading-relaxed">{desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================================ PROCESS TIMELINE ================================ */
+function Process() {
+  const steps = [
+    { n: "01", title: "Free Consultation", desc: "A no-obligation session to understand your goals, scores and preferences." },
+    { n: "02", title: "Career Assessment", desc: "Structured aptitude review and stream fit analysis with senior counsellors." },
+    { n: "03", title: "College Selection", desc: "A shortlist calibrated to rank, budget, location and long-term outcomes." },
+    { n: "04", title: "Application Assistance", desc: "Applications, entrance forms and choice-filling handled meticulously." },
+    { n: "05", title: "Documentation", desc: "Verification, attestation and submission — audited before every deadline." },
+    { n: "06", title: "Admission Confirmation", desc: "On-ground support during reporting, seat locking and campus onboarding." },
+  ];
+
+  return (
+    <section id="process" className="py-24 lg:py-32 bg-surface">
+      <div className="container-x">
+        <div className="max-w-3xl">
+          <Reveal><Eyebrow>Admission Process</Eyebrow></Reveal>
+          <Reveal delay={0.05}>
+            <h2 className="mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]">
+              Six deliberate steps, from<br className="hidden md:block" /> first call to first day.
+            </h2>
+          </Reveal>
+        </div>
+
+        {/* Desktop timeline */}
+        <div className="hidden lg:block mt-20 relative">
+          <div className="absolute top-6 left-0 right-0 h-px bg-border" />
+          <div className="grid grid-cols-6 gap-6">
+            {steps.map((s, i) => (
+              <Reveal key={s.n} delay={i * 0.08}>
+                <div className="relative">
+                  <div className="w-3 h-3 bg-primary relative z-10" />
+                  <p className="mt-8 font-display text-xs tracking-[0.2em] text-primary">STEP {s.n}</p>
+                  <h3 className="mt-3 font-display text-lg font-semibold text-ink">{s.title}</h3>
+                  <p className="mt-3 text-sm text-ink-soft leading-relaxed">{s.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile vertical */}
+        <div className="lg:hidden mt-14 space-y-8 relative">
+          <div className="absolute left-[5px] top-2 bottom-2 w-px bg-border" />
+          {steps.map((s, i) => (
+            <Reveal key={s.n} delay={i * 0.05}>
+              <div className="relative pl-8">
+                <div className="absolute left-0 top-1.5 w-3 h-3 bg-primary" />
+                <p className="font-display text-xs tracking-[0.2em] text-primary">STEP {s.n}</p>
+                <h3 className="mt-2 font-display text-lg font-semibold text-ink">{s.title}</h3>
+                <p className="mt-2 text-sm text-ink-soft leading-relaxed">{s.desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================================ PROGRAMS ================================ */
+function Programs() {
+  const programs = [
+    { title: "Engineering", tag: "B.E. / B.Tech", desc: "Core, computing and emerging disciplines across India's top engineering colleges.", img: progEngineering },
+    { title: "MBBS", tag: "Bachelor of Medicine", desc: "Government and private medical seats through NEET UG counselling.", img: progMbbs },
+    { title: "Medical PG", tag: "MD / MS", desc: "Post-graduate medical placements via NEET PG state and all-India quotas.", img: progPg },
+    { title: "BAMS", tag: "Ayurveda", desc: "Bachelor of Ayurvedic Medicine and Surgery at recognised institutions.", img: progBams },
+    { title: "BHMS", tag: "Homeopathy", desc: "Structured admissions for Bachelor of Homeopathic Medicine and Surgery.", img: progBhms },
+    { title: "BDS", tag: "Dental Surgery", desc: "Bachelor of Dental Surgery seats in reputed dental colleges.", img: progBds },
+    { title: "BPT", tag: "Physiotherapy", desc: "Allied health specialisation in Bachelor of Physiotherapy.", img: progBpt },
+  ];
+
+  return (
+    <section id="programs" className="py-24 lg:py-32">
+      <div className="container-x">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+          <div className="max-w-2xl">
+            <Reveal><Eyebrow>Featured Programs</Eyebrow></Reveal>
+            <Reveal delay={0.05}>
+              <h2 className="mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]">
+                Programmes we guide<br /> students into every year.
+              </h2>
+            </Reveal>
+          </div>
+          <Reveal delay={0.1}>
+            <a href="#contact" className="btn-outline">Speak to an advisor</a>
+          </Reveal>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {programs.map((p, i) => (
+            <Reveal key={p.title} delay={i * 0.05}>
+              <article className="group card-elevated card-elevated-hover overflow-hidden h-full flex flex-col">
+                <div className="aspect-[4/3] overflow-hidden bg-surface">
+                  <img
+                    src={p.img}
+                    alt={`${p.title} — ${p.tag}`}
+                    width={1200}
+                    height={900}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.2,0.7,0.2,1)] group-hover:scale-[1.04]"
+                  />
+                </div>
+                <div className="p-7 flex flex-col grow">
+                  <p className="text-[11px] tracking-[0.18em] uppercase text-primary font-medium">{p.tag}</p>
+                  <h3 className="mt-3 font-display text-2xl font-semibold text-ink tracking-tight">{p.title}</h3>
+                  <p className="mt-3 text-sm text-ink-soft leading-relaxed grow">{p.desc}</p>
+                  <a href="#contact" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-ink group/link">
+                    Learn more
+                    <ArrowUpRight size={16} className="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 text-primary" />
+                  </a>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================================ STATS ================================ */
+function Stats() {
+  const stats = [
+    { n: 5000, suffix: "+", label: "Successful Admissions" },
+    { n: 100, suffix: "+", label: "Partner Institutions" },
+    { n: 15, suffix: "+", label: "Years of Experience" },
+    { n: 98, suffix: "%", label: "Happy Students" },
+  ];
+  return (
+    <section className="bg-dark text-white">
+      <div className="container-x py-24 lg:py-32">
+        <Reveal>
+          <p className="eyebrow-light"><span className="rule-line" />By the numbers</p>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <h2 className="mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.1] max-w-3xl">
+            A track record measured in careers, not campaigns.
+          </h2>
+        </Reveal>
+
+        <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
+          {stats.map((s, i) => (
+            <Reveal key={s.label} delay={i * 0.08}>
+              <div className="bg-dark p-8 lg:p-10 h-full">
+                <p className="font-display text-5xl lg:text-6xl font-semibold text-white tabular-nums tracking-tight">
+                  <Counter to={s.n} suffix={s.suffix} />
+                </p>
+                <p className="mt-4 text-sm text-white/60 uppercase tracking-[0.14em]">{s.label}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================================ TESTIMONIALS ================================ */
+function Testimonials() {
+  const items = [
+    {
+      quote: "Career Vision made what felt impossible feel manageable. Their counsellors mapped every option against my NEET rank and helped me secure MBBS at a college I truly believe in.",
+      name: "Ananya Rao",
+      role: "MBBS, Bengaluru Medical College",
+    },
+    {
+      quote: "The team's transparency is unmatched. No inflated promises — just structured guidance that helped my son secure a top engineering seat in Karnataka.",
+      name: "Vikram Iyer",
+      role: "Parent, B.E. Computer Science",
+    },
+    {
+      quote: "From documentation to seat locking, every step was handled with genuine care. My BDS admission was completed without a single missed deadline.",
+      name: "Sneha Patil",
+      role: "BDS, Government Dental College",
+    },
+  ];
+  const [idx, setIdx] = useState(0);
+  const active = items[idx];
+
+  return (
+    <section id="testimonials" className="py-24 lg:py-32 bg-surface">
+      <div className="container-x">
+        <div className="max-w-3xl">
+          <Reveal><Eyebrow>Student Testimonials</Eyebrow></Reveal>
+          <Reveal delay={0.05}>
+            <h2 className="mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]">
+              Words from families who<br /> walked this road with us.
+            </h2>
+          </Reveal>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <Reveal className="lg:col-span-8">
+            <motion.blockquote
+              key={idx}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
+              className="relative bg-white border border-border p-10 lg:p-14"
+            >
+              <Quote size={40} strokeWidth={1.25} className="text-primary/25 absolute top-8 right-8" />
+              <div className="flex items-center gap-1 text-primary">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} size={16} className="fill-primary" strokeWidth={0} />
+                ))}
+              </div>
+              <p className="mt-8 font-display text-2xl lg:text-3xl leading-[1.4] tracking-tight text-ink">
+                “{active.quote}”
+              </p>
+              <div className="mt-10 pt-8 border-t border-border flex items-center justify-between">
+                <div>
+                  <p className="font-display font-semibold text-ink">{active.name}</p>
+                  <p className="text-sm text-ink-soft mt-1">{active.role}</p>
+                </div>
+                <p className="font-display text-sm text-ink-soft tabular-nums">
+                  {String(idx + 1).padStart(2, "0")} <span className="text-ink-soft/40">/ {String(items.length).padStart(2, "0")}</span>
+                </p>
+              </div>
+            </motion.blockquote>
+          </Reveal>
+
+          <Reveal className="lg:col-span-4" delay={0.1}>
+            <div className="flex lg:flex-col gap-3">
+              {items.map((t, i) => (
+                <button
+                  key={t.name}
+                  onClick={() => setIdx(i)}
+                  className={`text-left border p-5 flex-1 lg:flex-none transition-all ${
+                    i === idx
+                      ? "bg-primary border-primary text-white"
+                      : "bg-white border-border text-ink hover:border-primary/40"
+                  }`}
+                  aria-pressed={i === idx}
+                >
+                  <p className={`text-[10px] tracking-[0.2em] uppercase ${i === idx ? "text-white/60" : "text-ink-soft"}`}>
+                    Student 0{i + 1}
+                  </p>
+                  <p className="mt-2 font-display font-medium">{t.name}</p>
+                  <p className={`text-xs mt-1 ${i === idx ? "text-white/70" : "text-ink-soft"}`}>{t.role}</p>
+                </button>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================================ FAQ ================================ */
+function FAQ() {
+  const faqs = [
+    { q: "How does the admission process work?", a: "We begin with a free consultation to understand your rank and preferences, followed by career assessment, a curated college shortlist, application support, documentation, and on-ground seat confirmation." },
+    { q: "Can you help with MBBS admissions?", a: "Yes. We handle NEET UG counselling across state and all-India rounds for both government and private medical colleges, along with documentation and reporting support." },
+    { q: "Do you provide personalised counselling?", a: "Every family we work with receives one-to-one sessions with senior counsellors. There are no scripted pitches — recommendations are tailored to your rank, budget, and long-term goals." },
+    { q: "Do you assist with documentation?", a: "Yes. Our operations team manages verification, attestation, choice-filling and every deadline — audited before submission so nothing is missed." },
+    { q: "Which colleges do you partner with?", a: "We work with 100+ engineering and medical institutions across Karnataka, Maharashtra, Tamil Nadu, and other major states — spanning government, deemed and private universities." },
+  ];
+  const [open, setOpen] = useState<number | null>(0);
+
+  return (
+    <section id="faq" className="py-24 lg:py-32">
+      <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="lg:col-span-4">
+          <Reveal><Eyebrow>FAQ</Eyebrow></Reveal>
+          <Reveal delay={0.05}>
+            <h2 className="mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]">
+              Questions we hear<br /> most often.
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-6 text-ink-soft">
+              Still curious? A free consultation is the fastest way to a clear answer.
+            </p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <a href="#contact" className="btn-primary mt-8">Ask us directly</a>
+          </Reveal>
+        </div>
+
+        <div className="lg:col-span-8">
+          <div className="border-t border-border">
+            {faqs.map((f, i) => {
+              const isOpen = open === i;
+              return (
+                <Reveal key={f.q} delay={i * 0.04}>
+                  <div className="border-b border-border">
+                    <button
+                      onClick={() => setOpen(isOpen ? null : i)}
+                      className="w-full flex items-center justify-between gap-6 py-6 text-left group"
+                      aria-expanded={isOpen}
+                    >
+                      <span className="font-display text-lg lg:text-xl font-medium text-ink tracking-tight">
+                        {f.q}
+                      </span>
+                      <span className="w-9 h-9 border border-border flex items-center justify-center text-ink shrink-0 group-hover:border-primary group-hover:text-primary transition-colors">
+                        {isOpen ? <Minus size={16} strokeWidth={1.5} /> : <Plus size={16} strokeWidth={1.5} />}
+                      </span>
+                    </button>
+                    <motion.div
+                      initial={false}
+                      animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+                      transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <p className="pb-8 pr-16 text-ink-soft leading-relaxed">{f.a}</p>
+                    </motion.div>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================================ CTA ================================ */
+function CTA() {
+  return (
+    <section className="bg-dark text-white">
+      <div className="container-x py-24 lg:py-32 text-center max-w-4xl mx-auto">
+        <Reveal>
+          <p className="eyebrow-light justify-center inline-flex"><span className="rule-line" />Ready when you are</p>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <h2 className="mt-6 font-display text-4xl lg:text-6xl font-semibold tracking-tight leading-[1.05]">
+            Ready to build<br /> your career?
+          </h2>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <p className="mt-8 text-lg text-white/60 max-w-xl mx-auto">
+            Book your free counselling session today. No obligations — just an
+            honest conversation about your future.
+          </p>
+        </Reveal>
+        <Reveal delay={0.15}>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <a href="#contact" className="btn-primary bg-white !text-ink border-white hover:!bg-white/90 hover:!border-white/90" style={{ backgroundColor: "white", color: "#0F172A", borderColor: "white" }}>
+              Schedule Consultation
+              <ArrowRight size={16} />
+            </a>
+            <a href="tel:+918639887319" className="btn-ghost-light">
+              <Phone size={14} /> +91 86398 87319
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ================================ CONTACT ================================ */
+function Contact() {
+  return (
+    <section id="contact" className="py-24 lg:py-32">
+      <div className="container-x">
+        <div className="max-w-3xl">
+          <Reveal><Eyebrow>Contact</Eyebrow></Reveal>
+          <Reveal delay={0.05}>
+            <h2 className="mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]">
+              Visit us in Jayanagar,<br /> Bengaluru.
+            </h2>
+          </Reveal>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Map */}
+          <Reveal className="lg:col-span-7">
+            <div className="aspect-[4/3] lg:aspect-auto lg:h-full border border-border overflow-hidden bg-surface">
+              <iframe
+                title="Career Vision Educational Consultancy — Jayanagar, Bengaluru"
+                src="https://www.google.com/maps?q=18th+C+Main+Rd,+Marenahalli,+Jayanagar+9th+Block,+Bengaluru,+Karnataka+560041&output=embed"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full block filter grayscale-[35%] contrast-[0.95]"
+                style={{ border: 0, minHeight: 480 }}
+              />
+            </div>
+          </Reveal>
+
+          {/* Contact card */}
+          <Reveal className="lg:col-span-5" delay={0.1}>
+            <div className="bg-dark text-white p-8 lg:p-10 h-full flex flex-col">
+              <h3 className="font-display text-2xl font-semibold">Get in touch</h3>
+              <p className="mt-3 text-sm text-white/60">
+                We respond to every enquiry within one business day.
+              </p>
+
+              <div className="mt-10 space-y-6 flex-1">
+                <ContactRow icon={Phone} label="Phone">
+                  <a href="tel:+918639887319" className="hover:underline tabular-nums">+91 86398 87319</a>
+                </ContactRow>
+                <ContactRow icon={Mail} label="Email">
+                  <a href="mailto:careervisioneduconsultancy@gmail.com" className="hover:underline break-all">
+                    careervisioneduconsultancy@gmail.com
+                  </a>
+                </ContactRow>
+                <ContactRow icon={MapPin} label="Address">
+                  Second Floor, 07/3, 18th C Main Rd, MTB Area, Marenahalli, Jayanagar 9th Block, Bengaluru, Karnataka 560041
+                </ContactRow>
+                <ContactRow icon={CheckCircle2} label="Business Hours">
+                  Monday – Saturday · 9:00 AM – 8:00 PM<br />
+                  <span className="text-white/50">Sunday · Holiday</span>
+                </ContactRow>
+              </div>
+
+              <a href="tel:+918639887319" className="btn-primary mt-10 w-full">
+                Call to book a session
+                <ArrowRight size={16} />
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ContactRow({
+  icon: Icon,
+  label,
+  children,
+}: {
+  icon: typeof Phone;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex items-start gap-4">
+      <div className="w-9 h-9 border border-white/15 flex items-center justify-center text-white/80 shrink-0">
+        <Icon size={15} strokeWidth={1.5} />
+      </div>
+      <div className="min-w-0">
+        <p className="text-[10px] tracking-[0.2em] uppercase text-white/50">{label}</p>
+        <div className="mt-1.5 text-sm text-white/90 leading-relaxed">{children}</div>
+      </div>
     </div>
   );
 }
