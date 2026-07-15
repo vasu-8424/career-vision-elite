@@ -34,7 +34,7 @@ export function Header() {
       <div className="container-x flex items-center justify-between h-[72px]">
         <Logo />
 
-        <nav className="hidden lg:flex items-center gap-9" aria-label="Primary">
+        <nav className="hidden xl:flex items-center gap-6" aria-label="Primary">
           {nav.map((n) => (
             <a key={n.href} href={n.href} className="nav-link">
               {n.label}
@@ -42,10 +42,10 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden xl:flex items-center gap-4">
           <a href="tel:+918639887319" className="flex items-center gap-2 text-sm text-ink-soft hover:text-primary transition-colors">
             <Phone size={14} strokeWidth={1.75} />
-            <span className="tabular-nums">+91 86398 87319</span>
+            <span className="tabular-nums font-medium">+91 86398 87319</span>
           </a>
           <a href="#contact" className="btn-primary h-11 px-5 text-[14px]">
             Book Consultation
@@ -53,7 +53,7 @@ export function Header() {
         </div>
 
         <button
-          className="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-border"
+          className="xl:hidden inline-flex items-center justify-center w-10 h-10 border border-border"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((s) => !s)}
         >
@@ -62,7 +62,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-border bg-white">
+        <div className="xl:hidden border-t border-border bg-white">
           <nav className="container-x py-4 flex flex-col gap-1" aria-label="Mobile">
             {nav.map((n) => (
               <a

@@ -36,16 +36,17 @@ import {
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { Counter, Eyebrow, Reveal } from "../components/site/primitives";
+import { toast } from "sonner";
 
-import heroImg from "../assets/hero.jpg";
-import aboutImg from "../assets/about.jpg";
-import progEngineering from "../assets/prog-engineering.jpg";
-import progMbbs from "../assets/prog-mbbs.jpg";
-import progPg from "../assets/prog-pg.jpg";
-import progBams from "../assets/prog-bams.jpg";
-import progBhms from "../assets/prog-bhms.jpg";
-import progBds from "../assets/prog-bds.jpg";
-import progBpt from "../assets/prog-bpt.jpg";
+import heroImg from "../assets/hero.webp";
+import aboutImg from "../assets/about.webp";
+import progEngineering from "../assets/prog-engineering.webp";
+import progMbbs from "../assets/prog-mbbs.webp";
+import progPg from "../assets/prog-pg.webp";
+import progBams from "../assets/prog-bams.webp";
+import progBhms from "../assets/prog-bhms.webp";
+import progBds from "../assets/prog-bds.webp";
+import progBpt from "../assets/prog-bpt.webp";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -80,26 +81,33 @@ function Hero() {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
 
   return (
-    <section ref={ref} className="relative pt-[72px] overflow-hidden">
-      <div className="container-x pt-16 lg:pt-24 pb-20 lg:pb-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section ref={ref} className="relative pt-[72px] overflow-hidden bg-surface">
+      {/* Background patterns and glowing accents */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-50 pointer-events-none" />
+      <div className="absolute top-[-20%] right-[-10%] w-[65%] aspect-square rounded-full bg-[radial-gradient(circle,rgba(15,76,129,0.06)_0%,transparent_70%)] pointer-events-none blur-3xl" />
+      <div className="absolute bottom-[-10%] left-[-15%] w-[55%] aspect-square rounded-full bg-[radial-gradient(circle,rgba(197,168,128,0.08)_0%,transparent_70%)] pointer-events-none blur-3xl" />
+
+      <div className="container-x pt-16 lg:pt-24 pb-20 lg:pb-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
         {/* Copy */}
-        <div className="lg:col-span-6 relative z-10">
+        <div className="lg:col-span-6 relative">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-border/80 shadow-[0_2px_8px_rgba(15,76,129,0.03)]"
           >
-            <Eyebrow>Est. 2010 — Bengaluru</Eyebrow>
+            <span className="w-1.5 h-1.5 rounded-full bg-primary glow-dot" />
+            <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-ink-soft">Est. 2010 — Bengaluru</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.2, 0.7, 0.2, 1] }}
-            className="mt-6 font-display font-semibold text-[44px] sm:text-[56px] lg:text-[68px] leading-[1.02] tracking-[-0.03em] text-ink"
+            className="mt-6 font-display font-semibold text-[48px] sm:text-[64px] lg:text-[76px] leading-[1.02] tracking-[-0.03em] text-ink"
           >
             Your future begins<br />
-            with the right <span className="text-primary">guidance</span>.
+            with the right <span className="text-gradient-primary inline-block relative">guidance.</span>
           </motion.h1>
 
           <motion.p
@@ -119,7 +127,7 @@ function Hero() {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.2, 0.7, 0.2, 1] }}
             className="mt-10 flex flex-wrap items-center gap-4"
           >
-            <a href="#contact" className="btn-primary group">
+            <a href="#contact" className="btn-primary bg-primary border-primary hover:bg-primary-hover hover:border-primary-hover text-white shadow-[0_10px_25px_rgba(15,76,129,0.18)] group">
               Book Free Counselling
               <ArrowRight size={16} strokeWidth={2} className="transition-transform group-hover:translate-x-0.5" />
             </a>
@@ -137,59 +145,67 @@ function Hero() {
               { k: "5000+", v: "Admissions" },
               { k: "100+", v: "Colleges" },
             ].map((s) => (
-              <div key={s.v}>
+              <div key={s.v} className="border-l border-border pl-4 first:border-0 first:pl-0">
                 <p className="font-display text-2xl font-semibold text-ink tabular-nums">{s.k}</p>
-                <p className="text-xs uppercase tracking-[0.14em] text-ink-soft mt-1">{s.v}</p>
+                <p className="text-[10px] uppercase tracking-[0.14em] text-ink-soft mt-1.5">{s.v}</p>
               </div>
             ))}
           </motion.div>
         </div>
 
         {/* Image w/ floating cards */}
-        <div className="lg:col-span-6 relative">
+        <div className="lg:col-span-6 relative px-4">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.2, 0.7, 0.2, 1] }}
-            className="relative aspect-[4/5] overflow-hidden bg-surface"
+            className="relative border border-border p-2.5 bg-white rounded-[6px] shadow-[0_20px_50px_rgba(15,76,129,0.06)]"
           >
-            <motion.img
-              src={heroImg}
-              alt="Educational counsellor guiding students in a career discussion"
-              width={1600}
-              height={2000}
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{ y, scale }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-tr from-ink/40 via-transparent to-transparent" />
+            {/* Corner styling accents */}
+            <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary/20" />
+            <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-primary/20" />
+            <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-primary/20" />
+            <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary/20" />
+
+            <div className="relative aspect-[4/5] overflow-hidden bg-surface rounded-[4px]">
+              <motion.img
+                src={heroImg}
+                alt="Educational counsellor guiding students in a career discussion"
+                width={1600}
+                height={2000}
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{ y, scale }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-ink/30 via-transparent to-transparent" />
+            </div>
 
             {/* Floating stat cards */}
             <motion.div
               initial={{ opacity: 0, x: -20, y: 20 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.7, delay: 0.7 }}
-              className="absolute left-5 bottom-5 bg-white border border-border p-5 w-56 shadow-[0_20px_50px_-20px_rgba(15,23,42,0.35)]"
+              className="absolute -left-6 bottom-10 glass-panel p-6 w-56 rounded-[6px] border border-white/50 shadow-[0_20px_40px_-15px_rgba(15,76,129,0.15)]"
             >
               <div className="flex items-center gap-2 text-primary">
                 <Sparkles size={14} strokeWidth={1.75} />
                 <span className="text-[10px] tracking-[0.18em] uppercase font-medium">Success Rate</span>
               </div>
               <p className="mt-3 font-display text-3xl font-semibold text-ink">98%</p>
-              <p className="mt-1 text-xs text-ink-soft">Student satisfaction across counselling cohorts</p>
+              <p className="mt-1 text-xs text-ink-soft leading-relaxed">Student satisfaction across counselling cohorts</p>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: 20, y: -20 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.7, delay: 0.85 }}
-              className="absolute right-5 top-5 bg-white border border-border p-5 w-52 shadow-[0_20px_50px_-20px_rgba(15,23,42,0.35)]"
+              className="absolute -right-6 top-10 glass-panel p-6 w-52 rounded-[6px] border border-white/50 shadow-[0_20px_40px_-15px_rgba(15,76,129,0.15)]"
             >
               <div className="flex items-center gap-2 text-primary">
                 <ShieldCheck size={14} strokeWidth={1.75} />
                 <span className="text-[10px] tracking-[0.18em] uppercase font-medium">Trusted since</span>
               </div>
               <p className="mt-3 font-display text-3xl font-semibold text-ink tabular-nums">2010</p>
-              <p className="mt-1 text-xs text-ink-soft">Bengaluru's admissions specialists</p>
+              <p className="mt-1 text-xs text-ink-soft leading-relaxed">Bengaluru's admissions specialists</p>
             </motion.div>
           </motion.div>
         </div>
@@ -407,44 +423,53 @@ function Process() {
   ];
 
   return (
-    <section id="process" className="py-24 lg:py-32 bg-surface">
-      <div className="container-x">
+    <section id="process" className="py-24 lg:py-32 bg-surface relative overflow-hidden">
+      {/* Decorative background grid pattern for process */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
+      
+      <div className="container-x relative z-10">
         <div className="max-w-3xl">
           <Reveal><Eyebrow>Admission Process</Eyebrow></Reveal>
           <Reveal delay={0.05}>
             <h2 className="mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]">
-              Six deliberate steps, from<br className="hidden md:block" /> first call to first day.
+              Six deliberate steps, from<br /> first call to first day.
             </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-5 text-base lg:text-lg leading-relaxed text-ink-soft max-w-xl">
+              We guide students through a structured, transparent timeline to make college admissions smooth and stress-free.
+            </p>
           </Reveal>
         </div>
 
-        {/* Desktop timeline */}
-        <div className="hidden lg:block mt-20 relative">
-          <div className="absolute top-6 left-0 right-0 h-px bg-border" />
-          <div className="grid grid-cols-6 gap-6">
-            {steps.map((s, i) => (
-              <Reveal key={s.n} delay={i * 0.08}>
-                <div className="relative">
-                  <div className="w-3 h-3 bg-primary relative z-10" />
-                  <p className="mt-8 font-display text-xs tracking-[0.2em] text-primary">STEP {s.n}</p>
-                  <h3 className="mt-3 font-display text-lg font-semibold text-ink">{s.title}</h3>
-                  <p className="mt-3 text-sm text-ink-soft leading-relaxed">{s.desc}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile vertical */}
-        <div className="lg:hidden mt-14 space-y-8 relative">
-          <div className="absolute left-[5px] top-2 bottom-2 w-px bg-border" />
+        {/* Premium Cards Grid */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {steps.map((s, i) => (
-            <Reveal key={s.n} delay={i * 0.05}>
-              <div className="relative pl-8">
-                <div className="absolute left-0 top-1.5 w-3 h-3 bg-primary" />
-                <p className="font-display text-xs tracking-[0.2em] text-primary">STEP {s.n}</p>
-                <h3 className="mt-2 font-display text-lg font-semibold text-ink">{s.title}</h3>
-                <p className="mt-2 text-sm text-ink-soft leading-relaxed">{s.desc}</p>
+            <Reveal key={s.n} delay={i * 0.06}>
+              <div className="group bg-white border border-border p-8 rounded-[6px] relative overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_20px_50px_rgba(15,76,129,0.06)] h-full flex flex-col justify-between">
+                
+                {/* Large Background Serif Number */}
+                <span className="font-display font-bold text-[96px] text-primary/[0.03] absolute right-6 bottom-[-15px] select-none pointer-events-none transition-colors duration-300 group-hover:text-primary/[0.06]">
+                  {s.n}
+                </span>
+
+                <div className="relative z-10">
+                  {/* Step Badge */}
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/5 text-primary text-xs font-semibold tracking-wider transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+                    {s.n}
+                  </div>
+
+                  <h3 className="mt-8 font-display text-xl font-semibold text-ink tracking-tight transition-colors duration-300 group-hover:text-primary">
+                    {s.title}
+                  </h3>
+                  
+                  <p className="mt-4 text-sm text-ink-soft leading-relaxed pr-6">
+                    {s.desc}
+                  </p>
+                </div>
+
+                {/* Bottom decorative color slide */}
+                <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gold scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
               </div>
             </Reveal>
           ))}
@@ -467,8 +492,11 @@ function Programs() {
   ];
 
   return (
-    <section id="programs" className="py-24 lg:py-32">
-      <div className="container-x">
+    <section id="programs" className="py-24 lg:py-32 relative overflow-hidden">
+      {/* Background radial glow */}
+      <div className="absolute top-[-10%] left-[-10%] w-[50%] aspect-square rounded-full bg-[radial-gradient(circle,rgba(197,168,128,0.04)_0%,transparent_70%)] pointer-events-none blur-3xl" />
+      
+      <div className="container-x relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="max-w-2xl">
             <Reveal><Eyebrow>Featured Programs</Eyebrow></Reveal>
@@ -479,33 +507,39 @@ function Programs() {
             </Reveal>
           </div>
           <Reveal delay={0.1}>
-            <a href="#contact" className="btn-outline">Speak to an advisor</a>
+            <a href="#contact" className="btn-primary bg-primary border-primary hover:bg-primary-hover hover:border-primary-hover text-white shadow-[0_10px_25px_rgba(15,76,129,0.15)] h-12 flex items-center justify-center">
+              Speak to an advisor
+            </a>
           </Reveal>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.05}>
-              <article className="group card-elevated card-elevated-hover overflow-hidden h-full flex flex-col">
-                <div className="aspect-[4/3] overflow-hidden bg-surface">
+              <article className="group bg-white border border-border overflow-hidden rounded-[6px] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_rgba(15,76,129,0.07)] hover:border-primary/20 flex flex-col h-full relative">
+                <div className="aspect-[4/3] overflow-hidden bg-surface relative">
                   <img
                     src={p.img}
                     alt={`${p.title} — ${p.tag}`}
                     width={1200}
                     height={900}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.2,0.7,0.2,1)] group-hover:scale-[1.04]"
+                    className="w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.2,0.7,0.2,1)] group-hover:scale-[1.05]"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
-                <div className="p-7 flex flex-col grow">
-                  <p className="text-[11px] tracking-[0.18em] uppercase text-primary font-medium">{p.tag}</p>
-                  <h3 className="mt-3 font-display text-2xl font-semibold text-ink tracking-tight">{p.title}</h3>
+                <div className="p-8 flex flex-col grow relative z-10">
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-primary font-semibold">{p.tag}</p>
+                  <h3 className="mt-3.5 font-display text-2xl font-bold text-ink tracking-tight transition-colors duration-300 group-hover:text-primary">{p.title}</h3>
                   <p className="mt-3 text-sm text-ink-soft leading-relaxed grow">{p.desc}</p>
-                  <a href="#contact" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-ink group/link">
+                  <a href="#contact" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-ink transition-colors duration-300 group-hover:text-primary group/link">
                     Learn more
-                    <ArrowUpRight size={16} className="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 text-primary" />
+                    <ArrowUpRight size={15} className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
                   </a>
                 </div>
+
+                {/* Bottom luxury slide line */}
+                <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gold scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
               </article>
             </Reveal>
           ))}
@@ -575,8 +609,12 @@ function Testimonials() {
   const active = items[idx];
 
   return (
-    <section id="testimonials" className="py-24 lg:py-32 bg-surface">
-      <div className="container-x">
+    <section id="testimonials" className="py-24 lg:py-32 bg-surface relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] aspect-square rounded-full bg-[radial-gradient(circle,rgba(15,76,129,0.03)_0%,transparent_70%)] pointer-events-none blur-3xl" />
+
+      <div className="container-x relative z-10">
         <div className="max-w-3xl">
           <Reveal><Eyebrow>Student Testimonials</Eyebrow></Reveal>
           <Reveal delay={0.05}>
@@ -593,24 +631,27 @@ function Testimonials() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
-              className="relative bg-white border border-border p-10 lg:p-14"
+              className="relative bg-white border border-border p-10 lg:p-14 shadow-[0_20px_50px_rgba(15,76,129,0.04)] rounded-[6px] overflow-hidden"
             >
-              <Quote size={40} strokeWidth={1.25} className="text-primary/25 absolute top-8 right-8" />
-              <div className="flex items-center gap-1 text-primary">
+              <Quote size={80} strokeWidth={0.75} className="text-gold/10 absolute top-6 right-6 pointer-events-none" />
+              
+              <div className="flex items-center gap-1 text-primary relative z-10">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} size={16} className="fill-primary" strokeWidth={0} />
+                  <Star key={i} size={15} className="fill-primary" strokeWidth={0} />
                 ))}
               </div>
-              <p className="mt-8 font-display text-2xl lg:text-3xl leading-[1.4] tracking-tight text-ink">
+              
+              <p className="mt-8 font-display text-2xl lg:text-3xl leading-[1.4] tracking-tight text-ink relative z-10 font-medium">
                 “{active.quote}”
               </p>
-              <div className="mt-10 pt-8 border-t border-border flex items-center justify-between">
+              
+              <div className="mt-10 pt-8 border-t border-border flex items-center justify-between relative z-10">
                 <div>
-                  <p className="font-display font-semibold text-ink">{active.name}</p>
+                  <p className="font-display font-semibold text-ink text-base">{active.name}</p>
                   <p className="text-sm text-ink-soft mt-1">{active.role}</p>
                 </div>
-                <p className="font-display text-sm text-ink-soft tabular-nums">
-                  {String(idx + 1).padStart(2, "0")} <span className="text-ink-soft/40">/ {String(items.length).padStart(2, "0")}</span>
+                <p className="font-display text-sm text-ink-soft/60 tabular-nums">
+                  {String(idx + 1).padStart(2, "0")} <span className="text-ink-soft/20">/</span> {String(items.length).padStart(2, "0")}
                 </p>
               </div>
             </motion.blockquote>
@@ -622,17 +663,17 @@ function Testimonials() {
                 <button
                   key={t.name}
                   onClick={() => setIdx(i)}
-                  className={`text-left border p-5 flex-1 lg:flex-none transition-all ${
+                  className={`text-left border p-5 flex-1 lg:flex-none transition-all duration-300 cursor-pointer ${
                     i === idx
-                      ? "bg-primary border-primary text-white"
-                      : "bg-white border-border text-ink hover:border-primary/40"
+                      ? "bg-primary border-primary text-white shadow-[0_10px_20px_rgba(15,76,129,0.15)] rounded-[6px]"
+                      : "bg-white border-border text-ink hover:border-primary/30 hover:translate-x-1 rounded-[6px]"
                   }`}
                   aria-pressed={i === idx}
                 >
-                  <p className={`text-[10px] tracking-[0.2em] uppercase ${i === idx ? "text-white/60" : "text-ink-soft"}`}>
+                  <p className={`text-[9px] tracking-[0.2em] uppercase font-semibold ${i === idx ? "text-white/60" : "text-ink-soft"}`}>
                     Student 0{i + 1}
                   </p>
-                  <p className="mt-2 font-display font-medium">{t.name}</p>
+                  <p className="mt-2 font-display font-medium text-sm lg:text-base">{t.name}</p>
                   <p className={`text-xs mt-1 ${i === idx ? "text-white/70" : "text-ink-soft"}`}>{t.role}</p>
                 </button>
               ))}
@@ -656,8 +697,12 @@ function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 lg:py-32">
-      <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <section id="faq" className="py-24 lg:py-32 relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
+      <div className="absolute top-[-10%] right-[-10%] w-[50%] aspect-square rounded-full bg-[radial-gradient(circle,rgba(197,168,128,0.03)_0%,transparent_70%)] pointer-events-none blur-3xl" />
+
+      <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
         <div className="lg:col-span-4">
           <Reveal><Eyebrow>FAQ</Eyebrow></Reveal>
           <Reveal delay={0.05}>
@@ -671,7 +716,9 @@ function FAQ() {
             </p>
           </Reveal>
           <Reveal delay={0.15}>
-            <a href="#contact" className="btn-primary mt-8">Ask us directly</a>
+            <a href="#contact" className="btn-primary bg-primary border-primary hover:bg-primary-hover hover:border-primary-hover text-white shadow-[0_10px_25px_rgba(15,76,129,0.15)] mt-8">
+              Ask us directly
+            </a>
           </Reveal>
         </div>
 
@@ -684,14 +731,14 @@ function FAQ() {
                   <div className="border-b border-border">
                     <button
                       onClick={() => setOpen(isOpen ? null : i)}
-                      className="w-full flex items-center justify-between gap-6 py-6 text-left group"
+                      className="w-full flex items-center justify-between gap-6 py-6 text-left group cursor-pointer"
                       aria-expanded={isOpen}
                     >
-                      <span className="font-display text-lg lg:text-xl font-medium text-ink tracking-tight">
+                      <span className="font-display text-lg lg:text-xl font-medium text-ink tracking-tight transition-colors duration-300 group-hover:text-primary">
                         {f.q}
                       </span>
-                      <span className="w-9 h-9 border border-border flex items-center justify-center text-ink shrink-0 group-hover:border-primary group-hover:text-primary transition-colors">
-                        {isOpen ? <Minus size={16} strokeWidth={1.5} /> : <Plus size={16} strokeWidth={1.5} />}
+                      <span className="w-9 h-9 border border-border flex items-center justify-center text-ink shrink-0 group-hover:bg-primary group-hover:border-primary group-hover:text-white transition-all duration-300 rounded-[4px]">
+                        {isOpen ? <Minus size={15} strokeWidth={1.5} /> : <Plus size={15} strokeWidth={1.5} />}
                       </span>
                     </button>
                     <motion.div
@@ -700,7 +747,7 @@ function FAQ() {
                       transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-8 pr-16 text-ink-soft leading-relaxed">{f.a}</p>
+                      <p className="pb-8 pr-16 text-ink-soft leading-relaxed text-sm lg:text-base">{f.a}</p>
                     </motion.div>
                   </div>
                 </Reveal>
@@ -750,6 +797,43 @@ function CTA() {
 
 /* ================================ CONTACT ================================ */
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    course: "General Inquiry",
+    message: "",
+  });
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name.trim() || !formData.phone.trim()) {
+      toast.error("Please fill in all required fields.");
+      return;
+    }
+
+    toast.success("Opening WhatsApp to send your details...");
+
+    const text = `Hello Career Vision, I would like to make an inquiry. Here are my details:
+- Name: ${formData.name.trim()}
+- Phone: ${formData.phone.trim()}
+- Preferred Course: ${formData.course}
+${formData.message.trim() ? `- Message: ${formData.message.trim()}` : ""}`;
+
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/918639887319?text=${encodedText}`;
+
+    // Open WhatsApp
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+    // Clear form fields
+    setFormData({
+      name: "",
+      phone: "",
+      course: "General Inquiry",
+      message: "",
+    });
+  };
+
   return (
     <section id="contact" className="py-24 lg:py-32">
       <div className="container-x">
@@ -757,58 +841,142 @@ function Contact() {
           <Reveal><Eyebrow>Contact</Eyebrow></Reveal>
           <Reveal delay={0.05}>
             <h2 className="mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]">
-              Visit us in Jayanagar,<br /> Bengaluru.
+              Get in Touch with Career Vision.
             </h2>
           </Reveal>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Map */}
-          <Reveal className="lg:col-span-7">
-            <div className="aspect-[4/3] lg:aspect-auto lg:h-full border border-border overflow-hidden bg-surface">
-              <iframe
-                title="Career Vision Educational Consultancy — Jayanagar, Bengaluru"
-                src="https://www.google.com/maps?q=18th+C+Main+Rd,+Marenahalli,+Jayanagar+9th+Block,+Bengaluru,+Karnataka+560041&output=embed"
-                width="100%"
-                height="100%"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full block filter grayscale-[35%] contrast-[0.95]"
-                style={{ border: 0, minHeight: 480 }}
-              />
-            </div>
-          </Reveal>
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Left Column: Info & Map */}
+          <div className="lg:col-span-6 space-y-8">
+            <Reveal>
+              <div className="bg-dark text-white p-8 lg:p-10 flex flex-col">
+                <h3 className="font-display text-2xl font-semibold">Visit Our Office</h3>
+                <p className="mt-3 text-sm text-white/60">
+                  Located in the educational hub of Jayanagar, Bengaluru.
+                </p>
 
-          {/* Contact card */}
-          <Reveal className="lg:col-span-5" delay={0.1}>
-            <div className="bg-dark text-white p-8 lg:p-10 h-full flex flex-col">
-              <h3 className="font-display text-2xl font-semibold">Get in touch</h3>
-              <p className="mt-3 text-sm text-white/60">
-                We respond to every enquiry within one business day.
-              </p>
-
-              <div className="mt-10 space-y-6 flex-1">
-                <ContactRow icon={Phone} label="Phone">
-                  <a href="tel:+918639887319" className="hover:underline tabular-nums">+91 86398 87319</a>
-                </ContactRow>
-                <ContactRow icon={Mail} label="Email">
-                  <a href="mailto:careervisioneduconsultancy@gmail.com" className="hover:underline break-all">
-                    careervisioneduconsultancy@gmail.com
-                  </a>
-                </ContactRow>
-                <ContactRow icon={MapPin} label="Address">
-                  Second Floor, 07/3, 18th C Main Rd, MTB Area, Marenahalli, Jayanagar 9th Block, Bengaluru, Karnataka 560041
-                </ContactRow>
-                <ContactRow icon={CheckCircle2} label="Business Hours">
-                  Monday – Saturday · 9:00 AM – 8:00 PM<br />
-                  <span className="text-white/50">Sunday · Holiday</span>
-                </ContactRow>
+                <div className="mt-8 space-y-6">
+                  <ContactRow icon={Phone} label="Phone">
+                    <a href="tel:+918639887319" className="hover:underline tabular-nums">+91 86398 87319</a>
+                  </ContactRow>
+                  <ContactRow icon={Mail} label="Email">
+                    <a href="mailto:careervisioneduconsultancy@gmail.com" className="hover:underline break-all">
+                      careervisioneduconsultancy@gmail.com
+                    </a>
+                  </ContactRow>
+                  <ContactRow icon={MapPin} label="Address">
+                    Second Floor, 07/3, 18th C Main Rd, MTB Area, Marenahalli, Jayanagar 9th Block, Bengaluru, Karnataka 560041
+                  </ContactRow>
+                  <ContactRow icon={CheckCircle2} label="Business Hours">
+                    Monday – Saturday · 9:00 AM – 8:00 PM<br />
+                    <span className="text-white/50">Sunday · Holiday</span>
+                  </ContactRow>
+                </div>
               </div>
+            </Reveal>
 
-              <a href="tel:+918639887319" className="btn-primary mt-10 w-full">
-                Call to book a session
-                <ArrowRight size={16} />
-              </a>
+            <Reveal delay={0.05}>
+              <div className="aspect-[16/10] border border-border overflow-hidden bg-surface">
+                <iframe
+                  title="Career Vision Educational Consultancy — Jayanagar, Bengaluru"
+                  src="https://www.google.com/maps?q=18th+C+Main+Rd,+Marenahalli,+Jayanagar+9th+Block,+Bengaluru,+Karnataka+560041&output=embed"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full block filter grayscale-[35%] contrast-[0.95]"
+                  style={{ border: 0, minHeight: 300 }}
+                />
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Right Column: Sleek WhatsApp Inquiry Form */}
+          <Reveal className="lg:col-span-6" delay={0.1}>
+            <div className="bg-white border border-border p-8 lg:p-10 h-full flex flex-col justify-between">
+              <div>
+                <h3 className="font-display text-2xl font-semibold text-ink">Send an Inquiry</h3>
+                <p className="mt-3 text-sm text-ink-soft">
+                  Fill in your details below to directly connect with our senior admission advisors on WhatsApp.
+                </p>
+
+                <form onSubmit={handleFormSubmit} className="mt-8 space-y-6">
+                  <div>
+                    <label htmlFor="form-name" className="block text-xs font-semibold uppercase tracking-wider text-ink">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="form-name"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder="John Doe"
+                      className="mt-2 block w-full px-4 py-3 border border-border rounded-[6px] focus:outline-none focus:border-primary text-sm text-ink bg-surface placeholder:text-ink-soft/40 transition-colors"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="form-phone" className="block text-xs font-semibold uppercase tracking-wider text-ink">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        id="form-phone"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="e.g. +91 98765 43210"
+                        className="mt-2 block w-full px-4 py-3 border border-border rounded-[6px] focus:outline-none focus:border-primary text-sm text-ink bg-surface placeholder:text-ink-soft/40 transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="form-course" className="block text-xs font-semibold uppercase tracking-wider text-ink">
+                        Preferred Program *
+                      </label>
+                      <select
+                        id="form-course"
+                        required
+                        value={formData.course}
+                        onChange={(e) => setFormData({ ...formData, course: e.target.value })}
+                        className="mt-2 block w-full px-4 py-3 border border-border rounded-[6px] focus:outline-none focus:border-primary text-sm text-ink bg-surface transition-colors cursor-pointer"
+                      >
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="MBBS Admission">MBBS Admission</option>
+                        <option value="Engineering Admission">Engineering Admission</option>
+                        <option value="Medical PG Admission">Medical PG Admission</option>
+                        <option value="BAMS Admission">BAMS Admission</option>
+                        <option value="BHMS Admission">BHMS Admission</option>
+                        <option value="BDS Admission">BDS Admission</option>
+                        <option value="BPT Admission">BPT Admission</option>
+                        <option value="Career Counselling">Career Counselling</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="form-message" className="block text-xs font-semibold uppercase tracking-wider text-ink">
+                      Inquiry Details
+                    </label>
+                    <textarea
+                      id="form-message"
+                      rows={4}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="Share your entrance exam rank, score, budget constraints, or specific queries..."
+                      className="mt-2 block w-full px-4 py-3 border border-border rounded-[6px] focus:outline-none focus:border-primary text-sm text-ink bg-surface placeholder:text-ink-soft/40 transition-colors resize-none"
+                    />
+                  </div>
+
+                  <button type="submit" className="btn-primary w-full group mt-2">
+                    Submit & Chat on WhatsApp
+                    <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
+                  </button>
+                </form>
+              </div>
             </div>
           </Reveal>
         </div>
