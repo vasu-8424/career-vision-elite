@@ -9,7 +9,7 @@ import { t as motion } from "../_libs/motion.mjs";
 import { A as Award, C as GraduationCap, D as Compass, E as Facebook, M as ArrowRight, O as CircleCheck, S as Handshake, T as FileCheck, _ as Mail, a as Stethoscope, b as Instagram, c as ShieldCheck, d as Plus, f as Phone, g as MapPin, h as Menu, i as UserCheck, j as ArrowUpRight, k as Building2, l as Route, m as Microscope, n as Wallet, o as Star, p as Minus, r as Users, s as Sparkles, t as X, u as Quote, v as Linkedin, w as FileText, x as HeartPulse, y as Leaf } from "../_libs/lucide-react.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-ulunb7DW.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-c0yyubop.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function Logo({ variant = "dark" }) {
@@ -420,15 +420,14 @@ var prog_bams_default = "/assets/prog-bams-ZzAaFnAP.webp";
 var prog_bhms_default = "/assets/prog-bhms-DU4hpmin.webp";
 var prog_bds_default = "/assets/prog-bds-BDbus3kA.webp";
 var prog_bpt_default = "/assets/prog-bpt-Cjczn1D2.webp";
-var ToothIcon = ({ size, strokeWidth, ...props }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-	...props,
+var ToothIcon = ({ size, className }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+	className,
 	style: {
 		fontSize: size || 24,
 		lineHeight: 1,
 		display: "inline-flex",
 		alignItems: "center",
-		justifyContent: "center",
-		...props.style
+		justifyContent: "center"
 	},
 	children: "🦷"
 });

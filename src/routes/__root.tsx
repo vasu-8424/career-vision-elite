@@ -47,6 +47,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <p className="mt-2 text-sm text-muted-foreground">
           Something went wrong on our end. Try refreshing or head back home.
         </p>
+        <div className="mt-4 p-4 bg-red-100 text-red-900 rounded text-left overflow-auto text-xs max-h-64">
+          <p className="font-bold">{error.name}: {error.message}</p>
+          <pre className="mt-2">{error.stack}</pre>
+        </div>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <button onClick={() => { router.invalidate(); reset(); }} className="btn-primary">
             Try again

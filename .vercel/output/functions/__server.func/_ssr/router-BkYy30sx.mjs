@@ -6,10 +6,10 @@ import { n as require_jsx_runtime } from "../_libs/radix-ui__react-context+react
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-mRGtAzMM.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-BkYy30sx.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-CxNtaGzc.css";
+var styles_default = "/assets/styles-JxXMeAIW.css";
 var Toaster$1 = ({ ...props }) => {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Toaster, {
 		className: "toaster group",
@@ -82,6 +82,20 @@ function ErrorComponent({ error, reset }) {
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "mt-2 text-sm text-muted-foreground",
 					children: "Something went wrong on our end. Try refreshing or head back home."
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "mt-4 p-4 bg-red-100 text-red-900 rounded text-left overflow-auto text-xs max-h-64",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+						className: "font-bold",
+						children: [
+							error.name,
+							": ",
+							error.message
+						]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("pre", {
+						className: "mt-2",
+						children: error.stack
+					})]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "mt-6 flex flex-wrap justify-center gap-3",
@@ -220,7 +234,7 @@ function RootComponent() {
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Toaster$1, {})]
 	});
 }
-var $$splitComponentImporter = () => import("./routes-ulunb7DW.mjs");
+var $$splitComponentImporter = () => import("./routes-c0yyubop.mjs");
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter, "component") }).update({
 	id: "/",
 	path: "/",
