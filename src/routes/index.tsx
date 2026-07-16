@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "motion/react";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -37,6 +37,7 @@ import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { Counter, Eyebrow, Reveal } from "../components/site/primitives";
 import { toast } from "sonner";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "../components/ui/dialog";
 
 import heroImg from "../assets/hero.webp";
 import aboutImg from "../assets/about.webp";
@@ -48,6 +49,77 @@ import progBhms from "../assets/prog-bhms.webp";
 import progBds from "../assets/prog-bds.webp";
 import progBpt from "../assets/prog-bpt.webp";
 
+const ToothIcon = (props: any) => (
+  <span 
+    {...props} 
+    style={{ 
+      fontSize: props.size || 24, 
+      lineHeight: 1, 
+      display: 'inline-flex', 
+      alignItems: 'center', 
+      justifyContent: 'center', 
+      ...props.style 
+    }}
+  >
+    🦷
+  </span>
+);
+
+function EnquiryPopup() {
+  const [open, setOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: "", phone: "", course: "General Inquiry" });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setOpen(true);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast.success("Inquiry sent successfully!");
+    setOpen(false);
+  };
+
+  return (
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Get Expert Admission Guidance</DialogTitle>
+          <DialogDescription>
+            Fill out the form below and our senior counselors will get in touch with you.
+          </DialogDescription>
+        </DialogHeader>
+        <form onSubmit={handleSubmit} className="mt-4 space-y-4 text-left">
+          <div>
+            <label className="block text-xs font-semibold uppercase tracking-wider text-ink mb-2">Name</label>
+            <input required type="text" className="w-full px-3 py-2 border border-border rounded-[6px] focus:border-primary focus:outline-none bg-surface text-ink" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} placeholder="Your Name" />
+          </div>
+          <div>
+            <label className="block text-xs font-semibold uppercase tracking-wider text-ink mb-2">Phone Number</label>
+            <input required type="tel" className="w-full px-3 py-2 border border-border rounded-[6px] focus:border-primary focus:outline-none bg-surface text-ink" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} placeholder="+91 XXXXX XXXXX" />
+          </div>
+          <div>
+            <label className="block text-xs font-semibold uppercase tracking-wider text-ink mb-2">Preferred Program</label>
+            <select className="w-full px-3 py-2 border border-border rounded-[6px] focus:border-primary focus:outline-none bg-surface text-ink" value={formData.course} onChange={e => setFormData({...formData, course: e.target.value})}>
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="MBBS Admission">MBBS Admission</option>
+              <option value="Engineering Admission">Engineering Admission</option>
+              <option value="Medical PG Admission">Medical PG Admission</option>
+              <option value="BAMS Admission">BAMS Admission</option>
+              <option value="BHMS Admission">BHMS Admission</option>
+              <option value="BDS Admission">BDS Admission</option>
+              <option value="BPT Admission">BPT Admission</option>
+            </select>
+          </div>
+          <button type="submit" className="w-full bg-primary text-white py-3 rounded-[6px] hover:bg-primary/90 transition-colors font-semibold mt-2">Submit Inquiry</button>
+        </form>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
 export const Route = createFileRoute("/")({
   component: Index,
 });
@@ -55,6 +127,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main id="top" className="bg-background text-foreground">
+      <EnquiryPopup />
       <Header />
       <Hero />
       <TrustBar />
@@ -97,7 +170,7 @@ function Hero() {
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-border/80 shadow-[0_2px_8px_rgba(15,76,129,0.03)]"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-primary glow-dot" />
-            <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-ink-soft">Est. 2010 — Bengaluru</span>
+            <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-ink-soft">Est. 2017 — Bengaluru</span>
           </motion.div>
 
           <motion.h1
@@ -311,7 +384,7 @@ function Services() {
     { icon: HeartPulse, title: "Medical PG Admissions", desc: "MD / MS / Diploma placements through NEET PG state and all-India rounds." },
     { icon: Leaf, title: "BAMS Admissions", desc: "Ayurvedic medicine admissions across recognised universities." },
     { icon: Microscope, title: "BHMS Admissions", desc: "Homeopathy programmes with a structured, transparent process." },
-    { icon: BookOpen, title: "BDS Admissions", desc: "Dental surgery seats in reputed government and private colleges." },
+    { icon: ToothIcon, title: "BDS Admissions", desc: "Dental surgery seats in reputed government and private colleges." },
     { icon: Handshake, title: "BPT Admissions", desc: "Physiotherapy programmes with allied health specialisation guidance." },
     { icon: Compass, title: "Career Counselling", desc: "One-to-one aptitude, stream and career-path discovery sessions." },
     { icon: Building2, title: "College Selection", desc: "Curated shortlists that fit your rank, budget and long-term goals." },
@@ -590,19 +663,29 @@ function Stats() {
 function Testimonials() {
   const items = [
     {
-      quote: "Career Vision made what felt impossible feel manageable. Their counsellors mapped every option against my NEET rank and helped me secure MBBS at a college I truly believe in.",
-      name: "Ananya Rao",
-      role: "MBBS, Bengaluru Medical College",
+      quote: "Career Vision's expert guidance made my dream a reality.",
+      name: "Balla Sri Charan",
+      role: "MBBS, VINAYAKA MISSION MEDICAL COLLEGE",
     },
     {
-      quote: "The team's transparency is unmatched. No inflated promises — just structured guidance that helped my son secure a top engineering seat in Karnataka.",
-      name: "Vikram Iyer",
-      role: "Parent, B.E. Computer Science",
+      quote: "They provided step-by-step assistance throughout the entire admission process.",
+      name: "Devareddy Tayswitha Reddy",
+      role: "MBBS, CMR MEDICAL COLLEGE HYDERABAD",
     },
     {
-      quote: "From documentation to seat locking, every step was handled with genuine care. My BDS admission was completed without a single missed deadline.",
-      name: "Sneha Patil",
-      role: "BDS, Government Dental College",
+      quote: "I highly recommend Career Vision for anyone seeking medical admissions.",
+      name: "Yannam Sai Hemanth Reddy",
+      role: "MBBS, CHALMADA ANANDH RAO MEDICAL COLLEGE",
+    },
+    {
+      quote: "Their transparency and dedication secured my admission seamlessly.",
+      name: "Polamarasetti Tanvi",
+      role: "BAMS, HILLSIDES AYURVEDIC MEDICAL COLLEGE",
+    },
+    {
+      quote: "From documentation to seat locking, every step was handled with genuine care.",
+      name: "Siva Krishan",
+      role: "PG ORTHO, MNR MEDICAL COLLEGE",
     },
   ];
   const [idx, setIdx] = useState(0);

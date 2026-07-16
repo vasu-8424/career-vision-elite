@@ -1,11 +1,15 @@
 import { o as __toESM } from "../_runtime.mjs";
 import { t as hero_default } from "./hero-B1OZv87V.mjs";
-import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
+import { n as require_react } from "../_libs/@radix-ui/react-compose-refs+[...].mjs";
+import { n as require_jsx_runtime } from "../_libs/radix-ui__react-context+react.mjs";
+import { a as DialogOverlay$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
 import { a as useScroll, i as useMotionValue, n as useSpring, r as useTransform, t as useInView } from "../_libs/framer-motion.mjs";
 import { t as motion } from "../_libs/motion.mjs";
-import { A as BookOpen, C as GraduationCap, D as Compass, E as Facebook, M as ArrowUpRight, N as ArrowRight, O as CircleCheck, S as Handshake, T as FileCheck, _ as Mail, a as Stethoscope, b as Instagram, c as ShieldCheck, d as Plus, f as Phone, g as MapPin, h as Menu, i as UserCheck, j as Award, k as Building2, l as Route, m as Microscope, n as Wallet, o as Star, p as Minus, r as Users, s as Sparkles, t as X, u as Quote, v as Linkedin, w as FileText, x as HeartPulse, y as Leaf } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-Ckn1AMW4.js
+import { A as Award, C as GraduationCap, D as Compass, E as Facebook, M as ArrowRight, O as CircleCheck, S as Handshake, T as FileCheck, _ as Mail, a as Stethoscope, b as Instagram, c as ShieldCheck, d as Plus, f as Phone, g as MapPin, h as Menu, i as UserCheck, j as ArrowUpRight, k as Building2, l as Route, m as Microscope, n as Wallet, o as Star, p as Minus, r as Users, s as Sparkles, t as X, u as Quote, v as Linkedin, w as FileText, x as HeartPulse, y as Leaf } from "../_libs/lucide-react.mjs";
+import { t as clsx } from "../_libs/clsx.mjs";
+import { t as twMerge } from "../_libs/tailwind-merge.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-B96aLNwu.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function Logo({ variant = "dark" }) {
@@ -362,6 +366,52 @@ function Footer() {
 		})]
 	});
 }
+function cn(...inputs) {
+	return twMerge(clsx(inputs));
+}
+var Dialog = Dialog$1;
+var DialogPortal = DialogPortal$1;
+var DialogOverlay = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogOverlay$1, {
+	ref,
+	className: cn("fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className),
+	...props
+}));
+DialogOverlay.displayName = DialogOverlay$1.displayName;
+var DialogContent = import_react.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogPortal, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogOverlay, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogContent$1, {
+	ref,
+	className: cn("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 sm:rounded-lg", className),
+	...props,
+	children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogClose, {
+		className: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background cursor-pointer transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { className: "h-4 w-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+			className: "sr-only",
+			children: "Close"
+		})]
+	})]
+})] }));
+DialogContent.displayName = DialogContent$1.displayName;
+var DialogHeader = ({ className, ...props }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	className: cn("flex flex-col space-y-1.5 text-center sm:text-left", className),
+	...props
+});
+DialogHeader.displayName = "DialogHeader";
+var DialogFooter = ({ className, ...props }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	className: cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className),
+	...props
+});
+DialogFooter.displayName = "DialogFooter";
+var DialogTitle = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTitle$1, {
+	ref,
+	className: cn("text-lg font-semibold leading-none tracking-tight", className),
+	...props
+}));
+DialogTitle.displayName = DialogTitle$1.displayName;
+var DialogDescription = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogDescription$1, {
+	ref,
+	className: cn("text-sm text-muted-foreground", className),
+	...props
+}));
+DialogDescription.displayName = DialogDescription$1.displayName;
 var about_default = "/assets/about-DwYjfyWb.webp";
 var prog_engineering_default = "/assets/prog-engineering-CSzkyCPG.webp";
 var prog_mbbs_default = "/assets/prog-mbbs-BdiLoQKU.webp";
@@ -370,11 +420,134 @@ var prog_bams_default = "/assets/prog-bams-ZzAaFnAP.webp";
 var prog_bhms_default = "/assets/prog-bhms-DU4hpmin.webp";
 var prog_bds_default = "/assets/prog-bds-BDbus3kA.webp";
 var prog_bpt_default = "/assets/prog-bpt-Cjczn1D2.webp";
+var ToothIcon = (props) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+	...props,
+	style: {
+		fontSize: props.size || 24,
+		lineHeight: 1,
+		display: "inline-flex",
+		alignItems: "center",
+		justifyContent: "center",
+		...props.style
+	},
+	children: "🦷"
+});
+function EnquiryPopup() {
+	const [open, setOpen] = (0, import_react.useState)(false);
+	const [formData, setFormData] = (0, import_react.useState)({
+		name: "",
+		phone: "",
+		course: "General Inquiry"
+	});
+	(0, import_react.useEffect)(() => {
+		const timer = setTimeout(() => {
+			setOpen(true);
+		}, 1500);
+		return () => clearTimeout(timer);
+	}, []);
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		toast.success("Inquiry sent successfully!");
+		setOpen(false);
+	};
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dialog, {
+		open,
+		onOpenChange: setOpen,
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogContent, {
+			className: "sm:max-w-[425px]",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogHeader, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTitle, { children: "Get Expert Admission Guidance" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogDescription, { children: "Fill out the form below and our senior counselors will get in touch with you." })] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
+				onSubmit: handleSubmit,
+				className: "mt-4 space-y-4 text-left",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+						className: "block text-xs font-semibold uppercase tracking-wider text-ink mb-2",
+						children: "Name"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+						required: true,
+						type: "text",
+						className: "w-full px-3 py-2 border border-border rounded-[6px] focus:border-primary focus:outline-none bg-surface text-ink",
+						value: formData.name,
+						onChange: (e) => setFormData({
+							...formData,
+							name: e.target.value
+						}),
+						placeholder: "Your Name"
+					})] }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+						className: "block text-xs font-semibold uppercase tracking-wider text-ink mb-2",
+						children: "Phone Number"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+						required: true,
+						type: "tel",
+						className: "w-full px-3 py-2 border border-border rounded-[6px] focus:border-primary focus:outline-none bg-surface text-ink",
+						value: formData.phone,
+						onChange: (e) => setFormData({
+							...formData,
+							phone: e.target.value
+						}),
+						placeholder: "+91 XXXXX XXXXX"
+					})] }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+						className: "block text-xs font-semibold uppercase tracking-wider text-ink mb-2",
+						children: "Preferred Program"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+						className: "w-full px-3 py-2 border border-border rounded-[6px] focus:border-primary focus:outline-none bg-surface text-ink",
+						value: formData.course,
+						onChange: (e) => setFormData({
+							...formData,
+							course: e.target.value
+						}),
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "General Inquiry",
+								children: "General Inquiry"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "MBBS Admission",
+								children: "MBBS Admission"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "Engineering Admission",
+								children: "Engineering Admission"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "Medical PG Admission",
+								children: "Medical PG Admission"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "BAMS Admission",
+								children: "BAMS Admission"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "BHMS Admission",
+								children: "BHMS Admission"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "BDS Admission",
+								children: "BDS Admission"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "BPT Admission",
+								children: "BPT Admission"
+							})
+						]
+					})] }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						type: "submit",
+						className: "w-full bg-primary text-white py-3 rounded-[6px] hover:bg-primary/90 transition-colors font-semibold mt-2",
+						children: "Submit Inquiry"
+					})
+				]
+			})]
+		})
+	});
+}
 function Index() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
 		id: "top",
 		className: "bg-background text-foreground",
 		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(EnquiryPopup, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Header, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Hero, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TrustBar, {}),
@@ -433,7 +606,7 @@ function Hero() {
 							className: "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-border/80 shadow-[0_2px_8px_rgba(15,76,129,0.03)]",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-1.5 h-1.5 rounded-full bg-primary glow-dot" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 								className: "text-[10px] font-semibold tracking-[0.2em] uppercase text-ink-soft",
-								children: "Est. 2010 — Bengaluru"
+								children: "Est. 2017 — Bengaluru"
 							})]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.h1, {
@@ -866,7 +1039,7 @@ function Services() {
 						desc: "Homeopathy programmes with a structured, transparent process."
 					},
 					{
-						icon: BookOpen,
+						icon: ToothIcon,
 						title: "BDS Admissions",
 						desc: "Dental surgery seats in reputed government and private colleges."
 					},
@@ -1314,19 +1487,29 @@ function Stats() {
 function Testimonials() {
 	const items = [
 		{
-			quote: "Career Vision made what felt impossible feel manageable. Their counsellors mapped every option against my NEET rank and helped me secure MBBS at a college I truly believe in.",
-			name: "Ananya Rao",
-			role: "MBBS, Bengaluru Medical College"
+			quote: "Career Vision's expert guidance made my dream a reality.",
+			name: "Balla Sri Charan",
+			role: "MBBS, VINAYAKA MISSION MEDICAL COLLEGE"
 		},
 		{
-			quote: "The team's transparency is unmatched. No inflated promises — just structured guidance that helped my son secure a top engineering seat in Karnataka.",
-			name: "Vikram Iyer",
-			role: "Parent, B.E. Computer Science"
+			quote: "They provided step-by-step assistance throughout the entire admission process.",
+			name: "Devareddy Tayswitha Reddy",
+			role: "MBBS, CMR MEDICAL COLLEGE HYDERABAD"
 		},
 		{
-			quote: "From documentation to seat locking, every step was handled with genuine care. My BDS admission was completed without a single missed deadline.",
-			name: "Sneha Patil",
-			role: "BDS, Government Dental College"
+			quote: "I highly recommend Career Vision for anyone seeking medical admissions.",
+			name: "Yannam Sai Hemanth Reddy",
+			role: "MBBS, CHALMADA ANANDH RAO MEDICAL COLLEGE"
+		},
+		{
+			quote: "Their transparency and dedication secured my admission seamlessly.",
+			name: "Polamarasetti Tanvi",
+			role: "BAMS, HILLSIDES AYURVEDIC MEDICAL COLLEGE"
+		},
+		{
+			quote: "From documentation to seat locking, every step was handled with genuine care.",
+			name: "Siva Krishan",
+			role: "PG ORTHO, MNR MEDICAL COLLEGE"
 		}
 	];
 	const [idx, setIdx] = (0, import_react.useState)(0);

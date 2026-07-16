@@ -1,5 +1,5 @@
 import { o as __toESM } from "../_runtime.mjs";
-import { r as require_react } from "./react+tanstack__react-query.mjs";
+import { n as require_react } from "./@radix-ui/react-compose-refs+[...].mjs";
 //#region node_modules/lucide-react/dist/esm/shared/src/utils/mergeClasses.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 /**
@@ -149,19 +149,6 @@ var Award = createLucideIcon("award", [["path", {
 	cy: "8",
 	r: "6",
 	key: "1vp47v"
-}]]);
-/**
-* @license lucide-react v0.575.0 - ISC
-*
-* This source code is licensed under the ISC license.
-* See the LICENSE file in the root directory of this source tree.
-*/
-var BookOpen = createLucideIcon("book-open", [["path", {
-	d: "M12 7v14",
-	key: "1akyts"
-}], ["path", {
-	d: "M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z",
-	key: "ruj8y"
 }]]);
 /**
 * @license lucide-react v0.575.0 - ISC
@@ -714,4 +701,4 @@ var X = createLucideIcon("x", [["path", {
 	key: "d8bk6v"
 }]]);
 //#endregion
-export { BookOpen as A, GraduationCap as C, Compass as D, Facebook as E, ArrowUpRight as M, ArrowRight as N, CircleCheck as O, Handshake as S, FileCheck as T, Mail as _, Stethoscope as a, Instagram as b, ShieldCheck as c, Plus as d, Phone as f, MapPin as g, Menu as h, UserCheck as i, Award as j, Building2 as k, Route as l, Microscope as m, Wallet as n, Star as o, Minus as p, Users as r, Sparkles as s, X as t, Quote as u, Linkedin as v, FileText as w, HeartPulse as x, Leaf as y };
+export { Award as A, GraduationCap as C, Compass as D, Facebook as E, ArrowRight as M, CircleCheck as O, Handshake as S, FileCheck as T, Mail as _, Stethoscope as a, Instagram as b, ShieldCheck as c, Plus as d, Phone as f, MapPin as g, Menu as h, UserCheck as i, ArrowUpRight as j, Building2 as k, Route as l, Microscope as m, Wallet as n, Star as o, Minus as p, Users as r, Sparkles as s, X as t, Quote as u, Linkedin as v, FileText as w, HeartPulse as x, Leaf as y };
