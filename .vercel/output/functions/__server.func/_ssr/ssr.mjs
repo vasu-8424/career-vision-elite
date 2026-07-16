@@ -21,7 +21,7 @@ function consumeLastCapturedError() {
 	lastCapturedError = void 0;
 	return error;
 }
-function renderErrorPage() {
+function renderErrorPage(errorMsg = "") {
 	return `<!doctype html>
 <html lang="en">
   <head>
@@ -37,12 +37,14 @@ function renderErrorPage() {
       a, button { padding: 0.5rem 1rem; border-radius: 0.375rem; font: inherit; cursor: pointer; text-decoration: none; border: 1px solid transparent; }
       .primary { background: #111; color: #fff; }
       .secondary { background: #fff; color: #111; border-color: #d1d5db; }
+      .error-details { margin-top: 1rem; padding: 1rem; background: #fee2e2; color: #991b1b; text-align: left; overflow: auto; max-height: 200px; font-size: 12px; }
     </style>
   </head>
   <body>
     <div class="card">
       <h1>This page didn't load</h1>
       <p>Something went wrong on our end. You can try refreshing or head back home.</p>
+      ${errorMsg ? `<div class="error-details"><pre>${errorMsg}</pre></div>` : ""}
       <div class="actions">
         <button class="primary" onclick="location.reload()">Try again</button>
         <a class="secondary" href="/">Go home</a>
@@ -61,8 +63,9 @@ async function normalizeCatastrophicSsrResponse(response) {
 	if (!(response.headers.get("content-type") ?? "").includes("application/json")) return response;
 	const body = await response.clone().text();
 	if (!isH3SwallowedErrorBody(body)) return response;
-	console.error(consumeLastCapturedError() ?? /* @__PURE__ */ new Error(`h3 swallowed SSR error: ${body}`));
-	return new Response(renderErrorPage(), {
+	const error = consumeLastCapturedError() ?? /* @__PURE__ */ new Error(`h3 swallowed SSR error: ${body}`);
+	console.error(error);
+	return new Response(renderErrorPage(error.stack || error.message || String(error)), {
 		status: 500,
 		headers: { "content-type": "text/html; charset=utf-8" }
 	});
@@ -80,7 +83,7 @@ var server_default = { async fetch(request, env, ctx) {
 		return await normalizeCatastrophicSsrResponse(await (await getServerEntry()).fetch(request, env, ctx));
 	} catch (error) {
 		console.error(error);
-		return new Response(renderErrorPage(), {
+		return new Response(renderErrorPage(error.stack || error.message || String(error)), {
 			status: 500,
 			headers: { "content-type": "text/html; charset=utf-8" }
 		});
