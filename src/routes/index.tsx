@@ -49,16 +49,15 @@ import progBhms from "../assets/prog-bhms.webp";
 import progBds from "../assets/prog-bds.webp";
 import progBpt from "../assets/prog-bpt.webp";
 
-const ToothIcon = ({ size, strokeWidth, ...props }: any) => (
+const ToothIcon = ({ size, className }: any) => (
   <span 
-    {...props} 
+    className={className}
     style={{ 
       fontSize: size || 24, 
       lineHeight: 1, 
       display: 'inline-flex', 
       alignItems: 'center', 
-      justifyContent: 'center', 
-      ...props.style 
+      justifyContent: 'center'
     }}
   >
     🦷
