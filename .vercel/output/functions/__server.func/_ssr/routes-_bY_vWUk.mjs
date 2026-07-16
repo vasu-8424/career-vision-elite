@@ -1,12 +1,8 @@
-import { a as __toCommonJS, n as __esmMin, o as __toESM, r as __exportAll } from "../_runtime.mjs";
-import { n as require_react } from "./@radix-ui/react-compose-refs+[...].mjs";
-import { n as require_jsx_runtime } from "./radix-ui__react-context+react.mjs";
-//#region node_modules/framer-motion/dist/es/context/LayoutGroupContext.mjs
-var import_jsx_runtime = require_jsx_runtime();
+import { a as __toCommonJS, c as require_react, l as require_react_dom, n as __esmMin, o as __toESM, r as __exportAll, s as require_jsx_runtime, t as __commonJSMin } from "./react-dom-Yn6n5m3J.mjs";
+import { n as hero_default, r as toast } from "./dist-CEPWaCOt.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-_bY_vWUk.js
 var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
 var LayoutGroupContext = (0, import_react.createContext)({});
-//#endregion
-//#region node_modules/framer-motion/dist/es/utils/use-constant.mjs
 /**
 * Creates a constant value over the lifecycle of a component.
 *
@@ -19,17 +15,11 @@ function useConstant(init) {
 	if (ref.current === null) ref.current = init();
 	return ref.current;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/utils/use-isomorphic-effect.mjs
-var useIsomorphicLayoutEffect = typeof window !== "undefined" ? import_react.useLayoutEffect : import_react.useEffect;
-//#endregion
-//#region node_modules/framer-motion/dist/es/context/PresenceContext.mjs
+var useIsomorphicLayoutEffect$1 = typeof window !== "undefined" ? import_react.useLayoutEffect : import_react.useEffect;
 /**
 * @public
 */
 var PresenceContext = /* @__PURE__ */ (0, import_react.createContext)(null);
-//#endregion
-//#region node_modules/motion-utils/dist/es/array.mjs
 function addUniqueItem(arr, item) {
 	if (arr.indexOf(item) === -1) arr.push(item);
 }
@@ -37,33 +27,21 @@ function removeItem(arr, item) {
 	const index = arr.indexOf(item);
 	if (index > -1) arr.splice(index, 1);
 }
-//#endregion
-//#region node_modules/motion-utils/dist/es/clamp.mjs
 var clamp = (min, max, v) => {
 	if (v > max) return max;
 	if (v < min) return min;
 	return v;
 };
-//#endregion
-//#region node_modules/motion-utils/dist/es/global-config.mjs
 var MotionGlobalConfig = {};
-//#endregion
-//#region node_modules/motion-utils/dist/es/is-numerical-string.mjs
 /**
 * Check if value is a numerical string, ie a string that is purely a number eg "100" or "-100.1"
 */
 var isNumericalString = (v) => /^-?(?:\d+(?:\.\d+)?|\.\d+)$/u.test(v);
-//#endregion
-//#region node_modules/motion-utils/dist/es/is-object.mjs
 var isObject = (value) => typeof value === "object" && value !== null;
-//#endregion
-//#region node_modules/motion-utils/dist/es/is-zero-value-string.mjs
 /**
 * Check if the value is a zero value string like "0px" or "0%"
 */
 var isZeroValueString = (v) => /^0[^.\s]+$/u.test(v);
-//#endregion
-//#region node_modules/motion-utils/dist/es/memo.mjs
 /*#__NO_SIDE_EFFECTS__*/
 function memo(callback) {
 	let result;
@@ -72,11 +50,7 @@ function memo(callback) {
 		return result;
 	};
 }
-//#endregion
-//#region node_modules/motion-utils/dist/es/noop.mjs
 var noop = /* @__NO_SIDE_EFFECTS__ */ (any) => any;
-//#endregion
-//#region node_modules/motion-utils/dist/es/pipe.mjs
 /**
 * Pipe
 * Compose other transformers to run linearily
@@ -85,14 +59,10 @@ var noop = /* @__NO_SIDE_EFFECTS__ */ (any) => any;
 * @return {function}
 */
 var pipe = (...transformers) => transformers.reduce((a, b) => (v) => b(a(v)));
-//#endregion
-//#region node_modules/motion-utils/dist/es/progress.mjs
 var progress = /* @__NO_SIDE_EFFECTS__ */ (from, to, value) => {
 	const range = to - from;
 	return range ? (value - from) / range : 1;
 };
-//#endregion
-//#region node_modules/motion-utils/dist/es/subscription-manager.mjs
 var SubscriptionManager = class {
 	constructor() {
 		this.subscriptions = [];
@@ -125,8 +95,6 @@ var SubscriptionManager = class {
 		this.subscriptions.length = 0;
 	}
 };
-//#endregion
-//#region node_modules/motion-utils/dist/es/time-conversion.mjs
 /**
 * Converts seconds to milliseconds
 *
@@ -135,11 +103,7 @@ var SubscriptionManager = class {
 */
 var secondsToMilliseconds = /* @__NO_SIDE_EFFECTS__ */ (seconds) => seconds * 1e3;
 var millisecondsToSeconds = /* @__NO_SIDE_EFFECTS__ */ (milliseconds) => milliseconds / 1e3;
-//#endregion
-//#region node_modules/motion-utils/dist/es/velocity-per-second.mjs
 var velocityPerSecond = /* @__NO_SIDE_EFFECTS__ */ (velocity, frameDuration) => frameDuration ? velocity * (1e3 / frameDuration) : 0;
-//#endregion
-//#region node_modules/motion-utils/dist/es/easing/cubic-bezier.mjs
 var calcBezier = (t, a1, a2) => (((1 - 3 * a2 + 3 * a1) * t + (3 * a2 - 6 * a1)) * t + 3 * a1) * t;
 var subdivisionPrecision = 1e-7;
 var subdivisionMaxIterations = 12;
@@ -161,40 +125,22 @@ function cubicBezier(mX1, mY1, mX2, mY2) {
 	const getTForX = (aX) => binarySubdivide(aX, 0, 1, mX1, mX2);
 	return (t) => t === 0 || t === 1 ? t : calcBezier(getTForX(t), mY1, mY2);
 }
-//#endregion
-//#region node_modules/motion-utils/dist/es/easing/modifiers/mirror.mjs
 var mirrorEasing = /* @__NO_SIDE_EFFECTS__ */ (easing) => (p) => p <= .5 ? easing(2 * p) / 2 : (2 - easing(2 * (1 - p))) / 2;
-//#endregion
-//#region node_modules/motion-utils/dist/es/easing/modifiers/reverse.mjs
 var reverseEasing = /* @__NO_SIDE_EFFECTS__ */ (easing) => (p) => 1 - easing(1 - p);
-//#endregion
-//#region node_modules/motion-utils/dist/es/easing/back.mjs
 var backOut = /*@__PURE__*/ cubicBezier(.33, 1.53, .69, .99);
 var backIn = /*@__PURE__*/ reverseEasing(backOut);
 var backInOut = /*@__PURE__*/ mirrorEasing(backIn);
-//#endregion
-//#region node_modules/motion-utils/dist/es/easing/anticipate.mjs
 var anticipate = (p) => p >= 1 ? 1 : (p *= 2) < 1 ? .5 * backIn(p) : .5 * (2 - Math.pow(2, -10 * (p - 1)));
-//#endregion
-//#region node_modules/motion-utils/dist/es/easing/circ.mjs
 var circIn = (p) => 1 - Math.sin(Math.acos(p));
 var circOut = /* @__PURE__ */ reverseEasing(circIn);
 var circInOut = /* @__PURE__ */ mirrorEasing(circIn);
-//#endregion
-//#region node_modules/motion-utils/dist/es/easing/ease.mjs
 var easeIn = /*@__PURE__*/ cubicBezier(.42, 0, 1, 1);
 var easeOut = /*@__PURE__*/ cubicBezier(0, 0, .58, 1);
 var easeInOut = /*@__PURE__*/ cubicBezier(.42, 0, .58, 1);
-//#endregion
-//#region node_modules/motion-utils/dist/es/easing/utils/is-easing-array.mjs
 var isEasingArray = /* @__NO_SIDE_EFFECTS__ */ (ease) => {
 	return Array.isArray(ease) && typeof ease[0] !== "number";
 };
-//#endregion
-//#region node_modules/motion-utils/dist/es/easing/utils/is-bezier-definition.mjs
 var isBezierDefinition = /* @__NO_SIDE_EFFECTS__ */ (easing) => Array.isArray(easing) && typeof easing[0] === "number";
-//#endregion
-//#region node_modules/motion-utils/dist/es/easing/utils/map.mjs
 var easingLookup = {
 	linear: noop,
 	easeIn,
@@ -222,8 +168,6 @@ var easingDefinitionToFunction = (definition) => {
 	}
 	return definition;
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/frameloop/order.mjs
 var stepsOrder = [
 	"setup",
 	"read",
@@ -234,8 +178,6 @@ var stepsOrder = [
 	"render",
 	"postRender"
 ];
-//#endregion
-//#region node_modules/motion-dom/dist/es/frameloop/render-step.mjs
 function createRenderStep(runNextFrame) {
 	/**
 	* We create and reuse two queues, one to queue jobs for the current frame
@@ -311,8 +253,6 @@ function createRenderStep(runNextFrame) {
 	};
 	return step;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/frameloop/batcher.mjs
 var maxElapsed$1 = 40;
 function createRenderBatcher(scheduleNextBatch, allowKeepAlive) {
 	let runNextFrame = false;
@@ -372,11 +312,7 @@ function createRenderBatcher(scheduleNextBatch, allowKeepAlive) {
 		steps
 	};
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/frameloop/frame.mjs
 var { schedule: frame, cancel: cancelFrame, state: frameData, steps: frameSteps } = /* @__PURE__ */ createRenderBatcher(typeof requestAnimationFrame !== "undefined" ? requestAnimationFrame : noop, true);
-//#endregion
-//#region node_modules/motion-dom/dist/es/frameloop/sync-time.mjs
 var now;
 function clearTime() {
 	now = void 0;
@@ -399,8 +335,6 @@ var time = {
 		queueMicrotask(clearTime);
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/utils/is-css-variable.mjs
 var checkStringStartsWith = (token) => (key) => typeof key === "string" && key.startsWith(token);
 var isCSSVariableName = /*@__PURE__*/ checkStringStartsWith("--");
 var startsAsVariableToken = /*@__PURE__*/ checkStringStartsWith("var(--");
@@ -418,8 +352,6 @@ function containsCSSVariable(value) {
 	if (typeof value !== "string") return false;
 	return value.split("/*")[0].includes("var(--");
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/numbers/index.mjs
 var number = {
 	test: (v) => typeof v === "number",
 	parse: parseFloat,
@@ -433,22 +365,12 @@ var scale = {
 	...number,
 	default: 1
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/utils/sanitize.mjs
 var sanitize = (v) => Math.round(v * 1e5) / 1e5;
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/utils/float-regex.mjs
 var floatRegex = /-?(?:\d+(?:\.\d+)?|\.\d+)/gu;
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/utils/is-nullish.mjs
 function isNullish(v) {
 	return v == null;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/utils/single-color-regex.mjs
 var singleColorRegex = /^(?:#[\da-f]{3,8}|(?:rgb|hsl)a?\((?:-?[\d.]+%?[,\s]+){2}-?[\d.]+%?\s*(?:[,/]\s*)?(?:\b\d+(?:\.\d+)?|\.\d+)?%?\))$/iu;
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/color/utils.mjs
 /**
 * Returns true if the provided string is a color, ie rgba(0,0,0,0) or #000,
 * but false if a number or multiple colors
@@ -466,8 +388,6 @@ var splitColor = (aName, bName, cName) => (v) => {
 		alpha: alpha !== void 0 ? parseFloat(alpha) : 1
 	};
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/color/rgba.mjs
 var clampRgbUnit = (v) => clamp(0, 255, v);
 var rgbUnit = {
 	...number,
@@ -478,8 +398,6 @@ var rgba = {
 	parse: /*@__PURE__*/ splitColor("red", "green", "blue"),
 	transform: ({ red, green, blue, alpha: alpha$1 = 1 }) => "rgba(" + rgbUnit.transform(red) + ", " + rgbUnit.transform(green) + ", " + rgbUnit.transform(blue) + ", " + sanitize(alpha.transform(alpha$1)) + ")"
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/color/hex.mjs
 function parseHex(v) {
 	let r = "";
 	let g = "";
@@ -512,8 +430,6 @@ var hex = {
 	parse: parseHex,
 	transform: rgba.transform
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/numbers/units.mjs
 var createUnitType = /* @__NO_SIDE_EFFECTS__ */ (unit) => ({
 	test: (v) => typeof v === "string" && v.endsWith(unit) && v.split(" ").length === 1,
 	parse: parseFloat,
@@ -529,8 +445,6 @@ var progressPercentage = /*@__PURE__*/ (() => ({
 	parse: (v) => percent.parse(v) / 100,
 	transform: (v) => percent.transform(v * 100)
 }))();
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/color/hsla.mjs
 var hsla = {
 	test: /*@__PURE__*/ isColorString("hsl", "hue"),
 	parse: /*@__PURE__*/ splitColor("hue", "saturation", "lightness"),
@@ -538,8 +452,6 @@ var hsla = {
 		return "hsla(" + Math.round(hue) + ", " + percent.transform(sanitize(saturation)) + ", " + percent.transform(sanitize(lightness)) + ", " + sanitize(alpha.transform(alpha$1)) + ")";
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/color/index.mjs
 var color = {
 	test: (v) => rgba.test(v) || hex.test(v) || hsla.test(v),
 	parse: (v) => {
@@ -556,11 +468,7 @@ var color = {
 		return color.transform(parsed);
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/utils/color-regex.mjs
 var colorRegex = /(?:#[\da-f]{3,8}|(?:rgb|hsl)a?\((?:-?[\d.]+%?[,\s]+){2}-?[\d.]+%?\s*(?:[,/]\s*)?(?:\b\d+(?:\.\d+)?|\.\d+)?%?\))/giu;
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/complex/index.mjs
 function test(v) {
 	return isNaN(v) && typeof v === "string" && (v.match(floatRegex)?.length || 0) + (v.match(colorRegex)?.length || 0) > 0;
 }
@@ -654,8 +562,6 @@ var complex = {
 	createTransformer,
 	getAnimatableNone: getAnimatableNone$1
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/color/hsla-to-rgba.mjs
 function hueToRgb(p, q, t) {
 	if (t < 0) t += 1;
 	if (t > 1) t -= 1;
@@ -686,18 +592,12 @@ function hslaToRgba({ hue, saturation, lightness, alpha }) {
 		alpha
 	};
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/mix/immediate.mjs
 function mixImmediate(a, b) {
 	return (p) => p > 0 ? b : a;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/mix/number.mjs
 var mixNumber$1 = (from, to, progress) => {
 	return from + (to - from) * progress;
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/mix/color.mjs
 var mixLinearColor = (from, to, v) => {
 	const fromExpo = from * from;
 	const expo = v * (to * to - fromExpo) + fromExpo;
@@ -730,8 +630,6 @@ var mixColor = (from, to) => {
 		return rgba.transform(blended);
 	};
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/mix/visibility.mjs
 var invisibleValues = /* @__PURE__ */ new Set(["none", "hidden"]);
 /**
 * Returns a function that, when provided a progress value between 0 and 1,
@@ -742,8 +640,6 @@ function mixVisibility(origin, target) {
 	if (invisibleValues.has(origin)) return (p) => p <= 0 ? origin : target;
 	else return (p) => p >= 1 ? target : origin;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/mix/complex.mjs
 function mixNumber(a, b) {
 	return (p) => mixNumber$1(a, b, p);
 }
@@ -802,14 +698,10 @@ var mixComplex = (origin, target) => {
 		return mixImmediate(origin, target);
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/mix/index.mjs
 function mix(from, to, p) {
 	if (typeof from === "number" && typeof to === "number" && typeof p === "number") return mixNumber$1(from, to, p);
 	return getMixer(from)(from, to);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/drivers/frame.mjs
 var frameloopDriver = (update) => {
 	const passTimestamp = ({ timestamp }) => update(timestamp);
 	return {
@@ -822,16 +714,12 @@ var frameloopDriver = (update) => {
 		now: () => frameData.isProcessing ? frameData.timestamp : time.now()
 	};
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/waapi/utils/linear.mjs
 var generateLinearEasing = (easing, duration, resolution = 10) => {
 	let points = "";
 	const numPoints = Math.max(Math.round(duration / resolution), 2);
 	for (let i = 0; i < numPoints; i++) points += Math.round(easing(i / (numPoints - 1)) * 1e4) / 1e4 + ", ";
 	return `linear(${points.substring(0, points.length - 2)})`;
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/generators/utils/calc-duration.mjs
 /**
 * Implement a practical max duration for keyframe generation
 * to prevent infinite loops
@@ -847,8 +735,6 @@ function calcGeneratorDuration(generator) {
 	}
 	return duration >= 2e4 ? Infinity : duration;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/generators/utils/create-generator-easing.mjs
 /**
 * Create a progress => progress easing function from a generator.
 */
@@ -866,8 +752,6 @@ function createGeneratorEasing(options, scale = 100, createGenerator) {
 		duration: /* @__PURE__ */ millisecondsToSeconds(duration)
 	};
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/generators/spring.mjs
 var springDefaults = {
 	stiffness: 100,
 	damping: 10,
@@ -1122,15 +1006,11 @@ spring.applyToOptions = (options) => {
 	options.type = "keyframes";
 	return options;
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/generators/utils/velocity.mjs
 var velocitySampleDuration = 5;
 function getGeneratorVelocity(resolveValue, t, current) {
 	const prevT = Math.max(t - velocitySampleDuration, 0);
 	return /* @__PURE__ */ velocityPerSecond(current - resolveValue(prevT), t - prevT);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/generators/inertia.mjs
 function inertia({ keyframes, velocity = 0, power = .8, timeConstant = 325, bounceDamping = 10, bounceStiffness = 500, modifyTarget, min, max, restDelta = .5, restSpeed }) {
 	const origin = keyframes[0];
 	const state = {
@@ -1207,8 +1087,6 @@ function inertia({ keyframes, velocity = 0, power = .8, timeConstant = 325, boun
 		}
 	};
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/interpolate.mjs
 function createMixers(output, ease, customMixer) {
 	const mixers = [];
 	const mixerFactory = customMixer || MotionGlobalConfig.mix || mix;
@@ -1266,8 +1144,6 @@ function interpolate(input, output, { clamp: isClamp = true, ease, mixer } = {})
 	};
 	return isClamp ? (v) => interpolator(clamp(input[0], input[inputLength - 1], v)) : interpolator;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/keyframes/offsets/fill.mjs
 function fillOffset(offset, remaining) {
 	const min = offset[offset.length - 1];
 	for (let i = 1; i <= remaining; i++) {
@@ -1275,20 +1151,14 @@ function fillOffset(offset, remaining) {
 		offset.push(mixNumber$1(min, 1, offsetProgress));
 	}
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/keyframes/offsets/default.mjs
 function defaultOffset$1(arr) {
 	const offset = [0];
 	fillOffset(offset, arr.length - 1);
 	return offset;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/keyframes/offsets/time.mjs
 function convertOffsetToTimes(offset, duration) {
 	return offset.map((o) => o * duration);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/generators/keyframes.mjs
 function defaultEasing(values, easing) {
 	return values.map(() => easing || easeInOut).splice(0, values.length - 1);
 }
@@ -1316,16 +1186,12 @@ function keyframes({ duration = 300, keyframes: keyframeValues, times, ease = "e
 		}
 	};
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/keyframes/get-final.mjs
 var isNotNull = (value) => value !== null;
 function getFinalKeyframe(keyframes, { repeat, repeatType = "loop" }, finalKeyframe, speed = 1) {
 	const resolvedKeyframes = keyframes.filter(isNotNull);
 	const index = speed < 0 || repeat && repeatType !== "loop" && repeat % 2 === 1 ? 0 : resolvedKeyframes.length - 1;
 	return !index || finalKeyframe === void 0 ? resolvedKeyframes[index] : finalKeyframe;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/utils/replace-transition-type.mjs
 var transitionTypeMap = {
 	decay: inertia,
 	inertia,
@@ -1336,8 +1202,6 @@ var transitionTypeMap = {
 function replaceTransitionType(transition) {
 	if (typeof transition.type === "string") transition.type = transitionTypeMap[transition.type];
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/utils/WithPromise.mjs
 var WithPromise = class {
 	constructor() {
 		this.updateFinished();
@@ -1362,8 +1226,6 @@ var WithPromise = class {
 		return this.finished.then(onResolve, onReject);
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/JSAnimation.mjs
 var percentToProgress = (percent) => percent / 100;
 var JSAnimation = class extends WithPromise {
 	constructor(options) {
@@ -1641,13 +1503,9 @@ var JSAnimation = class extends WithPromise {
 		return timeline.observe(this);
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/keyframes/utils/fill-wildcards.mjs
 function fillWildcards(keyframes) {
 	for (let i = 1; i < keyframes.length; i++) keyframes[i] ?? (keyframes[i] = keyframes[i - 1]);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/dom/parse-transform.mjs
 var radToDeg = (rad) => rad * 180 / Math.PI;
 var rotate = (v) => {
 	return rebaseAngle(radToDeg(Math.atan2(v[1], v[0])));
@@ -1720,8 +1578,6 @@ var readTransformValue = (instance, name) => {
 function convertTransformToNumber(value) {
 	return parseFloat(value.trim());
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/keys-transform.mjs
 /**
 * Generate a list of every possible transform key.
 */
@@ -1755,8 +1611,6 @@ var transformPropOrder = [
 * unit-conversion, keys-position).
 */
 var transformProps = /*@__PURE__*/ (() => /* @__PURE__ */ new Set([...transformPropOrder, "pathRotation"]))();
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/keyframes/utils/unit-conversion.mjs
 var isNumOrPxType = (v) => v === number || v === px;
 var transformKeys = /* @__PURE__ */ new Set([
 	"x",
@@ -1793,8 +1647,6 @@ var positionalValues = {
 };
 positionalValues.translateX = positionalValues.x;
 positionalValues.translateY = positionalValues.y;
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/keyframes/KeyframesResolver.mjs
 var toResolve = /* @__PURE__ */ new Set();
 var isScheduled = false;
 var anyNeedsMeasurement = false;
@@ -1913,33 +1765,21 @@ var KeyframeResolver = class {
 		if (this.state === "pending") this.scheduleResolve();
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/dom/is-css-var.mjs
 var isCSSVar = (name) => name.startsWith("--");
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/dom/style-set.mjs
 function setStyle(element, name, value) {
 	isCSSVar(name) ? element.style.setProperty(name, value) : element.style[name] = value;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/supports/flags.mjs
 /**
 * Add the ability for test suites to manually set support flags
 * to better test more environments.
 */
 var supportsFlags = {};
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/supports/memo.mjs
 function memoSupports(callback, supportsFlag) {
 	const memoized = /* @__PURE__ */ memo(callback);
 	return () => supportsFlags[supportsFlag] ?? memoized();
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/supports/scroll-timeline.mjs
 var supportsScrollTimeline = /* @__PURE__ */ memoSupports(() => window.ScrollTimeline !== void 0, "scrollTimeline");
 var supportsViewTimeline = /* @__PURE__ */ memoSupports(() => window.ViewTimeline !== void 0, "viewTimeline");
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/supports/linear-easing.mjs
 var supportsLinearEasing = /*@__PURE__*/ memoSupports(() => {
 	try {
 		document.createElement("div").animate({ opacity: 0 }, { easing: "linear(0, 1)" });
@@ -1948,11 +1788,7 @@ var supportsLinearEasing = /*@__PURE__*/ memoSupports(() => {
 	}
 	return true;
 }, "linearEasing");
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/waapi/easing/cubic-bezier.mjs
 var cubicBezierAsString = ([a, b, c, d]) => `cubic-bezier(${a}, ${b}, ${c}, ${d})`;
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/waapi/easing/supported.mjs
 var supportedWaapiEasing = {
 	linear: "linear",
 	ease: "ease",
@@ -1984,8 +1820,6 @@ var supportedWaapiEasing = {
 		.99
 	])
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/waapi/easing/map-easing.mjs
 function mapEasingToNativeEasing(easing, duration) {
 	if (!easing) return;
 	else if (typeof easing === "function") return supportsLinearEasing() ? generateLinearEasing(easing, duration) : "ease-out";
@@ -1993,8 +1827,6 @@ function mapEasingToNativeEasing(easing, duration) {
 	else if (Array.isArray(easing)) return easing.map((segmentEasing) => mapEasingToNativeEasing(segmentEasing, duration) || supportedWaapiEasing.easeOut);
 	else return supportedWaapiEasing[easing];
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/waapi/start-waapi-animation.mjs
 function startWaapiAnimation(element, valueName, keyframes, { delay = 0, duration = 300, repeat = 0, repeatType = "loop", ease = "easeOut", times } = {}, pseudoElement = void 0) {
 	const keyframeOptions = { [valueName]: keyframes };
 	if (times) keyframeOptions.offset = times;
@@ -2014,13 +1846,9 @@ function startWaapiAnimation(element, valueName, keyframes, { delay = 0, duratio
 	if (pseudoElement) options.pseudoElement = pseudoElement;
 	return element.animate(keyframeOptions, options);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/generators/utils/is-generator.mjs
 function isGenerator(type) {
 	return typeof type === "function" && "applyToOptions" in type;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/waapi/utils/apply-generator.mjs
 function applyGeneratorOptions({ type, ...options }) {
 	if (isGenerator(type) && supportsLinearEasing()) return type.applyToOptions(options);
 	else {
@@ -2029,8 +1857,6 @@ function applyGeneratorOptions({ type, ...options }) {
 	}
 	return options;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/NativeAnimation.mjs
 /**
 * NativeAnimation implements AnimationPlaybackControls for the browser's Web Animations API.
 */
@@ -2167,8 +1993,6 @@ var NativeAnimation = class extends WithPromise {
 		} else return observe(this);
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/waapi/utils/unsupported-easing.mjs
 var unsupportedEasingFunctions = {
 	anticipate,
 	backInOut,
@@ -2180,8 +2004,6 @@ function isUnsupportedEase(key) {
 function replaceStringEasing(transition) {
 	if (typeof transition.ease === "string" && isUnsupportedEase(transition.ease)) transition.ease = unsupportedEasingFunctions[transition.ease];
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/NativeAnimationExtended.mjs
 /**
 * 10ms is chosen here as it strikes a balance between smooth
 * results (more than one keyframe per frame at 60fps) and
@@ -2255,8 +2077,6 @@ var NativeAnimationExtended = class extends NativeAnimation {
 		sampleAnimation.stop();
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/utils/is-animatable.mjs
 /**
 * Check if a value is animatable. Examples:
 *
@@ -2272,8 +2092,6 @@ var isAnimatable = (value, name) => {
 	if (typeof value === "string" && (complex.test(value) || value === "0") && !value.startsWith("url(")) return true;
 	return false;
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/utils/can-animate.mjs
 function hasKeyframesChanged(keyframes) {
 	const current = keyframes[0];
 	if (keyframes.length === 1) return true;
@@ -2300,14 +2118,10 @@ function canAnimate(keyframes, name, type, velocity) {
 	if (!isOriginAnimatable || !isTargetAnimatable) return false;
 	return hasKeyframesChanged(keyframes) || (type === "spring" || isGenerator(type)) && velocity;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/utils/make-animation-instant.mjs
 function makeAnimationInstant(options) {
 	options.duration = 0;
 	options.type = "keyframes";
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/waapi/utils/accelerated-values.mjs
 /**
 * A list of values that can be hardware-accelerated.
 */
@@ -2317,15 +2131,11 @@ var acceleratedValues = /* @__PURE__ */ new Set([
 	"filter",
 	"transform"
 ]);
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/waapi/utils/is-browser-color.mjs
 var browserColorFunctions = /^(?:oklch|oklab|lab|lch|color|color-mix|light-dark)\(/;
 function hasBrowserOnlyColors(keyframes) {
 	for (let i = 0; i < keyframes.length; i++) if (typeof keyframes[i] === "string" && browserColorFunctions.test(keyframes[i])) return true;
 	return false;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/waapi/supports/waapi.mjs
 var colorProperties = /* @__PURE__ */ new Set([
 	"color",
 	"backgroundColor",
@@ -2351,8 +2161,6 @@ function supportsBrowserAnimation(options) {
 	const { onUpdate, transformTemplate } = motionValue.owner.getProps();
 	return supportsWaapi() && name && (acceleratedValues.has(name) || colorProperties.has(name) && hasBrowserOnlyColors(keyframes)) && (name !== "transform" || !transformTemplate) && !onUpdate && !repeatDelay && repeatType !== "mirror" && damping !== 0 && type !== "inertia";
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/AsyncMotionValueAnimation.mjs
 /**
 * Maximum time allowed between an animation being created and it being
 * resolved for us to use the latter as the start time.
@@ -2500,16 +2308,12 @@ var AsyncMotionValueAnimation = class extends WithPromise {
 		this.keyframeResolver?.cancel();
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/utils/calc-child-stagger.mjs
 function calcChildStagger(children, child, delayChildren, staggerChildren = 0, staggerDirection = 1) {
 	const index = Array.from(children).sort((a, b) => a.sortNodePosition(b)).indexOf(child);
 	const numChildren = children.size;
 	const maxStaggerDuration = (numChildren - 1) * staggerChildren;
 	return typeof delayChildren === "function" ? delayChildren(index, numChildren) : staggerDirection === 1 ? index * staggerChildren : maxStaggerDuration - index * staggerChildren;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/index.mjs
 /**
 * Maximum time between the value of two frames, beyond which we
 * assume the velocity has since been 0.
@@ -2780,8 +2584,6 @@ var MotionValue = class {
 function motionValue(init, options) {
 	return new MotionValue(init, options);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/utils/resolve-transition.mjs
 /**
 * If `transition` has `inherit: true`, shallow-merge it with
 * `parentTransition` (child keys win) and strip the `inherit` key.
@@ -2797,15 +2599,11 @@ function resolveTransition(transition, parentTransition) {
 	}
 	return transition;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/utils/get-value-transition.mjs
 function getValueTransition(transition, key) {
 	const valueTransition = transition?.[key] ?? transition?.["default"] ?? transition;
 	if (valueTransition !== transition) return resolveTransition(valueTransition, transition);
 	return valueTransition;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/utils/default-transitions.mjs
 var underDampedSpring = {
 	type: "spring",
 	stiffness: 500,
@@ -2841,8 +2639,6 @@ var getDefaultTransition = (valueKey, { keyframes }) => {
 	else if (transformProps.has(valueKey)) return valueKey.startsWith("scale") ? criticallyDampedSpring(keyframes[1]) : underDampedSpring;
 	return ease;
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/utils/is-transition-defined.mjs
 var orchestrationKeys = /* @__PURE__ */ new Set([
 	"when",
 	"delay",
@@ -2864,8 +2660,6 @@ function isTransitionDefined(transition) {
 	for (const key in transition) if (!orchestrationKeys.has(key)) return true;
 	return false;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/interfaces/motion-value.mjs
 var animateMotionValue = (name, value, target, transition = {}, element, isHandoff) => (onComplete) => {
 	const valueTransition = getValueTransition(transition, name) || {};
 	/**
@@ -2946,8 +2740,6 @@ var animateMotionValue = (name, value, target, transition = {}, element, isHando
 	}
 	return valueTransition.isSync ? new JSAnimation(options) : new AsyncMotionValueAnimation(options);
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/utils/css-variables-conversion.mjs
 /**
 * Parse Framer's special CSS variable format into a CSS token and a fallback.
 *
@@ -2975,8 +2767,6 @@ function getVariableValue(current, element, depth = 1) {
 	}
 	return isCSSVariableToken(fallback) ? getVariableValue(fallback, element, depth + 1) : fallback;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/resolve-variants.mjs
 function getValueState(visualElement) {
 	const state = [{}, {}];
 	visualElement?.values.forEach((value, key) => {
@@ -3009,14 +2799,10 @@ function resolveVariantFromProps(props, definition, custom, visualElement) {
 	}
 	return definition;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/resolve-dynamic-variants.mjs
 function resolveVariant(visualElement, definition, custom) {
 	const props = visualElement.getProps();
 	return resolveVariantFromProps(props, definition, custom !== void 0 ? custom : props.custom, visualElement);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/keys-position.mjs
 var positionalKeys = /* @__PURE__ */ new Set([
 	"width",
 	"height",
@@ -3026,13 +2812,9 @@ var positionalKeys = /* @__PURE__ */ new Set([
 	"bottom",
 	...transformPropOrder
 ]);
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/is-keyframes-target.mjs
 var isKeyframesTarget = (v) => {
 	return Array.isArray(v);
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/setters.mjs
 /**
 * Set VisualElement's MotionValue, creating a new MotionValue for it if
 * it doesn't exist.
@@ -3052,16 +2834,10 @@ function setTarget(visualElement, definition) {
 	};
 	for (const key in target) setMotionValue(visualElement, key, resolveFinalValueInKeyframes(target[key]));
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/utils/is-motion-value.mjs
 var isMotionValue = (value) => Boolean(value && value.getVelocity);
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/will-change/is.mjs
 function isWillChangeMotionValue(value) {
 	return Boolean(isMotionValue(value) && value.add);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/will-change/add-will-change.mjs
 function addValueToWillChange(visualElement, key) {
 	const willChange = visualElement.getValue("willChange");
 	/**
@@ -3075,19 +2851,13 @@ function addValueToWillChange(visualElement, key) {
 		newWillChange.add(key);
 	}
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/dom/utils/camel-to-dash.mjs
 function camelToDash(str) {
 	return str.replace(/([A-Z])/g, (match) => `-${match.toLowerCase()}`);
 }
 var optimizedAppearDataAttribute = "data-" + camelToDash("framerAppearId");
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/optimized-appear/get-appear-id.mjs
 function getOptimisedAppearId(visualElement) {
 	return visualElement.props[optimizedAppearDataAttribute];
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/interfaces/visual-element-target.mjs
 /**
 * Decide whether we should block this animation. Previously, we achieved this
 * just by checking whether the key was listed in protectedKeys, but this
@@ -3159,8 +2929,6 @@ function animateTarget(visualElement, targetAndTransition, { delay = 0, transiti
 	}
 	return animations;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/interfaces/visual-element-variant.mjs
 function animateVariant(visualElement, variant, options = {}) {
 	const resolved = resolveVariant(visualElement, variant, options.type === "exit" ? visualElement.presenceContext?.custom : void 0);
 	let { transition = visualElement.getDefaultTransition() || {} } = resolved || {};
@@ -3199,8 +2967,6 @@ function animateChildren(visualElement, variant, delay = 0, delayChildren = 0, s
 	}
 	return Promise.all(animations);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/interfaces/visual-element.mjs
 function animateVisualElement(visualElement, definition, options = {}) {
 	visualElement.notify("AnimationStart", definition);
 	let animation;
@@ -3216,8 +2982,6 @@ function animateVisualElement(visualElement, definition, options = {}) {
 		visualElement.notify("AnimationComplete", definition);
 	});
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/auto.mjs
 /**
 * ValueType for "auto"
 */
@@ -3225,14 +2989,10 @@ var auto = {
 	test: (v) => v === "auto",
 	parse: (v) => v
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/test.mjs
 /**
 * Tests a provided value against a ValueType
 */
 var testValueType = (v) => (type) => type.test(v);
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/dimensions.mjs
 /**
 * A list of value types commonly used for dimensions
 */
@@ -3249,15 +3009,11 @@ var dimensionValueTypes = [
 * Tests a dimensional value against the list of dimension ValueTypes
 */
 var findDimensionValueType = (v) => dimensionValueTypes.find(testValueType(v));
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/keyframes/utils/is-none.mjs
 function isNone(value) {
 	if (typeof value === "number") return value === 0;
 	else if (value !== null) return value === "none" || value === "0" || isZeroValueString(value);
 	else return true;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/complex/filter.mjs
 /**
 * Properties that should default to 1 or 100%
 */
@@ -3285,8 +3041,6 @@ var filter = {
 		return functions ? functions.map(applyDefaultFilter).join(" ") : v;
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/complex/mask.mjs
 var mask = {
 	...complex,
 	getAnimatableNone: (v) => {
@@ -3297,14 +3051,10 @@ var mask = {
 		} : v));
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/int.mjs
 var int = {
 	...number,
 	transform: Math.round
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/maps/number.mjs
 var numberValueTypes = {
 	borderWidth: px,
 	borderTopWidth: px,
@@ -3391,8 +3141,6 @@ var numberValueTypes = {
 	strokeOpacity: alpha,
 	numOctaves: int
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/maps/defaults.mjs
 /**
 * A map of default value types for common values
 */
@@ -3417,16 +3165,12 @@ var defaultValueTypes = {
 * Gets the default ValueType for the provided value key
 */
 var getDefaultValueType = (key) => defaultValueTypes[key];
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/utils/animatable-none.mjs
 var customTypes = /*@__PURE__*/ new Set([filter, mask]);
 function getAnimatableNone(key, value) {
 	let defaultValueType = getDefaultValueType(key);
 	if (!customTypes.has(defaultValueType)) defaultValueType = complex;
 	return defaultValueType.getAnimatableNone ? defaultValueType.getAnimatableNone(value) : void 0;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/keyframes/utils/make-none-animatable.mjs
 /**
 * If we encounter keyframes like "none" or "0" and we also have keyframes like
 * "#fff" or "200px 200px" we want to find a keyframe to serve as a template for
@@ -3448,8 +3192,6 @@ function makeNoneKeyframesAnimatable(unresolvedKeyframes, noneKeyframeIndexes, n
 	}
 	if (animatableTemplate && name) for (const noneIndex of noneKeyframeIndexes) unresolvedKeyframes[noneIndex] = getAnimatableNone(name, animatableTemplate);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/keyframes/DOMKeyframesResolver.mjs
 var DOMKeyframesResolver = class extends KeyframeResolver {
 	constructor(unresolvedKeyframes, onComplete, name, motionValue, element) {
 		super(unresolvedKeyframes, onComplete, name, motionValue, element, true);
@@ -3540,8 +3282,6 @@ var DOMKeyframesResolver = class extends KeyframeResolver {
 		this.resolveNoneKeyframes();
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/border-radius.mjs
 /**
 * The four corner-radius longhands. Shared so the projection mixer, scale
 * corrector, WAAPI px-value set and view-transition crop pass don't each carry
@@ -3554,8 +3294,6 @@ var cornerRadiusProps = [
 	"borderBottomRightRadius",
 	"borderBottomLeftRadius"
 ];
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/resolve-elements.mjs
 function resolveElements(elementOrSelector, scope, selectorCache) {
 	if (elementOrSelector == null) return [];
 	if (elementOrSelector instanceof EventTarget) return [elementOrSelector];
@@ -3567,16 +3305,12 @@ function resolveElements(elementOrSelector, scope, selectorCache) {
 	}
 	return Array.from(elementOrSelector).filter((element) => element != null);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/utils/get-as-type.mjs
 /**
 * Provided a value and a ValueType, returns the value as that value type.
 */
 var getValueAsType = (value, type) => {
 	return type && typeof value === "number" ? type.transform(value) : value;
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/is-html-element.mjs
 /**
 * Checks if an element is an HTML element in a way
 * that works across iframes
@@ -3584,11 +3318,7 @@ var getValueAsType = (value, type) => {
 function isHTMLElement(element) {
 	return isObject(element) && "offsetHeight" in element && !("ownerSVGElement" in element);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/frameloop/microtask.mjs
 var { schedule: microtask, cancel: cancelMicrotask } = /* @__PURE__ */ createRenderBatcher(queueMicrotask, false);
-//#endregion
-//#region node_modules/motion-dom/dist/es/gestures/drag/state/is-active.mjs
 var isDragging = {
 	x: false,
 	y: false
@@ -3596,8 +3326,6 @@ var isDragging = {
 function isDragActive() {
 	return isDragging.x || isDragging.y;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/gestures/drag/state/set-active.mjs
 function setDragLock(axis) {
 	if (axis === "x" || axis === "y") if (isDragging[axis]) return null;
 	else {
@@ -3614,8 +3342,6 @@ function setDragLock(axis) {
 		};
 	}
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/gestures/utils/setup.mjs
 function setupGesture(elementOrSelector, options) {
 	const elements = resolveElements(elementOrSelector);
 	const gestureAbortController = new AbortController();
@@ -3631,8 +3357,6 @@ function setupGesture(elementOrSelector, options) {
 		cancel
 	];
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/gestures/hover.mjs
 function isValidHover(event) {
 	return !(event.pointerType === "touch" || isDragActive());
 }
@@ -3694,8 +3418,6 @@ function hover(elementOrSelector, onHoverStart, options = {}) {
 	});
 	return cancel;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/gestures/utils/is-node-or-child.mjs
 /**
 * Recursively traverse up the tree to check whether the provided child node
 * is the parent or a descendant of it.
@@ -3708,8 +3430,6 @@ var isNodeOrChild = (parent, child) => {
 	else if (parent === child) return true;
 	else return isNodeOrChild(parent, child.parentElement);
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/gestures/utils/is-primary-pointer.mjs
 var isPrimaryPointer = (event) => {
 	if (event.pointerType === "mouse") return typeof event.button !== "number" || event.button <= 0;
 	else
@@ -3723,8 +3443,6 @@ var isPrimaryPointer = (event) => {
 	*/
 	return event.isPrimary !== false;
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/gestures/press/utils/is-keyboard-accessible.mjs
 var keyboardAccessibleElements = /* @__PURE__ */ new Set([
 	"BUTTON",
 	"INPUT",
@@ -3758,11 +3476,7 @@ var textInputElements = /* @__PURE__ */ new Set([
 function isElementTextInput(element) {
 	return textInputElements.has(element.tagName) || element.isContentEditable === true;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/gestures/press/utils/state.mjs
 var isPressing = /* @__PURE__ */ new WeakSet();
-//#endregion
-//#region node_modules/motion-dom/dist/es/gestures/press/utils/keyboard.mjs
 /**
 * Filter out events that are not "Enter" keys.
 */
@@ -3797,8 +3511,6 @@ var enableKeyboardPress = (focusEvent, eventOptions) => {
 	*/
 	element.addEventListener("blur", () => element.removeEventListener("keydown", handleKeydown), eventOptions);
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/gestures/press/index.mjs
 /**
 * Filter out events that are not primary pointer events, or are triggering
 * while a Motion gesture is active.
@@ -3870,8 +3582,6 @@ function press(targetOrSelector, onPressStart, options = {}) {
 	});
 	return cancelEvents;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/is-svg-element.mjs
 /**
 * Checks if an element is an SVG element in a way
 * that works across iframes
@@ -3879,8 +3589,6 @@ function press(targetOrSelector, onPressStart, options = {}) {
 function isSVGElement(element) {
 	return isObject(element) && "ownerSVGElement" in element;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/resize/handle-element.mjs
 var resizeHandlers = /* @__PURE__ */ new WeakMap();
 var observer;
 var getSize = (borderBoxAxis, svgAxis, htmlAxis) => (target, borderBoxSize) => {
@@ -3929,8 +3637,6 @@ function resizeElement(target, handler) {
 		});
 	};
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/resize/handle-window.mjs
 var windowCallbacks = /* @__PURE__ */ new Set();
 var windowResizeHandler;
 function createWindowResizeHandler() {
@@ -3958,13 +3664,9 @@ function resizeWindow(callback) {
 		}
 	};
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/resize/index.mjs
 function resize(a, b) {
 	return typeof a === "function" ? resizeWindow(a) : resizeElement(a, b);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/scroll/observe.mjs
 function observeTimeline(update, timeline) {
 	let prevProgress;
 	const onFrame = () => {
@@ -3976,14 +3678,10 @@ function observeTimeline(update, timeline) {
 	frame.preUpdate(onFrame, true);
 	return () => cancelFrame(onFrame);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/stats/buffer.mjs
 var statsBuffer = {
 	value: null,
 	addProjectionMetrics: null
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/is-svg-svg-element.mjs
 /**
 * Checks if an element is specifically an SVGSVGElement (the root SVG element)
 * in a way that works across iframes
@@ -3991,8 +3689,6 @@ var statsBuffer = {
 function isSVGSVGElement(element) {
 	return isSVGElement(element) && element.tagName === "svg";
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/transform.mjs
 function transform(...args) {
 	const useImmediate = !Array.isArray(args[0]);
 	const argOffset = useImmediate ? 0 : -1;
@@ -4003,8 +3699,6 @@ function transform(...args) {
 	const interpolator = interpolate(inputRange, outputRange, options);
 	return useImmediate ? interpolator(inputValue) : interpolator;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/follow-value.mjs
 /**
 * Attach an animation to a MotionValue that will animate whenever the value changes.
 * Similar to attachSpring but supports any transition type (spring, tween, inertia, etc.)
@@ -4084,8 +3778,6 @@ function parseValue(v, unit) {
 function asNumber$1(v) {
 	return typeof v === "number" ? v : parseFloat(v);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/types/utils/find.mjs
 /**
 * A list of all ValueTypes
 */
@@ -4098,8 +3790,6 @@ var valueTypes = [
 * Tests a value against the list of ValueTypes
 */
 var findValueType = (v) => valueTypes.find(testValueType(v));
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/geometry/models.mjs
 var createAxisDelta = () => ({
 	translate: 0,
 	scale: 1,
@@ -4118,24 +3808,16 @@ var createBox = () => ({
 	x: createAxis(),
 	y: createAxis()
 });
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/store.mjs
 var visualElementStore = /* @__PURE__ */ new WeakMap();
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/is-animation-controls.mjs
 function isAnimationControls(v) {
 	return v !== null && typeof v === "object" && typeof v.start === "function";
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/is-variant-label.mjs
 /**
 * Decides if the supplied variable is variant label
 */
 function isVariantLabel(v) {
 	return typeof v === "string" || Array.isArray(v);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/variant-props.mjs
 var variantPriorityOrder = [
 	"animate",
 	"whileInView",
@@ -4146,16 +3828,12 @@ var variantPriorityOrder = [
 	"exit"
 ];
 var variantProps = ["initial", ...variantPriorityOrder];
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/is-controlling-variants.mjs
 function isControllingVariants(props) {
 	return isAnimationControls(props.animate) || variantProps.some((name) => isVariantLabel(props[name]));
 }
 function isVariantNode(props) {
 	return Boolean(isControllingVariants(props) || props.variants);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/motion-values.mjs
 /**
 * Updates motion values from props changes.
 * Uses `any` type for element to avoid circular dependencies with VisualElement.
@@ -4194,12 +3872,8 @@ function updateMotionValuesFromProps(element, next, prev) {
 	for (const key in prev) if (next[key] === void 0) element.removeValue(key);
 	return next;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/reduced-motion/state.mjs
 var prefersReducedMotion = { current: null };
 var hasReducedMotionListener = { current: false };
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/reduced-motion/index.mjs
 var isBrowser = typeof window !== "undefined";
 function initPrefersReducedMotion() {
 	hasReducedMotionListener.current = true;
@@ -4211,8 +3885,6 @@ function initPrefersReducedMotion() {
 		setReducedMotionPreferences();
 	} else prefersReducedMotion.current = false;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/VisualElement.mjs
 var propEventHandlers = [
 	"AnimationStart",
 	"AnimationComplete",
@@ -4663,8 +4335,6 @@ var VisualElement = class {
 		microtask.render(this.render);
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/dom/DOMVisualElement.mjs
 var DOMVisualElement = class extends VisualElement {
 	constructor() {
 		super(...arguments);
@@ -4697,8 +4367,6 @@ var DOMVisualElement = class extends VisualElement {
 		});
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/Feature.mjs
 /**
 * Feature base class for extending VisualElement functionality.
 * Features are plugins that can be mounted/unmounted to add behavior
@@ -4711,8 +4379,6 @@ var Feature = class {
 	}
 	update() {}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/geometry/conversion.mjs
 /**
 * Bounding boxes tend to be defined as top, left, right, bottom. For various operations
 * it's easier to consider each axis individually. This function returns a bounding box
@@ -4760,8 +4426,6 @@ function transformBoxPoints(point, transformPoint) {
 		right: bottomRight.x
 	};
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/utils/has-transform.mjs
 function isIdentityScale(scale) {
 	return scale === void 0 || scale === 1;
 }
@@ -4777,8 +4441,6 @@ function has2DTranslate(values) {
 function is2DTranslate(value) {
 	return value && value !== "0%";
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/geometry/delta-apply.mjs
 /**
 * Scales a point based on a factor and an originPoint
 */
@@ -4871,8 +4533,6 @@ function transformBox(box, transform, sourceBox) {
 	transformAxis(box.x, resolveAxisTranslate(transform.x, resolveBox.x), transform.scaleX, transform.scale, transform.originX);
 	transformAxis(box.y, resolveAxisTranslate(transform.y, resolveBox.y), transform.scaleY, transform.scale, transform.originY);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/utils/measure.mjs
 function measureViewportBox(instance, transformPoint) {
 	return convertBoundingBoxToBox(transformBoxPoints(instance.getBoundingClientRect(), transformPoint));
 }
@@ -4885,8 +4545,6 @@ function measurePageBox(element, rootProjectionNode, transformPagePoint) {
 	}
 	return viewportBox;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/html/utils/build-transform.mjs
 var translateAlias = {
 	x: "translateX",
 	y: "translateY",
@@ -4937,8 +4595,6 @@ function buildTransform(latestValues, transform, transformTemplate) {
 	else if (transformIsDefault) transformString = "none";
 	return transformString;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/html/utils/build-styles.mjs
 function buildHTMLStyles(state, latestValues, transformTemplate) {
 	const { style, vars, transformOrigin } = state;
 	let hasTransform = false;
@@ -4983,8 +4639,6 @@ function buildHTMLStyles(state, latestValues, transformTemplate) {
 		style.transformOrigin = `${originX} ${originY} ${originZ}`;
 	}
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/html/utils/render.mjs
 function renderHTML(element, { style, vars }, styleProp, projection) {
 	const elementStyle = element.style;
 	let key;
@@ -4992,8 +4646,6 @@ function renderHTML(element, { style, vars }, styleProp, projection) {
 	projection?.applyProjectionStyles(elementStyle, styleProp);
 	for (key in vars) elementStyle.setProperty(key, vars[key]);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/styles/scale-border-radius.mjs
 function pixelsToPercent(pixels, axis) {
 	if (axis.max === axis.min) return 0;
 	return pixels / (axis.max - axis.min) * 100;
@@ -5015,8 +4667,6 @@ var correctBorderRadius = { correct: (latest, node) => {
 	else return latest;
 	return `${pixelsToPercent(latest, node.target.x)}% ${pixelsToPercent(latest, node.target.y)}%`;
 } };
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/styles/scale-box-shadow.mjs
 var correctBoxShadow = { correct: (latest, { treeScale, projectionDelta }) => {
 	const original = latest;
 	const shadow = complex.parse(latest);
@@ -5038,8 +4688,6 @@ var correctBoxShadow = { correct: (latest, { treeScale, projectionDelta }) => {
 	if (typeof shadow[3 + offset] === "number") shadow[3 + offset] /= averageScale;
 	return template(shadow);
 } };
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/styles/scale-correction.mjs
 var scaleCorrectors = {
 	borderRadius: {
 		...correctBorderRadius,
@@ -5051,13 +4699,9 @@ var scaleCorrectors = {
 	borderBottomRightRadius: correctBorderRadius,
 	boxShadow: correctBoxShadow
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/is-forced-motion-value.mjs
 function isForcedMotionValue(key, { layout, layoutId }) {
 	return transformProps.has(key) || key.startsWith("origin") || (layout || layoutId !== void 0) && (!!scaleCorrectors[key] || key === "opacity");
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/html/utils/scrape-motion-values.mjs
 function scrapeMotionValuesFromProps$1(props, prevProps, visualElement) {
 	const style = props.style;
 	const prevStyle = prevProps?.style;
@@ -5066,8 +4710,6 @@ function scrapeMotionValuesFromProps$1(props, prevProps, visualElement) {
 	for (const key in style) if (isMotionValue(style[key]) || prevStyle && isMotionValue(prevStyle[key]) || isForcedMotionValue(key, props) || visualElement?.getValue(key)?.liveStyle !== void 0) newValues[key] = style[key];
 	return newValues;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/html/HTMLVisualElement.mjs
 function getComputedStyle$1(element) {
 	return window.getComputedStyle(element);
 }
@@ -5095,8 +4737,6 @@ var HTMLVisualElement = class extends DOMVisualElement {
 		return scrapeMotionValuesFromProps$1(props, prevProps, visualElement);
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/svg/utils/path.mjs
 var dashKeys = {
 	offset: "stroke-dashoffset",
 	array: "stroke-dasharray"
@@ -5121,8 +4761,6 @@ function buildSVGPath(attrs, length, spacing = 1, offset = 0, useDashCase = true
 	attrs[keys.offset] = `${-offset}`;
 	attrs[keys.array] = `${length} ${spacing}`;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/svg/utils/build-attrs.mjs
 /**
 * CSS Motion Path properties that should remain as CSS styles on SVG elements.
 */
@@ -5177,8 +4815,6 @@ function buildSVGAttrs(state, { attrX, attrY, attrScale, pathLength, pathSpacing
 	if (attrScale !== void 0) attrs.scale = attrScale;
 	if (pathLength !== void 0) buildSVGPath(attrs, pathLength, pathSpacing, pathOffset, false);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/svg/utils/camel-case-attrs.mjs
 /**
 * A set of attribute names that are always read/written as camel case.
 */
@@ -5207,17 +4843,11 @@ var camelCaseAttributes = /* @__PURE__ */ new Set([
 	"textLength",
 	"lengthAdjust"
 ]);
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/svg/utils/is-svg-tag.mjs
 var isSVGTag = (tag) => typeof tag === "string" && tag.toLowerCase() === "svg";
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/svg/utils/render.mjs
 function renderSVG(element, renderState, _styleProp, projection) {
 	renderHTML(element, renderState, void 0, projection);
 	for (const key in renderState.attrs) element.setAttribute(!camelCaseAttributes.has(key) ? camelToDash(key) : key, renderState.attrs[key]);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/svg/utils/scrape-motion-values.mjs
 function scrapeMotionValuesFromProps(props, prevProps, visualElement) {
 	const newValues = scrapeMotionValuesFromProps$1(props, prevProps, visualElement);
 	for (const key in props) if (isMotionValue(props[key]) || isMotionValue(prevProps[key])) {
@@ -5226,8 +4856,6 @@ function scrapeMotionValuesFromProps(props, prevProps, visualElement) {
 	}
 	return newValues;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/svg/SVGVisualElement.mjs
 var SVGVisualElement = class extends DOMVisualElement {
 	constructor() {
 		super(...arguments);
@@ -5260,8 +4888,6 @@ var SVGVisualElement = class extends DOMVisualElement {
 		super.mount(instance);
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/get-variant-context.mjs
 var numVariantProps = variantProps.length;
 /**
 * Get variant context from a visual element's parent chain.
@@ -5282,8 +4908,6 @@ function getVariantContext(visualElement) {
 	}
 	return context;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/shallow-compare.mjs
 function shallowCompare(next, prev) {
 	if (!Array.isArray(prev)) return false;
 	const prevLength = prev.length;
@@ -5291,8 +4915,6 @@ function shallowCompare(next, prev) {
 	for (let i = 0; i < prevLength; i++) if (prev[i] !== next[i]) return false;
 	return true;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/render/utils/animation-state.mjs
 var reversePriorityOrder = [...variantPriorityOrder].reverse();
 var numAnimationTypes = variantPriorityOrder.length;
 function createAnimateFunction(visualElement) {
@@ -5594,8 +5216,6 @@ function createState() {
 		exit: createTypeState()
 	};
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/geometry/copy.mjs
 /**
 * Reset an axis to the provided origin box.
 *
@@ -5625,8 +5245,6 @@ function copyAxisDeltaInto(delta, originDelta) {
 	delta.originPoint = originDelta.originPoint;
 	delta.origin = originDelta.origin;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/geometry/delta-calc.mjs
 var SCALE_MIN = .9999;
 var SCALE_MAX = 1.0001;
 var TRANSLATE_MIN = -.01;
@@ -5666,8 +5284,6 @@ function calcRelativePosition(target, layout, parent, anchor) {
 	calcRelativeAxisPosition(target.x, layout.x, parent.x, anchor?.x);
 	calcRelativeAxisPosition(target.y, layout.y, parent.y, anchor?.y);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/geometry/delta-remove.mjs
 /**
 * Remove a delta from a point. This is essentially the steps of applyPointDelta in reverse
 */
@@ -5719,8 +5335,6 @@ function removeBoxTransforms(box, transforms, originBox, sourceBox) {
 	removeAxisTransforms(box.x, transforms, xKeys, originBox ? originBox.x : void 0, sourceBox ? sourceBox.x : void 0);
 	removeAxisTransforms(box.y, transforms, yKeys, originBox ? originBox.y : void 0, sourceBox ? sourceBox.y : void 0);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/geometry/utils.mjs
 function isAxisDeltaZero(delta) {
 	return delta.translate === 0 && delta.scale === 1;
 }
@@ -5745,13 +5359,9 @@ function aspectRatio(box) {
 function axisDeltaEquals(a, b) {
 	return a.translate === b.translate && a.scale === b.scale && a.originPoint === b.originPoint;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/utils/each-axis.mjs
 function eachAxis(callback) {
 	return [callback("x"), callback("y")];
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/styles/transform.mjs
 function buildProjectionTransform(delta, treeScale, latestTransform) {
 	let transform = "";
 	/**
@@ -5788,8 +5398,6 @@ function buildProjectionTransform(delta, treeScale, latestTransform) {
 	if (elementScaleX !== 1 || elementScaleY !== 1) transform += `scale(${elementScaleX}, ${elementScaleY})`;
 	return transform || "none";
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/animation/mix-values.mjs
 var numBorders = cornerRadiusProps.length;
 var asNumber = (value) => typeof value === "string" ? parseFloat(value) : value;
 var isPx = (value) => typeof value === "number" || px.test(value);
@@ -5830,24 +5438,16 @@ function compress(min, max, easing) {
 		return easing(/* @__PURE__ */ progress(min, max, p));
 	};
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/animation/animate/single-value.mjs
 function animateSingleValue(value, keyframes, options) {
 	const motionValue$1 = isMotionValue(value) ? value : motionValue(value);
 	motionValue$1.start(animateMotionValue("", motionValue$1, keyframes, options));
 	return motionValue$1.animation;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/events/add-dom-event.mjs
 function addDomEvent(target, eventName, handler, options = { passive: true }) {
 	target.addEventListener(eventName, handler, options);
 	return () => target.removeEventListener(eventName, handler, options);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/utils/compare-by-depth.mjs
 var compareByDepth = (a, b) => a.depth - b.depth;
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/utils/flat-tree.mjs
 var FlatTree = class {
 	constructor() {
 		this.children = [];
@@ -5867,8 +5467,6 @@ var FlatTree = class {
 		this.children.forEach(callback);
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/utils/delay.mjs
 /**
 * Timeout defined in ms
 */
@@ -5884,16 +5482,12 @@ function delay(callback, timeout) {
 	frame.setup(checkElapsed, true);
 	return () => cancelFrame(checkElapsed);
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/value/utils/resolve-motion-value.mjs
 /**
 * If the provided value is a MotionValue, this returns the actual value, otherwise just the value itself
 */
 function resolveMotionValue(value) {
 	return isMotionValue(value) ? value.get() : value;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/shared/stack.mjs
 var NodeStack = class {
 	constructor() {
 		this.members = [];
@@ -5965,8 +5559,6 @@ var NodeStack = class {
 		if (this.lead?.snapshot) this.lead.snapshot = void 0;
 	}
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/node/state.mjs
 /**
 * This should only ever be modified on the client otherwise it'll
 * persist through server requests. If we need instanced states we
@@ -5984,8 +5576,6 @@ var globalProjectionState = {
 	*/
 	hasEverUpdated: false
 };
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/node/create-projection-node.mjs
 var metrics = {
 	nodes: 0,
 	calculatedTargetDeltas: 0,
@@ -7279,8 +6869,6 @@ function shouldAnimatePositionOnly(animationType, snapshot, layout) {
 function checkNodeWasScrollRoot(node) {
 	return node !== node.root && node.scroll?.wasRoot;
 }
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/node/DocumentProjectionNode.mjs
 var DocumentProjectionNode = createProjectionNode$1({
 	attachResizeListener: (ref, notify) => addDomEvent(ref, "resize", notify),
 	measureScroll: () => ({
@@ -7289,8 +6877,6 @@ var DocumentProjectionNode = createProjectionNode$1({
 	}),
 	checkIsScrollRoot: () => true
 });
-//#endregion
-//#region node_modules/motion-dom/dist/es/projection/node/HTMLProjectionNode.mjs
 var rootProjectionNode = { current: void 0 };
 var HTMLProjectionNode = createProjectionNode$1({
 	measureScroll: (instance) => ({
@@ -7311,8 +6897,6 @@ var HTMLProjectionNode = createProjectionNode$1({
 	},
 	checkIsScrollRoot: (instance) => Boolean(window.getComputedStyle(instance).position === "fixed")
 });
-//#endregion
-//#region node_modules/framer-motion/dist/es/context/MotionConfigContext.mjs
 /**
 * @public
 */
@@ -7321,8 +6905,6 @@ var MotionConfigContext = (0, import_react.createContext)({
 	isStatic: false,
 	reducedMotion: "never"
 });
-//#endregion
-//#region node_modules/framer-motion/dist/es/components/AnimatePresence/use-presence.mjs
 /**
 * When a component is the child of `AnimatePresence`, it can use `usePresence`
 * to access information about whether it's still present in the React tree.
@@ -7346,7 +6928,7 @@ var MotionConfigContext = (0, import_react.createContext)({
 *
 * @public
 */
-function usePresence(subscribe = true) {
+function usePresence$1(subscribe = true) {
 	const context = (0, import_react.useContext)(PresenceContext);
 	if (context === null) return [true, null];
 	const { isPresent, onExitComplete, register } = context;
@@ -7361,11 +6943,7 @@ function usePresence(subscribe = true) {
 	]);
 	return !isPresent && onExitComplete ? [false, safeToRemove] : [true];
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/context/LazyContext.mjs
 var LazyContext = (0, import_react.createContext)({ strict: false });
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/features/definitions.mjs
 var featureProps = {
 	animation: [
 		"animate",
@@ -7423,8 +7001,6 @@ function getInitializedFeatureDefinitions() {
 	initFeatureDefinitions();
 	return getFeatureDefinitions();
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/features/load-features.mjs
 function loadFeatures(features) {
 	const featureDefinitions = getInitializedFeatureDefinitions();
 	for (const key in features) featureDefinitions[key] = {
@@ -7433,8 +7009,6 @@ function loadFeatures(features) {
 	};
 	setFeatureDefinitions(featureDefinitions);
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/utils/valid-prop.mjs
 /**
 * A list of all valid MotionProps.
 *
@@ -7485,16 +7059,12 @@ var validMotionProps = /* @__PURE__ */ new Set([
 function isValidMotionProp(key) {
 	return key.startsWith("while") || key.startsWith("drag") && key !== "draggable" || key.startsWith("layout") || key.startsWith("onTap") || key.startsWith("onPan") || key.startsWith("onLayout") || validMotionProps.has(key);
 }
-//#endregion
-//#region __vite-optional-peer-dep:@emotion/is-prop-valid:framer-motion
 var is_prop_valid_framer_motion_exports = /* @__PURE__ */ __exportAll({ default: () => is_prop_valid_framer_motion_default });
 var is_prop_valid_framer_motion_default;
 var init_is_prop_valid_framer_motion = __esmMin((() => {
 	is_prop_valid_framer_motion_default = {};
 	throw new Error(`Could not resolve "@emotion/is-prop-valid" imported by "framer-motion". Is it installed?`);
 }));
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/utils/filter-props.mjs
 var shouldForward = (key) => !isValidMotionProp(key);
 function loadExternalIsValidProp(isValidProp) {
 	if (typeof isValidProp !== "function") return;
@@ -7532,11 +7102,7 @@ function filterProps(props, isDom, forwardMotionProps) {
 	}
 	return filteredProps;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/context/MotionContext/index.mjs
 var MotionContext = /* @__PURE__ */ (0, import_react.createContext)({});
-//#endregion
-//#region node_modules/framer-motion/dist/es/context/MotionContext/utils.mjs
 function getCurrentTreeVariants(props, context) {
 	if (isControllingVariants(props)) {
 		const { initial, animate } = props;
@@ -7547,8 +7113,6 @@ function getCurrentTreeVariants(props, context) {
 	}
 	return props.inherit !== false ? context : {};
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/context/MotionContext/create.mjs
 function useCreateMotionContext(props) {
 	const { initial, animate } = getCurrentTreeVariants(props, (0, import_react.useContext)(MotionContext));
 	return (0, import_react.useMemo)(() => ({
@@ -7559,16 +7123,12 @@ function useCreateMotionContext(props) {
 function variantLabelsAsDependency(prop) {
 	return Array.isArray(prop) ? prop.join(" ") : prop;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/html/utils/create-render-state.mjs
 var createHtmlRenderState = () => ({
 	style: {},
 	transform: {},
 	transformOrigin: {},
 	vars: {}
 });
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/html/use-props.mjs
 function copyRawValuesOnly(target, source, props) {
 	for (const key in source) if (!isMotionValue(source[key]) && !isForcedMotionValue(key, props)) target[key] = source[key];
 }
@@ -7601,14 +7161,10 @@ function useHTMLProps(props, visualState) {
 	htmlProps.style = style;
 	return htmlProps;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/svg/utils/create-render-state.mjs
 var createSvgRenderState = () => ({
 	...createHtmlRenderState(),
 	attrs: {}
 });
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/svg/use-props.mjs
 function useSVGProps(props, visualState, _isStatic, Component) {
 	const visualProps = (0, import_react.useMemo)(() => {
 		const state = createSvgRenderState();
@@ -7628,8 +7184,6 @@ function useSVGProps(props, visualState, _isStatic, Component) {
 	}
 	return visualProps;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/svg/lowercase-elements.mjs
 /**
 * We keep these listed separately as we use the lowercase tag names as part
 * of the runtime bundle to detect SVG components
@@ -7661,15 +7215,11 @@ var lowercaseSVGElements = [
 	"use",
 	"view"
 ];
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/utils/is-svg-component.mjs
 function isSVGComponent(Component) {
 	if (typeof Component !== "string" || Component.includes("-")) return false;
 	else if (lowercaseSVGElements.indexOf(Component) > -1 || /[A-Z]/u.test(Component)) return true;
 	return false;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/use-render.mjs
 function useRender(Component, props, ref, { latestValues }, isStatic, forwardMotionProps = false, isSVG) {
 	const visualProps = (isSVG ?? isSVGComponent(Component) ? useSVGProps : useHTMLProps)(props, latestValues, isStatic, Component);
 	const filteredProps = filterProps(props, typeof Component === "string", forwardMotionProps);
@@ -7690,8 +7240,6 @@ function useRender(Component, props, ref, { latestValues }, isStatic, forwardMot
 		children: renderedChildren
 	});
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/utils/use-visual-state.mjs
 function makeState({ scrapeMotionValuesFromProps, createRenderState }, props, context, presenceContext) {
 	return {
 		latestValues: makeLatestValues(props, context, presenceContext, scrapeMotionValuesFromProps),
@@ -7742,23 +7290,15 @@ var makeUseVisualState = (config) => (props, isStatic) => {
 	const make = () => makeState(config, props, context, presenceContext);
 	return isStatic ? make() : useConstant(make);
 };
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/html/use-html-visual-state.mjs
 var useHTMLVisualState = /*@__PURE__*/ makeUseVisualState({
 	scrapeMotionValuesFromProps: scrapeMotionValuesFromProps$1,
 	createRenderState: createHtmlRenderState
 });
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/svg/use-svg-visual-state.mjs
 var useSVGVisualState = /*@__PURE__*/ makeUseVisualState({
 	scrapeMotionValuesFromProps,
 	createRenderState: createSvgRenderState
 });
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/utils/symbol.mjs
 var motionComponentSymbol = Symbol.for("motionComponentSymbol");
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/utils/use-motion-ref.mjs
 /**
 * Creates a ref function that, when called, hydrates the provided
 * external ref and VisualElement.
@@ -7790,19 +7330,13 @@ function useMotionRef(visualState, visualElement, externalRef) {
 		else if (ref) ref.current = instance;
 	}, [visualElement]);
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/context/SwitchLayoutGroupContext.mjs
 /**
 * Internal, exported only for usage in Framer
 */
 var SwitchLayoutGroupContext = (0, import_react.createContext)({});
-//#endregion
-//#region node_modules/framer-motion/dist/es/utils/is-ref-object.mjs
 function isRefObject(ref) {
 	return ref && typeof ref === "object" && Object.prototype.hasOwnProperty.call(ref, "current");
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/utils/use-visual-element.mjs
 function useVisualElement(Component, visualState, props, createVisualElement, ProjectionNodeConstructor, isSVG) {
 	const { visualElement: parent } = (0, import_react.useContext)(MotionContext);
 	const lazyContext = (0, import_react.useContext)(LazyContext);
@@ -7860,7 +7394,7 @@ function useVisualElement(Component, visualState, props, createVisualElement, Pr
 	*/
 	const optimisedAppearId = props[optimizedAppearDataAttribute];
 	const wantsHandoff = (0, import_react.useRef)(Boolean(optimisedAppearId) && typeof window !== "undefined" && !window.MotionHandoffIsComplete?.(optimisedAppearId) && window.MotionHasOptimisedAnimation?.(optimisedAppearId));
-	useIsomorphicLayoutEffect(() => {
+	useIsomorphicLayoutEffect$1(() => {
 		/**
 		* Track that this component has mounted. This is used to detect when
 		* LazyMotion features load after the component has already committed.
@@ -7927,8 +7461,7 @@ function getClosestProjectingNode(visualElement) {
 	if (!visualElement) return void 0;
 	return visualElement.options.allowProjection !== false ? visualElement.projection : getClosestProjectingNode(visualElement.parent);
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/index.mjs
+var import_jsx_runtime = require_jsx_runtime();
 /**
 * Create a `motion` component.
 *
@@ -8009,8 +7542,6 @@ function getProjectionFunctionality(props) {
 		ProjectionNode: combined.ProjectionNode
 	};
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/components/create-proxy.mjs
 function createMotionProxy(preloadedFeatures, createVisualElement) {
 	if (typeof Proxy === "undefined") return createMotionComponent;
 	/**
@@ -8042,13 +7573,9 @@ get: (_target, key) => {
 		return componentCache.get(key);
 	} });
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/create-visual-element.mjs
 var createDomVisualElement = (Component, options) => {
 	return options.isSVG ?? isSVGComponent(Component) ? new SVGVisualElement(options) : new HTMLVisualElement(options, { allowProjection: Component !== import_react.Fragment });
 };
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/features/animation/index.mjs
 var AnimationFeature = class extends Feature {
 	/**
 	* We dynamically generate the AnimationState manager as it contains a reference
@@ -8079,8 +7606,6 @@ var AnimationFeature = class extends Feature {
 		this.unmountControls?.();
 	}
 };
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/features/animation/exit.mjs
 var id = 0;
 var ExitAnimationFeature = class extends Feature {
 	constructor() {
@@ -8127,14 +7652,10 @@ var ExitAnimationFeature = class extends Feature {
 	}
 	unmount() {}
 };
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/features/animations.mjs
 var animations = {
 	animation: { Feature: AnimationFeature },
 	exit: { Feature: ExitAnimationFeature }
 };
-//#endregion
-//#region node_modules/framer-motion/dist/es/events/event-info.mjs
 function extractEventInfo(event) {
 	return { point: {
 		x: event.pageX,
@@ -8142,26 +7663,18 @@ function extractEventInfo(event) {
 	} };
 }
 var addPointerInfo = (handler) => (event) => isPrimaryPointer(event) && handler(event, extractEventInfo(event));
-//#endregion
-//#region node_modules/framer-motion/dist/es/events/add-pointer-event.mjs
 function addPointerEvent(target, eventName, handler, options) {
 	return addDomEvent(target, eventName, addPointerInfo(handler), options);
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/utils/get-context-window.mjs
 var getContextWindow = ({ current }) => {
 	return current ? current.ownerDocument.defaultView : null;
 };
-//#endregion
-//#region node_modules/framer-motion/dist/es/utils/distance.mjs
 var distance = (a, b) => Math.abs(a - b);
 function distance2D(a, b) {
 	const xDelta = distance(a.x, b.x);
 	const yDelta = distance(a.y, b.y);
 	return Math.sqrt(xDelta ** 2 + yDelta ** 2);
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/gestures/pan/PanSession.mjs
 var overflowStyles = /*#__PURE__*/ new Set(["auto", "scroll"]);
 /**
 * @internal
@@ -8399,8 +7912,6 @@ function getVelocity(history, timeDelta) {
 	if (currentVelocity.y === Infinity) currentVelocity.y = 0;
 	return currentVelocity;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/gestures/drag/utils/constraints.mjs
 /**
 * Apply constraints to a point. These constraints are both physical along an
 * axis, and an elastic factor that determines how much to constrain the point
@@ -8495,8 +8006,6 @@ function resolveAxisElastic(dragElastic, minLabel, maxLabel) {
 function resolvePointElastic(dragElastic, label) {
 	return typeof dragElastic === "number" ? dragElastic : dragElastic[label] || 0;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/gestures/drag/VisualElementDragControls.mjs
 var elementDragControls = /* @__PURE__ */ new WeakMap();
 var VisualElementDragControls = class {
 	constructor(visualElement) {
@@ -8983,8 +8492,6 @@ function getCurrentDirection(offset, lockThreshold = 10) {
 	else if (Math.abs(offset.x) > lockThreshold) direction = "x";
 	return direction;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/gestures/drag/index.mjs
 var DragGesture = class extends Feature {
 	constructor(node) {
 		super(node);
@@ -9021,8 +8528,6 @@ var DragGesture = class extends Feature {
 		if (!this.controls.isDragging) this.controls.endPanSession();
 	}
 };
-//#endregion
-//#region node_modules/framer-motion/dist/es/gestures/pan/index.mjs
 var asyncHandler = (handler) => (event, info) => {
 	if (handler) frame.update(() => handler(event, info), false, true);
 };
@@ -9060,8 +8565,6 @@ var PanGesture = class extends Feature {
 		this.session && this.session.end();
 	}
 };
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/features/layout/MeasureLayout.mjs
 /**
 * Track whether we've taken any snapshots yet. If not,
 * we can safely skip notification of didUpdate.
@@ -9159,7 +8662,7 @@ var MeasureLayoutWithContext = class extends import_react.Component {
 	}
 };
 function MeasureLayout(props) {
-	const [isPresent, safeToRemove] = usePresence();
+	const [isPresent, safeToRemove] = usePresence$1();
 	const layoutGroup = (0, import_react.useContext)(LayoutGroupContext);
 	return (0, import_jsx_runtime.jsx)(MeasureLayoutWithContext, {
 		...props,
@@ -9169,8 +8672,6 @@ function MeasureLayout(props) {
 		safeToRemove
 	});
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/features/drag.mjs
 var drag = {
 	pan: { Feature: PanGesture },
 	drag: {
@@ -9179,8 +8680,6 @@ var drag = {
 		MeasureLayout
 	}
 };
-//#endregion
-//#region node_modules/framer-motion/dist/es/gestures/hover.mjs
 function handleHoverEvent(node, event, lifecycle) {
 	const { props } = node;
 	if (node.animationState && props.whileHover) node.animationState.setActive("whileHover", lifecycle === "Start");
@@ -9198,8 +8697,6 @@ var HoverGesture = class extends Feature {
 	}
 	unmount() {}
 };
-//#endregion
-//#region node_modules/framer-motion/dist/es/gestures/focus.mjs
 var FocusGesture = class extends Feature {
 	constructor() {
 		super(...arguments);
@@ -9232,8 +8729,6 @@ var FocusGesture = class extends Feature {
 	}
 	unmount() {}
 };
-//#endregion
-//#region node_modules/framer-motion/dist/es/gestures/press.mjs
 function handlePressEvent(node, event, lifecycle) {
 	const { props } = node;
 	if (node.current instanceof HTMLButtonElement && node.current.disabled) return;
@@ -9256,8 +8751,6 @@ var PressGesture = class extends Feature {
 	}
 	unmount() {}
 };
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/features/viewport/observers.mjs
 /**
 * Map an IntersectionHandler callback to an element. We only ever make one handler for one
 * element, so even though these handlers might all be triggered by different
@@ -9304,8 +8797,6 @@ function observeIntersection(element, options, callback) {
 		rootInteresectionObserver.unobserve(element);
 	};
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/features/viewport/index.mjs
 var thresholdNames = {
 	some: 0,
 	all: 1
@@ -9370,36 +8861,26 @@ var InViewFeature = class extends Feature {
 function hasViewportOptionChanged({ viewport = {} }, { viewport: prevViewport = {} } = {}) {
 	return (name) => viewport[name] !== prevViewport[name];
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/features/gestures.mjs
 var gestureAnimations = {
 	inView: { Feature: InViewFeature },
 	tap: { Feature: PressGesture },
 	focus: { Feature: FocusGesture },
 	hover: { Feature: HoverGesture }
 };
-//#endregion
-//#region node_modules/framer-motion/dist/es/motion/features/layout.mjs
 var layout = { layout: {
 	ProjectionNode: HTMLProjectionNode,
 	MeasureLayout
 } };
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs
-var motion = /*@__PURE__*/ createMotionProxy({
+var motion$1 = /*@__PURE__*/ createMotionProxy({
 	...animations,
 	...gestureAnimations,
 	...drag,
 	...layout
 }, createDomVisualElement);
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/scroll/utils/can-use-native-timeline.mjs
 function canUseNativeTimeline(target) {
 	if (typeof window === "undefined") return false;
 	return target ? supportsViewTimeline() : supportsScrollTimeline();
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/scroll/info.mjs
 /**
 * A time in milliseconds, beyond which we consider the scroll velocity to be 0.
 */
@@ -9448,8 +8929,6 @@ function updateScrollInfo(element, info, time) {
 	updateAxisInfo(element, "y", info, time);
 	info.time = time;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/scroll/offsets/inset.mjs
 function calcInset(element, container) {
 	const inset = {
 		x: 0,
@@ -9487,8 +8966,6 @@ function calcInset(element, container) {
 	} else break;
 	return inset;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/scroll/offsets/edge.mjs
 var namedEdges = {
 	start: 0,
 	center: .5,
@@ -9518,8 +8995,6 @@ function resolveEdge(edge, length, inset = 0) {
 	if (typeof edge === "number") delta = length * edge;
 	return inset + delta;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/scroll/offsets/offset.mjs
 var defaultOffset = [0, 0];
 function resolveOffset(offset, containerLength, targetLength, targetInset) {
 	let offsetDefinition = Array.isArray(offset) ? offset : defaultOffset;
@@ -9547,16 +9022,12 @@ function resolveOffset(offset, containerLength, targetLength, targetInset) {
 	containerPoint = resolveEdge(offsetDefinition[1], containerLength);
 	return targetPoint - containerPoint;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/scroll/offsets/presets.mjs
 var ScrollOffset = {
 	Enter: [[0, 1], [1, 1]],
 	Exit: [[0, 0], [1, 0]],
 	Any: [[1, 0], [0, 1]],
 	All: [[0, 0], [1, 1]]
 };
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/scroll/offsets/index.mjs
 var point = {
 	x: 0,
 	y: 0
@@ -9611,8 +9082,6 @@ function resolveOffsets(container, info, options) {
 	}
 	info[axis].progress = clamp(0, 1, info[axis].interpolate(info[axis].current));
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/scroll/on-scroll-handler.mjs
 function measure(container, target = container, info) {
 	/**
 	* Find inset of target within scrollable container
@@ -9642,8 +9111,6 @@ function createOnScrollHandler(element, onScroll, info, options = {}) {
 		notify: () => onScroll(info)
 	};
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/scroll/track.mjs
 var scrollListeners = /* @__PURE__ */ new WeakMap();
 var resizeListeners = /* @__PURE__ */ new WeakMap();
 var onScrollHandlers = /* @__PURE__ */ new WeakMap();
@@ -9734,8 +9201,6 @@ function scrollInfo(onScroll, { container = document.scrollingElement, trackCont
 		scrollSize.delete(container);
 	};
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/scroll/utils/offset-to-range.mjs
 /**
 * Maps from ProgressIntersection pairs used by Motion's preset offsets to
 * ViewTimeline named ranges. Returns undefined for unrecognised patterns,
@@ -9790,8 +9255,6 @@ function offsetToViewTimelineRange(offset) {
 		rangeEnd: `${name} 100%`
 	};
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/scroll/utils/get-timeline.mjs
 var timelineCache = /* @__PURE__ */ new Map();
 function scrollTimelineFallback(options) {
 	const currentTime = { value: 0 };
@@ -9835,8 +9298,6 @@ function getTimeline({ source, container, ...options }) {
 	});
 	return targetCache[axisKey];
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/scroll/attach-animation.mjs
 function attachToAnimation(animation, options) {
 	const timeline = getTimeline(options);
 	const range = options.target ? offsetToViewTimelineRange(options.offset) : void 0;
@@ -9861,8 +9322,6 @@ function attachToAnimation(animation, options) {
 		}
 	});
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/scroll/utils/is-element-tracking.mjs
 /**
 * Currently, we only support element tracking with `scrollInfo`, though in
 * the future we can also offer ViewTimeline support.
@@ -9870,8 +9329,6 @@ function attachToAnimation(animation, options) {
 function isElementTracking(options) {
 	return options && (options.target || options.offset);
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/scroll/attach-function.mjs
 /**
 * If the onScroll function has two arguments, it's expecting
 * more specific information about the scroll from scrollInfo.
@@ -9885,8 +9342,6 @@ function attachToFunction(onScroll, options) {
 	}, options);
 	else return observeTimeline(onScroll, getTimeline(options));
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/scroll/index.mjs
 function scroll(onScroll, { axis = "y", container = document.scrollingElement, ...options } = {}) {
 	if (!container) return noop;
 	const optionsWithDefaults = {
@@ -9896,8 +9351,6 @@ function scroll(onScroll, { axis = "y", container = document.scrollingElement, .
 	};
 	return typeof onScroll === "function" ? attachToFunction(onScroll, optionsWithDefaults) : attachToAnimation(onScroll, optionsWithDefaults);
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/value/use-scroll.mjs
 var createScrollMotionValues = () => ({
 	scrollX: motionValue(0),
 	scrollY: motionValue(0),
@@ -9967,7 +9420,7 @@ function useScroll({ container, target, ...options } = {}) {
 		target,
 		JSON.stringify(options.offset)
 	]);
-	useIsomorphicLayoutEffect(() => {
+	useIsomorphicLayoutEffect$1(() => {
 		needsStart.current = false;
 		if (isRefPending(container) || isRefPending(target)) {
 			needsStart.current = true;
@@ -9990,8 +9443,6 @@ function useScroll({ container, target, ...options } = {}) {
 	}, [start]);
 	return values;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/value/use-motion-value.mjs
 /**
 * Creates a `MotionValue` to track the state and velocity of a value.
 *
@@ -10023,8 +9474,6 @@ function useMotionValue(initial) {
 	}
 	return value;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/value/use-combine-values.mjs
 function useCombineMotionValues(values, combineValues) {
 	/**
 	* Initialise the returned motion value. This remains the same between renders.
@@ -10046,7 +9495,7 @@ function useCombineMotionValues(values, combineValues) {
 	* Subscribe to all motion values found within the template. Whenever any of them change,
 	* schedule an update.
 	*/
-	useIsomorphicLayoutEffect(() => {
+	useIsomorphicLayoutEffect$1(() => {
 		const scheduleUpdate = () => frame.preRender(updateValue, false, true);
 		const subscriptions = values.map((v) => v.on("change", scheduleUpdate));
 		return () => {
@@ -10056,8 +9505,6 @@ function useCombineMotionValues(values, combineValues) {
 	});
 	return value;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/value/use-computed.mjs
 function useComputed(compute) {
 	/**
 	* Open session of collectMotionValues. Any MotionValue that calls get()
@@ -10072,8 +9519,6 @@ function useComputed(compute) {
 	collectMotionValues.current = void 0;
 	return value;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/value/use-transform.mjs
 function useTransform(input, inputRangeOrTransformer, outputRangeOrMap, options) {
 	if (typeof input === "function") return useComputed(input);
 	if (outputRangeOrMap !== void 0 && !Array.isArray(outputRangeOrMap) && typeof inputRangeOrTransformer !== "function") return useMapTransform(input, inputRangeOrTransformer, outputRangeOrMap, options);
@@ -10107,8 +9552,6 @@ function useMapTransform(inputValue, inputRange, outputMap, options) {
 	for (const key of keys) output[key] = useTransform(inputValue, inputRange, outputMap[key], options);
 	return output;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/value/use-follow-value.mjs
 function useFollowValue(source, options = {}) {
 	const { isStatic } = (0, import_react.useContext)(MotionConfigContext);
 	const getFromSource = () => isMotionValue(source) ? source.get() : source;
@@ -10119,16 +9562,12 @@ function useFollowValue(source, options = {}) {
 	}, [value, JSON.stringify(options)]);
 	return value;
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/value/use-spring.mjs
 function useSpring(source, options = {}) {
 	return useFollowValue(source, {
 		type: "spring",
 		...options
 	});
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/render/dom/viewport/index.mjs
 var thresholds = {
 	some: 0,
 	all: 1
@@ -10162,8 +9601,6 @@ function inView(elementOrSelector, onStart, { root, margin: rootMargin, amount =
 	elements.forEach((element) => observer.observe(element));
 	return () => observer.disconnect();
 }
-//#endregion
-//#region node_modules/framer-motion/dist/es/utils/use-in-view.mjs
 function useInView(ref, { root, margin, amount, once = false, initial = false } = {}) {
 	const [isInView, setInView] = (0, import_react.useState)(initial);
 	(0, import_react.useEffect)(() => {
@@ -10187,5 +9624,8643 @@ function useInView(ref, { root, margin, amount, once = false, initial = false } 
 	]);
 	return isInView;
 }
+var motion = motion$1;
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var mergeClasses = (...classes) => classes.filter((className, index, array) => {
+	return Boolean(className) && className.trim() !== "" && array.indexOf(className) === index;
+}).join(" ").trim();
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var toCamelCase = (string) => string.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2) => p2 ? p2.toUpperCase() : p1.toLowerCase());
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var toPascalCase = (string) => {
+	const camelCase = toCamelCase(string);
+	return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
+};
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var defaultAttributes = {
+	xmlns: "http://www.w3.org/2000/svg",
+	width: 24,
+	height: 24,
+	viewBox: "0 0 24 24",
+	fill: "none",
+	stroke: "currentColor",
+	strokeWidth: 2,
+	strokeLinecap: "round",
+	strokeLinejoin: "round"
+};
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var hasA11yProp = (props) => {
+	for (const prop in props) if (prop.startsWith("aria-") || prop === "role" || prop === "title") return true;
+	return false;
+};
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Icon = (0, import_react.forwardRef)(({ color = "currentColor", size = 24, strokeWidth = 2, absoluteStrokeWidth, className = "", children, iconNode, ...rest }, ref) => (0, import_react.createElement)("svg", {
+	ref,
+	...defaultAttributes,
+	width: size,
+	height: size,
+	stroke: color,
+	strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size) : strokeWidth,
+	className: mergeClasses("lucide", className),
+	...!children && !hasA11yProp(rest) && { "aria-hidden": "true" },
+	...rest
+}, [...iconNode.map(([tag, attrs]) => (0, import_react.createElement)(tag, attrs)), ...Array.isArray(children) ? children : [children]]));
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var createLucideIcon = (iconName, iconNode) => {
+	const Component = (0, import_react.forwardRef)(({ className, ...props }, ref) => (0, import_react.createElement)(Icon, {
+		ref,
+		iconNode,
+		className: mergeClasses(`lucide-${toKebabCase(toPascalCase(iconName))}`, `lucide-${iconName}`, className),
+		...props
+	}));
+	Component.displayName = toPascalCase(iconName);
+	return Component;
+};
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var ArrowRight = createLucideIcon("arrow-right", [["path", {
+	d: "M5 12h14",
+	key: "1ays0h"
+}], ["path", {
+	d: "m12 5 7 7-7 7",
+	key: "xquz4c"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var ArrowUpRight = createLucideIcon("arrow-up-right", [["path", {
+	d: "M7 7h10v10",
+	key: "1tivn9"
+}], ["path", {
+	d: "M7 17 17 7",
+	key: "1vkiza"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Award = createLucideIcon("award", [["path", {
+	d: "m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526",
+	key: "1yiouv"
+}], ["circle", {
+	cx: "12",
+	cy: "8",
+	r: "6",
+	key: "1vp47v"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Building2 = createLucideIcon("building-2", [
+	["path", {
+		d: "M10 12h4",
+		key: "a56b0p"
+	}],
+	["path", {
+		d: "M10 8h4",
+		key: "1sr2af"
+	}],
+	["path", {
+		d: "M14 21v-3a2 2 0 0 0-4 0v3",
+		key: "1rgiei"
+	}],
+	["path", {
+		d: "M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2",
+		key: "secmi2"
+	}],
+	["path", {
+		d: "M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16",
+		key: "16ra0t"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var CircleCheck = createLucideIcon("circle-check", [["circle", {
+	cx: "12",
+	cy: "12",
+	r: "10",
+	key: "1mglay"
+}], ["path", {
+	d: "m9 12 2 2 4-4",
+	key: "dzmm74"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Compass = createLucideIcon("compass", [["circle", {
+	cx: "12",
+	cy: "12",
+	r: "10",
+	key: "1mglay"
+}], ["path", {
+	d: "m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z",
+	key: "9ktpf1"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Facebook = createLucideIcon("facebook", [["path", {
+	d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
+	key: "1jg4f8"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var FileCheck = createLucideIcon("file-check", [
+	["path", {
+		d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
+		key: "1oefj6"
+	}],
+	["path", {
+		d: "M14 2v5a1 1 0 0 0 1 1h5",
+		key: "wfsgrz"
+	}],
+	["path", {
+		d: "m9 15 2 2 4-4",
+		key: "1grp1n"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var FileText = createLucideIcon("file-text", [
+	["path", {
+		d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
+		key: "1oefj6"
+	}],
+	["path", {
+		d: "M14 2v5a1 1 0 0 0 1 1h5",
+		key: "wfsgrz"
+	}],
+	["path", {
+		d: "M10 9H8",
+		key: "b1mrlr"
+	}],
+	["path", {
+		d: "M16 13H8",
+		key: "t4e002"
+	}],
+	["path", {
+		d: "M16 17H8",
+		key: "z1uh3a"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var GraduationCap = createLucideIcon("graduation-cap", [
+	["path", {
+		d: "M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z",
+		key: "j76jl0"
+	}],
+	["path", {
+		d: "M22 10v6",
+		key: "1lu8f3"
+	}],
+	["path", {
+		d: "M6 12.5V16a6 3 0 0 0 12 0v-3.5",
+		key: "1r8lef"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Handshake = createLucideIcon("handshake", [
+	["path", {
+		d: "m11 17 2 2a1 1 0 1 0 3-3",
+		key: "efffak"
+	}],
+	["path", {
+		d: "m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4",
+		key: "9pr0kb"
+	}],
+	["path", {
+		d: "m21 3 1 11h-2",
+		key: "1tisrp"
+	}],
+	["path", {
+		d: "M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3",
+		key: "1uvwmv"
+	}],
+	["path", {
+		d: "M3 4h8",
+		key: "1ep09j"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var HeartPulse = createLucideIcon("heart-pulse", [["path", {
+	d: "M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5",
+	key: "mvr1a0"
+}], ["path", {
+	d: "M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27",
+	key: "auskq0"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Instagram = createLucideIcon("instagram", [
+	["rect", {
+		width: "20",
+		height: "20",
+		x: "2",
+		y: "2",
+		rx: "5",
+		ry: "5",
+		key: "2e1cvw"
+	}],
+	["path", {
+		d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z",
+		key: "9exkf1"
+	}],
+	["line", {
+		x1: "17.5",
+		x2: "17.51",
+		y1: "6.5",
+		y2: "6.5",
+		key: "r4j83e"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Leaf = createLucideIcon("leaf", [["path", {
+	d: "M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z",
+	key: "nnexq3"
+}], ["path", {
+	d: "M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12",
+	key: "mt58a7"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Linkedin = createLucideIcon("linkedin", [
+	["path", {
+		d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z",
+		key: "c2jq9f"
+	}],
+	["rect", {
+		width: "4",
+		height: "12",
+		x: "2",
+		y: "9",
+		key: "mk3on5"
+	}],
+	["circle", {
+		cx: "4",
+		cy: "4",
+		r: "2",
+		key: "bt5ra8"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Mail = createLucideIcon("mail", [["path", {
+	d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7",
+	key: "132q7q"
+}], ["rect", {
+	x: "2",
+	y: "4",
+	width: "20",
+	height: "16",
+	rx: "2",
+	key: "izxlao"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var MapPin = createLucideIcon("map-pin", [["path", {
+	d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0",
+	key: "1r0f0z"
+}], ["circle", {
+	cx: "12",
+	cy: "10",
+	r: "3",
+	key: "ilqhr7"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Menu = createLucideIcon("menu", [
+	["path", {
+		d: "M4 5h16",
+		key: "1tepv9"
+	}],
+	["path", {
+		d: "M4 12h16",
+		key: "1lakjw"
+	}],
+	["path", {
+		d: "M4 19h16",
+		key: "1djgab"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Microscope = createLucideIcon("microscope", [
+	["path", {
+		d: "M6 18h8",
+		key: "1borvv"
+	}],
+	["path", {
+		d: "M3 22h18",
+		key: "8prr45"
+	}],
+	["path", {
+		d: "M14 22a7 7 0 1 0 0-14h-1",
+		key: "1jwaiy"
+	}],
+	["path", {
+		d: "M9 14h2",
+		key: "197e7h"
+	}],
+	["path", {
+		d: "M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z",
+		key: "1bmzmy"
+	}],
+	["path", {
+		d: "M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3",
+		key: "1drr47"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Minus = createLucideIcon("minus", [["path", {
+	d: "M5 12h14",
+	key: "1ays0h"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Phone = createLucideIcon("phone", [["path", {
+	d: "M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384",
+	key: "9njp5v"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Plus = createLucideIcon("plus", [["path", {
+	d: "M5 12h14",
+	key: "1ays0h"
+}], ["path", {
+	d: "M12 5v14",
+	key: "s699le"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Quote = createLucideIcon("quote", [["path", {
+	d: "M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z",
+	key: "rib7q0"
+}], ["path", {
+	d: "M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z",
+	key: "1ymkrd"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Route = createLucideIcon("route", [
+	["circle", {
+		cx: "6",
+		cy: "19",
+		r: "3",
+		key: "1kj8tv"
+	}],
+	["path", {
+		d: "M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15",
+		key: "1d8sl"
+	}],
+	["circle", {
+		cx: "18",
+		cy: "5",
+		r: "3",
+		key: "gq8acd"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var ShieldCheck = createLucideIcon("shield-check", [["path", {
+	d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+	key: "oel41y"
+}], ["path", {
+	d: "m9 12 2 2 4-4",
+	key: "dzmm74"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Sparkles = createLucideIcon("sparkles", [
+	["path", {
+		d: "M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z",
+		key: "1s2grr"
+	}],
+	["path", {
+		d: "M20 2v4",
+		key: "1rf3ol"
+	}],
+	["path", {
+		d: "M22 4h-4",
+		key: "gwowj6"
+	}],
+	["circle", {
+		cx: "4",
+		cy: "20",
+		r: "2",
+		key: "6kqj1y"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Star = createLucideIcon("star", [["path", {
+	d: "M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z",
+	key: "r04s7s"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Stethoscope = createLucideIcon("stethoscope", [
+	["path", {
+		d: "M11 2v2",
+		key: "1539x4"
+	}],
+	["path", {
+		d: "M5 2v2",
+		key: "1yf1q8"
+	}],
+	["path", {
+		d: "M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1",
+		key: "rb5t3r"
+	}],
+	["path", {
+		d: "M8 15a6 6 0 0 0 12 0v-3",
+		key: "x18d4x"
+	}],
+	["circle", {
+		cx: "20",
+		cy: "10",
+		r: "2",
+		key: "ts1r5v"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var UserCheck = createLucideIcon("user-check", [
+	["path", {
+		d: "m16 11 2 2 4-4",
+		key: "9rsbq5"
+	}],
+	["path", {
+		d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2",
+		key: "1yyitq"
+	}],
+	["circle", {
+		cx: "9",
+		cy: "7",
+		r: "4",
+		key: "nufk8"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Users = createLucideIcon("users", [
+	["path", {
+		d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2",
+		key: "1yyitq"
+	}],
+	["path", {
+		d: "M16 3.128a4 4 0 0 1 0 7.744",
+		key: "16gr8j"
+	}],
+	["path", {
+		d: "M22 21v-2a4 4 0 0 0-3-3.87",
+		key: "kshegd"
+	}],
+	["circle", {
+		cx: "9",
+		cy: "7",
+		r: "4",
+		key: "nufk8"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Wallet = createLucideIcon("wallet", [["path", {
+	d: "M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1",
+	key: "18etb6"
+}], ["path", {
+	d: "M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4",
+	key: "xoc0q4"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var X = createLucideIcon("x", [["path", {
+	d: "M18 6 6 18",
+	key: "1bl5f8"
+}], ["path", {
+	d: "m6 6 12 12",
+	key: "d8bk6v"
+}]]);
+function Logo({ variant = "dark" }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+		href: "#top",
+		className: "flex items-center gap-3 group",
+		"aria-label": "Career Vision Educational Consultancy — home",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+			width: "36",
+			height: "36",
+			viewBox: "0 0 40 40",
+			fill: "none",
+			xmlns: "http://www.w3.org/2000/svg",
+			"aria-hidden": "true",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
+					width: "40",
+					height: "40",
+					fill: "#0F4C81"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+					d: "M6 16 L20 10 L34 16 L20 22 Z",
+					fill: "white"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+					d: "M12 19 L12 26 C12 27.5 15.5 29 20 29 C24.5 29 28 27.5 28 26 L28 19",
+					stroke: "white",
+					strokeWidth: "1.5",
+					fill: "none"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+					d: "M32 16 L32 22 L30 22",
+					stroke: "white",
+					strokeWidth: "1.5",
+					strokeLinecap: "square",
+					fill: "none"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+					d: "M32 22 L35 25",
+					stroke: "white",
+					strokeWidth: "1.5",
+					strokeLinecap: "square"
+				})
+			]
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "flex flex-col leading-none",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+				className: "font-display font-semibold text-[15px] tracking-tight",
+				style: { color: variant === "dark" ? "#0F172A" : "#FFFFFF" },
+				children: "Career Vision"
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+				className: "text-[10px] tracking-[0.18em] uppercase mt-1",
+				style: { color: variant === "dark" ? "#64748B" : "rgba(255,255,255,0.6)" },
+				children: "Educational Consultancy"
+			})]
+		})]
+	});
+}
+function Reveal({ children, delay = 0, y = 24, className, as = "div" }) {
+	const ref = (0, import_react.useRef)(null);
+	const inView = useInView(ref, {
+		once: true,
+		margin: "0px 0px -80px 0px"
+	});
+	const MotionTag = motion[as];
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MotionTag, {
+		ref,
+		initial: {
+			opacity: 0,
+			y
+		},
+		animate: inView ? {
+			opacity: 1,
+			y: 0
+		} : {},
+		transition: {
+			duration: .7,
+			delay,
+			ease: [
+				.2,
+				.7,
+				.2,
+				1
+			]
+		},
+		className,
+		children
+	});
+}
+function Counter({ to, suffix = "" }) {
+	const ref = (0, import_react.useRef)(null);
+	const inView = useInView(ref, {
+		once: true,
+		margin: "0px 0px -60px 0px"
+	});
+	const mv = useMotionValue(0);
+	const rounded = useTransform(useSpring(mv, {
+		duration: 2e3,
+		bounce: 0
+	}), (v) => Math.floor(v).toLocaleString());
+	(0, import_react.useEffect)(() => {
+		if (inView) mv.set(to);
+	}, [
+		inView,
+		mv,
+		to
+	]);
+	(0, import_react.useEffect)(() => {
+		return rounded.on("change", (v) => {
+			if (ref.current) ref.current.textContent = v + suffix;
+		});
+	}, [rounded, suffix]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+		ref,
+		children: ["0", suffix]
+	});
+}
+function Eyebrow({ children }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+		className: "eyebrow",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "rule-line" }), children]
+	});
+}
+var nav = [
+	{
+		label: "Home",
+		href: "#top"
+	},
+	{
+		label: "About",
+		href: "#about"
+	},
+	{
+		label: "Courses",
+		href: "#programs"
+	},
+	{
+		label: "Services",
+		href: "#services"
+	},
+	{
+		label: "Admission Process",
+		href: "#process"
+	},
+	{
+		label: "Testimonials",
+		href: "#testimonials"
+	},
+	{
+		label: "Contact",
+		href: "#contact"
+	}
+];
+function Header() {
+	const [scrolled, setScrolled] = (0, import_react.useState)(false);
+	const [open, setOpen] = (0, import_react.useState)(false);
+	(0, import_react.useEffect)(() => {
+		const onScroll = () => setScrolled(window.scrollY > 12);
+		onScroll();
+		window.addEventListener("scroll", onScroll, { passive: true });
+		return () => window.removeEventListener("scroll", onScroll);
+	}, []);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
+		className: `fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/90 backdrop-blur-md border-b border-border" : "bg-white/70 backdrop-blur-sm border-b border-transparent"}`,
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "container-x flex items-center justify-between h-[72px]",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Logo, {}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
+					className: "hidden xl:flex items-center gap-6",
+					"aria-label": "Primary",
+					children: nav.map((n) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+						href: n.href,
+						className: "nav-link",
+						children: n.label
+					}, n.href))
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "hidden xl:flex items-center gap-4",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+						href: "tel:+918639887319",
+						className: "flex items-center gap-2 text-sm text-ink-soft hover:text-primary transition-colors",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, {
+							size: 14,
+							strokeWidth: 1.75
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "tabular-nums font-medium",
+							children: "+91 86398 87319"
+						})]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+						href: "#contact",
+						className: "btn-primary h-11 px-5 text-[14px]",
+						children: "Book Consultation"
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+					className: "xl:hidden inline-flex items-center justify-center w-10 h-10 border border-border",
+					"aria-label": open ? "Close menu" : "Open menu",
+					onClick: () => setOpen((s) => !s),
+					children: open ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { size: 18 }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Menu, { size: 18 })
+				})
+			]
+		}), open && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			className: "xl:hidden border-t border-border bg-white",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
+				className: "container-x py-4 flex flex-col gap-1",
+				"aria-label": "Mobile",
+				children: [nav.map((n) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+					href: n.href,
+					onClick: () => setOpen(false),
+					className: "py-3 border-b border-border text-sm font-medium text-ink",
+					children: n.label
+				}, n.href)), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+					href: "#contact",
+					onClick: () => setOpen(false),
+					className: "btn-primary mt-4",
+					children: "Book Consultation"
+				})]
+			})
+		})]
+	});
+}
+function Footer() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("footer", {
+		className: "bg-dark text-white",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "container-x py-20 grid grid-cols-1 lg:grid-cols-12 gap-12",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "lg:col-span-5",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Logo, { variant: "light" }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-6 text-sm leading-relaxed max-w-md text-white/60",
+							children: "Career Vision Educational Consultancy helps students secure admissions into India's most reputed Engineering, Medical, and Allied Health Science institutions through trusted, personalised counselling."
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "mt-8 flex items-center gap-3",
+							children: [
+								{
+									Icon: Facebook,
+									href: "https://facebook.com/careervisioneducation",
+									label: "Facebook"
+								},
+								{
+									Icon: Instagram,
+									href: "https://instagram.com/careervisioneducation",
+									label: "Instagram"
+								},
+								{
+									Icon: Linkedin,
+									href: "https://linkedin.com/company/careervisioneducation",
+									label: "LinkedIn"
+								}
+							].map(({ Icon, href, label }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+								href,
+								"aria-label": label,
+								target: "_blank",
+								rel: "noopener noreferrer",
+								className: "inline-flex items-center justify-center w-10 h-10 border border-white/15 hover:border-white/50 hover:bg-white/5 transition-colors",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
+									size: 16,
+									strokeWidth: 1.5
+								})
+							}, label))
+						})
+					]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "lg:col-span-3",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+						className: "text-[11px] tracking-[0.2em] uppercase text-white/50 font-medium",
+						children: "Quick Links"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+						className: "mt-6 space-y-3 text-sm text-white/70",
+						children: [
+							{
+								label: "Admissions",
+								href: "#process"
+							},
+							{
+								label: "Engineering",
+								href: "#programs"
+							},
+							{
+								label: "Medical",
+								href: "#programs"
+							},
+							{
+								label: "Services",
+								href: "#services"
+							},
+							{
+								label: "Contact",
+								href: "#contact"
+							}
+						].map((l) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+							href: l.href,
+							className: "hover:text-white transition-colors",
+							children: l.label
+						}) }, l.label))
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "lg:col-span-4",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+						className: "text-[11px] tracking-[0.2em] uppercase text-white/50 font-medium",
+						children: "Contact"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
+						className: "mt-6 space-y-4 text-sm text-white/70",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+								className: "flex items-start gap-3",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, {
+									size: 14,
+									className: "mt-1 text-white/50 shrink-0",
+									strokeWidth: 1.5
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									href: "tel:+918639887319",
+									className: "hover:text-white transition-colors tabular-nums",
+									children: "+91 86398 87319"
+								})]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+								className: "flex items-start gap-3",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, {
+									size: 14,
+									className: "mt-1 text-white/50 shrink-0",
+									strokeWidth: 1.5
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									href: "mailto:careervisioneduconsultancy@gmail.com",
+									className: "hover:text-white transition-colors break-all",
+									children: "careervisioneduconsultancy@gmail.com"
+								})]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+								className: "flex items-start gap-3",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPin, {
+									size: 14,
+									className: "mt-1 text-white/50 shrink-0",
+									strokeWidth: 1.5
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Second Floor, 07/3, 18th C Main Rd, MTB Area, Marenahalli, Jayanagar 9th Block, Bengaluru, Karnataka 560041" })]
+							})
+						]
+					})]
+				})
+			]
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			className: "border-t border-white/10",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "container-x py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "© 2026 Career Vision Educational Consultancy. All Rights Reserved." }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Bengaluru, India" })]
+			})
+		})]
+	});
+}
+typeof window !== "undefined" && window.document && window.document.createElement;
+function composeEventHandlers(originalEventHandler, ourEventHandler, { checkForDefaultPrevented = true } = {}) {
+	return function handleEvent(event) {
+		originalEventHandler?.(event);
+		if (checkForDefaultPrevented === false || !event || !event.defaultPrevented) return ourEventHandler?.(event);
+	};
+}
+function setRef$1(ref, value) {
+	if (typeof ref === "function") return ref(value);
+	else if (ref !== null && ref !== void 0) ref.current = value;
+}
+function composeRefs(...refs) {
+	return (node) => {
+		let hasCleanup = false;
+		const cleanups = refs.map((ref) => {
+			const cleanup = setRef$1(ref, node);
+			if (!hasCleanup && typeof cleanup == "function") hasCleanup = true;
+			return cleanup;
+		});
+		if (hasCleanup) return () => {
+			for (let i = 0; i < cleanups.length; i++) {
+				const cleanup = cleanups[i];
+				if (typeof cleanup == "function") cleanup();
+				else setRef$1(refs[i], null);
+			}
+		};
+	};
+}
+function useComposedRefs(...refs) {
+	return import_react.useCallback(composeRefs(...refs), refs);
+}
+function createContextScope(scopeName, createContextScopeDeps = []) {
+	let defaultContexts = [];
+	function createContext3(rootComponentName, defaultContext) {
+		const BaseContext = import_react.createContext(defaultContext);
+		BaseContext.displayName = rootComponentName + "Context";
+		const index = defaultContexts.length;
+		defaultContexts = [...defaultContexts, defaultContext];
+		const Provider = (props) => {
+			const { scope, children, ...context } = props;
+			const Context = scope?.[scopeName]?.[index] || BaseContext;
+			const value = import_react.useMemo(() => context, Object.values(context));
+			return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Context.Provider, {
+				value,
+				children
+			});
+		};
+		Provider.displayName = rootComponentName + "Provider";
+		function useContext2(consumerName, scope, options = {}) {
+			const { optional = false } = options;
+			const Context = scope?.[scopeName]?.[index] || BaseContext;
+			const context = import_react.useContext(Context);
+			if (context) return context;
+			if (defaultContext !== void 0) return defaultContext;
+			if (optional) return void 0;
+			throw new Error(`\`${consumerName}\` must be used within \`${rootComponentName}\``);
+		}
+		return [Provider, useContext2];
+	}
+	const createScope = () => {
+		const scopeContexts = defaultContexts.map((defaultContext) => {
+			return import_react.createContext(defaultContext);
+		});
+		return function useScope(scope) {
+			const contexts = scope?.[scopeName] || scopeContexts;
+			return import_react.useMemo(() => ({ [`__scope${scopeName}`]: {
+				...scope,
+				[scopeName]: contexts
+			} }), [scope, contexts]);
+		};
+	};
+	createScope.scopeName = scopeName;
+	return [createContext3, composeContextScopes(createScope, ...createContextScopeDeps)];
+}
+function composeContextScopes(...scopes) {
+	const baseScope = scopes[0];
+	if (scopes.length === 1) return baseScope;
+	const createScope = () => {
+		const scopeHooks = scopes.map((createScope2) => ({
+			useScope: createScope2(),
+			scopeName: createScope2.scopeName
+		}));
+		return function useComposedScopes(overrideScopes) {
+			const nextScopes = scopeHooks.reduce((nextScopes2, { useScope, scopeName }) => {
+				const currentScope = useScope(overrideScopes)[`__scope${scopeName}`];
+				return {
+					...nextScopes2,
+					...currentScope
+				};
+			}, {});
+			return import_react.useMemo(() => ({ [`__scope${baseScope.scopeName}`]: nextScopes }), [nextScopes]);
+		};
+	};
+	createScope.scopeName = baseScope.scopeName;
+	return createScope;
+}
+var useLayoutEffect2 = globalThis?.document ? import_react.useLayoutEffect : () => {};
+var useReactId = import_react[" useId ".trim().toString()] || (() => void 0);
+var count$1 = 0;
+function useId(deterministicId) {
+	const [id, setId] = import_react.useState(useReactId());
+	useLayoutEffect2(() => {
+		if (!deterministicId) setId((reactId) => reactId ?? String(count$1++));
+	}, [deterministicId]);
+	return deterministicId || (id ? `radix-${id}` : "");
+}
+var useInsertionEffect = import_react[" useInsertionEffect ".trim().toString()] || useLayoutEffect2;
+function useControllableState({ prop, defaultProp, onChange = () => {}, caller }) {
+	const [uncontrolledProp, setUncontrolledProp, onChangeRef] = useUncontrolledState({
+		defaultProp,
+		onChange
+	});
+	const isControlled = prop !== void 0;
+	const value = isControlled ? prop : uncontrolledProp;
+	{
+		const isControlledRef = import_react.useRef(prop !== void 0);
+		import_react.useEffect(() => {
+			const wasControlled = isControlledRef.current;
+			if (wasControlled !== isControlled) console.warn(`${caller} is changing from ${wasControlled ? "controlled" : "uncontrolled"} to ${isControlled ? "controlled" : "uncontrolled"}. Components should not switch from controlled to uncontrolled (or vice versa). Decide between using a controlled or uncontrolled value for the lifetime of the component.`);
+			isControlledRef.current = isControlled;
+		}, [isControlled, caller]);
+	}
+	return [value, import_react.useCallback((nextValue) => {
+		if (isControlled) {
+			const value2 = isFunction(nextValue) ? nextValue(prop) : nextValue;
+			if (value2 !== prop) onChangeRef.current?.(value2);
+		} else setUncontrolledProp(nextValue);
+	}, [
+		isControlled,
+		prop,
+		setUncontrolledProp,
+		onChangeRef
+	])];
+}
+function useUncontrolledState({ defaultProp, onChange }) {
+	const [value, setValue] = import_react.useState(defaultProp);
+	const prevValueRef = import_react.useRef(value);
+	const onChangeRef = import_react.useRef(onChange);
+	useInsertionEffect(() => {
+		onChangeRef.current = onChange;
+	}, [onChange]);
+	import_react.useEffect(() => {
+		if (prevValueRef.current !== value) {
+			onChangeRef.current?.(value);
+			prevValueRef.current = value;
+		}
+	}, [value, prevValueRef]);
+	return [
+		value,
+		setValue,
+		onChangeRef
+	];
+}
+function isFunction(value) {
+	return typeof value === "function";
+}
+var import_react_dom = /* @__PURE__ */ __toESM(require_react_dom(), 1);
+// @__NO_SIDE_EFFECTS__
+function createSlot(ownerName) {
+	const Slot2 = import_react.forwardRef((props, forwardedRef) => {
+		let { children, ...slotProps } = props;
+		let slottableElement = null;
+		let hasSlottable = false;
+		const newChildren = [];
+		if (isLazyComponent(children) && typeof use === "function") children = use(children._payload);
+		import_react.Children.forEach(children, (maybeSlottable) => {
+			if (isSlottable(maybeSlottable)) {
+				hasSlottable = true;
+				const slottable = maybeSlottable;
+				let child = "child" in slottable.props ? slottable.props.child : slottable.props.children;
+				if (isLazyComponent(child) && typeof use === "function") child = use(child._payload);
+				slottableElement = getSlottableElementFromSlottable(slottable, child);
+				newChildren.push(slottableElement?.props?.children);
+			} else newChildren.push(maybeSlottable);
+		});
+		if (slottableElement) slottableElement = import_react.cloneElement(slottableElement, void 0, newChildren);
+		else if (!hasSlottable && import_react.Children.count(children) === 1 && import_react.isValidElement(children)) slottableElement = children;
+		const slottableElementRef = slottableElement ? getElementRef$1(slottableElement) : void 0;
+		const composedRef = useComposedRefs(forwardedRef, slottableElementRef);
+		if (!slottableElement) {
+			if (children || children === 0) throw new Error(hasSlottable ? createSlottableError(ownerName) : createSlotError(ownerName));
+			return children;
+		}
+		const mergedProps = mergeProps(slotProps, slottableElement.props ?? {});
+		if (slottableElement.type !== import_react.Fragment) mergedProps.ref = forwardedRef ? composedRef : slottableElementRef;
+		return import_react.cloneElement(slottableElement, mergedProps);
+	});
+	Slot2.displayName = `${ownerName}.Slot`;
+	return Slot2;
+}
+var SLOTTABLE_IDENTIFIER = Symbol.for("radix.slottable");
+var getSlottableElementFromSlottable = (slottable, child) => {
+	if ("child" in slottable.props) {
+		const child2 = slottable.props.child;
+		if (!import_react.isValidElement(child2)) return null;
+		return import_react.cloneElement(child2, void 0, slottable.props.children(child2.props.children));
+	}
+	return import_react.isValidElement(child) ? child : null;
+};
+function mergeProps(slotProps, childProps) {
+	const overrideProps = { ...childProps };
+	for (const propName in childProps) {
+		const slotPropValue = slotProps[propName];
+		const childPropValue = childProps[propName];
+		if (/^on[A-Z]/.test(propName)) {
+			if (slotPropValue && childPropValue) overrideProps[propName] = (...args) => {
+				const result = childPropValue(...args);
+				slotPropValue(...args);
+				return result;
+			};
+			else if (slotPropValue) overrideProps[propName] = slotPropValue;
+		} else if (propName === "style") overrideProps[propName] = {
+			...slotPropValue,
+			...childPropValue
+		};
+		else if (propName === "className") overrideProps[propName] = [slotPropValue, childPropValue].filter(Boolean).join(" ");
+	}
+	return {
+		...slotProps,
+		...overrideProps
+	};
+}
+function getElementRef$1(element) {
+	let getter = Object.getOwnPropertyDescriptor(element.props, "ref")?.get;
+	let mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
+	if (mayWarn) return element.ref;
+	getter = Object.getOwnPropertyDescriptor(element, "ref")?.get;
+	mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
+	if (mayWarn) return element.props.ref;
+	return element.props.ref || element.ref;
+}
+function isSlottable(child) {
+	return import_react.isValidElement(child) && typeof child.type === "function" && "__radixId" in child.type && child.type.__radixId === SLOTTABLE_IDENTIFIER;
+}
+var REACT_LAZY_TYPE = Symbol.for("react.lazy");
+function isLazyComponent(element) {
+	return element != null && typeof element === "object" && "$$typeof" in element && element.$$typeof === REACT_LAZY_TYPE && "_payload" in element && isPromiseLike(element._payload);
+}
+function isPromiseLike(value) {
+	return typeof value === "object" && value !== null && "then" in value;
+}
+var createSlotError = (ownerName) => {
+	return `${ownerName} failed to slot onto its children. Expected a single React element child or \`Slottable\`.`;
+};
+var createSlottableError = (ownerName) => {
+	return `${ownerName} failed to slot onto its \`Slottable\`. Expected \`Slottable\` to receive a single React element child.`;
+};
+var use = import_react[" use ".trim().toString()];
+var Primitive = [
+	"a",
+	"button",
+	"div",
+	"form",
+	"h2",
+	"h3",
+	"img",
+	"input",
+	"label",
+	"li",
+	"nav",
+	"ol",
+	"p",
+	"select",
+	"span",
+	"svg",
+	"ul"
+].reduce((primitive, node) => {
+	const Slot = /* @__PURE__ */ createSlot(`Primitive.${node}`);
+	const Node = import_react.forwardRef((props, forwardedRef) => {
+		const { asChild, ...primitiveProps } = props;
+		const Comp = asChild ? Slot : node;
+		if (typeof window !== "undefined") window[Symbol.for("radix-ui")] = true;
+		return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Comp, {
+			...primitiveProps,
+			ref: forwardedRef
+		});
+	});
+	Node.displayName = `Primitive.${node}`;
+	return {
+		...primitive,
+		[node]: Node
+	};
+}, {});
+function dispatchDiscreteCustomEvent(target, event) {
+	if (target) import_react_dom.flushSync(() => target.dispatchEvent(event));
+}
+function useCallbackRef$1(callback) {
+	const callbackRef = import_react.useRef(callback);
+	import_react.useEffect(() => {
+		callbackRef.current = callback;
+	});
+	return import_react.useMemo(() => ((...args) => callbackRef.current?.(...args)), []);
+}
+var DISMISSABLE_LAYER_NAME = "DismissableLayer";
+var CONTEXT_UPDATE = "dismissableLayer.update";
+var POINTER_DOWN_OUTSIDE = "dismissableLayer.pointerDownOutside";
+var FOCUS_OUTSIDE = "dismissableLayer.focusOutside";
+var originalBodyPointerEvents;
+var DismissableLayerContext = import_react.createContext({
+	layers: /* @__PURE__ */ new Set(),
+	layersWithOutsidePointerEventsDisabled: /* @__PURE__ */ new Set(),
+	branches: /* @__PURE__ */ new Set(),
+	dismissableSurfaces: /* @__PURE__ */ new Set()
+});
+var DismissableLayer = import_react.forwardRef((props, forwardedRef) => {
+	const { disableOutsidePointerEvents = false, deferPointerDownOutside = false, onEscapeKeyDown, onPointerDownOutside, onFocusOutside, onInteractOutside, onDismiss, ...layerProps } = props;
+	const context = import_react.useContext(DismissableLayerContext);
+	const [node, setNode] = import_react.useState(null);
+	const ownerDocument = node?.ownerDocument ?? globalThis?.document;
+	const [, force] = import_react.useState({});
+	const composedRefs = useComposedRefs(forwardedRef, setNode);
+	const layers = Array.from(context.layers);
+	const [highestLayerWithOutsidePointerEventsDisabled] = [...context.layersWithOutsidePointerEventsDisabled].slice(-1);
+	const highestLayerWithOutsidePointerEventsDisabledIndex = highestLayerWithOutsidePointerEventsDisabled ? layers.indexOf(highestLayerWithOutsidePointerEventsDisabled) : -1;
+	const index = node ? layers.indexOf(node) : -1;
+	const isBodyPointerEventsDisabled = context.layersWithOutsidePointerEventsDisabled.size > 0;
+	const isPointerEventsEnabled = index >= highestLayerWithOutsidePointerEventsDisabledIndex;
+	const isDeferredPointerDownOutsideRef = import_react.useRef(false);
+	const pointerDownOutside = usePointerDownOutside((event) => {
+		onPointerDownOutside?.(event);
+		onInteractOutside?.(event);
+		if (!event.defaultPrevented) onDismiss?.();
+	}, {
+		ownerDocument,
+		deferPointerDownOutside,
+		isDeferredPointerDownOutsideRef,
+		dismissableSurfaces: context.dismissableSurfaces,
+		shouldHandlePointerDownOutside: import_react.useCallback((target) => {
+			if (!(target instanceof Node)) return false;
+			const isPointerDownOnBranch = [...context.branches].some((branch) => branch.contains(target));
+			return isPointerEventsEnabled && !isPointerDownOnBranch;
+		}, [context.branches, isPointerEventsEnabled])
+	});
+	const focusOutside = useFocusOutside((event) => {
+		if (deferPointerDownOutside && isDeferredPointerDownOutsideRef.current) return;
+		const target = event.target;
+		if ([...context.branches].some((branch) => branch.contains(target))) return;
+		onFocusOutside?.(event);
+		onInteractOutside?.(event);
+		if (!event.defaultPrevented) onDismiss?.();
+	}, ownerDocument);
+	const isHighestLayer = node ? index === layers.length - 1 : false;
+	const handleKeyDown = useCallbackRef$1((event) => {
+		if (event.key !== "Escape") return;
+		onEscapeKeyDown?.(event);
+		if (!event.defaultPrevented && onDismiss) {
+			event.preventDefault();
+			onDismiss();
+		}
+	});
+	import_react.useEffect(() => {
+		if (!isHighestLayer) return;
+		ownerDocument.addEventListener("keydown", handleKeyDown, { capture: true });
+		return () => ownerDocument.removeEventListener("keydown", handleKeyDown, { capture: true });
+	}, [
+		ownerDocument,
+		isHighestLayer,
+		handleKeyDown
+	]);
+	import_react.useEffect(() => {
+		if (!node) return;
+		if (disableOutsidePointerEvents) {
+			if (context.layersWithOutsidePointerEventsDisabled.size === 0) {
+				originalBodyPointerEvents = ownerDocument.body.style.pointerEvents;
+				ownerDocument.body.style.pointerEvents = "none";
+			}
+			context.layersWithOutsidePointerEventsDisabled.add(node);
+		}
+		context.layers.add(node);
+		dispatchUpdate();
+		return () => {
+			if (disableOutsidePointerEvents) {
+				context.layersWithOutsidePointerEventsDisabled.delete(node);
+				if (context.layersWithOutsidePointerEventsDisabled.size === 0) ownerDocument.body.style.pointerEvents = originalBodyPointerEvents;
+			}
+		};
+	}, [
+		node,
+		ownerDocument,
+		disableOutsidePointerEvents,
+		context
+	]);
+	import_react.useEffect(() => {
+		return () => {
+			if (!node) return;
+			context.layers.delete(node);
+			context.layersWithOutsidePointerEventsDisabled.delete(node);
+			dispatchUpdate();
+		};
+	}, [node, context]);
+	import_react.useEffect(() => {
+		const handleUpdate = () => force({});
+		document.addEventListener(CONTEXT_UPDATE, handleUpdate);
+		return () => document.removeEventListener(CONTEXT_UPDATE, handleUpdate);
+	}, []);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive.div, {
+		...layerProps,
+		ref: composedRefs,
+		style: {
+			pointerEvents: isBodyPointerEventsDisabled ? isPointerEventsEnabled ? "auto" : "none" : void 0,
+			...props.style
+		},
+		onFocusCapture: composeEventHandlers(props.onFocusCapture, focusOutside.onFocusCapture),
+		onBlurCapture: composeEventHandlers(props.onBlurCapture, focusOutside.onBlurCapture),
+		onPointerDownCapture: composeEventHandlers(props.onPointerDownCapture, pointerDownOutside.onPointerDownCapture)
+	});
+});
+DismissableLayer.displayName = DISMISSABLE_LAYER_NAME;
+var BRANCH_NAME = "DismissableLayerBranch";
+var DismissableLayerBranch = import_react.forwardRef((props, forwardedRef) => {
+	const context = import_react.useContext(DismissableLayerContext);
+	const ref = import_react.useRef(null);
+	const composedRefs = useComposedRefs(forwardedRef, ref);
+	import_react.useEffect(() => {
+		const node = ref.current;
+		if (node) {
+			context.branches.add(node);
+			return () => {
+				context.branches.delete(node);
+			};
+		}
+	}, [context.branches]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive.div, {
+		...props,
+		ref: composedRefs
+	});
+});
+DismissableLayerBranch.displayName = BRANCH_NAME;
+function useDismissableLayerSurface() {
+	const context = import_react.useContext(DismissableLayerContext);
+	const [node, setNode] = import_react.useState(null);
+	import_react.useEffect(() => {
+		if (!node) return;
+		context.dismissableSurfaces.add(node);
+		return () => {
+			context.dismissableSurfaces.delete(node);
+		};
+	}, [node, context.dismissableSurfaces]);
+	return setNode;
+}
+var IS_TRUE = () => true;
+function usePointerDownOutside(onPointerDownOutside, args) {
+	const { ownerDocument = globalThis?.document, deferPointerDownOutside = false, isDeferredPointerDownOutsideRef, dismissableSurfaces, shouldHandlePointerDownOutside = IS_TRUE } = args;
+	const handlePointerDownOutside = useCallbackRef$1(onPointerDownOutside);
+	const isPointerInsideReactTreeRef = import_react.useRef(false);
+	const isPointerDownOutsideRef = import_react.useRef(false);
+	const interceptedOutsideInteractionEventsRef = import_react.useRef(/* @__PURE__ */ new Map());
+	const handleClickRef = import_react.useRef(() => {});
+	import_react.useEffect(() => {
+		function resetOutsideInteraction() {
+			isPointerDownOutsideRef.current = false;
+			isDeferredPointerDownOutsideRef.current = false;
+			interceptedOutsideInteractionEventsRef.current.clear();
+		}
+		function isOutsideInteractionIntercepted() {
+			return Array.from(interceptedOutsideInteractionEventsRef.current.values()).some(Boolean);
+		}
+		function handleInteractionCapture(event) {
+			if (!isPointerDownOutsideRef.current) return;
+			const target = event.target;
+			if (!(target instanceof Node && [...dismissableSurfaces].some((surface) => surface.contains(target)))) interceptedOutsideInteractionEventsRef.current.set(event.type, true);
+			if (event.type === "click") window.setTimeout(() => {
+				if (isPointerDownOutsideRef.current) handleClickRef.current();
+			}, 0);
+		}
+		function handleInteractionBubble(event) {
+			if (isPointerDownOutsideRef.current) interceptedOutsideInteractionEventsRef.current.set(event.type, false);
+		}
+		const handlePointerDown = (event) => {
+			if (event.target && !isPointerInsideReactTreeRef.current) {
+				let handleAndDispatchPointerDownOutsideEvent2 = function() {
+					ownerDocument.removeEventListener("click", handleClickRef.current);
+					const wasOutsideInteractionIntercepted = isOutsideInteractionIntercepted();
+					resetOutsideInteraction();
+					if (!wasOutsideInteractionIntercepted) handleAndDispatchCustomEvent(POINTER_DOWN_OUTSIDE, handlePointerDownOutside, eventDetail, { discrete: true });
+				};
+				if (!shouldHandlePointerDownOutside(event.target)) {
+					ownerDocument.removeEventListener("click", handleClickRef.current);
+					resetOutsideInteraction();
+					isPointerInsideReactTreeRef.current = false;
+					return;
+				}
+				const eventDetail = { originalEvent: event };
+				isPointerDownOutsideRef.current = true;
+				isDeferredPointerDownOutsideRef.current = deferPointerDownOutside && event.button === 0;
+				interceptedOutsideInteractionEventsRef.current.clear();
+				if (!deferPointerDownOutside || event.button !== 0) handleAndDispatchPointerDownOutsideEvent2();
+				else {
+					ownerDocument.removeEventListener("click", handleClickRef.current);
+					handleClickRef.current = handleAndDispatchPointerDownOutsideEvent2;
+					ownerDocument.addEventListener("click", handleClickRef.current, { once: true });
+				}
+			} else {
+				ownerDocument.removeEventListener("click", handleClickRef.current);
+				resetOutsideInteraction();
+			}
+			isPointerInsideReactTreeRef.current = false;
+		};
+		const outsideInteractionEvents = [
+			"pointerup",
+			"mousedown",
+			"mouseup",
+			"touchstart",
+			"touchend",
+			"click"
+		];
+		for (const eventName of outsideInteractionEvents) {
+			ownerDocument.addEventListener(eventName, handleInteractionCapture, true);
+			ownerDocument.addEventListener(eventName, handleInteractionBubble);
+		}
+		const timerId = window.setTimeout(() => {
+			ownerDocument.addEventListener("pointerdown", handlePointerDown);
+		}, 0);
+		return () => {
+			window.clearTimeout(timerId);
+			ownerDocument.removeEventListener("pointerdown", handlePointerDown);
+			ownerDocument.removeEventListener("click", handleClickRef.current);
+			for (const eventName of outsideInteractionEvents) {
+				ownerDocument.removeEventListener(eventName, handleInteractionCapture, true);
+				ownerDocument.removeEventListener(eventName, handleInteractionBubble);
+			}
+		};
+	}, [
+		ownerDocument,
+		handlePointerDownOutside,
+		deferPointerDownOutside,
+		isDeferredPointerDownOutsideRef,
+		dismissableSurfaces,
+		shouldHandlePointerDownOutside
+	]);
+	return { onPointerDownCapture: () => isPointerInsideReactTreeRef.current = true };
+}
+function useFocusOutside(onFocusOutside, ownerDocument = globalThis?.document) {
+	const handleFocusOutside = useCallbackRef$1(onFocusOutside);
+	const isFocusInsideReactTreeRef = import_react.useRef(false);
+	import_react.useEffect(() => {
+		const handleFocus = (event) => {
+			if (event.target && !isFocusInsideReactTreeRef.current) handleAndDispatchCustomEvent(FOCUS_OUTSIDE, handleFocusOutside, { originalEvent: event }, { discrete: false });
+		};
+		ownerDocument.addEventListener("focusin", handleFocus);
+		return () => ownerDocument.removeEventListener("focusin", handleFocus);
+	}, [ownerDocument, handleFocusOutside]);
+	return {
+		onFocusCapture: () => isFocusInsideReactTreeRef.current = true,
+		onBlurCapture: () => isFocusInsideReactTreeRef.current = false
+	};
+}
+function dispatchUpdate() {
+	const event = new CustomEvent(CONTEXT_UPDATE);
+	document.dispatchEvent(event);
+}
+function handleAndDispatchCustomEvent(name, handler, detail, { discrete }) {
+	const target = detail.originalEvent.target;
+	const event = new CustomEvent(name, {
+		bubbles: false,
+		cancelable: true,
+		detail
+	});
+	if (handler) target.addEventListener(name, handler, { once: true });
+	if (discrete) dispatchDiscreteCustomEvent(target, event);
+	else target.dispatchEvent(event);
+}
+var AUTOFOCUS_ON_MOUNT = "focusScope.autoFocusOnMount";
+var AUTOFOCUS_ON_UNMOUNT = "focusScope.autoFocusOnUnmount";
+var EVENT_OPTIONS = {
+	bubbles: false,
+	cancelable: true
+};
+var FOCUS_SCOPE_NAME = "FocusScope";
+var FocusScope = import_react.forwardRef((props, forwardedRef) => {
+	const { loop = false, trapped = false, onMountAutoFocus: onMountAutoFocusProp, onUnmountAutoFocus: onUnmountAutoFocusProp, ...scopeProps } = props;
+	const [container, setContainer] = import_react.useState(null);
+	const onMountAutoFocus = useCallbackRef$1(onMountAutoFocusProp);
+	const onUnmountAutoFocus = useCallbackRef$1(onUnmountAutoFocusProp);
+	const lastFocusedElementRef = import_react.useRef(null);
+	const composedRefs = useComposedRefs(forwardedRef, setContainer);
+	const focusScope = import_react.useRef({
+		paused: false,
+		pause() {
+			this.paused = true;
+		},
+		resume() {
+			this.paused = false;
+		}
+	}).current;
+	import_react.useEffect(() => {
+		if (trapped) {
+			let handleFocusIn2 = function(event) {
+				if (focusScope.paused || !container) return;
+				const target = event.target;
+				if (container.contains(target)) lastFocusedElementRef.current = target;
+				else focus(lastFocusedElementRef.current, { select: true });
+			}, handleFocusOut2 = function(event) {
+				if (focusScope.paused || !container) return;
+				const relatedTarget = event.relatedTarget;
+				if (relatedTarget === null) return;
+				if (!container.contains(relatedTarget)) focus(lastFocusedElementRef.current, { select: true });
+			}, handleMutations2 = function(mutations) {
+				if (document.activeElement !== document.body) return;
+				for (const mutation of mutations) if (mutation.removedNodes.length > 0) focus(container);
+			};
+			document.addEventListener("focusin", handleFocusIn2);
+			document.addEventListener("focusout", handleFocusOut2);
+			const mutationObserver = new MutationObserver(handleMutations2);
+			if (container) mutationObserver.observe(container, {
+				childList: true,
+				subtree: true
+			});
+			return () => {
+				document.removeEventListener("focusin", handleFocusIn2);
+				document.removeEventListener("focusout", handleFocusOut2);
+				mutationObserver.disconnect();
+			};
+		}
+	}, [
+		trapped,
+		container,
+		focusScope.paused
+	]);
+	import_react.useEffect(() => {
+		if (container) {
+			focusScopesStack.add(focusScope);
+			const previouslyFocusedElement = document.activeElement;
+			if (!container.contains(previouslyFocusedElement)) {
+				const mountEvent = new CustomEvent(AUTOFOCUS_ON_MOUNT, EVENT_OPTIONS);
+				container.addEventListener(AUTOFOCUS_ON_MOUNT, onMountAutoFocus);
+				container.dispatchEvent(mountEvent);
+				if (!mountEvent.defaultPrevented) {
+					focusFirst(removeLinks(getTabbableCandidates(container)), { select: true });
+					if (document.activeElement === previouslyFocusedElement) focus(container);
+				}
+			}
+			return () => {
+				container.removeEventListener(AUTOFOCUS_ON_MOUNT, onMountAutoFocus);
+				setTimeout(() => {
+					const unmountEvent = new CustomEvent(AUTOFOCUS_ON_UNMOUNT, EVENT_OPTIONS);
+					container.addEventListener(AUTOFOCUS_ON_UNMOUNT, onUnmountAutoFocus);
+					container.dispatchEvent(unmountEvent);
+					if (!unmountEvent.defaultPrevented) focus(previouslyFocusedElement ?? document.body, { select: true });
+					container.removeEventListener(AUTOFOCUS_ON_UNMOUNT, onUnmountAutoFocus);
+					focusScopesStack.remove(focusScope);
+				}, 0);
+			};
+		}
+	}, [
+		container,
+		onMountAutoFocus,
+		onUnmountAutoFocus,
+		focusScope
+	]);
+	const handleKeyDown = import_react.useCallback((event) => {
+		if (!loop && !trapped) return;
+		if (focusScope.paused) return;
+		const isTabKey = event.key === "Tab" && !event.altKey && !event.ctrlKey && !event.metaKey;
+		const focusedElement = document.activeElement;
+		if (isTabKey && focusedElement) {
+			const container2 = event.currentTarget;
+			const [first, last] = getTabbableEdges(container2);
+			if (!(first && last)) {
+				if (focusedElement === container2) event.preventDefault();
+			} else if (!event.shiftKey && focusedElement === last) {
+				event.preventDefault();
+				if (loop) focus(first, { select: true });
+			} else if (event.shiftKey && focusedElement === first) {
+				event.preventDefault();
+				if (loop) focus(last, { select: true });
+			}
+		}
+	}, [
+		loop,
+		trapped,
+		focusScope.paused
+	]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive.div, {
+		tabIndex: -1,
+		...scopeProps,
+		ref: composedRefs,
+		onKeyDown: handleKeyDown
+	});
+});
+FocusScope.displayName = FOCUS_SCOPE_NAME;
+function focusFirst(candidates, { select = false } = {}) {
+	const previouslyFocusedElement = document.activeElement;
+	for (const candidate of candidates) {
+		focus(candidate, { select });
+		if (document.activeElement !== previouslyFocusedElement) return;
+	}
+}
+function getTabbableEdges(container) {
+	const candidates = getTabbableCandidates(container);
+	return [findVisible(candidates, container), findVisible(candidates.reverse(), container)];
+}
+function getTabbableCandidates(container) {
+	const nodes = [];
+	const walker = document.createTreeWalker(container, NodeFilter.SHOW_ELEMENT, { acceptNode: (node) => {
+		const isHiddenInput = node.tagName === "INPUT" && node.type === "hidden";
+		if (node.disabled || node.hidden || isHiddenInput) return NodeFilter.FILTER_SKIP;
+		return node.tabIndex >= 0 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+	} });
+	while (walker.nextNode()) nodes.push(walker.currentNode);
+	return nodes;
+}
+function findVisible(elements, container) {
+	const canUseCheckVisibility = typeof container.checkVisibility === "function" && container.checkVisibility({ checkVisibilityCSS: true });
+	for (const element of elements) if (!(canUseCheckVisibility ? !element.checkVisibility({ checkVisibilityCSS: true }) : isHidden(element, { upTo: container }))) return element;
+}
+function isHidden(node, { upTo }) {
+	if (getComputedStyle(node).visibility === "hidden") return true;
+	while (node) {
+		if (upTo !== void 0 && node === upTo) return false;
+		if (getComputedStyle(node).display === "none") return true;
+		node = node.parentElement;
+	}
+	return false;
+}
+function isSelectableInput(element) {
+	return element instanceof HTMLInputElement && "select" in element;
+}
+function focus(element, { select = false } = {}) {
+	if (element && element.focus) {
+		const previouslyFocusedElement = document.activeElement;
+		element.focus({ preventScroll: true });
+		if (element !== previouslyFocusedElement && isSelectableInput(element) && select) element.select();
+	}
+}
+var focusScopesStack = createFocusScopesStack();
+function createFocusScopesStack() {
+	let stack = [];
+	return {
+		add(focusScope) {
+			const activeFocusScope = stack[0];
+			if (focusScope !== activeFocusScope) activeFocusScope?.pause();
+			stack = arrayRemove(stack, focusScope);
+			stack.unshift(focusScope);
+		},
+		remove(focusScope) {
+			stack = arrayRemove(stack, focusScope);
+			stack[0]?.resume();
+		}
+	};
+}
+function arrayRemove(array, item) {
+	const updatedArray = [...array];
+	const index = updatedArray.indexOf(item);
+	if (index !== -1) updatedArray.splice(index, 1);
+	return updatedArray;
+}
+function removeLinks(items) {
+	return items.filter((item) => item.tagName !== "A");
+}
+var PORTAL_NAME$1 = "Portal";
+var Portal = import_react.forwardRef((props, forwardedRef) => {
+	const { container: containerProp, ...portalProps } = props;
+	const [mounted, setMounted] = import_react.useState(false);
+	useLayoutEffect2(() => setMounted(true), []);
+	const container = containerProp || mounted && globalThis?.document?.body;
+	return container ? import_react_dom.createPortal(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive.div, {
+		...portalProps,
+		ref: forwardedRef
+	}), container) : null;
+});
+Portal.displayName = PORTAL_NAME$1;
+function useStateMachine(initialState, machine) {
+	return import_react.useReducer((state, event) => {
+		return machine[state][event] ?? state;
+	}, initialState);
+}
+var Presence = (props) => {
+	const { present, children } = props;
+	const presence = usePresence(present);
+	const child = typeof children === "function" ? children({ present: presence.isPresent }) : import_react.Children.only(children);
+	const ref = useStableComposedRefs(presence.ref, getElementRef(child));
+	return typeof children === "function" || presence.isPresent ? import_react.cloneElement(child, { ref }) : null;
+};
+Presence.displayName = "Presence";
+function usePresence(present) {
+	const [node, setNode] = import_react.useState();
+	const stylesRef = import_react.useRef(null);
+	const prevPresentRef = import_react.useRef(present);
+	const prevAnimationNameRef = import_react.useRef("none");
+	const mountAnimationNameRef = import_react.useRef(void 0);
+	const [state, send] = useStateMachine(present ? "mounted" : "unmounted", {
+		mounted: {
+			UNMOUNT: "unmounted",
+			ANIMATION_OUT: "unmountSuspended"
+		},
+		unmountSuspended: {
+			MOUNT: "mounted",
+			ANIMATION_END: "unmounted"
+		},
+		unmounted: { MOUNT: "mounted" }
+	});
+	import_react.useEffect(() => {
+		if (state === "mounted") {
+			prevAnimationNameRef.current = mountAnimationNameRef.current ?? getAnimationName(stylesRef.current);
+			mountAnimationNameRef.current = void 0;
+		} else prevAnimationNameRef.current = "none";
+	}, [state]);
+	useLayoutEffect2(() => {
+		const styles = stylesRef.current;
+		const wasPresent = prevPresentRef.current;
+		if (wasPresent !== present) {
+			const prevAnimationName = prevAnimationNameRef.current;
+			const currentAnimationName = getAnimationName(styles);
+			if (present) {
+				mountAnimationNameRef.current = currentAnimationName;
+				send("MOUNT");
+			} else if (currentAnimationName === "none" || styles?.display === "none") send("UNMOUNT");
+			else if (wasPresent && prevAnimationName !== currentAnimationName) send("ANIMATION_OUT");
+			else send("UNMOUNT");
+			prevPresentRef.current = present;
+		}
+	}, [present, send]);
+	useLayoutEffect2(() => {
+		if (node) {
+			let timeoutId;
+			const ownerWindow = node.ownerDocument.defaultView ?? window;
+			const handleAnimationEnd = (event) => {
+				const isCurrentAnimation = getAnimationName(stylesRef.current).includes(CSS.escape(event.animationName));
+				if (event.target === node && isCurrentAnimation) {
+					send("ANIMATION_END");
+					if (!prevPresentRef.current) {
+						const currentFillMode = node.style.animationFillMode;
+						node.style.animationFillMode = "forwards";
+						timeoutId = ownerWindow.setTimeout(() => {
+							if (node.style.animationFillMode === "forwards") node.style.animationFillMode = currentFillMode;
+						});
+					}
+				}
+			};
+			const handleAnimationStart = (event) => {
+				if (event.target === node) prevAnimationNameRef.current = getAnimationName(stylesRef.current);
+			};
+			node.addEventListener("animationstart", handleAnimationStart);
+			node.addEventListener("animationcancel", handleAnimationEnd);
+			node.addEventListener("animationend", handleAnimationEnd);
+			return () => {
+				ownerWindow.clearTimeout(timeoutId);
+				node.removeEventListener("animationstart", handleAnimationStart);
+				node.removeEventListener("animationcancel", handleAnimationEnd);
+				node.removeEventListener("animationend", handleAnimationEnd);
+			};
+		} else send("ANIMATION_END");
+	}, [node, send]);
+	return {
+		isPresent: ["mounted", "unmountSuspended"].includes(state),
+		ref: import_react.useCallback((node2) => {
+			if (node2) {
+				const styles = getComputedStyle(node2);
+				stylesRef.current = styles;
+				mountAnimationNameRef.current = getAnimationName(styles);
+			} else stylesRef.current = null;
+			setNode(node2);
+		}, [])
+	};
+}
+function setRef(ref, value) {
+	if (typeof ref === "function") return ref(value);
+	else if (ref !== null && ref !== void 0) ref.current = value;
+}
+function useStableComposedRefs(...refs) {
+	const refsRef = import_react.useRef(refs);
+	refsRef.current = refs;
+	return import_react.useCallback((node) => {
+		const currentRefs = refsRef.current;
+		let hasCleanup = false;
+		const cleanups = currentRefs.map((ref) => {
+			const cleanup = setRef(ref, node);
+			if (!hasCleanup && typeof cleanup === "function") hasCleanup = true;
+			return cleanup;
+		});
+		if (hasCleanup) return () => {
+			for (let i = 0; i < cleanups.length; i++) {
+				const cleanup = cleanups[i];
+				if (typeof cleanup === "function") cleanup();
+				else setRef(currentRefs[i], null);
+			}
+		};
+	}, []);
+}
+function getAnimationName(styles) {
+	return styles?.animationName || "none";
+}
+function getElementRef(element) {
+	let getter = Object.getOwnPropertyDescriptor(element.props, "ref")?.get;
+	let mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
+	if (mayWarn) return element.ref;
+	getter = Object.getOwnPropertyDescriptor(element, "ref")?.get;
+	mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
+	if (mayWarn) return element.props.ref;
+	return element.props.ref || element.ref;
+}
+var count = 0;
+var guards = null;
+function useFocusGuards() {
+	import_react.useEffect(() => {
+		if (!guards) guards = {
+			start: createFocusGuard(),
+			end: createFocusGuard()
+		};
+		const { start, end } = guards;
+		if (document.body.firstElementChild !== start) document.body.insertAdjacentElement("afterbegin", start);
+		if (document.body.lastElementChild !== end) document.body.insertAdjacentElement("beforeend", end);
+		count++;
+		return () => {
+			if (count === 1) {
+				guards?.start.remove();
+				guards?.end.remove();
+				guards = null;
+			}
+			count = Math.max(0, count - 1);
+		};
+	}, []);
+}
+function createFocusGuard() {
+	const element = document.createElement("span");
+	element.setAttribute("data-radix-focus-guard", "");
+	element.tabIndex = 0;
+	element.style.outline = "none";
+	element.style.opacity = "0";
+	element.style.position = "fixed";
+	element.style.pointerEvents = "none";
+	return element;
+}
+var { __extends, __assign, __rest, __decorate, __param, __esDecorate, __runInitializers, __propKey, __setFunctionName, __metadata, __awaiter, __generator, __exportStar, __createBinding, __values, __read, __spread, __spreadArrays, __spreadArray, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet, __classPrivateFieldIn, __addDisposableResource, __disposeResources, __rewriteRelativeImportExtension } = (/* @__PURE__ */ __toESM((/* @__PURE__ */ __commonJSMin(((exports, module) => {
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+	
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+	
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	var __extends;
+	var __assign;
+	var __rest;
+	var __decorate;
+	var __param;
+	var __esDecorate;
+	var __runInitializers;
+	var __propKey;
+	var __setFunctionName;
+	var __metadata;
+	var __awaiter;
+	var __generator;
+	var __exportStar;
+	var __values;
+	var __read;
+	var __spread;
+	var __spreadArrays;
+	var __spreadArray;
+	var __await;
+	var __asyncGenerator;
+	var __asyncDelegator;
+	var __asyncValues;
+	var __makeTemplateObject;
+	var __importStar;
+	var __importDefault;
+	var __classPrivateFieldGet;
+	var __classPrivateFieldSet;
+	var __classPrivateFieldIn;
+	var __createBinding;
+	var __addDisposableResource;
+	var __disposeResources;
+	var __rewriteRelativeImportExtension;
+	(function(factory) {
+		var root = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
+		if (typeof define === "function" && define.amd) define("tslib", ["exports"], function(exports$1) {
+			factory(createExporter(root, createExporter(exports$1)));
+		});
+		else if (typeof module === "object" && typeof module.exports === "object") factory(createExporter(root, createExporter(module.exports)));
+		else factory(createExporter(root));
+		function createExporter(exports$2, previous) {
+			if (exports$2 !== root) if (typeof Object.create === "function") Object.defineProperty(exports$2, "__esModule", { value: true });
+			else exports$2.__esModule = true;
+			return function(id, v) {
+				return exports$2[id] = previous ? previous(id, v) : v;
+			};
+		}
+	})(function(exporter) {
+		var extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d, b) {
+			d.__proto__ = b;
+		} || function(d, b) {
+			for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+		};
+		__extends = function(d, b) {
+			if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+			extendStatics(d, b);
+			function __() {
+				this.constructor = d;
+			}
+			d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+		};
+		__assign = Object.assign || function(t) {
+			for (var s, i = 1, n = arguments.length; i < n; i++) {
+				s = arguments[i];
+				for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+			}
+			return t;
+		};
+		__rest = function(s, e) {
+			var t = {};
+			for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+			if (s != null && typeof Object.getOwnPropertySymbols === "function") {
+				for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+			}
+			return t;
+		};
+		__decorate = function(decorators, target, key, desc) {
+			var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+			if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+			else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+			return c > 3 && r && Object.defineProperty(target, key, r), r;
+		};
+		__param = function(paramIndex, decorator) {
+			return function(target, key) {
+				decorator(target, key, paramIndex);
+			};
+		};
+		__esDecorate = function(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
+			function accept(f) {
+				if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected");
+				return f;
+			}
+			var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
+			var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
+			var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
+			var _, done = false;
+			for (var i = decorators.length - 1; i >= 0; i--) {
+				var context = {};
+				for (var p in contextIn) context[p] = p === "access" ? {} : contextIn[p];
+				for (var p in contextIn.access) context.access[p] = contextIn.access[p];
+				context.addInitializer = function(f) {
+					if (done) throw new TypeError("Cannot add initializers after decoration has completed");
+					extraInitializers.push(accept(f || null));
+				};
+				var result = (0, decorators[i])(kind === "accessor" ? {
+					get: descriptor.get,
+					set: descriptor.set
+				} : descriptor[key], context);
+				if (kind === "accessor") {
+					if (result === void 0) continue;
+					if (result === null || typeof result !== "object") throw new TypeError("Object expected");
+					if (_ = accept(result.get)) descriptor.get = _;
+					if (_ = accept(result.set)) descriptor.set = _;
+					if (_ = accept(result.init)) initializers.unshift(_);
+				} else if (_ = accept(result)) if (kind === "field") initializers.unshift(_);
+				else descriptor[key] = _;
+			}
+			if (target) Object.defineProperty(target, contextIn.name, descriptor);
+			done = true;
+		};
+		__runInitializers = function(thisArg, initializers, value) {
+			var useValue = arguments.length > 2;
+			for (var i = 0; i < initializers.length; i++) value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
+			return useValue ? value : void 0;
+		};
+		__propKey = function(x) {
+			return typeof x === "symbol" ? x : "".concat(x);
+		};
+		__setFunctionName = function(f, name, prefix) {
+			if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
+			return Object.defineProperty(f, "name", {
+				configurable: true,
+				value: prefix ? "".concat(prefix, " ", name) : name
+			});
+		};
+		__metadata = function(metadataKey, metadataValue) {
+			if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+		};
+		__awaiter = function(thisArg, _arguments, P, generator) {
+			function adopt(value) {
+				return value instanceof P ? value : new P(function(resolve) {
+					resolve(value);
+				});
+			}
+			return new (P || (P = Promise))(function(resolve, reject) {
+				function fulfilled(value) {
+					try {
+						step(generator.next(value));
+					} catch (e) {
+						reject(e);
+					}
+				}
+				function rejected(value) {
+					try {
+						step(generator["throw"](value));
+					} catch (e) {
+						reject(e);
+					}
+				}
+				function step(result) {
+					result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+				}
+				step((generator = generator.apply(thisArg, _arguments || [])).next());
+			});
+		};
+		__generator = function(thisArg, body) {
+			var _ = {
+				label: 0,
+				sent: function() {
+					if (t[0] & 1) throw t[1];
+					return t[1];
+				},
+				trys: [],
+				ops: []
+			}, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+			return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() {
+				return this;
+			}), g;
+			function verb(n) {
+				return function(v) {
+					return step([n, v]);
+				};
+			}
+			function step(op) {
+				if (f) throw new TypeError("Generator is already executing.");
+				while (g && (g = 0, op[0] && (_ = 0)), _) try {
+					if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+					if (y = 0, t) op = [op[0] & 2, t.value];
+					switch (op[0]) {
+						case 0:
+						case 1:
+							t = op;
+							break;
+						case 4:
+							_.label++;
+							return {
+								value: op[1],
+								done: false
+							};
+						case 5:
+							_.label++;
+							y = op[1];
+							op = [0];
+							continue;
+						case 7:
+							op = _.ops.pop();
+							_.trys.pop();
+							continue;
+						default:
+							if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+								_ = 0;
+								continue;
+							}
+							if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+								_.label = op[1];
+								break;
+							}
+							if (op[0] === 6 && _.label < t[1]) {
+								_.label = t[1];
+								t = op;
+								break;
+							}
+							if (t && _.label < t[2]) {
+								_.label = t[2];
+								_.ops.push(op);
+								break;
+							}
+							if (t[2]) _.ops.pop();
+							_.trys.pop();
+							continue;
+					}
+					op = body.call(thisArg, _);
+				} catch (e) {
+					op = [6, e];
+					y = 0;
+				} finally {
+					f = t = 0;
+				}
+				if (op[0] & 5) throw op[1];
+				return {
+					value: op[0] ? op[1] : void 0,
+					done: true
+				};
+			}
+		};
+		__exportStar = function(m, o) {
+			for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
+		};
+		__createBinding = Object.create ? (function(o, m, k, k2) {
+			if (k2 === void 0) k2 = k;
+			var desc = Object.getOwnPropertyDescriptor(m, k);
+			if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) desc = {
+				enumerable: true,
+				get: function() {
+					return m[k];
+				}
+			};
+			Object.defineProperty(o, k2, desc);
+		}) : (function(o, m, k, k2) {
+			if (k2 === void 0) k2 = k;
+			o[k2] = m[k];
+		});
+		__values = function(o) {
+			var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+			if (m) return m.call(o);
+			if (o && typeof o.length === "number") return { next: function() {
+				if (o && i >= o.length) o = void 0;
+				return {
+					value: o && o[i++],
+					done: !o
+				};
+			} };
+			throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+		};
+		__read = function(o, n) {
+			var m = typeof Symbol === "function" && o[Symbol.iterator];
+			if (!m) return o;
+			var i = m.call(o), r, ar = [], e;
+			try {
+				while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+			} catch (error) {
+				e = { error };
+			} finally {
+				try {
+					if (r && !r.done && (m = i["return"])) m.call(i);
+				} finally {
+					if (e) throw e.error;
+				}
+			}
+			return ar;
+		};
+		/** @deprecated */
+		__spread = function() {
+			for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
+			return ar;
+		};
+		/** @deprecated */
+		__spreadArrays = function() {
+			for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+			for (var r = Array(s), k = 0, i = 0; i < il; i++) for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++) r[k] = a[j];
+			return r;
+		};
+		__spreadArray = function(to, from, pack) {
+			if (pack || arguments.length === 2) {
+				for (var i = 0, l = from.length, ar; i < l; i++) if (ar || !(i in from)) {
+					if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+					ar[i] = from[i];
+				}
+			}
+			return to.concat(ar || Array.prototype.slice.call(from));
+		};
+		__await = function(v) {
+			return this instanceof __await ? (this.v = v, this) : new __await(v);
+		};
+		__asyncGenerator = function(thisArg, _arguments, generator) {
+			if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+			var g = generator.apply(thisArg, _arguments || []), i, q = [];
+			return i = Object.create((typeof AsyncIterator === "function" ? AsyncIterator : Object).prototype), verb("next"), verb("throw"), verb("return", awaitReturn), i[Symbol.asyncIterator] = function() {
+				return this;
+			}, i;
+			function awaitReturn(f) {
+				return function(v) {
+					return Promise.resolve(v).then(f, reject);
+				};
+			}
+			function verb(n, f) {
+				if (g[n]) {
+					i[n] = function(v) {
+						return new Promise(function(a, b) {
+							q.push([
+								n,
+								v,
+								a,
+								b
+							]) > 1 || resume(n, v);
+						});
+					};
+					if (f) i[n] = f(i[n]);
+				}
+			}
+			function resume(n, v) {
+				try {
+					step(g[n](v));
+				} catch (e) {
+					settle(q[0][3], e);
+				}
+			}
+			function step(r) {
+				r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
+			}
+			function fulfill(value) {
+				resume("next", value);
+			}
+			function reject(value) {
+				resume("throw", value);
+			}
+			function settle(f, v) {
+				if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]);
+			}
+		};
+		__asyncDelegator = function(o) {
+			var i, p;
+			return i = {}, verb("next"), verb("throw", function(e) {
+				throw e;
+			}), verb("return"), i[Symbol.iterator] = function() {
+				return this;
+			}, i;
+			function verb(n, f) {
+				i[n] = o[n] ? function(v) {
+					return (p = !p) ? {
+						value: __await(o[n](v)),
+						done: false
+					} : f ? f(v) : v;
+				} : f;
+			}
+		};
+		__asyncValues = function(o) {
+			if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+			var m = o[Symbol.asyncIterator], i;
+			return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
+				return this;
+			}, i);
+			function verb(n) {
+				i[n] = o[n] && function(v) {
+					return new Promise(function(resolve, reject) {
+						v = o[n](v), settle(resolve, reject, v.done, v.value);
+					});
+				};
+			}
+			function settle(resolve, reject, d, v) {
+				Promise.resolve(v).then(function(v) {
+					resolve({
+						value: v,
+						done: d
+					});
+				}, reject);
+			}
+		};
+		__makeTemplateObject = function(cooked, raw) {
+			if (Object.defineProperty) Object.defineProperty(cooked, "raw", { value: raw });
+			else cooked.raw = raw;
+			return cooked;
+		};
+		var __setModuleDefault = Object.create ? (function(o, v) {
+			Object.defineProperty(o, "default", {
+				enumerable: true,
+				value: v
+			});
+		}) : function(o, v) {
+			o["default"] = v;
+		};
+		var ownKeys = function(o) {
+			ownKeys = Object.getOwnPropertyNames || function(o) {
+				var ar = [];
+				for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+				return ar;
+			};
+			return ownKeys(o);
+		};
+		__importStar = function(mod) {
+			if (mod && mod.__esModule) return mod;
+			var result = {};
+			if (mod != null) {
+				for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+			}
+			__setModuleDefault(result, mod);
+			return result;
+		};
+		__importDefault = function(mod) {
+			return mod && mod.__esModule ? mod : { "default": mod };
+		};
+		__classPrivateFieldGet = function(receiver, state, kind, f) {
+			if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+			if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+			return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+		};
+		__classPrivateFieldSet = function(receiver, state, value, kind, f) {
+			if (kind === "m") throw new TypeError("Private method is not writable");
+			if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+			if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+			return kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value), value;
+		};
+		__classPrivateFieldIn = function(state, receiver) {
+			if (receiver === null || typeof receiver !== "object" && typeof receiver !== "function") throw new TypeError("Cannot use 'in' operator on non-object");
+			return typeof state === "function" ? receiver === state : state.has(receiver);
+		};
+		__addDisposableResource = function(env, value, async) {
+			if (value !== null && value !== void 0) {
+				if (typeof value !== "object" && typeof value !== "function") throw new TypeError("Object expected.");
+				var dispose, inner;
+				if (async) {
+					if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
+					dispose = value[Symbol.asyncDispose];
+				}
+				if (dispose === void 0) {
+					if (!Symbol.dispose) throw new TypeError("Symbol.dispose is not defined.");
+					dispose = value[Symbol.dispose];
+					if (async) inner = dispose;
+				}
+				if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
+				if (inner) dispose = function() {
+					try {
+						inner.call(this);
+					} catch (e) {
+						return Promise.reject(e);
+					}
+				};
+				env.stack.push({
+					value,
+					dispose,
+					async
+				});
+			} else if (async) env.stack.push({ async: true });
+			return value;
+		};
+		var _SuppressedError = typeof SuppressedError === "function" ? SuppressedError : function(error, suppressed, message) {
+			var e = new Error(message);
+			return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+		};
+		__disposeResources = function(env) {
+			function fail(e) {
+				env.error = env.hasError ? new _SuppressedError(e, env.error, "An error was suppressed during disposal.") : e;
+				env.hasError = true;
+			}
+			var r, s = 0;
+			function next() {
+				while (r = env.stack.pop()) try {
+					if (!r.async && s === 1) return s = 0, env.stack.push(r), Promise.resolve().then(next);
+					if (r.dispose) {
+						var result = r.dispose.call(r.value);
+						if (r.async) return s |= 2, Promise.resolve(result).then(next, function(e) {
+							fail(e);
+							return next();
+						});
+					} else s |= 1;
+				} catch (e) {
+					fail(e);
+				}
+				if (s === 1) return env.hasError ? Promise.reject(env.error) : Promise.resolve();
+				if (env.hasError) throw env.error;
+			}
+			return next();
+		};
+		__rewriteRelativeImportExtension = function(path, preserveJsx) {
+			if (typeof path === "string" && /^\.\.?\//.test(path)) return path.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(m, tsx, d, ext, cm) {
+				return tsx ? preserveJsx ? ".jsx" : ".js" : d && (!ext || !cm) ? m : d + ext + "." + cm.toLowerCase() + "js";
+			});
+			return path;
+		};
+		exporter("__extends", __extends);
+		exporter("__assign", __assign);
+		exporter("__rest", __rest);
+		exporter("__decorate", __decorate);
+		exporter("__param", __param);
+		exporter("__esDecorate", __esDecorate);
+		exporter("__runInitializers", __runInitializers);
+		exporter("__propKey", __propKey);
+		exporter("__setFunctionName", __setFunctionName);
+		exporter("__metadata", __metadata);
+		exporter("__awaiter", __awaiter);
+		exporter("__generator", __generator);
+		exporter("__exportStar", __exportStar);
+		exporter("__createBinding", __createBinding);
+		exporter("__values", __values);
+		exporter("__read", __read);
+		exporter("__spread", __spread);
+		exporter("__spreadArrays", __spreadArrays);
+		exporter("__spreadArray", __spreadArray);
+		exporter("__await", __await);
+		exporter("__asyncGenerator", __asyncGenerator);
+		exporter("__asyncDelegator", __asyncDelegator);
+		exporter("__asyncValues", __asyncValues);
+		exporter("__makeTemplateObject", __makeTemplateObject);
+		exporter("__importStar", __importStar);
+		exporter("__importDefault", __importDefault);
+		exporter("__classPrivateFieldGet", __classPrivateFieldGet);
+		exporter("__classPrivateFieldSet", __classPrivateFieldSet);
+		exporter("__classPrivateFieldIn", __classPrivateFieldIn);
+		exporter("__addDisposableResource", __addDisposableResource);
+		exporter("__disposeResources", __disposeResources);
+		exporter("__rewriteRelativeImportExtension", __rewriteRelativeImportExtension);
+	});
+	0 && (module.exports = {
+		__extends,
+		__assign,
+		__rest,
+		__decorate,
+		__param,
+		__esDecorate,
+		__runInitializers,
+		__propKey,
+		__setFunctionName,
+		__metadata,
+		__awaiter,
+		__generator,
+		__exportStar,
+		__createBinding,
+		__values,
+		__read,
+		__spread,
+		__spreadArrays,
+		__spreadArray,
+		__await,
+		__asyncGenerator,
+		__asyncDelegator,
+		__asyncValues,
+		__makeTemplateObject,
+		__importStar,
+		__importDefault,
+		__classPrivateFieldGet,
+		__classPrivateFieldSet,
+		__classPrivateFieldIn,
+		__addDisposableResource,
+		__disposeResources,
+		__rewriteRelativeImportExtension
+	});
+})))())).default;
+var zeroRightClassName = "right-scroll-bar-position";
+var fullWidthClassName = "width-before-scroll-bar";
+var noScrollbarsClassName = "with-scroll-bars-hidden";
+/**
+* Name of a CSS variable containing the amount of "hidden" scrollbar
+* ! might be undefined ! use will fallback!
+*/
+var removedBarSizeVariable = "--removed-body-scroll-bar-size";
+/**
+* Assigns a value for a given ref, no matter of the ref format
+* @param {RefObject} ref - a callback function or ref object
+* @param value - a new value
+*
+* @see https://github.com/theKashey/use-callback-ref#assignref
+* @example
+* const refObject = useRef();
+* const refFn = (ref) => {....}
+*
+* assignRef(refObject, "refValue");
+* assignRef(refFn, "refValue");
+*/
+function assignRef(ref, value) {
+	if (typeof ref === "function") ref(value);
+	else if (ref) ref.current = value;
+	return ref;
+}
+/**
+* creates a MutableRef with ref change callback
+* @param initialValue - initial ref value
+* @param {Function} callback - a callback to run when value changes
+*
+* @example
+* const ref = useCallbackRef(0, (newValue, oldValue) => console.log(oldValue, '->', newValue);
+* ref.current = 1;
+* // prints 0 -> 1
+*
+* @see https://reactjs.org/docs/hooks-reference.html#useref
+* @see https://github.com/theKashey/use-callback-ref#usecallbackref---to-replace-reactuseref
+* @returns {MutableRefObject}
+*/
+function useCallbackRef(initialValue, callback) {
+	var ref = (0, import_react.useState)(function() {
+		return {
+			value: initialValue,
+			callback,
+			facade: {
+				get current() {
+					return ref.value;
+				},
+				set current(value) {
+					var last = ref.value;
+					if (last !== value) {
+						ref.value = value;
+						ref.callback(value, last);
+					}
+				}
+			}
+		};
+	})[0];
+	ref.callback = callback;
+	return ref.facade;
+}
+var useIsomorphicLayoutEffect = typeof window !== "undefined" ? import_react.useLayoutEffect : import_react.useEffect;
+var currentValues = /* @__PURE__ */ new WeakMap();
+/**
+* Merges two or more refs together providing a single interface to set their value
+* @param {RefObject|Ref} refs
+* @returns {MutableRefObject} - a new ref, which translates all changes to {refs}
+*
+* @see {@link mergeRefs} a version without buit-in memoization
+* @see https://github.com/theKashey/use-callback-ref#usemergerefs
+* @example
+* const Component = React.forwardRef((props, ref) => {
+*   const ownRef = useRef();
+*   const domRef = useMergeRefs([ref, ownRef]); // 👈 merge together
+*   return <div ref={domRef}>...</div>
+* }
+*/
+function useMergeRefs(refs, defaultValue) {
+	var callbackRef = useCallbackRef(defaultValue || null, function(newValue) {
+		return refs.forEach(function(ref) {
+			return assignRef(ref, newValue);
+		});
+	});
+	useIsomorphicLayoutEffect(function() {
+		var oldValue = currentValues.get(callbackRef);
+		if (oldValue) {
+			var prevRefs_1 = new Set(oldValue);
+			var nextRefs_1 = new Set(refs);
+			var current_1 = callbackRef.current;
+			prevRefs_1.forEach(function(ref) {
+				if (!nextRefs_1.has(ref)) assignRef(ref, null);
+			});
+			nextRefs_1.forEach(function(ref) {
+				if (!prevRefs_1.has(ref)) assignRef(ref, current_1);
+			});
+		}
+		currentValues.set(callbackRef, refs);
+	}, [refs]);
+	return callbackRef;
+}
+function ItoI(a) {
+	return a;
+}
+function innerCreateMedium(defaults, middleware) {
+	if (middleware === void 0) middleware = ItoI;
+	var buffer = [];
+	var assigned = false;
+	return {
+		read: function() {
+			if (assigned) throw new Error("Sidecar: could not `read` from an `assigned` medium. `read` could be used only with `useMedium`.");
+			if (buffer.length) return buffer[buffer.length - 1];
+			return defaults;
+		},
+		useMedium: function(data) {
+			var item = middleware(data, assigned);
+			buffer.push(item);
+			return function() {
+				buffer = buffer.filter(function(x) {
+					return x !== item;
+				});
+			};
+		},
+		assignSyncMedium: function(cb) {
+			assigned = true;
+			while (buffer.length) {
+				var cbs = buffer;
+				buffer = [];
+				cbs.forEach(cb);
+			}
+			buffer = {
+				push: function(x) {
+					return cb(x);
+				},
+				filter: function() {
+					return buffer;
+				}
+			};
+		},
+		assignMedium: function(cb) {
+			assigned = true;
+			var pendingQueue = [];
+			if (buffer.length) {
+				var cbs = buffer;
+				buffer = [];
+				cbs.forEach(cb);
+				pendingQueue = buffer;
+			}
+			var executeQueue = function() {
+				var cbs = pendingQueue;
+				pendingQueue = [];
+				cbs.forEach(cb);
+			};
+			var cycle = function() {
+				return Promise.resolve().then(executeQueue);
+			};
+			cycle();
+			buffer = {
+				push: function(x) {
+					pendingQueue.push(x);
+					cycle();
+				},
+				filter: function(filter) {
+					pendingQueue = pendingQueue.filter(filter);
+					return buffer;
+				}
+			};
+		}
+	};
+}
+function createSidecarMedium(options) {
+	if (options === void 0) options = {};
+	var medium = innerCreateMedium(null);
+	medium.options = __assign({
+		async: true,
+		ssr: false
+	}, options);
+	return medium;
+}
+var SideCar = function(_a) {
+	var sideCar = _a.sideCar, rest = __rest(_a, ["sideCar"]);
+	if (!sideCar) throw new Error("Sidecar: please provide `sideCar` property to import the right car");
+	var Target = sideCar.read();
+	if (!Target) throw new Error("Sidecar medium not found");
+	return import_react.createElement(Target, __assign({}, rest));
+};
+SideCar.isSideCarExport = true;
+function exportSidecar(medium, exported) {
+	medium.useMedium(exported);
+	return SideCar;
+}
+var effectCar = createSidecarMedium();
+var nothing = function() {};
+/**
+* Removes scrollbar from the page and contain the scroll within the Lock
+*/
+var RemoveScroll = import_react.forwardRef(function(props, parentRef) {
+	var ref = import_react.useRef(null);
+	var _a = import_react.useState({
+		onScrollCapture: nothing,
+		onWheelCapture: nothing,
+		onTouchMoveCapture: nothing
+	}), callbacks = _a[0], setCallbacks = _a[1];
+	var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noRelative = props.noRelative, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? "div" : _b, gapMode = props.gapMode, rest = __rest(props, [
+		"forwardProps",
+		"children",
+		"className",
+		"removeScrollBar",
+		"enabled",
+		"shards",
+		"sideCar",
+		"noRelative",
+		"noIsolation",
+		"inert",
+		"allowPinchZoom",
+		"as",
+		"gapMode"
+	]);
+	var SideCar = sideCar;
+	var containerRef = useMergeRefs([ref, parentRef]);
+	var containerProps = __assign(__assign({}, rest), callbacks);
+	return import_react.createElement(import_react.Fragment, null, enabled && import_react.createElement(SideCar, {
+		sideCar: effectCar,
+		removeScrollBar,
+		shards,
+		noRelative,
+		noIsolation,
+		inert,
+		setCallbacks,
+		allowPinchZoom: !!allowPinchZoom,
+		lockRef: ref,
+		gapMode
+	}), forwardProps ? import_react.cloneElement(import_react.Children.only(children), __assign(__assign({}, containerProps), { ref: containerRef })) : import_react.createElement(Container, __assign({}, containerProps, {
+		className,
+		ref: containerRef
+	}), children));
+});
+RemoveScroll.defaultProps = {
+	enabled: true,
+	removeScrollBar: true,
+	inert: false
+};
+RemoveScroll.classNames = {
+	fullWidth: fullWidthClassName,
+	zeroRight: zeroRightClassName
+};
+var currentNonce;
+var getNonce = function() {
+	if (currentNonce) return currentNonce;
+	if (typeof __webpack_nonce__ !== "undefined") return __webpack_nonce__;
+};
+function makeStyleTag() {
+	if (!document) return null;
+	var tag = document.createElement("style");
+	tag.type = "text/css";
+	var nonce = getNonce();
+	if (nonce) tag.setAttribute("nonce", nonce);
+	return tag;
+}
+function injectStyles(tag, css) {
+	if (tag.styleSheet) tag.styleSheet.cssText = css;
+	else tag.appendChild(document.createTextNode(css));
+}
+function insertStyleTag(tag) {
+	(document.head || document.getElementsByTagName("head")[0]).appendChild(tag);
+}
+var stylesheetSingleton = function() {
+	var counter = 0;
+	var stylesheet = null;
+	return {
+		add: function(style) {
+			if (counter == 0) {
+				if (stylesheet = makeStyleTag()) {
+					injectStyles(stylesheet, style);
+					insertStyleTag(stylesheet);
+				}
+			}
+			counter++;
+		},
+		remove: function() {
+			counter--;
+			if (!counter && stylesheet) {
+				stylesheet.parentNode && stylesheet.parentNode.removeChild(stylesheet);
+				stylesheet = null;
+			}
+		}
+	};
+};
+/**
+* creates a hook to control style singleton
+* @see {@link styleSingleton} for a safer component version
+* @example
+* ```tsx
+* const useStyle = styleHookSingleton();
+* ///
+* useStyle('body { overflow: hidden}');
+*/
+var styleHookSingleton = function() {
+	var sheet = stylesheetSingleton();
+	return function(styles, isDynamic) {
+		import_react.useEffect(function() {
+			sheet.add(styles);
+			return function() {
+				sheet.remove();
+			};
+		}, [styles && isDynamic]);
+	};
+};
+/**
+* create a Component to add styles on demand
+* - styles are added when first instance is mounted
+* - styles are removed when the last instance is unmounted
+* - changing styles in runtime does nothing unless dynamic is set. But with multiple components that can lead to the undefined behavior
+*/
+var styleSingleton = function() {
+	var useStyle = styleHookSingleton();
+	var Sheet = function(_a) {
+		var styles = _a.styles, dynamic = _a.dynamic;
+		useStyle(styles, dynamic);
+		return null;
+	};
+	return Sheet;
+};
+var zeroGap = {
+	left: 0,
+	top: 0,
+	right: 0,
+	gap: 0
+};
+var parse = function(x) {
+	return parseInt(x || "", 10) || 0;
+};
+var getOffset = function(gapMode) {
+	var cs = window.getComputedStyle(document.body);
+	var left = cs[gapMode === "padding" ? "paddingLeft" : "marginLeft"];
+	var top = cs[gapMode === "padding" ? "paddingTop" : "marginTop"];
+	var right = cs[gapMode === "padding" ? "paddingRight" : "marginRight"];
+	return [
+		parse(left),
+		parse(top),
+		parse(right)
+	];
+};
+var getGapWidth = function(gapMode) {
+	if (gapMode === void 0) gapMode = "margin";
+	if (typeof window === "undefined") return zeroGap;
+	var offsets = getOffset(gapMode);
+	var documentWidth = document.documentElement.clientWidth;
+	var windowWidth = window.innerWidth;
+	return {
+		left: offsets[0],
+		top: offsets[1],
+		right: offsets[2],
+		gap: Math.max(0, windowWidth - documentWidth + offsets[2] - offsets[0])
+	};
+};
+var Style = styleSingleton();
+var lockAttribute = "data-scroll-locked";
+var getStyles = function(_a, allowRelative, gapMode, important) {
+	var left = _a.left, top = _a.top, right = _a.right, gap = _a.gap;
+	if (gapMode === void 0) gapMode = "margin";
+	return "\n  .".concat(noScrollbarsClassName, " {\n   overflow: hidden ").concat(important, ";\n   padding-right: ").concat(gap, "px ").concat(important, ";\n  }\n  body[").concat(lockAttribute, "] {\n    overflow: hidden ").concat(important, ";\n    overscroll-behavior: contain;\n    ").concat([
+		allowRelative && "position: relative ".concat(important, ";"),
+		gapMode === "margin" && "\n    padding-left: ".concat(left, "px;\n    padding-top: ").concat(top, "px;\n    padding-right: ").concat(right, "px;\n    margin-left:0;\n    margin-top:0;\n    margin-right: ").concat(gap, "px ").concat(important, ";\n    "),
+		gapMode === "padding" && "padding-right: ".concat(gap, "px ").concat(important, ";")
+	].filter(Boolean).join(""), "\n  }\n  \n  .").concat(zeroRightClassName, " {\n    right: ").concat(gap, "px ").concat(important, ";\n  }\n  \n  .").concat(fullWidthClassName, " {\n    margin-right: ").concat(gap, "px ").concat(important, ";\n  }\n  \n  .").concat(zeroRightClassName, " .").concat(zeroRightClassName, " {\n    right: 0 ").concat(important, ";\n  }\n  \n  .").concat(fullWidthClassName, " .").concat(fullWidthClassName, " {\n    margin-right: 0 ").concat(important, ";\n  }\n  \n  body[").concat(lockAttribute, "] {\n    ").concat(removedBarSizeVariable, ": ").concat(gap, "px;\n  }\n");
+};
+var getCurrentUseCounter = function() {
+	var counter = parseInt(document.body.getAttribute("data-scroll-locked") || "0", 10);
+	return isFinite(counter) ? counter : 0;
+};
+var useLockAttribute = function() {
+	import_react.useEffect(function() {
+		document.body.setAttribute(lockAttribute, (getCurrentUseCounter() + 1).toString());
+		return function() {
+			var newCounter = getCurrentUseCounter() - 1;
+			if (newCounter <= 0) document.body.removeAttribute(lockAttribute);
+			else document.body.setAttribute(lockAttribute, newCounter.toString());
+		};
+	}, []);
+};
+/**
+* Removes page scrollbar and blocks page scroll when mounted
+*/
+var RemoveScrollBar = function(_a) {
+	var noRelative = _a.noRelative, noImportant = _a.noImportant, _b = _a.gapMode, gapMode = _b === void 0 ? "margin" : _b;
+	useLockAttribute();
+	var gap = import_react.useMemo(function() {
+		return getGapWidth(gapMode);
+	}, [gapMode]);
+	return import_react.createElement(Style, { styles: getStyles(gap, !noRelative, gapMode, !noImportant ? "!important" : "") });
+};
+var passiveSupported = false;
+if (typeof window !== "undefined") try {
+	var options = Object.defineProperty({}, "passive", { get: function() {
+		passiveSupported = true;
+		return true;
+	} });
+	window.addEventListener("test", options, options);
+	window.removeEventListener("test", options, options);
+} catch (err) {
+	passiveSupported = false;
+}
+var nonPassive = passiveSupported ? { passive: false } : false;
+var alwaysContainsScroll = function(node) {
+	return node.tagName === "TEXTAREA";
+};
+var elementCanBeScrolled = function(node, overflow) {
+	if (!(node instanceof Element)) return false;
+	var styles = window.getComputedStyle(node);
+	return styles[overflow] !== "hidden" && !(styles.overflowY === styles.overflowX && !alwaysContainsScroll(node) && styles[overflow] === "visible");
+};
+var elementCouldBeVScrolled = function(node) {
+	return elementCanBeScrolled(node, "overflowY");
+};
+var elementCouldBeHScrolled = function(node) {
+	return elementCanBeScrolled(node, "overflowX");
+};
+var locationCouldBeScrolled = function(axis, node) {
+	var ownerDocument = node.ownerDocument;
+	var current = node;
+	do {
+		if (typeof ShadowRoot !== "undefined" && current instanceof ShadowRoot) current = current.host;
+		if (elementCouldBeScrolled(axis, current)) {
+			var _a = getScrollVariables(axis, current);
+			if (_a[1] > _a[2]) return true;
+		}
+		current = current.parentNode;
+	} while (current && current !== ownerDocument.body);
+	return false;
+};
+var getVScrollVariables = function(_a) {
+	return [
+		_a.scrollTop,
+		_a.scrollHeight,
+		_a.clientHeight
+	];
+};
+var getHScrollVariables = function(_a) {
+	return [
+		_a.scrollLeft,
+		_a.scrollWidth,
+		_a.clientWidth
+	];
+};
+var elementCouldBeScrolled = function(axis, node) {
+	return axis === "v" ? elementCouldBeVScrolled(node) : elementCouldBeHScrolled(node);
+};
+var getScrollVariables = function(axis, node) {
+	return axis === "v" ? getVScrollVariables(node) : getHScrollVariables(node);
+};
+var getDirectionFactor = function(axis, direction) {
+	/**
+	* If the element's direction is rtl (right-to-left), then scrollLeft is 0 when the scrollbar is at its rightmost position,
+	* and then increasingly negative as you scroll towards the end of the content.
+	* @see https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft
+	*/
+	return axis === "h" && direction === "rtl" ? -1 : 1;
+};
+var handleScroll = function(axis, endTarget, event, sourceDelta, noOverscroll) {
+	var directionFactor = getDirectionFactor(axis, window.getComputedStyle(endTarget).direction);
+	var delta = directionFactor * sourceDelta;
+	var target = event.target;
+	var targetInLock = endTarget.contains(target);
+	var shouldCancelScroll = false;
+	var isDeltaPositive = delta > 0;
+	var availableScroll = 0;
+	var availableScrollTop = 0;
+	do {
+		if (!target) break;
+		var _a = getScrollVariables(axis, target), position = _a[0];
+		var elementScroll = _a[1] - _a[2] - directionFactor * position;
+		if (position || elementScroll) {
+			if (elementCouldBeScrolled(axis, target)) {
+				availableScroll += elementScroll;
+				availableScrollTop += position;
+			}
+		}
+		var parent_1 = target.parentNode;
+		target = parent_1 && parent_1.nodeType === Node.DOCUMENT_FRAGMENT_NODE ? parent_1.host : parent_1;
+	} while (!targetInLock && target !== document.body || targetInLock && (endTarget.contains(target) || endTarget === target));
+	if (isDeltaPositive && (noOverscroll && Math.abs(availableScroll) < 1 || !noOverscroll && delta > availableScroll)) shouldCancelScroll = true;
+	else if (!isDeltaPositive && (noOverscroll && Math.abs(availableScrollTop) < 1 || !noOverscroll && -delta > availableScrollTop)) shouldCancelScroll = true;
+	return shouldCancelScroll;
+};
+var getTouchXY = function(event) {
+	return "changedTouches" in event ? [event.changedTouches[0].clientX, event.changedTouches[0].clientY] : [0, 0];
+};
+var getDeltaXY = function(event) {
+	return [event.deltaX, event.deltaY];
+};
+var extractRef = function(ref) {
+	return ref && "current" in ref ? ref.current : ref;
+};
+var deltaCompare = function(x, y) {
+	return x[0] === y[0] && x[1] === y[1];
+};
+var generateStyle = function(id) {
+	return "\n  .block-interactivity-".concat(id, " {pointer-events: none;}\n  .allow-interactivity-").concat(id, " {pointer-events: all;}\n");
+};
+var idCounter = 0;
+var lockStack = [];
+function RemoveScrollSideCar(props) {
+	var shouldPreventQueue = import_react.useRef([]);
+	var touchStartRef = import_react.useRef([0, 0]);
+	var activeAxis = import_react.useRef();
+	var id = import_react.useState(idCounter++)[0];
+	var Style = import_react.useState(styleSingleton)[0];
+	var lastProps = import_react.useRef(props);
+	import_react.useEffect(function() {
+		lastProps.current = props;
+	}, [props]);
+	import_react.useEffect(function() {
+		if (props.inert) {
+			document.body.classList.add("block-interactivity-".concat(id));
+			var allow_1 = __spreadArray([props.lockRef.current], (props.shards || []).map(extractRef), true).filter(Boolean);
+			allow_1.forEach(function(el) {
+				return el.classList.add("allow-interactivity-".concat(id));
+			});
+			return function() {
+				document.body.classList.remove("block-interactivity-".concat(id));
+				allow_1.forEach(function(el) {
+					return el.classList.remove("allow-interactivity-".concat(id));
+				});
+			};
+		}
+	}, [
+		props.inert,
+		props.lockRef.current,
+		props.shards
+	]);
+	var shouldCancelEvent = import_react.useCallback(function(event, parent) {
+		if ("touches" in event && event.touches.length === 2 || event.type === "wheel" && event.ctrlKey) return !lastProps.current.allowPinchZoom;
+		var touch = getTouchXY(event);
+		var touchStart = touchStartRef.current;
+		var deltaX = "deltaX" in event ? event.deltaX : touchStart[0] - touch[0];
+		var deltaY = "deltaY" in event ? event.deltaY : touchStart[1] - touch[1];
+		var currentAxis;
+		var target = event.target;
+		var moveDirection = Math.abs(deltaX) > Math.abs(deltaY) ? "h" : "v";
+		if ("touches" in event && moveDirection === "h" && target.type === "range") return false;
+		var selection = window.getSelection();
+		var anchorNode = selection && selection.anchorNode;
+		if (anchorNode ? anchorNode === target || anchorNode.contains(target) : false) return false;
+		var canBeScrolledInMainDirection = locationCouldBeScrolled(moveDirection, target);
+		if (!canBeScrolledInMainDirection) return true;
+		if (canBeScrolledInMainDirection) currentAxis = moveDirection;
+		else {
+			currentAxis = moveDirection === "v" ? "h" : "v";
+			canBeScrolledInMainDirection = locationCouldBeScrolled(moveDirection, target);
+		}
+		if (!canBeScrolledInMainDirection) return false;
+		if (!activeAxis.current && "changedTouches" in event && (deltaX || deltaY)) activeAxis.current = currentAxis;
+		if (!currentAxis) return true;
+		var cancelingAxis = activeAxis.current || currentAxis;
+		return handleScroll(cancelingAxis, parent, event, cancelingAxis === "h" ? deltaX : deltaY, true);
+	}, []);
+	var shouldPrevent = import_react.useCallback(function(_event) {
+		var event = _event;
+		if (!lockStack.length || lockStack[lockStack.length - 1] !== Style) return;
+		var delta = "deltaY" in event ? getDeltaXY(event) : getTouchXY(event);
+		var sourceEvent = shouldPreventQueue.current.filter(function(e) {
+			return e.name === event.type && (e.target === event.target || event.target === e.shadowParent) && deltaCompare(e.delta, delta);
+		})[0];
+		if (sourceEvent && sourceEvent.should) {
+			if (event.cancelable) event.preventDefault();
+			return;
+		}
+		if (!sourceEvent) {
+			var shardNodes = (lastProps.current.shards || []).map(extractRef).filter(Boolean).filter(function(node) {
+				return node.contains(event.target);
+			});
+			if (shardNodes.length > 0 ? shouldCancelEvent(event, shardNodes[0]) : !lastProps.current.noIsolation) {
+				if (event.cancelable) event.preventDefault();
+			}
+		}
+	}, []);
+	var shouldCancel = import_react.useCallback(function(name, delta, target, should) {
+		var event = {
+			name,
+			delta,
+			target,
+			should,
+			shadowParent: getOutermostShadowParent(target)
+		};
+		shouldPreventQueue.current.push(event);
+		setTimeout(function() {
+			shouldPreventQueue.current = shouldPreventQueue.current.filter(function(e) {
+				return e !== event;
+			});
+		}, 1);
+	}, []);
+	var scrollTouchStart = import_react.useCallback(function(event) {
+		touchStartRef.current = getTouchXY(event);
+		activeAxis.current = void 0;
+	}, []);
+	var scrollWheel = import_react.useCallback(function(event) {
+		shouldCancel(event.type, getDeltaXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
+	}, []);
+	var scrollTouchMove = import_react.useCallback(function(event) {
+		shouldCancel(event.type, getTouchXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
+	}, []);
+	import_react.useEffect(function() {
+		lockStack.push(Style);
+		props.setCallbacks({
+			onScrollCapture: scrollWheel,
+			onWheelCapture: scrollWheel,
+			onTouchMoveCapture: scrollTouchMove
+		});
+		document.addEventListener("wheel", shouldPrevent, nonPassive);
+		document.addEventListener("touchmove", shouldPrevent, nonPassive);
+		document.addEventListener("touchstart", scrollTouchStart, nonPassive);
+		return function() {
+			lockStack = lockStack.filter(function(inst) {
+				return inst !== Style;
+			});
+			document.removeEventListener("wheel", shouldPrevent, nonPassive);
+			document.removeEventListener("touchmove", shouldPrevent, nonPassive);
+			document.removeEventListener("touchstart", scrollTouchStart, nonPassive);
+		};
+	}, []);
+	var removeScrollBar = props.removeScrollBar, inert = props.inert;
+	return import_react.createElement(import_react.Fragment, null, inert ? import_react.createElement(Style, { styles: generateStyle(id) }) : null, removeScrollBar ? import_react.createElement(RemoveScrollBar, {
+		noRelative: props.noRelative,
+		gapMode: props.gapMode
+	}) : null);
+}
+function getOutermostShadowParent(node) {
+	var shadowParent = null;
+	while (node !== null) {
+		if (node instanceof ShadowRoot) {
+			shadowParent = node.host;
+			node = node.host;
+		}
+		node = node.parentNode;
+	}
+	return shadowParent;
+}
+var sidecar_default = exportSidecar(effectCar, RemoveScrollSideCar);
+var ReactRemoveScroll = import_react.forwardRef(function(props, ref) {
+	return import_react.createElement(RemoveScroll, __assign({}, props, {
+		ref,
+		sideCar: sidecar_default
+	}));
+});
+ReactRemoveScroll.classNames = RemoveScroll.classNames;
+var getDefaultParent = function(originalTarget) {
+	if (typeof document === "undefined") return null;
+	return (Array.isArray(originalTarget) ? originalTarget[0] : originalTarget).ownerDocument.body;
+};
+var counterMap = /* @__PURE__ */ new WeakMap();
+var uncontrolledNodes = /* @__PURE__ */ new WeakMap();
+var markerMap = {};
+var lockCount = 0;
+var unwrapHost = function(node) {
+	return node && (node.host || unwrapHost(node.parentNode));
+};
+var correctTargets = function(parent, targets) {
+	return targets.map(function(target) {
+		if (parent.contains(target)) return target;
+		var correctedTarget = unwrapHost(target);
+		if (correctedTarget && parent.contains(correctedTarget)) return correctedTarget;
+		console.error("aria-hidden", target, "in not contained inside", parent, ". Doing nothing");
+		return null;
+	}).filter(function(x) {
+		return Boolean(x);
+	});
+};
+/**
+* Marks everything except given node(or nodes) as aria-hidden
+* @param {Element | Element[]} originalTarget - elements to keep on the page
+* @param [parentNode] - top element, defaults to document.body
+* @param {String} [markerName] - a special attribute to mark every node
+* @param {String} [controlAttribute] - html Attribute to control
+* @return {Undo} undo command
+*/
+var applyAttributeToOthers = function(originalTarget, parentNode, markerName, controlAttribute) {
+	var targets = correctTargets(parentNode, Array.isArray(originalTarget) ? originalTarget : [originalTarget]);
+	if (!markerMap[markerName]) markerMap[markerName] = /* @__PURE__ */ new WeakMap();
+	var markerCounter = markerMap[markerName];
+	var hiddenNodes = [];
+	var elementsToKeep = /* @__PURE__ */ new Set();
+	var elementsToStop = new Set(targets);
+	var keep = function(el) {
+		if (!el || elementsToKeep.has(el)) return;
+		elementsToKeep.add(el);
+		keep(el.parentNode);
+	};
+	targets.forEach(keep);
+	var deep = function(parent) {
+		if (!parent || elementsToStop.has(parent)) return;
+		Array.prototype.forEach.call(parent.children, function(node) {
+			if (elementsToKeep.has(node)) deep(node);
+			else try {
+				var attr = node.getAttribute(controlAttribute);
+				var alreadyHidden = attr !== null && attr !== "false";
+				var counterValue = (counterMap.get(node) || 0) + 1;
+				var markerValue = (markerCounter.get(node) || 0) + 1;
+				counterMap.set(node, counterValue);
+				markerCounter.set(node, markerValue);
+				hiddenNodes.push(node);
+				if (counterValue === 1 && alreadyHidden) uncontrolledNodes.set(node, true);
+				if (markerValue === 1) node.setAttribute(markerName, "true");
+				if (!alreadyHidden) node.setAttribute(controlAttribute, "true");
+			} catch (e) {
+				console.error("aria-hidden: cannot operate on ", node, e);
+			}
+		});
+	};
+	deep(parentNode);
+	elementsToKeep.clear();
+	lockCount++;
+	return function() {
+		hiddenNodes.forEach(function(node) {
+			var counterValue = counterMap.get(node) - 1;
+			var markerValue = markerCounter.get(node) - 1;
+			counterMap.set(node, counterValue);
+			markerCounter.set(node, markerValue);
+			if (!counterValue) {
+				if (!uncontrolledNodes.has(node)) node.removeAttribute(controlAttribute);
+				uncontrolledNodes.delete(node);
+			}
+			if (!markerValue) node.removeAttribute(markerName);
+		});
+		lockCount--;
+		if (!lockCount) {
+			counterMap = /* @__PURE__ */ new WeakMap();
+			counterMap = /* @__PURE__ */ new WeakMap();
+			uncontrolledNodes = /* @__PURE__ */ new WeakMap();
+			markerMap = {};
+		}
+	};
+};
+/**
+* Marks everything except given node(or nodes) as aria-hidden
+* @param {Element | Element[]} originalTarget - elements to keep on the page
+* @param [parentNode] - top element, defaults to document.body
+* @param {String} [markerName] - a special attribute to mark every node
+* @return {Undo} undo command
+*/
+var hideOthers = function(originalTarget, parentNode, markerName) {
+	if (markerName === void 0) markerName = "data-aria-hidden";
+	var targets = Array.from(Array.isArray(originalTarget) ? originalTarget : [originalTarget]);
+	var activeParentNode = parentNode || getDefaultParent(originalTarget);
+	if (!activeParentNode) return function() {
+		return null;
+	};
+	targets.push.apply(targets, Array.from(activeParentNode.querySelectorAll("[aria-live], script")));
+	return applyAttributeToOthers(targets, activeParentNode, markerName, "aria-hidden");
+};
+var DIALOG_NAME = "Dialog";
+var [createDialogContext, createDialogScope] = createContextScope(DIALOG_NAME);
+var [DialogProvider, useDialogContext] = createDialogContext(DIALOG_NAME);
+var Dialog$1 = (props) => {
+	const { __scopeDialog, children, open: openProp, defaultOpen, onOpenChange, modal = true } = props;
+	const triggerRef = import_react.useRef(null);
+	const contentRef = import_react.useRef(null);
+	const [open, setOpen] = useControllableState({
+		prop: openProp,
+		defaultProp: defaultOpen ?? false,
+		onChange: onOpenChange,
+		caller: DIALOG_NAME
+	});
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogProvider, {
+		scope: __scopeDialog,
+		triggerRef,
+		contentRef,
+		contentId: useId(),
+		titleId: useId(),
+		descriptionId: useId(),
+		open,
+		onOpenChange: setOpen,
+		onOpenToggle: import_react.useCallback(() => setOpen((prevOpen) => !prevOpen), [setOpen]),
+		modal,
+		children
+	});
+};
+Dialog$1.displayName = DIALOG_NAME;
+var TRIGGER_NAME = "DialogTrigger";
+var DialogTrigger = import_react.forwardRef((props, forwardedRef) => {
+	const { __scopeDialog, ...triggerProps } = props;
+	const context = useDialogContext(TRIGGER_NAME, __scopeDialog);
+	const composedTriggerRef = useComposedRefs(forwardedRef, context.triggerRef);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive.button, {
+		type: "button",
+		"aria-haspopup": "dialog",
+		"aria-expanded": context.open,
+		"aria-controls": context.open ? context.contentId : void 0,
+		"data-state": getState(context.open),
+		...triggerProps,
+		ref: composedTriggerRef,
+		onClick: composeEventHandlers(props.onClick, context.onOpenToggle)
+	});
+});
+DialogTrigger.displayName = TRIGGER_NAME;
+var PORTAL_NAME = "DialogPortal";
+var [PortalProvider, usePortalContext] = createDialogContext(PORTAL_NAME, { forceMount: void 0 });
+var DialogPortal$1 = (props) => {
+	const { __scopeDialog, forceMount, children, container } = props;
+	const context = useDialogContext(PORTAL_NAME, __scopeDialog);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PortalProvider, {
+		scope: __scopeDialog,
+		forceMount,
+		children: import_react.Children.map(children, (child) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Presence, {
+			present: forceMount || context.open,
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Portal, {
+				asChild: true,
+				container,
+				children: child
+			})
+		}))
+	});
+};
+DialogPortal$1.displayName = PORTAL_NAME;
+var OVERLAY_NAME = "DialogOverlay";
+var DialogOverlay$1 = import_react.forwardRef((props, forwardedRef) => {
+	const portalContext = usePortalContext(OVERLAY_NAME, props.__scopeDialog);
+	const { forceMount = portalContext.forceMount, ...overlayProps } = props;
+	const context = useDialogContext(OVERLAY_NAME, props.__scopeDialog);
+	return context.modal ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Presence, {
+		present: forceMount || context.open,
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogOverlayImpl, {
+			...overlayProps,
+			ref: forwardedRef
+		})
+	}) : null;
+});
+DialogOverlay$1.displayName = OVERLAY_NAME;
+var Slot = /* @__PURE__ */ createSlot("DialogOverlay.RemoveScroll");
+var DialogOverlayImpl = import_react.forwardRef((props, forwardedRef) => {
+	const { __scopeDialog, ...overlayProps } = props;
+	const context = useDialogContext(OVERLAY_NAME, __scopeDialog);
+	const composedRefs = useComposedRefs(forwardedRef, useDismissableLayerSurface());
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ReactRemoveScroll, {
+		as: Slot,
+		allowPinchZoom: true,
+		shards: [context.contentRef],
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive.div, {
+			"data-state": getState(context.open),
+			...overlayProps,
+			ref: composedRefs,
+			style: {
+				pointerEvents: "auto",
+				...overlayProps.style
+			}
+		})
+	});
+});
+var CONTENT_NAME = "DialogContent";
+var DialogContent$1 = import_react.forwardRef((props, forwardedRef) => {
+	const portalContext = usePortalContext(CONTENT_NAME, props.__scopeDialog);
+	const { forceMount = portalContext.forceMount, ...contentProps } = props;
+	const context = useDialogContext(CONTENT_NAME, props.__scopeDialog);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Presence, {
+		present: forceMount || context.open,
+		children: context.modal ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogContentModal, {
+			...contentProps,
+			ref: forwardedRef
+		}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogContentNonModal, {
+			...contentProps,
+			ref: forwardedRef
+		})
+	});
+});
+DialogContent$1.displayName = CONTENT_NAME;
+var DialogContentModal = import_react.forwardRef((props, forwardedRef) => {
+	const context = useDialogContext(CONTENT_NAME, props.__scopeDialog);
+	const contentRef = import_react.useRef(null);
+	const composedRefs = useComposedRefs(forwardedRef, context.contentRef, contentRef);
+	import_react.useEffect(() => {
+		const content = contentRef.current;
+		if (content) return hideOthers(content);
+	}, []);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogContentImpl, {
+		...props,
+		ref: composedRefs,
+		trapFocus: context.open,
+		disableOutsidePointerEvents: context.open,
+		onCloseAutoFocus: composeEventHandlers(props.onCloseAutoFocus, (event) => {
+			event.preventDefault();
+			context.triggerRef.current?.focus();
+		}),
+		onPointerDownOutside: composeEventHandlers(props.onPointerDownOutside, (event) => {
+			const originalEvent = event.detail.originalEvent;
+			const ctrlLeftClick = originalEvent.button === 0 && originalEvent.ctrlKey === true;
+			if (originalEvent.button === 2 || ctrlLeftClick) event.preventDefault();
+		}),
+		onFocusOutside: composeEventHandlers(props.onFocusOutside, (event) => event.preventDefault())
+	});
+});
+var DialogContentNonModal = import_react.forwardRef((props, forwardedRef) => {
+	const context = useDialogContext(CONTENT_NAME, props.__scopeDialog);
+	const hasInteractedOutsideRef = import_react.useRef(false);
+	const hasPointerDownOutsideRef = import_react.useRef(false);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogContentImpl, {
+		...props,
+		ref: forwardedRef,
+		trapFocus: false,
+		disableOutsidePointerEvents: false,
+		onCloseAutoFocus: (event) => {
+			props.onCloseAutoFocus?.(event);
+			if (!event.defaultPrevented) {
+				if (!hasInteractedOutsideRef.current) context.triggerRef.current?.focus();
+				event.preventDefault();
+			}
+			hasInteractedOutsideRef.current = false;
+			hasPointerDownOutsideRef.current = false;
+		},
+		onInteractOutside: (event) => {
+			props.onInteractOutside?.(event);
+			if (!event.defaultPrevented) {
+				hasInteractedOutsideRef.current = true;
+				if (event.detail.originalEvent.type === "pointerdown") hasPointerDownOutsideRef.current = true;
+			}
+			const target = event.target;
+			if (context.triggerRef.current?.contains(target)) event.preventDefault();
+			if (event.detail.originalEvent.type === "focusin" && hasPointerDownOutsideRef.current) event.preventDefault();
+		}
+	});
+});
+var DialogContentImpl = import_react.forwardRef((props, forwardedRef) => {
+	const { __scopeDialog, trapFocus, onOpenAutoFocus, onCloseAutoFocus, ...contentProps } = props;
+	const context = useDialogContext(CONTENT_NAME, __scopeDialog);
+	useFocusGuards();
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FocusScope, {
+		asChild: true,
+		loop: true,
+		trapped: trapFocus,
+		onMountAutoFocus: onOpenAutoFocus,
+		onUnmountAutoFocus: onCloseAutoFocus,
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DismissableLayer, {
+			role: "dialog",
+			id: context.contentId,
+			"aria-describedby": context.descriptionId,
+			"aria-labelledby": context.titleId,
+			"data-state": getState(context.open),
+			...contentProps,
+			ref: forwardedRef,
+			deferPointerDownOutside: true,
+			onDismiss: () => context.onOpenChange(false)
+		})
+	}) });
+});
+var TITLE_NAME = "DialogTitle";
+var DialogTitle$1 = import_react.forwardRef((props, forwardedRef) => {
+	const { __scopeDialog, ...titleProps } = props;
+	const context = useDialogContext(TITLE_NAME, __scopeDialog);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive.h2, {
+		id: context.titleId,
+		...titleProps,
+		ref: forwardedRef
+	});
+});
+DialogTitle$1.displayName = TITLE_NAME;
+var DESCRIPTION_NAME = "DialogDescription";
+var DialogDescription$1 = import_react.forwardRef((props, forwardedRef) => {
+	const { __scopeDialog, ...descriptionProps } = props;
+	const context = useDialogContext(DESCRIPTION_NAME, __scopeDialog);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive.p, {
+		id: context.descriptionId,
+		...descriptionProps,
+		ref: forwardedRef
+	});
+});
+DialogDescription$1.displayName = DESCRIPTION_NAME;
+var CLOSE_NAME = "DialogClose";
+var DialogClose = import_react.forwardRef((props, forwardedRef) => {
+	const { __scopeDialog, ...closeProps } = props;
+	const context = useDialogContext(CLOSE_NAME, __scopeDialog);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive.button, {
+		type: "button",
+		...closeProps,
+		ref: forwardedRef,
+		onClick: composeEventHandlers(props.onClick, () => context.onOpenChange(false))
+	});
+});
+DialogClose.displayName = CLOSE_NAME;
+function getState(open) {
+	return open ? "open" : "closed";
+}
+function r(e) {
+	var t, f, n = "";
+	if ("string" == typeof e || "number" == typeof e) n += e;
+	else if ("object" == typeof e) if (Array.isArray(e)) {
+		var o = e.length;
+		for (t = 0; t < o; t++) e[t] && (f = r(e[t])) && (n && (n += " "), n += f);
+	} else for (f in e) e[f] && (n && (n += " "), n += f);
+	return n;
+}
+function clsx() {
+	for (var e, t, f = 0, n = "", o = arguments.length; f < o; f++) (e = arguments[f]) && (t = r(e)) && (n && (n += " "), n += t);
+	return n;
+}
+/**
+* Concatenates two arrays faster than the array spread operator.
+*/
+var concatArrays = (array1, array2) => {
+	const combinedArray = new Array(array1.length + array2.length);
+	for (let i = 0; i < array1.length; i++) combinedArray[i] = array1[i];
+	for (let i = 0; i < array2.length; i++) combinedArray[array1.length + i] = array2[i];
+	return combinedArray;
+};
+var createClassValidatorObject = (classGroupId, validator) => ({
+	classGroupId,
+	validator
+});
+var createClassPartObject = (nextPart = /* @__PURE__ */ new Map(), validators = null, classGroupId) => ({
+	nextPart,
+	validators,
+	classGroupId
+});
+var CLASS_PART_SEPARATOR = "-";
+var EMPTY_CONFLICTS = [];
+var ARBITRARY_PROPERTY_PREFIX = "arbitrary..";
+var createClassGroupUtils = (config) => {
+	const classMap = createClassMap(config);
+	const { conflictingClassGroups, conflictingClassGroupModifiers } = config;
+	const getClassGroupId = (className) => {
+		if (className.startsWith("[") && className.endsWith("]")) return getGroupIdForArbitraryProperty(className);
+		const classParts = className.split(CLASS_PART_SEPARATOR);
+		return getGroupRecursive(classParts, classParts[0] === "" && classParts.length > 1 ? 1 : 0, classMap);
+	};
+	const getConflictingClassGroupIds = (classGroupId, hasPostfixModifier) => {
+		if (hasPostfixModifier) {
+			const modifierConflicts = conflictingClassGroupModifiers[classGroupId];
+			const baseConflicts = conflictingClassGroups[classGroupId];
+			if (modifierConflicts) {
+				if (baseConflicts) return concatArrays(baseConflicts, modifierConflicts);
+				return modifierConflicts;
+			}
+			return baseConflicts || EMPTY_CONFLICTS;
+		}
+		return conflictingClassGroups[classGroupId] || EMPTY_CONFLICTS;
+	};
+	return {
+		getClassGroupId,
+		getConflictingClassGroupIds
+	};
+};
+var getGroupRecursive = (classParts, startIndex, classPartObject) => {
+	if (classParts.length - startIndex === 0) return classPartObject.classGroupId;
+	const currentClassPart = classParts[startIndex];
+	const nextClassPartObject = classPartObject.nextPart.get(currentClassPart);
+	if (nextClassPartObject) {
+		const result = getGroupRecursive(classParts, startIndex + 1, nextClassPartObject);
+		if (result) return result;
+	}
+	const validators = classPartObject.validators;
+	if (validators === null) return;
+	const classRest = startIndex === 0 ? classParts.join(CLASS_PART_SEPARATOR) : classParts.slice(startIndex).join(CLASS_PART_SEPARATOR);
+	const validatorsLength = validators.length;
+	for (let i = 0; i < validatorsLength; i++) {
+		const validatorObj = validators[i];
+		if (validatorObj.validator(classRest)) return validatorObj.classGroupId;
+	}
+};
+/**
+* Get the class group ID for an arbitrary property.
+*
+* @param className - The class name to get the group ID for. Is expected to be string starting with `[` and ending with `]`.
+*/
+var getGroupIdForArbitraryProperty = (className) => className.slice(1, -1).indexOf(":") === -1 ? void 0 : (() => {
+	const content = className.slice(1, -1);
+	const colonIndex = content.indexOf(":");
+	const property = content.slice(0, colonIndex);
+	return property ? ARBITRARY_PROPERTY_PREFIX + property : void 0;
+})();
+/**
+* Exported for testing only
+*/
+var createClassMap = (config) => {
+	const { theme, classGroups } = config;
+	return processClassGroups(classGroups, theme);
+};
+var processClassGroups = (classGroups, theme) => {
+	const classMap = createClassPartObject();
+	for (const classGroupId in classGroups) {
+		const group = classGroups[classGroupId];
+		processClassesRecursively(group, classMap, classGroupId, theme);
+	}
+	return classMap;
+};
+var processClassesRecursively = (classGroup, classPartObject, classGroupId, theme) => {
+	const len = classGroup.length;
+	for (let i = 0; i < len; i++) {
+		const classDefinition = classGroup[i];
+		processClassDefinition(classDefinition, classPartObject, classGroupId, theme);
+	}
+};
+var processClassDefinition = (classDefinition, classPartObject, classGroupId, theme) => {
+	if (typeof classDefinition === "string") {
+		processStringDefinition(classDefinition, classPartObject, classGroupId);
+		return;
+	}
+	if (typeof classDefinition === "function") {
+		processFunctionDefinition(classDefinition, classPartObject, classGroupId, theme);
+		return;
+	}
+	processObjectDefinition(classDefinition, classPartObject, classGroupId, theme);
+};
+var processStringDefinition = (classDefinition, classPartObject, classGroupId) => {
+	const classPartObjectToEdit = classDefinition === "" ? classPartObject : getPart(classPartObject, classDefinition);
+	classPartObjectToEdit.classGroupId = classGroupId;
+};
+var processFunctionDefinition = (classDefinition, classPartObject, classGroupId, theme) => {
+	if (isThemeGetter(classDefinition)) {
+		processClassesRecursively(classDefinition(theme), classPartObject, classGroupId, theme);
+		return;
+	}
+	if (classPartObject.validators === null) classPartObject.validators = [];
+	classPartObject.validators.push(createClassValidatorObject(classGroupId, classDefinition));
+};
+var processObjectDefinition = (classDefinition, classPartObject, classGroupId, theme) => {
+	const entries = Object.entries(classDefinition);
+	const len = entries.length;
+	for (let i = 0; i < len; i++) {
+		const [key, value] = entries[i];
+		processClassesRecursively(value, getPart(classPartObject, key), classGroupId, theme);
+	}
+};
+var getPart = (classPartObject, path) => {
+	let current = classPartObject;
+	const parts = path.split(CLASS_PART_SEPARATOR);
+	const len = parts.length;
+	for (let i = 0; i < len; i++) {
+		const part = parts[i];
+		let next = current.nextPart.get(part);
+		if (!next) {
+			next = createClassPartObject();
+			current.nextPart.set(part, next);
+		}
+		current = next;
+	}
+	return current;
+};
+var isThemeGetter = (func) => "isThemeGetter" in func && func.isThemeGetter === true;
+var createLruCache = (maxCacheSize) => {
+	if (maxCacheSize < 1) return {
+		get: () => void 0,
+		set: () => {}
+	};
+	let cacheSize = 0;
+	let cache = Object.create(null);
+	let previousCache = Object.create(null);
+	const update = (key, value) => {
+		cache[key] = value;
+		cacheSize++;
+		if (cacheSize > maxCacheSize) {
+			cacheSize = 0;
+			previousCache = cache;
+			cache = Object.create(null);
+		}
+	};
+	return {
+		get(key) {
+			let value = cache[key];
+			if (value !== void 0) return value;
+			if ((value = previousCache[key]) !== void 0) {
+				update(key, value);
+				return value;
+			}
+		},
+		set(key, value) {
+			if (key in cache) cache[key] = value;
+			else update(key, value);
+		}
+	};
+};
+var IMPORTANT_MODIFIER = "!";
+var MODIFIER_SEPARATOR = ":";
+var EMPTY_MODIFIERS = [];
+var createResultObject = (modifiers, hasImportantModifier, baseClassName, maybePostfixModifierPosition, isExternal) => ({
+	modifiers,
+	hasImportantModifier,
+	baseClassName,
+	maybePostfixModifierPosition,
+	isExternal
+});
+var createParseClassName = (config) => {
+	const { prefix, experimentalParseClassName } = config;
+	/**
+	* Parse class name into parts.
+	*
+	* Inspired by `splitAtTopLevelOnly` used in Tailwind CSS
+	* @see https://github.com/tailwindlabs/tailwindcss/blob/v3.2.2/src/util/splitAtTopLevelOnly.js
+	*/
+	let parseClassName = (className) => {
+		const modifiers = [];
+		let bracketDepth = 0;
+		let parenDepth = 0;
+		let modifierStart = 0;
+		let postfixModifierPosition;
+		const len = className.length;
+		for (let index = 0; index < len; index++) {
+			const currentCharacter = className[index];
+			if (bracketDepth === 0 && parenDepth === 0) {
+				if (currentCharacter === MODIFIER_SEPARATOR) {
+					modifiers.push(className.slice(modifierStart, index));
+					modifierStart = index + 1;
+					continue;
+				}
+				if (currentCharacter === "/") {
+					postfixModifierPosition = index;
+					continue;
+				}
+			}
+			if (currentCharacter === "[") bracketDepth++;
+			else if (currentCharacter === "]") bracketDepth--;
+			else if (currentCharacter === "(") parenDepth++;
+			else if (currentCharacter === ")") parenDepth--;
+		}
+		const baseClassNameWithImportantModifier = modifiers.length === 0 ? className : className.slice(modifierStart);
+		let baseClassName = baseClassNameWithImportantModifier;
+		let hasImportantModifier = false;
+		if (baseClassNameWithImportantModifier.endsWith(IMPORTANT_MODIFIER)) {
+			baseClassName = baseClassNameWithImportantModifier.slice(0, -1);
+			hasImportantModifier = true;
+		} else if (baseClassNameWithImportantModifier.startsWith(IMPORTANT_MODIFIER)) {
+			baseClassName = baseClassNameWithImportantModifier.slice(1);
+			hasImportantModifier = true;
+		}
+		const maybePostfixModifierPosition = postfixModifierPosition && postfixModifierPosition > modifierStart ? postfixModifierPosition - modifierStart : void 0;
+		return createResultObject(modifiers, hasImportantModifier, baseClassName, maybePostfixModifierPosition);
+	};
+	if (prefix) {
+		const fullPrefix = prefix + MODIFIER_SEPARATOR;
+		const parseClassNameOriginal = parseClassName;
+		parseClassName = (className) => className.startsWith(fullPrefix) ? parseClassNameOriginal(className.slice(fullPrefix.length)) : createResultObject(EMPTY_MODIFIERS, false, className, void 0, true);
+	}
+	if (experimentalParseClassName) {
+		const parseClassNameOriginal = parseClassName;
+		parseClassName = (className) => experimentalParseClassName({
+			className,
+			parseClassName: parseClassNameOriginal
+		});
+	}
+	return parseClassName;
+};
+/**
+* Sorts modifiers according to following schema:
+* - Predefined modifiers are sorted alphabetically
+* - When an arbitrary variant appears, it must be preserved which modifiers are before and after it
+*/
+var createSortModifiers = (config) => {
+	const modifierWeights = /* @__PURE__ */ new Map();
+	config.orderSensitiveModifiers.forEach((mod, index) => {
+		modifierWeights.set(mod, 1e6 + index);
+	});
+	return (modifiers) => {
+		const result = [];
+		let currentSegment = [];
+		for (let i = 0; i < modifiers.length; i++) {
+			const modifier = modifiers[i];
+			const isArbitrary = modifier[0] === "[";
+			const isOrderSensitive = modifierWeights.has(modifier);
+			if (isArbitrary || isOrderSensitive) {
+				if (currentSegment.length > 0) {
+					currentSegment.sort();
+					result.push(...currentSegment);
+					currentSegment = [];
+				}
+				result.push(modifier);
+			} else currentSegment.push(modifier);
+		}
+		if (currentSegment.length > 0) {
+			currentSegment.sort();
+			result.push(...currentSegment);
+		}
+		return result;
+	};
+};
+var createConfigUtils = (config) => ({
+	cache: createLruCache(config.cacheSize),
+	parseClassName: createParseClassName(config),
+	sortModifiers: createSortModifiers(config),
+	postfixLookupClassGroupIds: createPostfixLookupClassGroupIds(config),
+	...createClassGroupUtils(config)
+});
+var createPostfixLookupClassGroupIds = (config) => {
+	const lookup = Object.create(null);
+	const classGroupIds = config.postfixLookupClassGroups;
+	if (classGroupIds) for (let i = 0; i < classGroupIds.length; i++) lookup[classGroupIds[i]] = true;
+	return lookup;
+};
+var SPLIT_CLASSES_REGEX = /\s+/;
+var mergeClassList = (classList, configUtils) => {
+	const { parseClassName, getClassGroupId, getConflictingClassGroupIds, sortModifiers, postfixLookupClassGroupIds } = configUtils;
+	/**
+	* Set of classGroupIds in following format:
+	* `{importantModifier}{variantModifiers}{classGroupId}`
+	* @example 'float'
+	* @example 'hover:focus:bg-color'
+	* @example 'md:!pr'
+	*/
+	const classGroupsInConflict = [];
+	const classNames = classList.trim().split(SPLIT_CLASSES_REGEX);
+	let result = "";
+	for (let index = classNames.length - 1; index >= 0; index -= 1) {
+		const originalClassName = classNames[index];
+		const { isExternal, modifiers, hasImportantModifier, baseClassName, maybePostfixModifierPosition } = parseClassName(originalClassName);
+		if (isExternal) {
+			result = originalClassName + (result.length > 0 ? " " + result : result);
+			continue;
+		}
+		let hasPostfixModifier = !!maybePostfixModifierPosition;
+		let classGroupId;
+		if (hasPostfixModifier) {
+			classGroupId = getClassGroupId(baseClassName.substring(0, maybePostfixModifierPosition));
+			const classGroupIdWithPostfix = classGroupId && postfixLookupClassGroupIds[classGroupId] ? getClassGroupId(baseClassName) : void 0;
+			if (classGroupIdWithPostfix && classGroupIdWithPostfix !== classGroupId) {
+				classGroupId = classGroupIdWithPostfix;
+				hasPostfixModifier = false;
+			}
+		} else classGroupId = getClassGroupId(baseClassName);
+		if (!classGroupId) {
+			if (!hasPostfixModifier) {
+				result = originalClassName + (result.length > 0 ? " " + result : result);
+				continue;
+			}
+			classGroupId = getClassGroupId(baseClassName);
+			if (!classGroupId) {
+				result = originalClassName + (result.length > 0 ? " " + result : result);
+				continue;
+			}
+			hasPostfixModifier = false;
+		}
+		const variantModifier = modifiers.length === 0 ? "" : modifiers.length === 1 ? modifiers[0] : sortModifiers(modifiers).join(":");
+		const modifierId = hasImportantModifier ? variantModifier + IMPORTANT_MODIFIER : variantModifier;
+		const classId = modifierId + classGroupId;
+		if (classGroupsInConflict.indexOf(classId) > -1) continue;
+		classGroupsInConflict.push(classId);
+		const conflictGroups = getConflictingClassGroupIds(classGroupId, hasPostfixModifier);
+		for (let i = 0; i < conflictGroups.length; ++i) {
+			const group = conflictGroups[i];
+			classGroupsInConflict.push(modifierId + group);
+		}
+		result = originalClassName + (result.length > 0 ? " " + result : result);
+	}
+	return result;
+};
+/**
+* The code in this file is copied from https://github.com/lukeed/clsx and modified to suit the needs of tailwind-merge better.
+*
+* Specifically:
+* - Runtime code from https://github.com/lukeed/clsx/blob/v1.2.1/src/index.js
+* - TypeScript types from https://github.com/lukeed/clsx/blob/v1.2.1/clsx.d.ts
+*
+* Original code has MIT license: Copyright (c) Luke Edwards <luke.edwards05@gmail.com> (lukeed.com)
+*/
+var twJoin = (...classLists) => {
+	let index = 0;
+	let argument;
+	let resolvedValue;
+	let string = "";
+	while (index < classLists.length) if (argument = classLists[index++]) {
+		if (resolvedValue = toValue(argument)) {
+			string && (string += " ");
+			string += resolvedValue;
+		}
+	}
+	return string;
+};
+var toValue = (mix) => {
+	if (typeof mix === "string") return mix;
+	let resolvedValue;
+	let string = "";
+	for (let k = 0; k < mix.length; k++) if (mix[k]) {
+		if (resolvedValue = toValue(mix[k])) {
+			string && (string += " ");
+			string += resolvedValue;
+		}
+	}
+	return string;
+};
+var createTailwindMerge = (createConfigFirst, ...createConfigRest) => {
+	let configUtils;
+	let cacheGet;
+	let cacheSet;
+	let functionToCall;
+	const initTailwindMerge = (classList) => {
+		configUtils = createConfigUtils(createConfigRest.reduce((previousConfig, createConfigCurrent) => createConfigCurrent(previousConfig), createConfigFirst()));
+		cacheGet = configUtils.cache.get;
+		cacheSet = configUtils.cache.set;
+		functionToCall = tailwindMerge;
+		return tailwindMerge(classList);
+	};
+	const tailwindMerge = (classList) => {
+		const cachedResult = cacheGet(classList);
+		if (cachedResult) return cachedResult;
+		const result = mergeClassList(classList, configUtils);
+		cacheSet(classList, result);
+		return result;
+	};
+	functionToCall = initTailwindMerge;
+	return (...args) => functionToCall(twJoin(...args));
+};
+var fallbackThemeArr = [];
+var fromTheme = (key) => {
+	const themeGetter = (theme) => theme[key] || fallbackThemeArr;
+	themeGetter.isThemeGetter = true;
+	return themeGetter;
+};
+var arbitraryValueRegex = /^\[(?:(\w[\w-]*):)?(.+)\]$/i;
+var arbitraryVariableRegex = /^\((?:(\w[\w-]*):)?(.+)\)$/i;
+var fractionRegex = /^\d+(?:\.\d+)?\/\d+(?:\.\d+)?$/;
+var tshirtUnitRegex = /^(\d+(\.\d+)?)?(xs|sm|md|lg|xl)$/;
+var lengthUnitRegex = /\d+(%|px|r?em|[sdl]?v([hwib]|min|max)|pt|pc|in|cm|mm|cap|ch|ex|r?lh|cq(w|h|i|b|min|max))|\b(calc|min|max|clamp)\(.+\)|^0$/;
+var colorFunctionRegex = /^(rgba?|hsla?|hwb|(ok)?(lab|lch)|color-mix)\(.+\)$/;
+var shadowRegex = /^(inset_)?-?((\d+)?\.?(\d+)[a-z]+|0)_-?((\d+)?\.?(\d+)[a-z]+|0)/;
+var imageRegex = /^(url|image|image-set|cross-fade|element|(repeating-)?(linear|radial|conic)-gradient)\(.+\)$/;
+var isFraction = (value) => fractionRegex.test(value);
+var isNumber = (value) => !!value && !Number.isNaN(Number(value));
+var isInteger = (value) => !!value && Number.isInteger(Number(value));
+var isPercent = (value) => value.endsWith("%") && isNumber(value.slice(0, -1));
+var isTshirtSize = (value) => tshirtUnitRegex.test(value);
+var isAny = () => true;
+var isLengthOnly = (value) => lengthUnitRegex.test(value) && !colorFunctionRegex.test(value);
+var isNever = () => false;
+var isShadow = (value) => shadowRegex.test(value);
+var isImage = (value) => imageRegex.test(value);
+var isAnyNonArbitrary = (value) => !isArbitraryValue(value) && !isArbitraryVariable(value);
+var isNamedContainerQuery = (value) => value.startsWith("@container") && (value[10] === "/" && value[11] !== void 0 || value[11] === "s" && value[16] !== void 0 && value.startsWith("-size/", 10) || value[11] === "n" && value[18] !== void 0 && value.startsWith("-normal/", 10));
+var isArbitrarySize = (value) => getIsArbitraryValue(value, isLabelSize, isNever);
+var isArbitraryValue = (value) => arbitraryValueRegex.test(value);
+var isArbitraryLength = (value) => getIsArbitraryValue(value, isLabelLength, isLengthOnly);
+var isArbitraryNumber = (value) => getIsArbitraryValue(value, isLabelNumber, isNumber);
+var isArbitraryWeight = (value) => getIsArbitraryValue(value, isLabelWeight, isAny);
+var isArbitraryFamilyName = (value) => getIsArbitraryValue(value, isLabelFamilyName, isNever);
+var isArbitraryPosition = (value) => getIsArbitraryValue(value, isLabelPosition, isNever);
+var isArbitraryImage = (value) => getIsArbitraryValue(value, isLabelImage, isImage);
+var isArbitraryShadow = (value) => getIsArbitraryValue(value, isLabelShadow, isShadow);
+var isArbitraryVariable = (value) => arbitraryVariableRegex.test(value);
+var isArbitraryVariableLength = (value) => getIsArbitraryVariable(value, isLabelLength);
+var isArbitraryVariableFamilyName = (value) => getIsArbitraryVariable(value, isLabelFamilyName);
+var isArbitraryVariablePosition = (value) => getIsArbitraryVariable(value, isLabelPosition);
+var isArbitraryVariableSize = (value) => getIsArbitraryVariable(value, isLabelSize);
+var isArbitraryVariableImage = (value) => getIsArbitraryVariable(value, isLabelImage);
+var isArbitraryVariableShadow = (value) => getIsArbitraryVariable(value, isLabelShadow, true);
+var isArbitraryVariableWeight = (value) => getIsArbitraryVariable(value, isLabelWeight, true);
+var getIsArbitraryValue = (value, testLabel, testValue) => {
+	const result = arbitraryValueRegex.exec(value);
+	if (result) {
+		if (result[1]) return testLabel(result[1]);
+		return testValue(result[2]);
+	}
+	return false;
+};
+var getIsArbitraryVariable = (value, testLabel, shouldMatchNoLabel = false) => {
+	const result = arbitraryVariableRegex.exec(value);
+	if (result) {
+		if (result[1]) return testLabel(result[1]);
+		return shouldMatchNoLabel;
+	}
+	return false;
+};
+var isLabelPosition = (label) => label === "position" || label === "percentage";
+var isLabelImage = (label) => label === "image" || label === "url";
+var isLabelSize = (label) => label === "length" || label === "size" || label === "bg-size";
+var isLabelLength = (label) => label === "length";
+var isLabelNumber = (label) => label === "number";
+var isLabelFamilyName = (label) => label === "family-name";
+var isLabelWeight = (label) => label === "number" || label === "weight";
+var isLabelShadow = (label) => label === "shadow";
+var getDefaultConfig = () => {
+	/**
+	* Theme getters for theme variable namespaces
+	* @see https://tailwindcss.com/docs/theme#theme-variable-namespaces
+	*/
+	const themeColor = fromTheme("color");
+	const themeFont = fromTheme("font");
+	const themeText = fromTheme("text");
+	const themeFontWeight = fromTheme("font-weight");
+	const themeTracking = fromTheme("tracking");
+	const themeLeading = fromTheme("leading");
+	const themeBreakpoint = fromTheme("breakpoint");
+	const themeContainer = fromTheme("container");
+	const themeSpacing = fromTheme("spacing");
+	const themeRadius = fromTheme("radius");
+	const themeShadow = fromTheme("shadow");
+	const themeInsetShadow = fromTheme("inset-shadow");
+	const themeTextShadow = fromTheme("text-shadow");
+	const themeDropShadow = fromTheme("drop-shadow");
+	const themeBlur = fromTheme("blur");
+	const themePerspective = fromTheme("perspective");
+	const themeAspect = fromTheme("aspect");
+	const themeEase = fromTheme("ease");
+	const themeAnimate = fromTheme("animate");
+	/**
+	* Helpers to avoid repeating the same scales
+	*
+	* We use functions that create a new array every time they're called instead of static arrays.
+	* This ensures that users who modify any scale by mutating the array (e.g. with `array.push(element)`) don't accidentally mutate arrays in other parts of the config.
+	*/
+	const scaleBreak = () => [
+		"auto",
+		"avoid",
+		"all",
+		"avoid-page",
+		"page",
+		"left",
+		"right",
+		"column"
+	];
+	const scalePosition = () => [
+		"center",
+		"top",
+		"bottom",
+		"left",
+		"right",
+		"top-left",
+		"left-top",
+		"top-right",
+		"right-top",
+		"bottom-right",
+		"right-bottom",
+		"bottom-left",
+		"left-bottom"
+	];
+	const scalePositionWithArbitrary = () => [
+		...scalePosition(),
+		isArbitraryVariable,
+		isArbitraryValue
+	];
+	const scaleOverflow = () => [
+		"auto",
+		"hidden",
+		"clip",
+		"visible",
+		"scroll"
+	];
+	const scaleOverscroll = () => [
+		"auto",
+		"contain",
+		"none"
+	];
+	const scaleUnambiguousSpacing = () => [
+		isArbitraryVariable,
+		isArbitraryValue,
+		themeSpacing
+	];
+	const scaleInset = () => [
+		isFraction,
+		"full",
+		"auto",
+		...scaleUnambiguousSpacing()
+	];
+	const scaleGridTemplateColsRows = () => [
+		isInteger,
+		"none",
+		"subgrid",
+		isArbitraryVariable,
+		isArbitraryValue
+	];
+	const scaleGridColRowStartAndEnd = () => [
+		"auto",
+		{ span: [
+			"full",
+			isInteger,
+			isArbitraryVariable,
+			isArbitraryValue
+		] },
+		isInteger,
+		isArbitraryVariable,
+		isArbitraryValue
+	];
+	const scaleGridColRowStartOrEnd = () => [
+		isInteger,
+		"auto",
+		isArbitraryVariable,
+		isArbitraryValue
+	];
+	const scaleGridAutoColsRows = () => [
+		"auto",
+		"min",
+		"max",
+		"fr",
+		isArbitraryVariable,
+		isArbitraryValue
+	];
+	const scaleAlignPrimaryAxis = () => [
+		"start",
+		"end",
+		"center",
+		"between",
+		"around",
+		"evenly",
+		"stretch",
+		"baseline",
+		"center-safe",
+		"end-safe"
+	];
+	const scaleAlignSecondaryAxis = () => [
+		"start",
+		"end",
+		"center",
+		"stretch",
+		"center-safe",
+		"end-safe"
+	];
+	const scaleMargin = () => ["auto", ...scaleUnambiguousSpacing()];
+	const scaleSizing = () => [
+		isFraction,
+		"auto",
+		"full",
+		"dvw",
+		"dvh",
+		"lvw",
+		"lvh",
+		"svw",
+		"svh",
+		"min",
+		"max",
+		"fit",
+		...scaleUnambiguousSpacing()
+	];
+	const scaleSizingInline = () => [
+		isFraction,
+		"screen",
+		"full",
+		"dvw",
+		"lvw",
+		"svw",
+		"min",
+		"max",
+		"fit",
+		...scaleUnambiguousSpacing()
+	];
+	const scaleSizingBlock = () => [
+		isFraction,
+		"screen",
+		"full",
+		"lh",
+		"dvh",
+		"lvh",
+		"svh",
+		"min",
+		"max",
+		"fit",
+		...scaleUnambiguousSpacing()
+	];
+	const scaleColor = () => [
+		themeColor,
+		isArbitraryVariable,
+		isArbitraryValue
+	];
+	const scaleBgPosition = () => [
+		...scalePosition(),
+		isArbitraryVariablePosition,
+		isArbitraryPosition,
+		{ position: [isArbitraryVariable, isArbitraryValue] }
+	];
+	const scaleBgRepeat = () => ["no-repeat", { repeat: [
+		"",
+		"x",
+		"y",
+		"space",
+		"round"
+	] }];
+	const scaleBgSize = () => [
+		"auto",
+		"cover",
+		"contain",
+		isArbitraryVariableSize,
+		isArbitrarySize,
+		{ size: [isArbitraryVariable, isArbitraryValue] }
+	];
+	const scaleGradientStopPosition = () => [
+		isPercent,
+		isArbitraryVariableLength,
+		isArbitraryLength
+	];
+	const scaleRadius = () => [
+		"",
+		"none",
+		"full",
+		themeRadius,
+		isArbitraryVariable,
+		isArbitraryValue
+	];
+	const scaleBorderWidth = () => [
+		"",
+		isNumber,
+		isArbitraryVariableLength,
+		isArbitraryLength
+	];
+	const scaleLineStyle = () => [
+		"solid",
+		"dashed",
+		"dotted",
+		"double"
+	];
+	const scaleBlendMode = () => [
+		"normal",
+		"multiply",
+		"screen",
+		"overlay",
+		"darken",
+		"lighten",
+		"color-dodge",
+		"color-burn",
+		"hard-light",
+		"soft-light",
+		"difference",
+		"exclusion",
+		"hue",
+		"saturation",
+		"color",
+		"luminosity"
+	];
+	const scaleMaskImagePosition = () => [
+		isNumber,
+		isPercent,
+		isArbitraryVariablePosition,
+		isArbitraryPosition
+	];
+	const scaleBlur = () => [
+		"",
+		"none",
+		themeBlur,
+		isArbitraryVariable,
+		isArbitraryValue
+	];
+	const scaleRotate = () => [
+		"none",
+		isNumber,
+		isArbitraryVariable,
+		isArbitraryValue
+	];
+	const scaleScale = () => [
+		"none",
+		isNumber,
+		isArbitraryVariable,
+		isArbitraryValue
+	];
+	const scaleSkew = () => [
+		isNumber,
+		isArbitraryVariable,
+		isArbitraryValue
+	];
+	const scaleTranslate = () => [
+		isFraction,
+		"full",
+		...scaleUnambiguousSpacing()
+	];
+	return {
+		cacheSize: 500,
+		theme: {
+			animate: [
+				"spin",
+				"ping",
+				"pulse",
+				"bounce"
+			],
+			aspect: ["video"],
+			blur: [isTshirtSize],
+			breakpoint: [isTshirtSize],
+			color: [isAny],
+			container: [isTshirtSize],
+			"drop-shadow": [isTshirtSize],
+			ease: [
+				"in",
+				"out",
+				"in-out"
+			],
+			font: [isAnyNonArbitrary],
+			"font-weight": [
+				"thin",
+				"extralight",
+				"light",
+				"normal",
+				"medium",
+				"semibold",
+				"bold",
+				"extrabold",
+				"black"
+			],
+			"inset-shadow": [isTshirtSize],
+			leading: [
+				"none",
+				"tight",
+				"snug",
+				"normal",
+				"relaxed",
+				"loose"
+			],
+			perspective: [
+				"dramatic",
+				"near",
+				"normal",
+				"midrange",
+				"distant",
+				"none"
+			],
+			radius: [isTshirtSize],
+			shadow: [isTshirtSize],
+			spacing: ["px", isNumber],
+			text: [isTshirtSize],
+			"text-shadow": [isTshirtSize],
+			tracking: [
+				"tighter",
+				"tight",
+				"normal",
+				"wide",
+				"wider",
+				"widest"
+			]
+		},
+		classGroups: {
+			/**
+			* Aspect Ratio
+			* @see https://tailwindcss.com/docs/aspect-ratio
+			*/
+			aspect: [{ aspect: [
+				"auto",
+				"square",
+				isFraction,
+				isArbitraryValue,
+				isArbitraryVariable,
+				themeAspect
+			] }],
+			/**
+			* Container
+			* @see https://tailwindcss.com/docs/container
+			* @deprecated since Tailwind CSS v4.0.0
+			*/
+			container: ["container"],
+			/**
+			* Container Type
+			* @see https://tailwindcss.com/docs/responsive-design#container-queries
+			*/
+			"container-type": [{ "@container": [
+				"",
+				"normal",
+				"size",
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Container Name
+			* @see https://tailwindcss.com/docs/responsive-design#named-containers
+			*/
+			"container-named": [isNamedContainerQuery],
+			/**
+			* Columns
+			* @see https://tailwindcss.com/docs/columns
+			*/
+			columns: [{ columns: [
+				isNumber,
+				isArbitraryValue,
+				isArbitraryVariable,
+				themeContainer
+			] }],
+			/**
+			* Break After
+			* @see https://tailwindcss.com/docs/break-after
+			*/
+			"break-after": [{ "break-after": scaleBreak() }],
+			/**
+			* Break Before
+			* @see https://tailwindcss.com/docs/break-before
+			*/
+			"break-before": [{ "break-before": scaleBreak() }],
+			/**
+			* Break Inside
+			* @see https://tailwindcss.com/docs/break-inside
+			*/
+			"break-inside": [{ "break-inside": [
+				"auto",
+				"avoid",
+				"avoid-page",
+				"avoid-column"
+			] }],
+			/**
+			* Box Decoration Break
+			* @see https://tailwindcss.com/docs/box-decoration-break
+			*/
+			"box-decoration": [{ "box-decoration": ["slice", "clone"] }],
+			/**
+			* Box Sizing
+			* @see https://tailwindcss.com/docs/box-sizing
+			*/
+			box: [{ box: ["border", "content"] }],
+			/**
+			* Display
+			* @see https://tailwindcss.com/docs/display
+			*/
+			display: [
+				"block",
+				"inline-block",
+				"inline",
+				"flex",
+				"inline-flex",
+				"table",
+				"inline-table",
+				"table-caption",
+				"table-cell",
+				"table-column",
+				"table-column-group",
+				"table-footer-group",
+				"table-header-group",
+				"table-row-group",
+				"table-row",
+				"flow-root",
+				"grid",
+				"inline-grid",
+				"contents",
+				"list-item",
+				"hidden"
+			],
+			/**
+			* Screen Reader Only
+			* @see https://tailwindcss.com/docs/display#screen-reader-only
+			*/
+			sr: ["sr-only", "not-sr-only"],
+			/**
+			* Floats
+			* @see https://tailwindcss.com/docs/float
+			*/
+			float: [{ float: [
+				"right",
+				"left",
+				"none",
+				"start",
+				"end"
+			] }],
+			/**
+			* Clear
+			* @see https://tailwindcss.com/docs/clear
+			*/
+			clear: [{ clear: [
+				"left",
+				"right",
+				"both",
+				"none",
+				"start",
+				"end"
+			] }],
+			/**
+			* Isolation
+			* @see https://tailwindcss.com/docs/isolation
+			*/
+			isolation: ["isolate", "isolation-auto"],
+			/**
+			* Object Fit
+			* @see https://tailwindcss.com/docs/object-fit
+			*/
+			"object-fit": [{ object: [
+				"contain",
+				"cover",
+				"fill",
+				"none",
+				"scale-down"
+			] }],
+			/**
+			* Object Position
+			* @see https://tailwindcss.com/docs/object-position
+			*/
+			"object-position": [{ object: scalePositionWithArbitrary() }],
+			/**
+			* Overflow
+			* @see https://tailwindcss.com/docs/overflow
+			*/
+			overflow: [{ overflow: scaleOverflow() }],
+			/**
+			* Overflow X
+			* @see https://tailwindcss.com/docs/overflow
+			*/
+			"overflow-x": [{ "overflow-x": scaleOverflow() }],
+			/**
+			* Overflow Y
+			* @see https://tailwindcss.com/docs/overflow
+			*/
+			"overflow-y": [{ "overflow-y": scaleOverflow() }],
+			/**
+			* Overscroll Behavior
+			* @see https://tailwindcss.com/docs/overscroll-behavior
+			*/
+			overscroll: [{ overscroll: scaleOverscroll() }],
+			/**
+			* Overscroll Behavior X
+			* @see https://tailwindcss.com/docs/overscroll-behavior
+			*/
+			"overscroll-x": [{ "overscroll-x": scaleOverscroll() }],
+			/**
+			* Overscroll Behavior Y
+			* @see https://tailwindcss.com/docs/overscroll-behavior
+			*/
+			"overscroll-y": [{ "overscroll-y": scaleOverscroll() }],
+			/**
+			* Position
+			* @see https://tailwindcss.com/docs/position
+			*/
+			position: [
+				"static",
+				"fixed",
+				"absolute",
+				"relative",
+				"sticky"
+			],
+			/**
+			* Inset
+			* @see https://tailwindcss.com/docs/top-right-bottom-left
+			*/
+			inset: [{ inset: scaleInset() }],
+			/**
+			* Inset Inline
+			* @see https://tailwindcss.com/docs/top-right-bottom-left
+			*/
+			"inset-x": [{ "inset-x": scaleInset() }],
+			/**
+			* Inset Block
+			* @see https://tailwindcss.com/docs/top-right-bottom-left
+			*/
+			"inset-y": [{ "inset-y": scaleInset() }],
+			/**
+			* Inset Inline Start
+			* @see https://tailwindcss.com/docs/top-right-bottom-left
+			* @todo class group will be renamed to `inset-s` in next major release
+			*/
+			start: [{
+				"inset-s": scaleInset(),
+				/**
+				* @deprecated since Tailwind CSS v4.2.0 in favor of `inset-s-*` utilities.
+				* @see https://github.com/tailwindlabs/tailwindcss/pull/19613
+				*/
+				start: scaleInset()
+			}],
+			/**
+			* Inset Inline End
+			* @see https://tailwindcss.com/docs/top-right-bottom-left
+			* @todo class group will be renamed to `inset-e` in next major release
+			*/
+			end: [{
+				"inset-e": scaleInset(),
+				/**
+				* @deprecated since Tailwind CSS v4.2.0 in favor of `inset-e-*` utilities.
+				* @see https://github.com/tailwindlabs/tailwindcss/pull/19613
+				*/
+				end: scaleInset()
+			}],
+			/**
+			* Inset Block Start
+			* @see https://tailwindcss.com/docs/top-right-bottom-left
+			*/
+			"inset-bs": [{ "inset-bs": scaleInset() }],
+			/**
+			* Inset Block End
+			* @see https://tailwindcss.com/docs/top-right-bottom-left
+			*/
+			"inset-be": [{ "inset-be": scaleInset() }],
+			/**
+			* Top
+			* @see https://tailwindcss.com/docs/top-right-bottom-left
+			*/
+			top: [{ top: scaleInset() }],
+			/**
+			* Right
+			* @see https://tailwindcss.com/docs/top-right-bottom-left
+			*/
+			right: [{ right: scaleInset() }],
+			/**
+			* Bottom
+			* @see https://tailwindcss.com/docs/top-right-bottom-left
+			*/
+			bottom: [{ bottom: scaleInset() }],
+			/**
+			* Left
+			* @see https://tailwindcss.com/docs/top-right-bottom-left
+			*/
+			left: [{ left: scaleInset() }],
+			/**
+			* Visibility
+			* @see https://tailwindcss.com/docs/visibility
+			*/
+			visibility: [
+				"visible",
+				"invisible",
+				"collapse"
+			],
+			/**
+			* Z-Index
+			* @see https://tailwindcss.com/docs/z-index
+			*/
+			z: [{ z: [
+				isInteger,
+				"auto",
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Flex Basis
+			* @see https://tailwindcss.com/docs/flex-basis
+			*/
+			basis: [{ basis: [
+				isFraction,
+				"full",
+				"auto",
+				themeContainer,
+				...scaleUnambiguousSpacing()
+			] }],
+			/**
+			* Flex Direction
+			* @see https://tailwindcss.com/docs/flex-direction
+			*/
+			"flex-direction": [{ flex: [
+				"row",
+				"row-reverse",
+				"col",
+				"col-reverse"
+			] }],
+			/**
+			* Flex Wrap
+			* @see https://tailwindcss.com/docs/flex-wrap
+			*/
+			"flex-wrap": [{ flex: [
+				"nowrap",
+				"wrap",
+				"wrap-reverse"
+			] }],
+			/**
+			* Flex
+			* @see https://tailwindcss.com/docs/flex
+			*/
+			flex: [{ flex: [
+				isNumber,
+				isFraction,
+				"auto",
+				"initial",
+				"none",
+				isArbitraryValue
+			] }],
+			/**
+			* Flex Grow
+			* @see https://tailwindcss.com/docs/flex-grow
+			*/
+			grow: [{ grow: [
+				"",
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Flex Shrink
+			* @see https://tailwindcss.com/docs/flex-shrink
+			*/
+			shrink: [{ shrink: [
+				"",
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Order
+			* @see https://tailwindcss.com/docs/order
+			*/
+			order: [{ order: [
+				isInteger,
+				"first",
+				"last",
+				"none",
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Grid Template Columns
+			* @see https://tailwindcss.com/docs/grid-template-columns
+			*/
+			"grid-cols": [{ "grid-cols": scaleGridTemplateColsRows() }],
+			/**
+			* Grid Column Start / End
+			* @see https://tailwindcss.com/docs/grid-column
+			*/
+			"col-start-end": [{ col: scaleGridColRowStartAndEnd() }],
+			/**
+			* Grid Column Start
+			* @see https://tailwindcss.com/docs/grid-column
+			*/
+			"col-start": [{ "col-start": scaleGridColRowStartOrEnd() }],
+			/**
+			* Grid Column End
+			* @see https://tailwindcss.com/docs/grid-column
+			*/
+			"col-end": [{ "col-end": scaleGridColRowStartOrEnd() }],
+			/**
+			* Grid Template Rows
+			* @see https://tailwindcss.com/docs/grid-template-rows
+			*/
+			"grid-rows": [{ "grid-rows": scaleGridTemplateColsRows() }],
+			/**
+			* Grid Row Start / End
+			* @see https://tailwindcss.com/docs/grid-row
+			*/
+			"row-start-end": [{ row: scaleGridColRowStartAndEnd() }],
+			/**
+			* Grid Row Start
+			* @see https://tailwindcss.com/docs/grid-row
+			*/
+			"row-start": [{ "row-start": scaleGridColRowStartOrEnd() }],
+			/**
+			* Grid Row End
+			* @see https://tailwindcss.com/docs/grid-row
+			*/
+			"row-end": [{ "row-end": scaleGridColRowStartOrEnd() }],
+			/**
+			* Grid Auto Flow
+			* @see https://tailwindcss.com/docs/grid-auto-flow
+			*/
+			"grid-flow": [{ "grid-flow": [
+				"row",
+				"col",
+				"dense",
+				"row-dense",
+				"col-dense"
+			] }],
+			/**
+			* Grid Auto Columns
+			* @see https://tailwindcss.com/docs/grid-auto-columns
+			*/
+			"auto-cols": [{ "auto-cols": scaleGridAutoColsRows() }],
+			/**
+			* Grid Auto Rows
+			* @see https://tailwindcss.com/docs/grid-auto-rows
+			*/
+			"auto-rows": [{ "auto-rows": scaleGridAutoColsRows() }],
+			/**
+			* Gap
+			* @see https://tailwindcss.com/docs/gap
+			*/
+			gap: [{ gap: scaleUnambiguousSpacing() }],
+			/**
+			* Gap X
+			* @see https://tailwindcss.com/docs/gap
+			*/
+			"gap-x": [{ "gap-x": scaleUnambiguousSpacing() }],
+			/**
+			* Gap Y
+			* @see https://tailwindcss.com/docs/gap
+			*/
+			"gap-y": [{ "gap-y": scaleUnambiguousSpacing() }],
+			/**
+			* Justify Content
+			* @see https://tailwindcss.com/docs/justify-content
+			*/
+			"justify-content": [{ justify: [...scaleAlignPrimaryAxis(), "normal"] }],
+			/**
+			* Justify Items
+			* @see https://tailwindcss.com/docs/justify-items
+			*/
+			"justify-items": [{ "justify-items": [...scaleAlignSecondaryAxis(), "normal"] }],
+			/**
+			* Justify Self
+			* @see https://tailwindcss.com/docs/justify-self
+			*/
+			"justify-self": [{ "justify-self": ["auto", ...scaleAlignSecondaryAxis()] }],
+			/**
+			* Align Content
+			* @see https://tailwindcss.com/docs/align-content
+			*/
+			"align-content": [{ content: ["normal", ...scaleAlignPrimaryAxis()] }],
+			/**
+			* Align Items
+			* @see https://tailwindcss.com/docs/align-items
+			*/
+			"align-items": [{ items: [...scaleAlignSecondaryAxis(), { baseline: ["", "last"] }] }],
+			/**
+			* Align Self
+			* @see https://tailwindcss.com/docs/align-self
+			*/
+			"align-self": [{ self: [
+				"auto",
+				...scaleAlignSecondaryAxis(),
+				{ baseline: ["", "last"] }
+			] }],
+			/**
+			* Place Content
+			* @see https://tailwindcss.com/docs/place-content
+			*/
+			"place-content": [{ "place-content": scaleAlignPrimaryAxis() }],
+			/**
+			* Place Items
+			* @see https://tailwindcss.com/docs/place-items
+			*/
+			"place-items": [{ "place-items": [...scaleAlignSecondaryAxis(), "baseline"] }],
+			/**
+			* Place Self
+			* @see https://tailwindcss.com/docs/place-self
+			*/
+			"place-self": [{ "place-self": ["auto", ...scaleAlignSecondaryAxis()] }],
+			/**
+			* Padding
+			* @see https://tailwindcss.com/docs/padding
+			*/
+			p: [{ p: scaleUnambiguousSpacing() }],
+			/**
+			* Padding Inline
+			* @see https://tailwindcss.com/docs/padding
+			*/
+			px: [{ px: scaleUnambiguousSpacing() }],
+			/**
+			* Padding Block
+			* @see https://tailwindcss.com/docs/padding
+			*/
+			py: [{ py: scaleUnambiguousSpacing() }],
+			/**
+			* Padding Inline Start
+			* @see https://tailwindcss.com/docs/padding
+			*/
+			ps: [{ ps: scaleUnambiguousSpacing() }],
+			/**
+			* Padding Inline End
+			* @see https://tailwindcss.com/docs/padding
+			*/
+			pe: [{ pe: scaleUnambiguousSpacing() }],
+			/**
+			* Padding Block Start
+			* @see https://tailwindcss.com/docs/padding
+			*/
+			pbs: [{ pbs: scaleUnambiguousSpacing() }],
+			/**
+			* Padding Block End
+			* @see https://tailwindcss.com/docs/padding
+			*/
+			pbe: [{ pbe: scaleUnambiguousSpacing() }],
+			/**
+			* Padding Top
+			* @see https://tailwindcss.com/docs/padding
+			*/
+			pt: [{ pt: scaleUnambiguousSpacing() }],
+			/**
+			* Padding Right
+			* @see https://tailwindcss.com/docs/padding
+			*/
+			pr: [{ pr: scaleUnambiguousSpacing() }],
+			/**
+			* Padding Bottom
+			* @see https://tailwindcss.com/docs/padding
+			*/
+			pb: [{ pb: scaleUnambiguousSpacing() }],
+			/**
+			* Padding Left
+			* @see https://tailwindcss.com/docs/padding
+			*/
+			pl: [{ pl: scaleUnambiguousSpacing() }],
+			/**
+			* Margin
+			* @see https://tailwindcss.com/docs/margin
+			*/
+			m: [{ m: scaleMargin() }],
+			/**
+			* Margin Inline
+			* @see https://tailwindcss.com/docs/margin
+			*/
+			mx: [{ mx: scaleMargin() }],
+			/**
+			* Margin Block
+			* @see https://tailwindcss.com/docs/margin
+			*/
+			my: [{ my: scaleMargin() }],
+			/**
+			* Margin Inline Start
+			* @see https://tailwindcss.com/docs/margin
+			*/
+			ms: [{ ms: scaleMargin() }],
+			/**
+			* Margin Inline End
+			* @see https://tailwindcss.com/docs/margin
+			*/
+			me: [{ me: scaleMargin() }],
+			/**
+			* Margin Block Start
+			* @see https://tailwindcss.com/docs/margin
+			*/
+			mbs: [{ mbs: scaleMargin() }],
+			/**
+			* Margin Block End
+			* @see https://tailwindcss.com/docs/margin
+			*/
+			mbe: [{ mbe: scaleMargin() }],
+			/**
+			* Margin Top
+			* @see https://tailwindcss.com/docs/margin
+			*/
+			mt: [{ mt: scaleMargin() }],
+			/**
+			* Margin Right
+			* @see https://tailwindcss.com/docs/margin
+			*/
+			mr: [{ mr: scaleMargin() }],
+			/**
+			* Margin Bottom
+			* @see https://tailwindcss.com/docs/margin
+			*/
+			mb: [{ mb: scaleMargin() }],
+			/**
+			* Margin Left
+			* @see https://tailwindcss.com/docs/margin
+			*/
+			ml: [{ ml: scaleMargin() }],
+			/**
+			* Space Between X
+			* @see https://tailwindcss.com/docs/margin#adding-space-between-children
+			*/
+			"space-x": [{ "space-x": scaleUnambiguousSpacing() }],
+			/**
+			* Space Between X Reverse
+			* @see https://tailwindcss.com/docs/margin#adding-space-between-children
+			*/
+			"space-x-reverse": ["space-x-reverse"],
+			/**
+			* Space Between Y
+			* @see https://tailwindcss.com/docs/margin#adding-space-between-children
+			*/
+			"space-y": [{ "space-y": scaleUnambiguousSpacing() }],
+			/**
+			* Space Between Y Reverse
+			* @see https://tailwindcss.com/docs/margin#adding-space-between-children
+			*/
+			"space-y-reverse": ["space-y-reverse"],
+			/**
+			* Size
+			* @see https://tailwindcss.com/docs/width#setting-both-width-and-height
+			*/
+			size: [{ size: scaleSizing() }],
+			/**
+			* Inline Size
+			* @see https://tailwindcss.com/docs/width
+			*/
+			"inline-size": [{ inline: ["auto", ...scaleSizingInline()] }],
+			/**
+			* Min-Inline Size
+			* @see https://tailwindcss.com/docs/min-width
+			*/
+			"min-inline-size": [{ "min-inline": ["auto", ...scaleSizingInline()] }],
+			/**
+			* Max-Inline Size
+			* @see https://tailwindcss.com/docs/max-width
+			*/
+			"max-inline-size": [{ "max-inline": ["none", ...scaleSizingInline()] }],
+			/**
+			* Block Size
+			* @see https://tailwindcss.com/docs/height
+			*/
+			"block-size": [{ block: ["auto", ...scaleSizingBlock()] }],
+			/**
+			* Min-Block Size
+			* @see https://tailwindcss.com/docs/min-height
+			*/
+			"min-block-size": [{ "min-block": ["auto", ...scaleSizingBlock()] }],
+			/**
+			* Max-Block Size
+			* @see https://tailwindcss.com/docs/max-height
+			*/
+			"max-block-size": [{ "max-block": ["none", ...scaleSizingBlock()] }],
+			/**
+			* Width
+			* @see https://tailwindcss.com/docs/width
+			*/
+			w: [{ w: [
+				themeContainer,
+				"screen",
+				...scaleSizing()
+			] }],
+			/**
+			* Min-Width
+			* @see https://tailwindcss.com/docs/min-width
+			*/
+			"min-w": [{ "min-w": [
+				themeContainer,
+				"screen",
+				"none",
+				...scaleSizing()
+			] }],
+			/**
+			* Max-Width
+			* @see https://tailwindcss.com/docs/max-width
+			*/
+			"max-w": [{ "max-w": [
+				themeContainer,
+				"screen",
+				"none",
+				"prose",
+				{ screen: [themeBreakpoint] },
+				...scaleSizing()
+			] }],
+			/**
+			* Height
+			* @see https://tailwindcss.com/docs/height
+			*/
+			h: [{ h: [
+				"screen",
+				"lh",
+				...scaleSizing()
+			] }],
+			/**
+			* Min-Height
+			* @see https://tailwindcss.com/docs/min-height
+			*/
+			"min-h": [{ "min-h": [
+				"screen",
+				"lh",
+				"none",
+				...scaleSizing()
+			] }],
+			/**
+			* Max-Height
+			* @see https://tailwindcss.com/docs/max-height
+			*/
+			"max-h": [{ "max-h": [
+				"screen",
+				"lh",
+				...scaleSizing()
+			] }],
+			/**
+			* Font Size
+			* @see https://tailwindcss.com/docs/font-size
+			*/
+			"font-size": [{ text: [
+				"base",
+				themeText,
+				isArbitraryVariableLength,
+				isArbitraryLength
+			] }],
+			/**
+			* Font Smoothing
+			* @see https://tailwindcss.com/docs/font-smoothing
+			*/
+			"font-smoothing": ["antialiased", "subpixel-antialiased"],
+			/**
+			* Font Style
+			* @see https://tailwindcss.com/docs/font-style
+			*/
+			"font-style": ["italic", "not-italic"],
+			/**
+			* Font Weight
+			* @see https://tailwindcss.com/docs/font-weight
+			*/
+			"font-weight": [{ font: [
+				themeFontWeight,
+				isArbitraryVariableWeight,
+				isArbitraryWeight
+			] }],
+			/**
+			* Font Stretch
+			* @see https://tailwindcss.com/docs/font-stretch
+			*/
+			"font-stretch": [{ "font-stretch": [
+				"ultra-condensed",
+				"extra-condensed",
+				"condensed",
+				"semi-condensed",
+				"normal",
+				"semi-expanded",
+				"expanded",
+				"extra-expanded",
+				"ultra-expanded",
+				isPercent,
+				isArbitraryValue
+			] }],
+			/**
+			* Font Family
+			* @see https://tailwindcss.com/docs/font-family
+			*/
+			"font-family": [{ font: [
+				isArbitraryVariableFamilyName,
+				isArbitraryFamilyName,
+				themeFont
+			] }],
+			/**
+			* Font Feature Settings
+			* @see https://tailwindcss.com/docs/font-feature-settings
+			*/
+			"font-features": [{ "font-features": [isArbitraryValue] }],
+			/**
+			* Font Variant Numeric
+			* @see https://tailwindcss.com/docs/font-variant-numeric
+			*/
+			"fvn-normal": ["normal-nums"],
+			/**
+			* Font Variant Numeric
+			* @see https://tailwindcss.com/docs/font-variant-numeric
+			*/
+			"fvn-ordinal": ["ordinal"],
+			/**
+			* Font Variant Numeric
+			* @see https://tailwindcss.com/docs/font-variant-numeric
+			*/
+			"fvn-slashed-zero": ["slashed-zero"],
+			/**
+			* Font Variant Numeric
+			* @see https://tailwindcss.com/docs/font-variant-numeric
+			*/
+			"fvn-figure": ["lining-nums", "oldstyle-nums"],
+			/**
+			* Font Variant Numeric
+			* @see https://tailwindcss.com/docs/font-variant-numeric
+			*/
+			"fvn-spacing": ["proportional-nums", "tabular-nums"],
+			/**
+			* Font Variant Numeric
+			* @see https://tailwindcss.com/docs/font-variant-numeric
+			*/
+			"fvn-fraction": ["diagonal-fractions", "stacked-fractions"],
+			/**
+			* Letter Spacing
+			* @see https://tailwindcss.com/docs/letter-spacing
+			*/
+			tracking: [{ tracking: [
+				themeTracking,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Line Clamp
+			* @see https://tailwindcss.com/docs/line-clamp
+			*/
+			"line-clamp": [{ "line-clamp": [
+				isNumber,
+				"none",
+				isArbitraryVariable,
+				isArbitraryNumber
+			] }],
+			/**
+			* Line Height
+			* @see https://tailwindcss.com/docs/line-height
+			*/
+			leading: [{ leading: [themeLeading, ...scaleUnambiguousSpacing()] }],
+			/**
+			* List Style Image
+			* @see https://tailwindcss.com/docs/list-style-image
+			*/
+			"list-image": [{ "list-image": [
+				"none",
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* List Style Position
+			* @see https://tailwindcss.com/docs/list-style-position
+			*/
+			"list-style-position": [{ list: ["inside", "outside"] }],
+			/**
+			* List Style Type
+			* @see https://tailwindcss.com/docs/list-style-type
+			*/
+			"list-style-type": [{ list: [
+				"disc",
+				"decimal",
+				"none",
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Text Alignment
+			* @see https://tailwindcss.com/docs/text-align
+			*/
+			"text-alignment": [{ text: [
+				"left",
+				"center",
+				"right",
+				"justify",
+				"start",
+				"end"
+			] }],
+			/**
+			* Placeholder Color
+			* @deprecated since Tailwind CSS v3.0.0
+			* @see https://v3.tailwindcss.com/docs/placeholder-color
+			*/
+			"placeholder-color": [{ placeholder: scaleColor() }],
+			/**
+			* Text Color
+			* @see https://tailwindcss.com/docs/text-color
+			*/
+			"text-color": [{ text: scaleColor() }],
+			/**
+			* Text Decoration
+			* @see https://tailwindcss.com/docs/text-decoration
+			*/
+			"text-decoration": [
+				"underline",
+				"overline",
+				"line-through",
+				"no-underline"
+			],
+			/**
+			* Text Decoration Style
+			* @see https://tailwindcss.com/docs/text-decoration-style
+			*/
+			"text-decoration-style": [{ decoration: [...scaleLineStyle(), "wavy"] }],
+			/**
+			* Text Decoration Thickness
+			* @see https://tailwindcss.com/docs/text-decoration-thickness
+			*/
+			"text-decoration-thickness": [{ decoration: [
+				isNumber,
+				"from-font",
+				"auto",
+				isArbitraryVariable,
+				isArbitraryLength
+			] }],
+			/**
+			* Text Decoration Color
+			* @see https://tailwindcss.com/docs/text-decoration-color
+			*/
+			"text-decoration-color": [{ decoration: scaleColor() }],
+			/**
+			* Text Underline Offset
+			* @see https://tailwindcss.com/docs/text-underline-offset
+			*/
+			"underline-offset": [{ "underline-offset": [
+				isNumber,
+				"auto",
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Text Transform
+			* @see https://tailwindcss.com/docs/text-transform
+			*/
+			"text-transform": [
+				"uppercase",
+				"lowercase",
+				"capitalize",
+				"normal-case"
+			],
+			/**
+			* Text Overflow
+			* @see https://tailwindcss.com/docs/text-overflow
+			*/
+			"text-overflow": [
+				"truncate",
+				"text-ellipsis",
+				"text-clip"
+			],
+			/**
+			* Text Wrap
+			* @see https://tailwindcss.com/docs/text-wrap
+			*/
+			"text-wrap": [{ text: [
+				"wrap",
+				"nowrap",
+				"balance",
+				"pretty"
+			] }],
+			/**
+			* Text Indent
+			* @see https://tailwindcss.com/docs/text-indent
+			*/
+			indent: [{ indent: scaleUnambiguousSpacing() }],
+			/**
+			* Tab Size
+			* @see https://tailwindcss.com/docs/tab-size
+			*/
+			"tab-size": [{ tab: [
+				isInteger,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Vertical Alignment
+			* @see https://tailwindcss.com/docs/vertical-align
+			*/
+			"vertical-align": [{ align: [
+				"baseline",
+				"top",
+				"middle",
+				"bottom",
+				"text-top",
+				"text-bottom",
+				"sub",
+				"super",
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Whitespace
+			* @see https://tailwindcss.com/docs/whitespace
+			*/
+			whitespace: [{ whitespace: [
+				"normal",
+				"nowrap",
+				"pre",
+				"pre-line",
+				"pre-wrap",
+				"break-spaces"
+			] }],
+			/**
+			* Word Break
+			* @see https://tailwindcss.com/docs/word-break
+			*/
+			break: [{ break: [
+				"normal",
+				"words",
+				"all",
+				"keep"
+			] }],
+			/**
+			* Overflow Wrap
+			* @see https://tailwindcss.com/docs/overflow-wrap
+			*/
+			wrap: [{ wrap: [
+				"break-word",
+				"anywhere",
+				"normal"
+			] }],
+			/**
+			* Hyphens
+			* @see https://tailwindcss.com/docs/hyphens
+			*/
+			hyphens: [{ hyphens: [
+				"none",
+				"manual",
+				"auto"
+			] }],
+			/**
+			* Content
+			* @see https://tailwindcss.com/docs/content
+			*/
+			content: [{ content: [
+				"none",
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Background Attachment
+			* @see https://tailwindcss.com/docs/background-attachment
+			*/
+			"bg-attachment": [{ bg: [
+				"fixed",
+				"local",
+				"scroll"
+			] }],
+			/**
+			* Background Clip
+			* @see https://tailwindcss.com/docs/background-clip
+			*/
+			"bg-clip": [{ "bg-clip": [
+				"border",
+				"padding",
+				"content",
+				"text"
+			] }],
+			/**
+			* Background Origin
+			* @see https://tailwindcss.com/docs/background-origin
+			*/
+			"bg-origin": [{ "bg-origin": [
+				"border",
+				"padding",
+				"content"
+			] }],
+			/**
+			* Background Position
+			* @see https://tailwindcss.com/docs/background-position
+			*/
+			"bg-position": [{ bg: scaleBgPosition() }],
+			/**
+			* Background Repeat
+			* @see https://tailwindcss.com/docs/background-repeat
+			*/
+			"bg-repeat": [{ bg: scaleBgRepeat() }],
+			/**
+			* Background Size
+			* @see https://tailwindcss.com/docs/background-size
+			*/
+			"bg-size": [{ bg: scaleBgSize() }],
+			/**
+			* Background Image
+			* @see https://tailwindcss.com/docs/background-image
+			*/
+			"bg-image": [{ bg: [
+				"none",
+				{
+					linear: [
+						{ to: [
+							"t",
+							"tr",
+							"r",
+							"br",
+							"b",
+							"bl",
+							"l",
+							"tl"
+						] },
+						isInteger,
+						isArbitraryVariable,
+						isArbitraryValue
+					],
+					radial: [
+						"",
+						isArbitraryVariable,
+						isArbitraryValue
+					],
+					conic: [
+						isInteger,
+						isArbitraryVariable,
+						isArbitraryValue
+					]
+				},
+				isArbitraryVariableImage,
+				isArbitraryImage
+			] }],
+			/**
+			* Background Color
+			* @see https://tailwindcss.com/docs/background-color
+			*/
+			"bg-color": [{ bg: scaleColor() }],
+			/**
+			* Gradient Color Stops From Position
+			* @see https://tailwindcss.com/docs/gradient-color-stops
+			*/
+			"gradient-from-pos": [{ from: scaleGradientStopPosition() }],
+			/**
+			* Gradient Color Stops Via Position
+			* @see https://tailwindcss.com/docs/gradient-color-stops
+			*/
+			"gradient-via-pos": [{ via: scaleGradientStopPosition() }],
+			/**
+			* Gradient Color Stops To Position
+			* @see https://tailwindcss.com/docs/gradient-color-stops
+			*/
+			"gradient-to-pos": [{ to: scaleGradientStopPosition() }],
+			/**
+			* Gradient Color Stops From
+			* @see https://tailwindcss.com/docs/gradient-color-stops
+			*/
+			"gradient-from": [{ from: scaleColor() }],
+			/**
+			* Gradient Color Stops Via
+			* @see https://tailwindcss.com/docs/gradient-color-stops
+			*/
+			"gradient-via": [{ via: scaleColor() }],
+			/**
+			* Gradient Color Stops To
+			* @see https://tailwindcss.com/docs/gradient-color-stops
+			*/
+			"gradient-to": [{ to: scaleColor() }],
+			/**
+			* Border Radius
+			* @see https://tailwindcss.com/docs/border-radius
+			*/
+			rounded: [{ rounded: scaleRadius() }],
+			/**
+			* Border Radius Start
+			* @see https://tailwindcss.com/docs/border-radius
+			*/
+			"rounded-s": [{ "rounded-s": scaleRadius() }],
+			/**
+			* Border Radius End
+			* @see https://tailwindcss.com/docs/border-radius
+			*/
+			"rounded-e": [{ "rounded-e": scaleRadius() }],
+			/**
+			* Border Radius Top
+			* @see https://tailwindcss.com/docs/border-radius
+			*/
+			"rounded-t": [{ "rounded-t": scaleRadius() }],
+			/**
+			* Border Radius Right
+			* @see https://tailwindcss.com/docs/border-radius
+			*/
+			"rounded-r": [{ "rounded-r": scaleRadius() }],
+			/**
+			* Border Radius Bottom
+			* @see https://tailwindcss.com/docs/border-radius
+			*/
+			"rounded-b": [{ "rounded-b": scaleRadius() }],
+			/**
+			* Border Radius Left
+			* @see https://tailwindcss.com/docs/border-radius
+			*/
+			"rounded-l": [{ "rounded-l": scaleRadius() }],
+			/**
+			* Border Radius Start Start
+			* @see https://tailwindcss.com/docs/border-radius
+			*/
+			"rounded-ss": [{ "rounded-ss": scaleRadius() }],
+			/**
+			* Border Radius Start End
+			* @see https://tailwindcss.com/docs/border-radius
+			*/
+			"rounded-se": [{ "rounded-se": scaleRadius() }],
+			/**
+			* Border Radius End End
+			* @see https://tailwindcss.com/docs/border-radius
+			*/
+			"rounded-ee": [{ "rounded-ee": scaleRadius() }],
+			/**
+			* Border Radius End Start
+			* @see https://tailwindcss.com/docs/border-radius
+			*/
+			"rounded-es": [{ "rounded-es": scaleRadius() }],
+			/**
+			* Border Radius Top Left
+			* @see https://tailwindcss.com/docs/border-radius
+			*/
+			"rounded-tl": [{ "rounded-tl": scaleRadius() }],
+			/**
+			* Border Radius Top Right
+			* @see https://tailwindcss.com/docs/border-radius
+			*/
+			"rounded-tr": [{ "rounded-tr": scaleRadius() }],
+			/**
+			* Border Radius Bottom Right
+			* @see https://tailwindcss.com/docs/border-radius
+			*/
+			"rounded-br": [{ "rounded-br": scaleRadius() }],
+			/**
+			* Border Radius Bottom Left
+			* @see https://tailwindcss.com/docs/border-radius
+			*/
+			"rounded-bl": [{ "rounded-bl": scaleRadius() }],
+			/**
+			* Border Width
+			* @see https://tailwindcss.com/docs/border-width
+			*/
+			"border-w": [{ border: scaleBorderWidth() }],
+			/**
+			* Border Width Inline
+			* @see https://tailwindcss.com/docs/border-width
+			*/
+			"border-w-x": [{ "border-x": scaleBorderWidth() }],
+			/**
+			* Border Width Block
+			* @see https://tailwindcss.com/docs/border-width
+			*/
+			"border-w-y": [{ "border-y": scaleBorderWidth() }],
+			/**
+			* Border Width Inline Start
+			* @see https://tailwindcss.com/docs/border-width
+			*/
+			"border-w-s": [{ "border-s": scaleBorderWidth() }],
+			/**
+			* Border Width Inline End
+			* @see https://tailwindcss.com/docs/border-width
+			*/
+			"border-w-e": [{ "border-e": scaleBorderWidth() }],
+			/**
+			* Border Width Block Start
+			* @see https://tailwindcss.com/docs/border-width
+			*/
+			"border-w-bs": [{ "border-bs": scaleBorderWidth() }],
+			/**
+			* Border Width Block End
+			* @see https://tailwindcss.com/docs/border-width
+			*/
+			"border-w-be": [{ "border-be": scaleBorderWidth() }],
+			/**
+			* Border Width Top
+			* @see https://tailwindcss.com/docs/border-width
+			*/
+			"border-w-t": [{ "border-t": scaleBorderWidth() }],
+			/**
+			* Border Width Right
+			* @see https://tailwindcss.com/docs/border-width
+			*/
+			"border-w-r": [{ "border-r": scaleBorderWidth() }],
+			/**
+			* Border Width Bottom
+			* @see https://tailwindcss.com/docs/border-width
+			*/
+			"border-w-b": [{ "border-b": scaleBorderWidth() }],
+			/**
+			* Border Width Left
+			* @see https://tailwindcss.com/docs/border-width
+			*/
+			"border-w-l": [{ "border-l": scaleBorderWidth() }],
+			/**
+			* Divide Width X
+			* @see https://tailwindcss.com/docs/border-width#between-children
+			*/
+			"divide-x": [{ "divide-x": scaleBorderWidth() }],
+			/**
+			* Divide Width X Reverse
+			* @see https://tailwindcss.com/docs/border-width#between-children
+			*/
+			"divide-x-reverse": ["divide-x-reverse"],
+			/**
+			* Divide Width Y
+			* @see https://tailwindcss.com/docs/border-width#between-children
+			*/
+			"divide-y": [{ "divide-y": scaleBorderWidth() }],
+			/**
+			* Divide Width Y Reverse
+			* @see https://tailwindcss.com/docs/border-width#between-children
+			*/
+			"divide-y-reverse": ["divide-y-reverse"],
+			/**
+			* Border Style
+			* @see https://tailwindcss.com/docs/border-style
+			*/
+			"border-style": [{ border: [
+				...scaleLineStyle(),
+				"hidden",
+				"none"
+			] }],
+			/**
+			* Divide Style
+			* @see https://tailwindcss.com/docs/border-style#setting-the-divider-style
+			*/
+			"divide-style": [{ divide: [
+				...scaleLineStyle(),
+				"hidden",
+				"none"
+			] }],
+			/**
+			* Border Color
+			* @see https://tailwindcss.com/docs/border-color
+			*/
+			"border-color": [{ border: scaleColor() }],
+			/**
+			* Border Color Inline
+			* @see https://tailwindcss.com/docs/border-color
+			*/
+			"border-color-x": [{ "border-x": scaleColor() }],
+			/**
+			* Border Color Block
+			* @see https://tailwindcss.com/docs/border-color
+			*/
+			"border-color-y": [{ "border-y": scaleColor() }],
+			/**
+			* Border Color Inline Start
+			* @see https://tailwindcss.com/docs/border-color
+			*/
+			"border-color-s": [{ "border-s": scaleColor() }],
+			/**
+			* Border Color Inline End
+			* @see https://tailwindcss.com/docs/border-color
+			*/
+			"border-color-e": [{ "border-e": scaleColor() }],
+			/**
+			* Border Color Block Start
+			* @see https://tailwindcss.com/docs/border-color
+			*/
+			"border-color-bs": [{ "border-bs": scaleColor() }],
+			/**
+			* Border Color Block End
+			* @see https://tailwindcss.com/docs/border-color
+			*/
+			"border-color-be": [{ "border-be": scaleColor() }],
+			/**
+			* Border Color Top
+			* @see https://tailwindcss.com/docs/border-color
+			*/
+			"border-color-t": [{ "border-t": scaleColor() }],
+			/**
+			* Border Color Right
+			* @see https://tailwindcss.com/docs/border-color
+			*/
+			"border-color-r": [{ "border-r": scaleColor() }],
+			/**
+			* Border Color Bottom
+			* @see https://tailwindcss.com/docs/border-color
+			*/
+			"border-color-b": [{ "border-b": scaleColor() }],
+			/**
+			* Border Color Left
+			* @see https://tailwindcss.com/docs/border-color
+			*/
+			"border-color-l": [{ "border-l": scaleColor() }],
+			/**
+			* Divide Color
+			* @see https://tailwindcss.com/docs/divide-color
+			*/
+			"divide-color": [{ divide: scaleColor() }],
+			/**
+			* Outline Style
+			* @see https://tailwindcss.com/docs/outline-style
+			*/
+			"outline-style": [{ outline: [
+				...scaleLineStyle(),
+				"none",
+				"hidden"
+			] }],
+			/**
+			* Outline Offset
+			* @see https://tailwindcss.com/docs/outline-offset
+			*/
+			"outline-offset": [{ "outline-offset": [
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Outline Width
+			* @see https://tailwindcss.com/docs/outline-width
+			*/
+			"outline-w": [{ outline: [
+				"",
+				isNumber,
+				isArbitraryVariableLength,
+				isArbitraryLength
+			] }],
+			/**
+			* Outline Color
+			* @see https://tailwindcss.com/docs/outline-color
+			*/
+			"outline-color": [{ outline: scaleColor() }],
+			/**
+			* Box Shadow
+			* @see https://tailwindcss.com/docs/box-shadow
+			*/
+			shadow: [{ shadow: [
+				"",
+				"none",
+				themeShadow,
+				isArbitraryVariableShadow,
+				isArbitraryShadow
+			] }],
+			/**
+			* Box Shadow Color
+			* @see https://tailwindcss.com/docs/box-shadow#setting-the-shadow-color
+			*/
+			"shadow-color": [{ shadow: scaleColor() }],
+			/**
+			* Inset Box Shadow
+			* @see https://tailwindcss.com/docs/box-shadow#adding-an-inset-shadow
+			*/
+			"inset-shadow": [{ "inset-shadow": [
+				"none",
+				themeInsetShadow,
+				isArbitraryVariableShadow,
+				isArbitraryShadow
+			] }],
+			/**
+			* Inset Box Shadow Color
+			* @see https://tailwindcss.com/docs/box-shadow#setting-the-inset-shadow-color
+			*/
+			"inset-shadow-color": [{ "inset-shadow": scaleColor() }],
+			/**
+			* Ring Width
+			* @see https://tailwindcss.com/docs/box-shadow#adding-a-ring
+			*/
+			"ring-w": [{ ring: scaleBorderWidth() }],
+			/**
+			* Ring Width Inset
+			* @see https://v3.tailwindcss.com/docs/ring-width#inset-rings
+			* @deprecated since Tailwind CSS v4.0.0
+			* @see https://github.com/tailwindlabs/tailwindcss/blob/v4.0.0/packages/tailwindcss/src/utilities.ts#L4158
+			*/
+			"ring-w-inset": ["ring-inset"],
+			/**
+			* Ring Color
+			* @see https://tailwindcss.com/docs/box-shadow#setting-the-ring-color
+			*/
+			"ring-color": [{ ring: scaleColor() }],
+			/**
+			* Ring Offset Width
+			* @see https://v3.tailwindcss.com/docs/ring-offset-width
+			* @deprecated since Tailwind CSS v4.0.0
+			* @see https://github.com/tailwindlabs/tailwindcss/blob/v4.0.0/packages/tailwindcss/src/utilities.ts#L4158
+			*/
+			"ring-offset-w": [{ "ring-offset": [isNumber, isArbitraryLength] }],
+			/**
+			* Ring Offset Color
+			* @see https://v3.tailwindcss.com/docs/ring-offset-color
+			* @deprecated since Tailwind CSS v4.0.0
+			* @see https://github.com/tailwindlabs/tailwindcss/blob/v4.0.0/packages/tailwindcss/src/utilities.ts#L4158
+			*/
+			"ring-offset-color": [{ "ring-offset": scaleColor() }],
+			/**
+			* Inset Ring Width
+			* @see https://tailwindcss.com/docs/box-shadow#adding-an-inset-ring
+			*/
+			"inset-ring-w": [{ "inset-ring": scaleBorderWidth() }],
+			/**
+			* Inset Ring Color
+			* @see https://tailwindcss.com/docs/box-shadow#setting-the-inset-ring-color
+			*/
+			"inset-ring-color": [{ "inset-ring": scaleColor() }],
+			/**
+			* Text Shadow
+			* @see https://tailwindcss.com/docs/text-shadow
+			*/
+			"text-shadow": [{ "text-shadow": [
+				"none",
+				themeTextShadow,
+				isArbitraryVariableShadow,
+				isArbitraryShadow
+			] }],
+			/**
+			* Text Shadow Color
+			* @see https://tailwindcss.com/docs/text-shadow#setting-the-shadow-color
+			*/
+			"text-shadow-color": [{ "text-shadow": scaleColor() }],
+			/**
+			* Opacity
+			* @see https://tailwindcss.com/docs/opacity
+			*/
+			opacity: [{ opacity: [
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Mix Blend Mode
+			* @see https://tailwindcss.com/docs/mix-blend-mode
+			*/
+			"mix-blend": [{ "mix-blend": [
+				...scaleBlendMode(),
+				"plus-darker",
+				"plus-lighter"
+			] }],
+			/**
+			* Background Blend Mode
+			* @see https://tailwindcss.com/docs/background-blend-mode
+			*/
+			"bg-blend": [{ "bg-blend": scaleBlendMode() }],
+			/**
+			* Mask Clip
+			* @see https://tailwindcss.com/docs/mask-clip
+			*/
+			"mask-clip": [{ "mask-clip": [
+				"border",
+				"padding",
+				"content",
+				"fill",
+				"stroke",
+				"view"
+			] }, "mask-no-clip"],
+			/**
+			* Mask Composite
+			* @see https://tailwindcss.com/docs/mask-composite
+			*/
+			"mask-composite": [{ mask: [
+				"add",
+				"subtract",
+				"intersect",
+				"exclude"
+			] }],
+			/**
+			* Mask Image
+			* @see https://tailwindcss.com/docs/mask-image
+			*/
+			"mask-image-linear-pos": [{ "mask-linear": [isNumber] }],
+			"mask-image-linear-from-pos": [{ "mask-linear-from": scaleMaskImagePosition() }],
+			"mask-image-linear-to-pos": [{ "mask-linear-to": scaleMaskImagePosition() }],
+			"mask-image-linear-from-color": [{ "mask-linear-from": scaleColor() }],
+			"mask-image-linear-to-color": [{ "mask-linear-to": scaleColor() }],
+			"mask-image-t-from-pos": [{ "mask-t-from": scaleMaskImagePosition() }],
+			"mask-image-t-to-pos": [{ "mask-t-to": scaleMaskImagePosition() }],
+			"mask-image-t-from-color": [{ "mask-t-from": scaleColor() }],
+			"mask-image-t-to-color": [{ "mask-t-to": scaleColor() }],
+			"mask-image-r-from-pos": [{ "mask-r-from": scaleMaskImagePosition() }],
+			"mask-image-r-to-pos": [{ "mask-r-to": scaleMaskImagePosition() }],
+			"mask-image-r-from-color": [{ "mask-r-from": scaleColor() }],
+			"mask-image-r-to-color": [{ "mask-r-to": scaleColor() }],
+			"mask-image-b-from-pos": [{ "mask-b-from": scaleMaskImagePosition() }],
+			"mask-image-b-to-pos": [{ "mask-b-to": scaleMaskImagePosition() }],
+			"mask-image-b-from-color": [{ "mask-b-from": scaleColor() }],
+			"mask-image-b-to-color": [{ "mask-b-to": scaleColor() }],
+			"mask-image-l-from-pos": [{ "mask-l-from": scaleMaskImagePosition() }],
+			"mask-image-l-to-pos": [{ "mask-l-to": scaleMaskImagePosition() }],
+			"mask-image-l-from-color": [{ "mask-l-from": scaleColor() }],
+			"mask-image-l-to-color": [{ "mask-l-to": scaleColor() }],
+			"mask-image-x-from-pos": [{ "mask-x-from": scaleMaskImagePosition() }],
+			"mask-image-x-to-pos": [{ "mask-x-to": scaleMaskImagePosition() }],
+			"mask-image-x-from-color": [{ "mask-x-from": scaleColor() }],
+			"mask-image-x-to-color": [{ "mask-x-to": scaleColor() }],
+			"mask-image-y-from-pos": [{ "mask-y-from": scaleMaskImagePosition() }],
+			"mask-image-y-to-pos": [{ "mask-y-to": scaleMaskImagePosition() }],
+			"mask-image-y-from-color": [{ "mask-y-from": scaleColor() }],
+			"mask-image-y-to-color": [{ "mask-y-to": scaleColor() }],
+			"mask-image-radial": [{ "mask-radial": [isArbitraryVariable, isArbitraryValue] }],
+			"mask-image-radial-from-pos": [{ "mask-radial-from": scaleMaskImagePosition() }],
+			"mask-image-radial-to-pos": [{ "mask-radial-to": scaleMaskImagePosition() }],
+			"mask-image-radial-from-color": [{ "mask-radial-from": scaleColor() }],
+			"mask-image-radial-to-color": [{ "mask-radial-to": scaleColor() }],
+			"mask-image-radial-shape": [{ "mask-radial": ["circle", "ellipse"] }],
+			"mask-image-radial-size": [{ "mask-radial": [{
+				closest: ["side", "corner"],
+				farthest: ["side", "corner"]
+			}] }],
+			"mask-image-radial-pos": [{ "mask-radial-at": scalePosition() }],
+			"mask-image-conic-pos": [{ "mask-conic": [isNumber] }],
+			"mask-image-conic-from-pos": [{ "mask-conic-from": scaleMaskImagePosition() }],
+			"mask-image-conic-to-pos": [{ "mask-conic-to": scaleMaskImagePosition() }],
+			"mask-image-conic-from-color": [{ "mask-conic-from": scaleColor() }],
+			"mask-image-conic-to-color": [{ "mask-conic-to": scaleColor() }],
+			/**
+			* Mask Mode
+			* @see https://tailwindcss.com/docs/mask-mode
+			*/
+			"mask-mode": [{ mask: [
+				"alpha",
+				"luminance",
+				"match"
+			] }],
+			/**
+			* Mask Origin
+			* @see https://tailwindcss.com/docs/mask-origin
+			*/
+			"mask-origin": [{ "mask-origin": [
+				"border",
+				"padding",
+				"content",
+				"fill",
+				"stroke",
+				"view"
+			] }],
+			/**
+			* Mask Position
+			* @see https://tailwindcss.com/docs/mask-position
+			*/
+			"mask-position": [{ mask: scaleBgPosition() }],
+			/**
+			* Mask Repeat
+			* @see https://tailwindcss.com/docs/mask-repeat
+			*/
+			"mask-repeat": [{ mask: scaleBgRepeat() }],
+			/**
+			* Mask Size
+			* @see https://tailwindcss.com/docs/mask-size
+			*/
+			"mask-size": [{ mask: scaleBgSize() }],
+			/**
+			* Mask Type
+			* @see https://tailwindcss.com/docs/mask-type
+			*/
+			"mask-type": [{ "mask-type": ["alpha", "luminance"] }],
+			/**
+			* Mask Image
+			* @see https://tailwindcss.com/docs/mask-image
+			*/
+			"mask-image": [{ mask: [
+				"none",
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Filter
+			* @see https://tailwindcss.com/docs/filter
+			*/
+			filter: [{ filter: [
+				"",
+				"none",
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Blur
+			* @see https://tailwindcss.com/docs/blur
+			*/
+			blur: [{ blur: scaleBlur() }],
+			/**
+			* Brightness
+			* @see https://tailwindcss.com/docs/brightness
+			*/
+			brightness: [{ brightness: [
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Contrast
+			* @see https://tailwindcss.com/docs/contrast
+			*/
+			contrast: [{ contrast: [
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Drop Shadow
+			* @see https://tailwindcss.com/docs/drop-shadow
+			*/
+			"drop-shadow": [{ "drop-shadow": [
+				"",
+				"none",
+				themeDropShadow,
+				isArbitraryVariableShadow,
+				isArbitraryShadow
+			] }],
+			/**
+			* Drop Shadow Color
+			* @see https://tailwindcss.com/docs/filter-drop-shadow#setting-the-shadow-color
+			*/
+			"drop-shadow-color": [{ "drop-shadow": scaleColor() }],
+			/**
+			* Grayscale
+			* @see https://tailwindcss.com/docs/grayscale
+			*/
+			grayscale: [{ grayscale: [
+				"",
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Hue Rotate
+			* @see https://tailwindcss.com/docs/hue-rotate
+			*/
+			"hue-rotate": [{ "hue-rotate": [
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Invert
+			* @see https://tailwindcss.com/docs/invert
+			*/
+			invert: [{ invert: [
+				"",
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Saturate
+			* @see https://tailwindcss.com/docs/saturate
+			*/
+			saturate: [{ saturate: [
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Sepia
+			* @see https://tailwindcss.com/docs/sepia
+			*/
+			sepia: [{ sepia: [
+				"",
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Backdrop Filter
+			* @see https://tailwindcss.com/docs/backdrop-filter
+			*/
+			"backdrop-filter": [{ "backdrop-filter": [
+				"",
+				"none",
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Backdrop Blur
+			* @see https://tailwindcss.com/docs/backdrop-blur
+			*/
+			"backdrop-blur": [{ "backdrop-blur": scaleBlur() }],
+			/**
+			* Backdrop Brightness
+			* @see https://tailwindcss.com/docs/backdrop-brightness
+			*/
+			"backdrop-brightness": [{ "backdrop-brightness": [
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Backdrop Contrast
+			* @see https://tailwindcss.com/docs/backdrop-contrast
+			*/
+			"backdrop-contrast": [{ "backdrop-contrast": [
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Backdrop Grayscale
+			* @see https://tailwindcss.com/docs/backdrop-grayscale
+			*/
+			"backdrop-grayscale": [{ "backdrop-grayscale": [
+				"",
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Backdrop Hue Rotate
+			* @see https://tailwindcss.com/docs/backdrop-hue-rotate
+			*/
+			"backdrop-hue-rotate": [{ "backdrop-hue-rotate": [
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Backdrop Invert
+			* @see https://tailwindcss.com/docs/backdrop-invert
+			*/
+			"backdrop-invert": [{ "backdrop-invert": [
+				"",
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Backdrop Opacity
+			* @see https://tailwindcss.com/docs/backdrop-opacity
+			*/
+			"backdrop-opacity": [{ "backdrop-opacity": [
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Backdrop Saturate
+			* @see https://tailwindcss.com/docs/backdrop-saturate
+			*/
+			"backdrop-saturate": [{ "backdrop-saturate": [
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Backdrop Sepia
+			* @see https://tailwindcss.com/docs/backdrop-sepia
+			*/
+			"backdrop-sepia": [{ "backdrop-sepia": [
+				"",
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Border Collapse
+			* @see https://tailwindcss.com/docs/border-collapse
+			*/
+			"border-collapse": [{ border: ["collapse", "separate"] }],
+			/**
+			* Border Spacing
+			* @see https://tailwindcss.com/docs/border-spacing
+			*/
+			"border-spacing": [{ "border-spacing": scaleUnambiguousSpacing() }],
+			/**
+			* Border Spacing X
+			* @see https://tailwindcss.com/docs/border-spacing
+			*/
+			"border-spacing-x": [{ "border-spacing-x": scaleUnambiguousSpacing() }],
+			/**
+			* Border Spacing Y
+			* @see https://tailwindcss.com/docs/border-spacing
+			*/
+			"border-spacing-y": [{ "border-spacing-y": scaleUnambiguousSpacing() }],
+			/**
+			* Table Layout
+			* @see https://tailwindcss.com/docs/table-layout
+			*/
+			"table-layout": [{ table: ["auto", "fixed"] }],
+			/**
+			* Caption Side
+			* @see https://tailwindcss.com/docs/caption-side
+			*/
+			caption: [{ caption: ["top", "bottom"] }],
+			/**
+			* Transition Property
+			* @see https://tailwindcss.com/docs/transition-property
+			*/
+			transition: [{ transition: [
+				"",
+				"all",
+				"colors",
+				"opacity",
+				"shadow",
+				"transform",
+				"none",
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Transition Behavior
+			* @see https://tailwindcss.com/docs/transition-behavior
+			*/
+			"transition-behavior": [{ transition: ["normal", "discrete"] }],
+			/**
+			* Transition Duration
+			* @see https://tailwindcss.com/docs/transition-duration
+			*/
+			duration: [{ duration: [
+				isNumber,
+				"initial",
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Transition Timing Function
+			* @see https://tailwindcss.com/docs/transition-timing-function
+			*/
+			ease: [{ ease: [
+				"linear",
+				"initial",
+				themeEase,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Transition Delay
+			* @see https://tailwindcss.com/docs/transition-delay
+			*/
+			delay: [{ delay: [
+				isNumber,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Animation
+			* @see https://tailwindcss.com/docs/animation
+			*/
+			animate: [{ animate: [
+				"none",
+				themeAnimate,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Backface Visibility
+			* @see https://tailwindcss.com/docs/backface-visibility
+			*/
+			backface: [{ backface: ["hidden", "visible"] }],
+			/**
+			* Perspective
+			* @see https://tailwindcss.com/docs/perspective
+			*/
+			perspective: [{ perspective: [
+				themePerspective,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Perspective Origin
+			* @see https://tailwindcss.com/docs/perspective-origin
+			*/
+			"perspective-origin": [{ "perspective-origin": scalePositionWithArbitrary() }],
+			/**
+			* Rotate
+			* @see https://tailwindcss.com/docs/rotate
+			*/
+			rotate: [{ rotate: scaleRotate() }],
+			/**
+			* Rotate X
+			* @see https://tailwindcss.com/docs/rotate
+			*/
+			"rotate-x": [{ "rotate-x": scaleRotate() }],
+			/**
+			* Rotate Y
+			* @see https://tailwindcss.com/docs/rotate
+			*/
+			"rotate-y": [{ "rotate-y": scaleRotate() }],
+			/**
+			* Rotate Z
+			* @see https://tailwindcss.com/docs/rotate
+			*/
+			"rotate-z": [{ "rotate-z": scaleRotate() }],
+			/**
+			* Scale
+			* @see https://tailwindcss.com/docs/scale
+			*/
+			scale: [{ scale: scaleScale() }],
+			/**
+			* Scale X
+			* @see https://tailwindcss.com/docs/scale
+			*/
+			"scale-x": [{ "scale-x": scaleScale() }],
+			/**
+			* Scale Y
+			* @see https://tailwindcss.com/docs/scale
+			*/
+			"scale-y": [{ "scale-y": scaleScale() }],
+			/**
+			* Scale Z
+			* @see https://tailwindcss.com/docs/scale
+			*/
+			"scale-z": [{ "scale-z": scaleScale() }],
+			/**
+			* Scale 3D
+			* @see https://tailwindcss.com/docs/scale
+			*/
+			"scale-3d": ["scale-3d"],
+			/**
+			* Skew
+			* @see https://tailwindcss.com/docs/skew
+			*/
+			skew: [{ skew: scaleSkew() }],
+			/**
+			* Skew X
+			* @see https://tailwindcss.com/docs/skew
+			*/
+			"skew-x": [{ "skew-x": scaleSkew() }],
+			/**
+			* Skew Y
+			* @see https://tailwindcss.com/docs/skew
+			*/
+			"skew-y": [{ "skew-y": scaleSkew() }],
+			/**
+			* Transform
+			* @see https://tailwindcss.com/docs/transform
+			*/
+			transform: [{ transform: [
+				isArbitraryVariable,
+				isArbitraryValue,
+				"",
+				"none",
+				"gpu",
+				"cpu"
+			] }],
+			/**
+			* Transform Origin
+			* @see https://tailwindcss.com/docs/transform-origin
+			*/
+			"transform-origin": [{ origin: scalePositionWithArbitrary() }],
+			/**
+			* Transform Style
+			* @see https://tailwindcss.com/docs/transform-style
+			*/
+			"transform-style": [{ transform: ["3d", "flat"] }],
+			/**
+			* Translate
+			* @see https://tailwindcss.com/docs/translate
+			*/
+			translate: [{ translate: scaleTranslate() }],
+			/**
+			* Translate X
+			* @see https://tailwindcss.com/docs/translate
+			*/
+			"translate-x": [{ "translate-x": scaleTranslate() }],
+			/**
+			* Translate Y
+			* @see https://tailwindcss.com/docs/translate
+			*/
+			"translate-y": [{ "translate-y": scaleTranslate() }],
+			/**
+			* Translate Z
+			* @see https://tailwindcss.com/docs/translate
+			*/
+			"translate-z": [{ "translate-z": scaleTranslate() }],
+			/**
+			* Translate None
+			* @see https://tailwindcss.com/docs/translate
+			*/
+			"translate-none": ["translate-none"],
+			/**
+			* Zoom
+			* @see https://tailwindcss.com/docs/zoom
+			*/
+			zoom: [{ zoom: [
+				isInteger,
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Accent Color
+			* @see https://tailwindcss.com/docs/accent-color
+			*/
+			accent: [{ accent: scaleColor() }],
+			/**
+			* Appearance
+			* @see https://tailwindcss.com/docs/appearance
+			*/
+			appearance: [{ appearance: ["none", "auto"] }],
+			/**
+			* Caret Color
+			* @see https://tailwindcss.com/docs/just-in-time-mode#caret-color-utilities
+			*/
+			"caret-color": [{ caret: scaleColor() }],
+			/**
+			* Color Scheme
+			* @see https://tailwindcss.com/docs/color-scheme
+			*/
+			"color-scheme": [{ scheme: [
+				"normal",
+				"dark",
+				"light",
+				"light-dark",
+				"only-dark",
+				"only-light"
+			] }],
+			/**
+			* Cursor
+			* @see https://tailwindcss.com/docs/cursor
+			*/
+			cursor: [{ cursor: [
+				"auto",
+				"default",
+				"pointer",
+				"wait",
+				"text",
+				"move",
+				"help",
+				"not-allowed",
+				"none",
+				"context-menu",
+				"progress",
+				"cell",
+				"crosshair",
+				"vertical-text",
+				"alias",
+				"copy",
+				"no-drop",
+				"grab",
+				"grabbing",
+				"all-scroll",
+				"col-resize",
+				"row-resize",
+				"n-resize",
+				"e-resize",
+				"s-resize",
+				"w-resize",
+				"ne-resize",
+				"nw-resize",
+				"se-resize",
+				"sw-resize",
+				"ew-resize",
+				"ns-resize",
+				"nesw-resize",
+				"nwse-resize",
+				"zoom-in",
+				"zoom-out",
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Field Sizing
+			* @see https://tailwindcss.com/docs/field-sizing
+			*/
+			"field-sizing": [{ "field-sizing": ["fixed", "content"] }],
+			/**
+			* Pointer Events
+			* @see https://tailwindcss.com/docs/pointer-events
+			*/
+			"pointer-events": [{ "pointer-events": ["auto", "none"] }],
+			/**
+			* Resize
+			* @see https://tailwindcss.com/docs/resize
+			*/
+			resize: [{ resize: [
+				"none",
+				"",
+				"y",
+				"x"
+			] }],
+			/**
+			* Scroll Behavior
+			* @see https://tailwindcss.com/docs/scroll-behavior
+			*/
+			"scroll-behavior": [{ scroll: ["auto", "smooth"] }],
+			/**
+			* Scrollbar Thumb Color
+			* @see https://tailwindcss.com/docs/scrollbar-color
+			*/
+			"scrollbar-thumb-color": [{ "scrollbar-thumb": scaleColor() }],
+			/**
+			* Scrollbar Track Color
+			* @see https://tailwindcss.com/docs/scrollbar-color
+			*/
+			"scrollbar-track-color": [{ "scrollbar-track": scaleColor() }],
+			/**
+			* Scrollbar Gutter
+			* @see https://tailwindcss.com/docs/scrollbar-gutter
+			*/
+			"scrollbar-gutter": [{ "scrollbar-gutter": [
+				"auto",
+				"stable",
+				"both"
+			] }],
+			/**
+			* Scrollbar Width
+			* @see https://tailwindcss.com/docs/scrollbar-width
+			*/
+			"scrollbar-w": [{ scrollbar: [
+				"auto",
+				"thin",
+				"none"
+			] }],
+			/**
+			* Scroll Margin
+			* @see https://tailwindcss.com/docs/scroll-margin
+			*/
+			"scroll-m": [{ "scroll-m": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Margin Inline
+			* @see https://tailwindcss.com/docs/scroll-margin
+			*/
+			"scroll-mx": [{ "scroll-mx": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Margin Block
+			* @see https://tailwindcss.com/docs/scroll-margin
+			*/
+			"scroll-my": [{ "scroll-my": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Margin Inline Start
+			* @see https://tailwindcss.com/docs/scroll-margin
+			*/
+			"scroll-ms": [{ "scroll-ms": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Margin Inline End
+			* @see https://tailwindcss.com/docs/scroll-margin
+			*/
+			"scroll-me": [{ "scroll-me": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Margin Block Start
+			* @see https://tailwindcss.com/docs/scroll-margin
+			*/
+			"scroll-mbs": [{ "scroll-mbs": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Margin Block End
+			* @see https://tailwindcss.com/docs/scroll-margin
+			*/
+			"scroll-mbe": [{ "scroll-mbe": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Margin Top
+			* @see https://tailwindcss.com/docs/scroll-margin
+			*/
+			"scroll-mt": [{ "scroll-mt": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Margin Right
+			* @see https://tailwindcss.com/docs/scroll-margin
+			*/
+			"scroll-mr": [{ "scroll-mr": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Margin Bottom
+			* @see https://tailwindcss.com/docs/scroll-margin
+			*/
+			"scroll-mb": [{ "scroll-mb": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Margin Left
+			* @see https://tailwindcss.com/docs/scroll-margin
+			*/
+			"scroll-ml": [{ "scroll-ml": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Padding
+			* @see https://tailwindcss.com/docs/scroll-padding
+			*/
+			"scroll-p": [{ "scroll-p": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Padding Inline
+			* @see https://tailwindcss.com/docs/scroll-padding
+			*/
+			"scroll-px": [{ "scroll-px": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Padding Block
+			* @see https://tailwindcss.com/docs/scroll-padding
+			*/
+			"scroll-py": [{ "scroll-py": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Padding Inline Start
+			* @see https://tailwindcss.com/docs/scroll-padding
+			*/
+			"scroll-ps": [{ "scroll-ps": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Padding Inline End
+			* @see https://tailwindcss.com/docs/scroll-padding
+			*/
+			"scroll-pe": [{ "scroll-pe": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Padding Block Start
+			* @see https://tailwindcss.com/docs/scroll-padding
+			*/
+			"scroll-pbs": [{ "scroll-pbs": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Padding Block End
+			* @see https://tailwindcss.com/docs/scroll-padding
+			*/
+			"scroll-pbe": [{ "scroll-pbe": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Padding Top
+			* @see https://tailwindcss.com/docs/scroll-padding
+			*/
+			"scroll-pt": [{ "scroll-pt": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Padding Right
+			* @see https://tailwindcss.com/docs/scroll-padding
+			*/
+			"scroll-pr": [{ "scroll-pr": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Padding Bottom
+			* @see https://tailwindcss.com/docs/scroll-padding
+			*/
+			"scroll-pb": [{ "scroll-pb": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Padding Left
+			* @see https://tailwindcss.com/docs/scroll-padding
+			*/
+			"scroll-pl": [{ "scroll-pl": scaleUnambiguousSpacing() }],
+			/**
+			* Scroll Snap Align
+			* @see https://tailwindcss.com/docs/scroll-snap-align
+			*/
+			"snap-align": [{ snap: [
+				"start",
+				"end",
+				"center",
+				"align-none"
+			] }],
+			/**
+			* Scroll Snap Stop
+			* @see https://tailwindcss.com/docs/scroll-snap-stop
+			*/
+			"snap-stop": [{ snap: ["normal", "always"] }],
+			/**
+			* Scroll Snap Type
+			* @see https://tailwindcss.com/docs/scroll-snap-type
+			*/
+			"snap-type": [{ snap: [
+				"none",
+				"x",
+				"y",
+				"both"
+			] }],
+			/**
+			* Scroll Snap Type Strictness
+			* @see https://tailwindcss.com/docs/scroll-snap-type
+			*/
+			"snap-strictness": [{ snap: ["mandatory", "proximity"] }],
+			/**
+			* Touch Action
+			* @see https://tailwindcss.com/docs/touch-action
+			*/
+			touch: [{ touch: [
+				"auto",
+				"none",
+				"manipulation"
+			] }],
+			/**
+			* Touch Action X
+			* @see https://tailwindcss.com/docs/touch-action
+			*/
+			"touch-x": [{ "touch-pan": [
+				"x",
+				"left",
+				"right"
+			] }],
+			/**
+			* Touch Action Y
+			* @see https://tailwindcss.com/docs/touch-action
+			*/
+			"touch-y": [{ "touch-pan": [
+				"y",
+				"up",
+				"down"
+			] }],
+			/**
+			* Touch Action Pinch Zoom
+			* @see https://tailwindcss.com/docs/touch-action
+			*/
+			"touch-pz": ["touch-pinch-zoom"],
+			/**
+			* User Select
+			* @see https://tailwindcss.com/docs/user-select
+			*/
+			select: [{ select: [
+				"none",
+				"text",
+				"all",
+				"auto"
+			] }],
+			/**
+			* Will Change
+			* @see https://tailwindcss.com/docs/will-change
+			*/
+			"will-change": [{ "will-change": [
+				"auto",
+				"scroll",
+				"contents",
+				"transform",
+				isArbitraryVariable,
+				isArbitraryValue
+			] }],
+			/**
+			* Fill
+			* @see https://tailwindcss.com/docs/fill
+			*/
+			fill: [{ fill: ["none", ...scaleColor()] }],
+			/**
+			* Stroke Width
+			* @see https://tailwindcss.com/docs/stroke-width
+			*/
+			"stroke-w": [{ stroke: [
+				isNumber,
+				isArbitraryVariableLength,
+				isArbitraryLength,
+				isArbitraryNumber
+			] }],
+			/**
+			* Stroke
+			* @see https://tailwindcss.com/docs/stroke
+			*/
+			stroke: [{ stroke: ["none", ...scaleColor()] }],
+			/**
+			* Forced Color Adjust
+			* @see https://tailwindcss.com/docs/forced-color-adjust
+			*/
+			"forced-color-adjust": [{ "forced-color-adjust": ["auto", "none"] }]
+		},
+		conflictingClassGroups: {
+			"container-named": ["container-type"],
+			overflow: ["overflow-x", "overflow-y"],
+			overscroll: ["overscroll-x", "overscroll-y"],
+			inset: [
+				"inset-x",
+				"inset-y",
+				"inset-bs",
+				"inset-be",
+				"start",
+				"end",
+				"top",
+				"right",
+				"bottom",
+				"left"
+			],
+			"inset-x": ["right", "left"],
+			"inset-y": ["top", "bottom"],
+			flex: [
+				"basis",
+				"grow",
+				"shrink"
+			],
+			gap: ["gap-x", "gap-y"],
+			p: [
+				"px",
+				"py",
+				"ps",
+				"pe",
+				"pbs",
+				"pbe",
+				"pt",
+				"pr",
+				"pb",
+				"pl"
+			],
+			px: ["pr", "pl"],
+			py: ["pt", "pb"],
+			m: [
+				"mx",
+				"my",
+				"ms",
+				"me",
+				"mbs",
+				"mbe",
+				"mt",
+				"mr",
+				"mb",
+				"ml"
+			],
+			mx: ["mr", "ml"],
+			my: ["mt", "mb"],
+			size: ["w", "h"],
+			"font-size": ["leading"],
+			"fvn-normal": [
+				"fvn-ordinal",
+				"fvn-slashed-zero",
+				"fvn-figure",
+				"fvn-spacing",
+				"fvn-fraction"
+			],
+			"fvn-ordinal": ["fvn-normal"],
+			"fvn-slashed-zero": ["fvn-normal"],
+			"fvn-figure": ["fvn-normal"],
+			"fvn-spacing": ["fvn-normal"],
+			"fvn-fraction": ["fvn-normal"],
+			"line-clamp": ["display", "overflow"],
+			rounded: [
+				"rounded-s",
+				"rounded-e",
+				"rounded-t",
+				"rounded-r",
+				"rounded-b",
+				"rounded-l",
+				"rounded-ss",
+				"rounded-se",
+				"rounded-ee",
+				"rounded-es",
+				"rounded-tl",
+				"rounded-tr",
+				"rounded-br",
+				"rounded-bl"
+			],
+			"rounded-s": ["rounded-ss", "rounded-es"],
+			"rounded-e": ["rounded-se", "rounded-ee"],
+			"rounded-t": ["rounded-tl", "rounded-tr"],
+			"rounded-r": ["rounded-tr", "rounded-br"],
+			"rounded-b": ["rounded-br", "rounded-bl"],
+			"rounded-l": ["rounded-tl", "rounded-bl"],
+			"border-spacing": ["border-spacing-x", "border-spacing-y"],
+			"border-w": [
+				"border-w-x",
+				"border-w-y",
+				"border-w-s",
+				"border-w-e",
+				"border-w-bs",
+				"border-w-be",
+				"border-w-t",
+				"border-w-r",
+				"border-w-b",
+				"border-w-l"
+			],
+			"border-w-x": ["border-w-r", "border-w-l"],
+			"border-w-y": ["border-w-t", "border-w-b"],
+			"border-color": [
+				"border-color-x",
+				"border-color-y",
+				"border-color-s",
+				"border-color-e",
+				"border-color-bs",
+				"border-color-be",
+				"border-color-t",
+				"border-color-r",
+				"border-color-b",
+				"border-color-l"
+			],
+			"border-color-x": ["border-color-r", "border-color-l"],
+			"border-color-y": ["border-color-t", "border-color-b"],
+			translate: [
+				"translate-x",
+				"translate-y",
+				"translate-none"
+			],
+			"translate-none": [
+				"translate",
+				"translate-x",
+				"translate-y",
+				"translate-z"
+			],
+			"scroll-m": [
+				"scroll-mx",
+				"scroll-my",
+				"scroll-ms",
+				"scroll-me",
+				"scroll-mbs",
+				"scroll-mbe",
+				"scroll-mt",
+				"scroll-mr",
+				"scroll-mb",
+				"scroll-ml"
+			],
+			"scroll-mx": ["scroll-mr", "scroll-ml"],
+			"scroll-my": ["scroll-mt", "scroll-mb"],
+			"scroll-p": [
+				"scroll-px",
+				"scroll-py",
+				"scroll-ps",
+				"scroll-pe",
+				"scroll-pbs",
+				"scroll-pbe",
+				"scroll-pt",
+				"scroll-pr",
+				"scroll-pb",
+				"scroll-pl"
+			],
+			"scroll-px": ["scroll-pr", "scroll-pl"],
+			"scroll-py": ["scroll-pt", "scroll-pb"],
+			touch: [
+				"touch-x",
+				"touch-y",
+				"touch-pz"
+			],
+			"touch-x": ["touch"],
+			"touch-y": ["touch"],
+			"touch-pz": ["touch"]
+		},
+		conflictingClassGroupModifiers: { "font-size": ["leading"] },
+		postfixLookupClassGroups: ["container-type"],
+		orderSensitiveModifiers: [
+			"*",
+			"**",
+			"after",
+			"backdrop",
+			"before",
+			"details-content",
+			"file",
+			"first-letter",
+			"first-line",
+			"marker",
+			"placeholder",
+			"selection"
+		]
+	};
+};
+var twMerge = /*#__PURE__*/ createTailwindMerge(getDefaultConfig);
+function cn(...inputs) {
+	return twMerge(clsx(inputs));
+}
+var Dialog = Dialog$1;
+var DialogPortal = DialogPortal$1;
+var DialogOverlay = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogOverlay$1, {
+	ref,
+	className: cn("fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className),
+	...props
+}));
+DialogOverlay.displayName = DialogOverlay$1.displayName;
+var DialogContent = import_react.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogPortal, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogOverlay, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogContent$1, {
+	ref,
+	className: cn("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 sm:rounded-lg", className),
+	...props,
+	children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogClose, {
+		className: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background cursor-pointer transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { className: "h-4 w-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+			className: "sr-only",
+			children: "Close"
+		})]
+	})]
+})] }));
+DialogContent.displayName = DialogContent$1.displayName;
+var DialogHeader = ({ className, ...props }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	className: cn("flex flex-col space-y-1.5 text-center sm:text-left", className),
+	...props
+});
+DialogHeader.displayName = "DialogHeader";
+var DialogFooter = ({ className, ...props }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	className: cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className),
+	...props
+});
+DialogFooter.displayName = "DialogFooter";
+var DialogTitle = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTitle$1, {
+	ref,
+	className: cn("text-lg font-semibold leading-none tracking-tight", className),
+	...props
+}));
+DialogTitle.displayName = DialogTitle$1.displayName;
+var DialogDescription = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogDescription$1, {
+	ref,
+	className: cn("text-sm text-muted-foreground", className),
+	...props
+}));
+DialogDescription.displayName = DialogDescription$1.displayName;
+var about_default = "/assets/about-DwYjfyWb.webp";
+var prog_engineering_default = "/assets/prog-engineering-CSzkyCPG.webp";
+var prog_mbbs_default = "/assets/prog-mbbs-BdiLoQKU.webp";
+var prog_pg_default = "/assets/prog-pg-DLC37LgG.webp";
+var prog_bams_default = "/assets/prog-bams-ZzAaFnAP.webp";
+var prog_bhms_default = "/assets/prog-bhms-DU4hpmin.webp";
+var prog_bds_default = "/assets/prog-bds-BDbus3kA.webp";
+var prog_bpt_default = "/assets/prog-bpt-Cjczn1D2.webp";
+var ToothIcon = ({ size, className }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+	className,
+	style: {
+		fontSize: size || 24,
+		lineHeight: 1,
+		display: "inline-flex",
+		alignItems: "center",
+		justifyContent: "center"
+	},
+	children: "🦷"
+});
+function EnquiryPopup() {
+	const [open, setOpen] = (0, import_react.useState)(false);
+	const [formData, setFormData] = (0, import_react.useState)({
+		name: "",
+		phone: "",
+		course: "General Inquiry"
+	});
+	(0, import_react.useEffect)(() => {
+		const timer = setTimeout(() => {
+			setOpen(true);
+		}, 1500);
+		return () => clearTimeout(timer);
+	}, []);
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		toast.success("Inquiry sent successfully!");
+		setOpen(false);
+	};
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dialog, {
+		open,
+		onOpenChange: setOpen,
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogContent, {
+			className: "sm:max-w-[425px]",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogHeader, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTitle, { children: "Get Expert Admission Guidance" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogDescription, { children: "Fill out the form below and our senior counselors will get in touch with you." })] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
+				onSubmit: handleSubmit,
+				className: "mt-4 space-y-4 text-left",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+						className: "block text-xs font-semibold uppercase tracking-wider text-ink mb-2",
+						children: "Name"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+						required: true,
+						type: "text",
+						className: "w-full px-3 py-2 border border-border rounded-[6px] focus:border-primary focus:outline-none bg-surface text-ink",
+						value: formData.name,
+						onChange: (e) => setFormData({
+							...formData,
+							name: e.target.value
+						}),
+						placeholder: "Your Name"
+					})] }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+						className: "block text-xs font-semibold uppercase tracking-wider text-ink mb-2",
+						children: "Phone Number"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+						required: true,
+						type: "tel",
+						className: "w-full px-3 py-2 border border-border rounded-[6px] focus:border-primary focus:outline-none bg-surface text-ink",
+						value: formData.phone,
+						onChange: (e) => setFormData({
+							...formData,
+							phone: e.target.value
+						}),
+						placeholder: "+91 XXXXX XXXXX"
+					})] }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+						className: "block text-xs font-semibold uppercase tracking-wider text-ink mb-2",
+						children: "Preferred Program"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+						className: "w-full px-3 py-2 border border-border rounded-[6px] focus:border-primary focus:outline-none bg-surface text-ink",
+						value: formData.course,
+						onChange: (e) => setFormData({
+							...formData,
+							course: e.target.value
+						}),
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "General Inquiry",
+								children: "General Inquiry"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "MBBS Admission",
+								children: "MBBS Admission"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "Engineering Admission",
+								children: "Engineering Admission"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "Medical PG Admission",
+								children: "Medical PG Admission"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "BAMS Admission",
+								children: "BAMS Admission"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "BHMS Admission",
+								children: "BHMS Admission"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "BDS Admission",
+								children: "BDS Admission"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "BPT Admission",
+								children: "BPT Admission"
+							})
+						]
+					})] }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						type: "submit",
+						className: "w-full bg-primary text-white py-3 rounded-[6px] hover:bg-primary/90 transition-colors font-semibold mt-2",
+						children: "Submit Inquiry"
+					})
+				]
+			})]
+		})
+	});
+}
+function Index() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
+		id: "top",
+		className: "bg-background text-foreground",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(EnquiryPopup, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Header, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Hero, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TrustBar, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(About, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Services, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(WhyUs, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Process, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Programs, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Stats, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Testimonials, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FAQ, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CTA, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Contact, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Footer, {})
+		]
+	});
+}
+function Hero() {
+	const ref = (0, import_react.useRef)(null);
+	const { scrollYProgress } = useScroll({
+		target: ref,
+		offset: ["start start", "end start"]
+	});
+	const y = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+	const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+		ref,
+		className: "relative pt-[72px] overflow-hidden bg-surface",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-grid-pattern opacity-50 pointer-events-none" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-[-20%] right-[-10%] w-[65%] aspect-square rounded-full bg-[radial-gradient(circle,rgba(15,76,129,0.06)_0%,transparent_70%)] pointer-events-none blur-3xl" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute bottom-[-10%] left-[-15%] w-[55%] aspect-square rounded-full bg-[radial-gradient(circle,rgba(197,168,128,0.08)_0%,transparent_70%)] pointer-events-none blur-3xl" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "container-x pt-16 lg:pt-24 pb-20 lg:pb-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "lg:col-span-6 relative",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+							initial: {
+								opacity: 0,
+								y: 12
+							},
+							animate: {
+								opacity: 1,
+								y: 0
+							},
+							transition: {
+								duration: .6,
+								ease: [
+									.2,
+									.7,
+									.2,
+									1
+								]
+							},
+							className: "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-border/80 shadow-[0_2px_8px_rgba(15,76,129,0.03)]",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "w-1.5 h-1.5 rounded-full bg-primary glow-dot" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "text-[10px] font-semibold tracking-[0.2em] uppercase text-ink-soft",
+								children: "Est. 2017 — Bengaluru"
+							})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.h1, {
+							initial: {
+								opacity: 0,
+								y: 20
+							},
+							animate: {
+								opacity: 1,
+								y: 0
+							},
+							transition: {
+								duration: .8,
+								delay: .1,
+								ease: [
+									.2,
+									.7,
+									.2,
+									1
+								]
+							},
+							className: "mt-6 font-display font-semibold text-[48px] sm:text-[64px] lg:text-[76px] leading-[1.02] tracking-[-0.03em] text-ink",
+							children: [
+								"Your future begins",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+								"with the right ",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-gradient-primary inline-block relative",
+									children: "guidance."
+								})
+							]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.p, {
+							initial: {
+								opacity: 0,
+								y: 20
+							},
+							animate: {
+								opacity: 1,
+								y: 0
+							},
+							transition: {
+								duration: .8,
+								delay: .2,
+								ease: [
+									.2,
+									.7,
+									.2,
+									1
+								]
+							},
+							className: "mt-8 text-lg text-ink-soft leading-relaxed max-w-xl",
+							children: "Helping students secure admissions into India's top Engineering and Medical colleges through trusted counselling and expert guidance — for over fifteen years."
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+							initial: {
+								opacity: 0,
+								y: 20
+							},
+							animate: {
+								opacity: 1,
+								y: 0
+							},
+							transition: {
+								duration: .8,
+								delay: .3,
+								ease: [
+									.2,
+									.7,
+									.2,
+									1
+								]
+							},
+							className: "mt-10 flex flex-wrap items-center gap-4",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+								href: "#contact",
+								className: "btn-primary bg-primary border-primary hover:bg-primary-hover hover:border-primary-hover text-white shadow-[0_10px_25px_rgba(15,76,129,0.18)] group",
+								children: ["Book Free Counselling", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, {
+									size: 16,
+									strokeWidth: 2,
+									className: "transition-transform group-hover:translate-x-0.5"
+								})]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+								href: "#programs",
+								className: "btn-outline",
+								children: "Explore Courses"
+							})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
+							initial: { opacity: 0 },
+							animate: { opacity: 1 },
+							transition: {
+								duration: .8,
+								delay: .5
+							},
+							className: "mt-12 pt-8 border-t border-border grid grid-cols-3 gap-6 max-w-lg",
+							children: [
+								{
+									k: "15+",
+									v: "Years"
+								},
+								{
+									k: "5000+",
+									v: "Admissions"
+								},
+								{
+									k: "100+",
+									v: "Colleges"
+								}
+							].map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "border-l border-border pl-4 first:border-0 first:pl-0",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "font-display text-2xl font-semibold text-ink tabular-nums",
+									children: s.k
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "text-[10px] uppercase tracking-[0.14em] text-ink-soft mt-1.5",
+									children: s.v
+								})]
+							}, s.v))
+						})
+					]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "lg:col-span-6 relative px-4",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+						initial: {
+							opacity: 0,
+							y: 24
+						},
+						animate: {
+							opacity: 1,
+							y: 0
+						},
+						transition: {
+							duration: .9,
+							delay: .15,
+							ease: [
+								.2,
+								.7,
+								.2,
+								1
+							]
+						},
+						className: "relative border border-border p-2.5 bg-white rounded-[6px] shadow-[0_20px_50px_rgba(15,76,129,0.06)]",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 left-0 w-4 h-4 border-t border-l border-primary/20" }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 right-0 w-4 h-4 border-t border-r border-primary/20" }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute bottom-0 left-0 w-4 h-4 border-b border-l border-primary/20" }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary/20" }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "relative aspect-[4/5] overflow-hidden bg-surface rounded-[4px]",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.img, {
+									src: hero_default,
+									alt: "Educational counsellor guiding students in a career discussion",
+									width: 1600,
+									height: 2e3,
+									className: "absolute inset-0 w-full h-full object-cover",
+									style: {
+										y,
+										scale
+									}
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-tr from-ink/30 via-transparent to-transparent" })]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+								initial: {
+									opacity: 0,
+									x: -20,
+									y: 20
+								},
+								animate: {
+									opacity: 1,
+									x: 0,
+									y: 0
+								},
+								transition: {
+									duration: .7,
+									delay: .7
+								},
+								className: "absolute -left-6 bottom-10 glass-panel p-6 w-56 rounded-[6px] border border-white/50 shadow-[0_20px_40px_-15px_rgba(15,76,129,0.15)]",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "flex items-center gap-2 text-primary",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sparkles, {
+											size: 14,
+											strokeWidth: 1.75
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "text-[10px] tracking-[0.18em] uppercase font-medium",
+											children: "Success Rate"
+										})]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "mt-3 font-display text-3xl font-semibold text-ink",
+										children: "98%"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "mt-1 text-xs text-ink-soft leading-relaxed",
+										children: "Student satisfaction across counselling cohorts"
+									})
+								]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+								initial: {
+									opacity: 0,
+									x: 20,
+									y: -20
+								},
+								animate: {
+									opacity: 1,
+									x: 0,
+									y: 0
+								},
+								transition: {
+									duration: .7,
+									delay: .85
+								},
+								className: "absolute -right-6 top-10 glass-panel p-6 w-52 rounded-[6px] border border-white/50 shadow-[0_20px_40px_-15px_rgba(15,76,129,0.15)]",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "flex items-center gap-2 text-primary",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShieldCheck, {
+											size: 14,
+											strokeWidth: 1.75
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "text-[10px] tracking-[0.18em] uppercase font-medium",
+											children: "Trusted since"
+										})]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "mt-3 font-display text-3xl font-semibold text-ink tabular-nums",
+										children: "2010"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "mt-1 text-xs text-ink-soft leading-relaxed",
+										children: "Bengaluru's admissions specialists"
+									})
+								]
+							})
+						]
+					})
+				})]
+			})
+		]
+	});
+}
+function TrustBar() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+		className: "border-y border-border bg-surface",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "container-x py-8 flex flex-col md:flex-row items-center justify-between gap-6",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+				className: "text-xs uppercase tracking-[0.2em] text-ink-soft",
+				children: "Guidance across every major entrance"
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "flex flex-wrap items-center gap-x-10 gap-y-3",
+				children: [
+					"NEET UG",
+					"JEE Main",
+					"KCET",
+					"COMEDK",
+					"NEET PG",
+					"AIAPGET"
+				].map((n) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					className: "font-display text-sm font-medium text-ink/70 tracking-tight",
+					children: n
+				}, n))
+			})]
+		})
+	});
+}
+function About() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+		id: "about",
+		className: "py-24 lg:py-32",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "container-x grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+				className: "lg:col-span-6",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "relative",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "aspect-[4/5] overflow-hidden bg-surface",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: about_default,
+							alt: "Career Vision consultancy office in Bengaluru",
+							width: 1400,
+							height: 1750,
+							loading: "lazy",
+							className: "w-full h-full object-cover"
+						})
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "hidden md:block absolute -bottom-8 -right-8 bg-primary text-white p-8 w-64",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+							className: "font-display text-5xl font-semibold tabular-nums",
+							children: ["15", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "text-xl align-top",
+								children: "+"
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+							className: "mt-2 text-xs uppercase tracking-[0.18em] text-white/70",
+							children: [
+								"Years guiding",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+								"India's students"
+							]
+						})]
+					})]
+				})
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "lg:col-span-6 lg:pl-4",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Eyebrow, { children: "About Career Vision" }) }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: .05,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
+							className: "mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]",
+							children: [
+								"A consultancy built on trust,",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+								"transparency and results."
+							]
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: .1,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-8 text-base lg:text-lg leading-relaxed text-ink-soft",
+							children: "Career Vision Educational Consultancy is a trusted education consultancy dedicated to helping students build successful careers by securing admissions into reputed Engineering, Medical, and Allied Health Science institutions across India."
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: .15,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-5 text-base lg:text-lg leading-relaxed text-ink-soft",
+							children: "Our mission is to simplify the admission process while providing honest guidance, personalised counselling, and complete support throughout every step."
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: .2,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "mt-10 grid grid-cols-2 gap-6 max-w-md",
+							children: [
+								{
+									icon: ShieldCheck,
+									label: "Transparent process"
+								},
+								{
+									icon: UserCheck,
+									label: "Personalised counsel"
+								},
+								{
+									icon: Building2,
+									label: "100+ partner colleges"
+								},
+								{
+									icon: Award,
+									label: "Since 2010"
+								}
+							].map(({ icon: Icon, label }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex items-center gap-3",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
+									size: 18,
+									strokeWidth: 1.5,
+									className: "text-primary shrink-0"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-sm text-ink",
+									children: label
+								})]
+							}, label))
+						})
+					})
+				]
+			})]
+		})
+	});
+}
+function Services() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+		id: "services",
+		className: "py-24 lg:py-32 bg-surface",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "container-x",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "max-w-3xl",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Eyebrow, { children: "Services" }) }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: .05,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
+							className: "mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]",
+							children: [
+								"A complete admissions practice",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", { className: "hidden md:block" }),
+								" under one roof."
+							]
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: .1,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-6 text-lg text-ink-soft max-w-2xl",
+							children: "From career discovery to your first day on campus, we provide the expertise, network and diligence a life-defining decision deserves."
+						})
+					})
+				]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border",
+				children: [
+					{
+						icon: GraduationCap,
+						title: "Engineering Admissions",
+						desc: "B.E. / B.Tech placements across India's leading engineering institutes."
+					},
+					{
+						icon: Stethoscope,
+						title: "MBBS Admissions",
+						desc: "Complete guidance for NEET UG counselling across government and private colleges."
+					},
+					{
+						icon: HeartPulse,
+						title: "Medical PG Admissions",
+						desc: "MD / MS / Diploma placements through NEET PG state and all-India rounds."
+					},
+					{
+						icon: Leaf,
+						title: "BAMS Admissions",
+						desc: "Ayurvedic medicine admissions across recognised universities."
+					},
+					{
+						icon: Microscope,
+						title: "BHMS Admissions",
+						desc: "Homeopathy programmes with a structured, transparent process."
+					},
+					{
+						icon: ToothIcon,
+						title: "BDS Admissions",
+						desc: "Dental surgery seats in reputed government and private colleges."
+					},
+					{
+						icon: Handshake,
+						title: "BPT Admissions",
+						desc: "Physiotherapy programmes with allied health specialisation guidance."
+					},
+					{
+						icon: Compass,
+						title: "Career Counselling",
+						desc: "One-to-one aptitude, stream and career-path discovery sessions."
+					},
+					{
+						icon: Building2,
+						title: "College Selection",
+						desc: "Curated shortlists that fit your rank, budget and long-term goals."
+					},
+					{
+						icon: FileCheck,
+						title: "Admission Guidance",
+						desc: "End-to-end handholding through every counselling and allotment round."
+					},
+					{
+						icon: FileText,
+						title: "Documentation Support",
+						desc: "Verification, attestation and submission — handled without stress."
+					},
+					{
+						icon: Route,
+						title: "Seat Booking Assistance",
+						desc: "On-ground assistance during reporting, seat locking and confirmation."
+					}
+				].map(({ icon: Icon, title, desc }, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+					delay: i * .04,
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "group h-full bg-white p-8 transition-colors duration-300 hover:bg-white relative",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-primary/30" }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "w-11 h-11 border border-border flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-colors",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
+									size: 20,
+									strokeWidth: 1.5
+								})
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+								className: "mt-6 font-display text-lg font-semibold text-ink tracking-tight",
+								children: title
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-3 text-sm text-ink-soft leading-relaxed",
+								children: desc
+							})
+						]
+					})
+				}, title))
+			})]
+		})
+	});
+}
+function WhyUs() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+		className: "py-24 lg:py-32",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "container-x",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex flex-col lg:flex-row lg:items-end justify-between gap-8",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "max-w-2xl",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Eyebrow, { children: "Why Career Vision" }) }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: .05,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
+							className: "mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]",
+							children: [
+								"Eight reasons families",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+								" choose us — and stay."
+							]
+						})
+					})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+					delay: .1,
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "text-ink-soft max-w-md",
+						children: "Every recommendation we make is one we would make for our own children. That single principle shapes everything below."
+					})
+				})]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6",
+				children: [
+					{
+						icon: Award,
+						title: "Expert Counsellors",
+						desc: "A senior team with 15+ years of admissions and academic advisory experience."
+					},
+					{
+						icon: UserCheck,
+						title: "Personalised Guidance",
+						desc: "Every plan is designed around your rank, aspirations and family context."
+					},
+					{
+						icon: ShieldCheck,
+						title: "Trusted Process",
+						desc: "A transparent, documented workflow — no shortcuts, no surprises."
+					},
+					{
+						icon: Building2,
+						title: "Wide College Network",
+						desc: "Direct relationships with 100+ engineering and medical institutions."
+					},
+					{
+						icon: FileCheck,
+						title: "Transparent Consultancy",
+						desc: "Clear fee structures, honest cut-offs, and objective recommendations."
+					},
+					{
+						icon: FileText,
+						title: "Documentation Support",
+						desc: "Every certificate, form and attestation handled by our operations team."
+					},
+					{
+						icon: Wallet,
+						title: "Affordable Consultation",
+						desc: "Premium service without premium overheads — value families can trust."
+					},
+					{
+						icon: Users,
+						title: "Student-First Approach",
+						desc: "Long-term outcomes over short-term commissions. Always."
+					}
+				].map(({ icon: Icon, title, desc }, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+					delay: i * .05,
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "card-elevated card-elevated-hover h-full p-7",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex items-start justify-between",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "w-10 h-10 bg-surface flex items-center justify-center text-primary",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
+										size: 18,
+										strokeWidth: 1.5
+									})
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+									className: "font-display text-xs text-ink-soft tabular-nums",
+									children: ["0", i + 1]
+								})]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+								className: "mt-8 font-display text-base font-semibold text-ink",
+								children: title
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-3 text-sm text-ink-soft leading-relaxed",
+								children: desc
+							})
+						]
+					})
+				}, title))
+			})]
+		})
+	});
+}
+function Process() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+		id: "process",
+		className: "py-24 lg:py-32 bg-surface relative overflow-hidden",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "container-x relative z-10",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "max-w-3xl",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Eyebrow, { children: "Admission Process" }) }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: .05,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
+							className: "mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]",
+							children: [
+								"Six deliberate steps, from",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+								" first call to first day."
+							]
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: .1,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-5 text-base lg:text-lg leading-relaxed text-ink-soft max-w-xl",
+							children: "We guide students through a structured, transparent timeline to make college admissions smooth and stress-free."
+						})
+					})
+				]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+				children: [
+					{
+						n: "01",
+						title: "Free Consultation",
+						desc: "A no-obligation session to understand your goals, scores and preferences."
+					},
+					{
+						n: "02",
+						title: "Career Assessment",
+						desc: "Structured aptitude review and stream fit analysis with senior counsellors."
+					},
+					{
+						n: "03",
+						title: "College Selection",
+						desc: "A shortlist calibrated to rank, budget, location and long-term outcomes."
+					},
+					{
+						n: "04",
+						title: "Application Assistance",
+						desc: "Applications, entrance forms and choice-filling handled meticulously."
+					},
+					{
+						n: "05",
+						title: "Documentation",
+						desc: "Verification, attestation and submission — audited before every deadline."
+					},
+					{
+						n: "06",
+						title: "Admission Confirmation",
+						desc: "On-ground support during reporting, seat locking and campus onboarding."
+					}
+				].map((s, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+					delay: i * .06,
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "group bg-white border border-border p-8 rounded-[6px] relative overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_20px_50px_rgba(15,76,129,0.06)] h-full flex flex-col justify-between",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "font-display font-bold text-[96px] text-primary/[0.03] absolute right-6 bottom-[-15px] select-none pointer-events-none transition-colors duration-300 group-hover:text-primary/[0.06]",
+								children: s.n
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "relative z-10",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/5 text-primary text-xs font-semibold tracking-wider transition-colors duration-300 group-hover:bg-primary group-hover:text-white",
+										children: s.n
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+										className: "mt-8 font-display text-xl font-semibold text-ink tracking-tight transition-colors duration-300 group-hover:text-primary",
+										children: s.title
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "mt-4 text-sm text-ink-soft leading-relaxed pr-6",
+										children: s.desc
+									})
+								]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute bottom-0 left-0 right-0 h-[3px] bg-gold scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" })
+						]
+					})
+				}, s.n))
+			})]
+		})]
+	});
+}
+function Programs() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+		id: "programs",
+		className: "py-24 lg:py-32 relative overflow-hidden",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-[-10%] left-[-10%] w-[50%] aspect-square rounded-full bg-[radial-gradient(circle,rgba(197,168,128,0.04)_0%,transparent_70%)] pointer-events-none blur-3xl" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "container-x relative z-10",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex flex-col lg:flex-row lg:items-end justify-between gap-8",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "max-w-2xl",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Eyebrow, { children: "Featured Programs" }) }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: .05,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
+							className: "mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]",
+							children: [
+								"Programmes we guide",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+								" students into every year."
+							]
+						})
+					})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+					delay: .1,
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+						href: "#contact",
+						className: "btn-primary bg-primary border-primary hover:bg-primary-hover hover:border-primary-hover text-white shadow-[0_10px_25px_rgba(15,76,129,0.15)] h-12 flex items-center justify-center",
+						children: "Speak to an advisor"
+					})
+				})]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+				children: [
+					{
+						title: "Engineering",
+						tag: "B.E. / B.Tech",
+						desc: "Core, computing and emerging disciplines across India's top engineering colleges.",
+						img: prog_engineering_default
+					},
+					{
+						title: "MBBS",
+						tag: "Bachelor of Medicine",
+						desc: "Government and private medical seats through NEET UG counselling.",
+						img: prog_mbbs_default
+					},
+					{
+						title: "Medical PG",
+						tag: "MD / MS",
+						desc: "Post-graduate medical placements via NEET PG state and all-India quotas.",
+						img: prog_pg_default
+					},
+					{
+						title: "BAMS",
+						tag: "Ayurveda",
+						desc: "Bachelor of Ayurvedic Medicine and Surgery at recognised institutions.",
+						img: prog_bams_default
+					},
+					{
+						title: "BHMS",
+						tag: "Homeopathy",
+						desc: "Structured admissions for Bachelor of Homeopathic Medicine and Surgery.",
+						img: prog_bhms_default
+					},
+					{
+						title: "BDS",
+						tag: "Dental Surgery",
+						desc: "Bachelor of Dental Surgery seats in reputed dental colleges.",
+						img: prog_bds_default
+					},
+					{
+						title: "BPT",
+						tag: "Physiotherapy",
+						desc: "Allied health specialisation in Bachelor of Physiotherapy.",
+						img: prog_bpt_default
+					}
+				].map((p, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+					delay: i * .05,
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
+						className: "group bg-white border border-border overflow-hidden rounded-[6px] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_rgba(15,76,129,0.07)] hover:border-primary/20 flex flex-col h-full relative",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "aspect-[4/3] overflow-hidden bg-surface relative",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+									src: p.img,
+									alt: `${p.title} — ${p.tag}`,
+									width: 1200,
+									height: 900,
+									loading: "lazy",
+									className: "w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.2,0.7,0.2,1)] group-hover:scale-[1.05]"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-t from-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" })]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "p-8 flex flex-col grow relative z-10",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-[10px] tracking-[0.2em] uppercase text-primary font-semibold",
+										children: p.tag
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+										className: "mt-3.5 font-display text-2xl font-bold text-ink tracking-tight transition-colors duration-300 group-hover:text-primary",
+										children: p.title
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "mt-3 text-sm text-ink-soft leading-relaxed grow",
+										children: p.desc
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+										href: "#contact",
+										className: "mt-8 inline-flex items-center gap-2 text-sm font-semibold text-ink transition-colors duration-300 group-hover:text-primary group/link",
+										children: ["Learn more", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, {
+											size: 15,
+											className: "transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+										})]
+									})
+								]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute bottom-0 left-0 right-0 h-[3px] bg-gold scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" })
+						]
+					})
+				}, p.title))
+			})]
+		})]
+	});
+}
+function Stats() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+		className: "bg-dark text-white",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "container-x py-24 lg:py-32",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+					className: "eyebrow-light",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "rule-line" }), "By the numbers"]
+				}) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+					delay: .05,
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+						className: "mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.1] max-w-3xl",
+						children: "A track record measured in careers, not campaigns."
+					})
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "mt-16 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10",
+					children: [
+						{
+							n: 5e3,
+							suffix: "+",
+							label: "Successful Admissions"
+						},
+						{
+							n: 100,
+							suffix: "+",
+							label: "Partner Institutions"
+						},
+						{
+							n: 15,
+							suffix: "+",
+							label: "Years of Experience"
+						},
+						{
+							n: 98,
+							suffix: "%",
+							label: "Happy Students"
+						}
+					].map((s, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: i * .08,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "bg-dark p-8 lg:p-10 h-full",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "font-display text-5xl lg:text-6xl font-semibold text-white tabular-nums tracking-tight",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Counter, {
+									to: s.n,
+									suffix: s.suffix
+								})
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-4 text-sm text-white/60 uppercase tracking-[0.14em]",
+								children: s.label
+							})]
+						})
+					}, s.label))
+				})
+			]
+		})
+	});
+}
+function Testimonials() {
+	const items = [
+		{
+			quote: "Career Vision's expert guidance made my dream a reality.",
+			name: "Balla Sri Charan",
+			role: "MBBS, VINAYAKA MISSION MEDICAL COLLEGE"
+		},
+		{
+			quote: "They provided step-by-step assistance throughout the entire admission process.",
+			name: "Devareddy Tayswitha Reddy",
+			role: "MBBS, CMR MEDICAL COLLEGE HYDERABAD"
+		},
+		{
+			quote: "I highly recommend Career Vision for anyone seeking medical admissions.",
+			name: "Yannam Sai Hemanth Reddy",
+			role: "MBBS, CHALMADA ANANDH RAO MEDICAL COLLEGE"
+		},
+		{
+			quote: "Their transparency and dedication secured my admission seamlessly.",
+			name: "Polamarasetti Tanvi",
+			role: "BAMS, HILLSIDES AYURVEDIC MEDICAL COLLEGE"
+		},
+		{
+			quote: "From documentation to seat locking, every step was handled with genuine care.",
+			name: "Siva Krishan",
+			role: "PG ORTHO, MNR MEDICAL COLLEGE"
+		}
+	];
+	const [idx, setIdx] = (0, import_react.useState)(0);
+	const active = items[idx];
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+		id: "testimonials",
+		className: "py-24 lg:py-32 bg-surface relative overflow-hidden",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute bottom-[-10%] right-[-10%] w-[50%] aspect-square rounded-full bg-[radial-gradient(circle,rgba(15,76,129,0.03)_0%,transparent_70%)] pointer-events-none blur-3xl" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "container-x relative z-10",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "max-w-3xl",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Eyebrow, { children: "Student Testimonials" }) }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: .05,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
+							className: "mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]",
+							children: [
+								"Words from families who",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+								" walked this road with us."
+							]
+						})
+					})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						className: "lg:col-span-8",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.blockquote, {
+							initial: {
+								opacity: 0,
+								y: 12
+							},
+							animate: {
+								opacity: 1,
+								y: 0
+							},
+							transition: {
+								duration: .6,
+								ease: [
+									.2,
+									.7,
+									.2,
+									1
+								]
+							},
+							className: "relative bg-white border border-border p-10 lg:p-14 shadow-[0_20px_50px_rgba(15,76,129,0.04)] rounded-[6px] overflow-hidden",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Quote, {
+									size: 80,
+									strokeWidth: .75,
+									className: "text-gold/10 absolute top-6 right-6 pointer-events-none"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "flex items-center gap-1 text-primary relative z-10",
+									children: Array.from({ length: 5 }).map((_, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Star, {
+										size: 15,
+										className: "fill-primary",
+										strokeWidth: 0
+									}, i))
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+									className: "mt-8 font-display text-2xl lg:text-3xl leading-[1.4] tracking-tight text-ink relative z-10 font-medium",
+									children: [
+										"“",
+										active.quote,
+										"”"
+									]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "mt-10 pt-8 border-t border-border flex items-center justify-between relative z-10",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "font-display font-semibold text-ink text-base",
+										children: active.name
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-sm text-ink-soft mt-1",
+										children: active.role
+									})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+										className: "font-display text-sm text-ink-soft/60 tabular-nums",
+										children: [
+											String(idx + 1).padStart(2, "0"),
+											" ",
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "text-ink-soft/20",
+												children: "/"
+											}),
+											" ",
+											String(items.length).padStart(2, "0")
+										]
+									})]
+								})
+							]
+						}, idx)
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						className: "lg:col-span-4",
+						delay: .1,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "flex lg:flex-col gap-3",
+							children: items.map((t, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+								onClick: () => setIdx(i),
+								className: `text-left border p-5 flex-1 lg:flex-none transition-all duration-300 cursor-pointer ${i === idx ? "bg-primary border-primary text-white shadow-[0_10px_20px_rgba(15,76,129,0.15)] rounded-[6px]" : "bg-white border-border text-ink hover:border-primary/30 hover:translate-x-1 rounded-[6px]"}`,
+								"aria-pressed": i === idx,
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+										className: `text-[9px] tracking-[0.2em] uppercase font-semibold ${i === idx ? "text-white/60" : "text-ink-soft"}`,
+										children: ["Student 0", i + 1]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "mt-2 font-display font-medium text-sm lg:text-base",
+										children: t.name
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: `text-xs mt-1 ${i === idx ? "text-white/70" : "text-ink-soft"}`,
+										children: t.role
+									})
+								]
+							}, t.name))
+						})
+					})]
+				})]
+			})
+		]
+	});
+}
+function FAQ() {
+	const faqs = [
+		{
+			q: "How does the admission process work?",
+			a: "We begin with a free consultation to understand your rank and preferences, followed by career assessment, a curated college shortlist, application support, documentation, and on-ground seat confirmation."
+		},
+		{
+			q: "Can you help with MBBS admissions?",
+			a: "Yes. We handle NEET UG counselling across state and all-India rounds for both government and private medical colleges, along with documentation and reporting support."
+		},
+		{
+			q: "Do you provide personalised counselling?",
+			a: "Every family we work with receives one-to-one sessions with senior counsellors. There are no scripted pitches — recommendations are tailored to your rank, budget, and long-term goals."
+		},
+		{
+			q: "Do you assist with documentation?",
+			a: "Yes. Our operations team manages verification, attestation, choice-filling and every deadline — audited before submission so nothing is missed."
+		},
+		{
+			q: "Which colleges do you partner with?",
+			a: "We work with 100+ engineering and medical institutions across Karnataka, Maharashtra, Tamil Nadu, and other major states — spanning government, deemed and private universities."
+		}
+	];
+	const [open, setOpen] = (0, import_react.useState)(0);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+		id: "faq",
+		className: "py-24 lg:py-32 relative overflow-hidden",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-[-10%] right-[-10%] w-[50%] aspect-square rounded-full bg-[radial-gradient(circle,rgba(197,168,128,0.03)_0%,transparent_70%)] pointer-events-none blur-3xl" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "container-x grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "lg:col-span-4",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Eyebrow, { children: "FAQ" }) }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+							delay: .05,
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
+								className: "mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]",
+								children: [
+									"Questions we hear",
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+									" most often."
+								]
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+							delay: .1,
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-6 text-ink-soft",
+								children: "Still curious? A free consultation is the fastest way to a clear answer."
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+							delay: .15,
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+								href: "#contact",
+								className: "btn-primary bg-primary border-primary hover:bg-primary-hover hover:border-primary-hover text-white shadow-[0_10px_25px_rgba(15,76,129,0.15)] mt-8",
+								children: "Ask us directly"
+							})
+						})
+					]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "lg:col-span-8",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "border-t border-border",
+						children: faqs.map((f, i) => {
+							const isOpen = open === i;
+							return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+								delay: i * .04,
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "border-b border-border",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+										onClick: () => setOpen(isOpen ? null : i),
+										className: "w-full flex items-center justify-between gap-6 py-6 text-left group cursor-pointer",
+										"aria-expanded": isOpen,
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "font-display text-lg lg:text-xl font-medium text-ink tracking-tight transition-colors duration-300 group-hover:text-primary",
+											children: f.q
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "w-9 h-9 border border-border flex items-center justify-center text-ink shrink-0 group-hover:bg-primary group-hover:border-primary group-hover:text-white transition-all duration-300 rounded-[4px]",
+											children: isOpen ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Minus, {
+												size: 15,
+												strokeWidth: 1.5
+											}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Plus, {
+												size: 15,
+												strokeWidth: 1.5
+											})
+										})]
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
+										initial: false,
+										animate: {
+											height: isOpen ? "auto" : 0,
+											opacity: isOpen ? 1 : 0
+										},
+										transition: {
+											duration: .35,
+											ease: [
+												.2,
+												.7,
+												.2,
+												1
+											]
+										},
+										className: "overflow-hidden",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "pb-8 pr-16 text-ink-soft leading-relaxed text-sm lg:text-base",
+											children: f.a
+										})
+									})]
+								})
+							}, f.q);
+						})
+					})
+				})]
+			})
+		]
+	});
+}
+function CTA() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+		className: "bg-dark text-white",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "container-x py-24 lg:py-32 text-center max-w-4xl mx-auto",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+					className: "eyebrow-light justify-center inline-flex",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "rule-line" }), "Ready when you are"]
+				}) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+					delay: .05,
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
+						className: "mt-6 font-display text-4xl lg:text-6xl font-semibold tracking-tight leading-[1.05]",
+						children: [
+							"Ready to build",
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+							" your career?"
+						]
+					})
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+					delay: .1,
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "mt-8 text-lg text-white/60 max-w-xl mx-auto",
+						children: "Book your free counselling session today. No obligations — just an honest conversation about your future."
+					})
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+					delay: .15,
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "mt-10 flex flex-wrap justify-center gap-4",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+							href: "#contact",
+							className: "btn-primary bg-white !text-ink border-white hover:!bg-white/90 hover:!border-white/90",
+							style: {
+								backgroundColor: "white",
+								color: "#0F172A",
+								borderColor: "white"
+							},
+							children: ["Schedule Consultation", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { size: 16 })]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+							href: "tel:+918639887319",
+							className: "btn-ghost-light",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { size: 14 }), " +91 86398 87319"]
+						})]
+					})
+				})
+			]
+		})
+	});
+}
+function Contact() {
+	const [formData, setFormData] = (0, import_react.useState)({
+		name: "",
+		phone: "",
+		course: "General Inquiry",
+		message: ""
+	});
+	const handleFormSubmit = (e) => {
+		e.preventDefault();
+		if (!formData.name.trim() || !formData.phone.trim()) {
+			toast.error("Please fill in all required fields.");
+			return;
+		}
+		toast.success("Opening WhatsApp to send your details...");
+		const text = `Hello Career Vision, I would like to make an inquiry. Here are my details:
+- Name: ${formData.name.trim()}
+- Phone: ${formData.phone.trim()}
+- Preferred Course: ${formData.course}
+${formData.message.trim() ? `- Message: ${formData.message.trim()}` : ""}`;
+		const whatsappUrl = `https://wa.me/918639887319?text=${encodeURIComponent(text)}`;
+		window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+		setFormData({
+			name: "",
+			phone: "",
+			course: "General Inquiry",
+			message: ""
+		});
+	};
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+		id: "contact",
+		className: "py-24 lg:py-32",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "container-x",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "max-w-3xl",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Eyebrow, { children: "Contact" }) }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+					delay: .05,
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+						className: "mt-6 font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink leading-[1.1]",
+						children: "Get in Touch with Career Vision."
+					})
+				})]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "lg:col-span-6 space-y-8",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "bg-dark text-white p-8 lg:p-10 flex flex-col",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+								className: "font-display text-2xl font-semibold",
+								children: "Visit Our Office"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-3 text-sm text-white/60",
+								children: "Located in the educational hub of Jayanagar, Bengaluru."
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "mt-8 space-y-6",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ContactRow, {
+										icon: Phone,
+										label: "Phone",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+											href: "tel:+918639887319",
+											className: "hover:underline tabular-nums",
+											children: "+91 86398 87319"
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ContactRow, {
+										icon: Mail,
+										label: "Email",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+											href: "mailto:careervisioneduconsultancy@gmail.com",
+											className: "hover:underline break-all",
+											children: "careervisioneduconsultancy@gmail.com"
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ContactRow, {
+										icon: MapPin,
+										label: "Address",
+										children: "Second Floor, 07/3, 18th C Main Rd, MTB Area, Marenahalli, Jayanagar 9th Block, Bengaluru, Karnataka 560041"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(ContactRow, {
+										icon: CircleCheck,
+										label: "Business Hours",
+										children: [
+											"Monday – Saturday · 9:00 AM – 8:00 PM",
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "text-white/50",
+												children: "Sunday · Holiday"
+											})
+										]
+									})
+								]
+							})
+						]
+					}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: .05,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "aspect-[16/10] border border-border overflow-hidden bg-surface",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("iframe", {
+								title: "Career Vision Educational Consultancy — Jayanagar, Bengaluru",
+								src: "https://www.google.com/maps?q=18th+C+Main+Rd,+Marenahalli,+Jayanagar+9th+Block,+Bengaluru,+Karnataka+560041&output=embed",
+								width: "100%",
+								height: "100%",
+								loading: "lazy",
+								referrerPolicy: "no-referrer-when-downgrade",
+								className: "w-full h-full block filter grayscale-[35%] contrast-[0.95]",
+								style: {
+									border: 0,
+									minHeight: 300
+								}
+							})
+						})
+					})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+					className: "lg:col-span-6",
+					delay: .1,
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "bg-white border border-border p-8 lg:p-10 h-full flex flex-col justify-between",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+								className: "font-display text-2xl font-semibold text-ink",
+								children: "Send an Inquiry"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-3 text-sm text-ink-soft",
+								children: "Fill in your details below to directly connect with our senior admission advisors on WhatsApp."
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
+								onSubmit: handleFormSubmit,
+								className: "mt-8 space-y-6",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+										htmlFor: "form-name",
+										className: "block text-xs font-semibold uppercase tracking-wider text-ink",
+										children: "Full Name *"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+										type: "text",
+										id: "form-name",
+										required: true,
+										value: formData.name,
+										onChange: (e) => setFormData({
+											...formData,
+											name: e.target.value
+										}),
+										placeholder: "John Doe",
+										className: "mt-2 block w-full px-4 py-3 border border-border rounded-[6px] focus:outline-none focus:border-primary text-sm text-ink bg-surface placeholder:text-ink-soft/40 transition-colors"
+									})] }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "grid grid-cols-1 md:grid-cols-2 gap-6",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+											htmlFor: "form-phone",
+											className: "block text-xs font-semibold uppercase tracking-wider text-ink",
+											children: "Phone Number *"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+											type: "tel",
+											id: "form-phone",
+											required: true,
+											value: formData.phone,
+											onChange: (e) => setFormData({
+												...formData,
+												phone: e.target.value
+											}),
+											placeholder: "e.g. +91 98765 43210",
+											className: "mt-2 block w-full px-4 py-3 border border-border rounded-[6px] focus:outline-none focus:border-primary text-sm text-ink bg-surface placeholder:text-ink-soft/40 transition-colors"
+										})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+											htmlFor: "form-course",
+											className: "block text-xs font-semibold uppercase tracking-wider text-ink",
+											children: "Preferred Program *"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+											id: "form-course",
+											required: true,
+											value: formData.course,
+											onChange: (e) => setFormData({
+												...formData,
+												course: e.target.value
+											}),
+											className: "mt-2 block w-full px-4 py-3 border border-border rounded-[6px] focus:outline-none focus:border-primary text-sm text-ink bg-surface transition-colors cursor-pointer",
+											children: [
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+													value: "General Inquiry",
+													children: "General Inquiry"
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+													value: "MBBS Admission",
+													children: "MBBS Admission"
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+													value: "Engineering Admission",
+													children: "Engineering Admission"
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+													value: "Medical PG Admission",
+													children: "Medical PG Admission"
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+													value: "BAMS Admission",
+													children: "BAMS Admission"
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+													value: "BHMS Admission",
+													children: "BHMS Admission"
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+													value: "BDS Admission",
+													children: "BDS Admission"
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+													value: "BPT Admission",
+													children: "BPT Admission"
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+													value: "Career Counselling",
+													children: "Career Counselling"
+												})
+											]
+										})] })]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+										htmlFor: "form-message",
+										className: "block text-xs font-semibold uppercase tracking-wider text-ink",
+										children: "Inquiry Details"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("textarea", {
+										id: "form-message",
+										rows: 4,
+										value: formData.message,
+										onChange: (e) => setFormData({
+											...formData,
+											message: e.target.value
+										}),
+										placeholder: "Share your entrance exam rank, score, budget constraints, or specific queries...",
+										className: "mt-2 block w-full px-4 py-3 border border-border rounded-[6px] focus:outline-none focus:border-primary text-sm text-ink bg-surface placeholder:text-ink-soft/40 transition-colors resize-none"
+									})] }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+										type: "submit",
+										className: "btn-primary w-full group mt-2",
+										children: ["Submit & Chat on WhatsApp", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, {
+											size: 16,
+											className: "transition-transform group-hover:translate-x-0.5"
+										})]
+									})
+								]
+							})
+						] })
+					})
+				})]
+			})]
+		})
+	});
+}
+function ContactRow({ icon: Icon, label, children }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "flex items-start gap-4",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			className: "w-9 h-9 border border-white/15 flex items-center justify-center text-white/80 shrink-0",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
+				size: 15,
+				strokeWidth: 1.5
+			})
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "min-w-0",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+				className: "text-[10px] tracking-[0.2em] uppercase text-white/50",
+				children: label
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "mt-1.5 text-sm text-white/90 leading-relaxed",
+				children
+			})]
+		})]
+	});
+}
 //#endregion
-export { useScroll as a, useMotionValue as i, useSpring as n, motion as o, useTransform as r, useInView as t };
+export { Index as component };
