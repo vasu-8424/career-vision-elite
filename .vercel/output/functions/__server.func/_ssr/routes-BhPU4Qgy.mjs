@@ -1,6 +1,6 @@
 import { a as __toCommonJS, c as require_react, l as require_react_dom, n as __esmMin, o as __toESM, r as __exportAll, s as require_jsx_runtime, t as __commonJSMin } from "./react-dom-Yn6n5m3J.mjs";
 import { n as hero_default, r as toast } from "./dist-CEPWaCOt.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-c94WTBVB.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BhPU4Qgy.js
 var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
 var LayoutGroupContext = (0, import_react.createContext)({});
 /**
@@ -10657,8 +10657,21 @@ function Footer() {
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 			className: "border-t border-white/10",
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "container-x py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "© 2026 Career Vision Educational Consultancy. All Rights Reserved." }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Bengaluru, India" })]
+				className: "container-x py-8 flex flex-col items-center justify-center gap-4 text-xs text-white/40 text-center",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex flex-col items-center gap-2",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+						src: "/logo.png",
+						alt: "Staffarc Logo",
+						className: "h-6 w-auto opacity-75 hover:opacity-100 transition-opacity"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "font-medium tracking-wide",
+						children: "Made with Staffarc"
+					})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex flex-col sm:flex-row items-center justify-between w-full border-t border-white/5 pt-4 gap-3",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "© 2026 Career Vision Educational Consultancy. All Rights Reserved." }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Bengaluru, India" })]
+				})]
 			})
 		})]
 	});
