@@ -15,5 +15,9 @@ export default defineConfig({
   nitro: {
     preset: "vercel",
   },
-  vite: {},
+  vite: {
+    ssr: {
+      noExternal: process.env.NODE_ENV === "production" ? true : [],
+    },
+  },
 });
