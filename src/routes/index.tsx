@@ -69,11 +69,12 @@ function EnquiryPopup() {
   const [formData, setFormData] = useState({ name: "", phone: "", course: "General Inquiry" });
 
   useEffect(() => {
+    if (open) return;
     const timer = setTimeout(() => {
       setOpen(true);
-    }, 1500);
+    }, 7000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [open]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -690,6 +691,55 @@ function Testimonials() {
   const [idx, setIdx] = useState(0);
   const active = items[idx];
 
+  // Touch Swipe Support
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const minSwipeDistance = 50;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe) {
+      setIdx((prev) => (prev + 1) % items.length);
+    } else if (isRightSwipe) {
+      setIdx((prev) => (prev - 1 + items.length) % items.length);
+    }
+  };
+
+  // Autoplay Slider (6 seconds)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIdx((prev) => (prev + 1) % items.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [idx, items.length]);
+
+  // Center Active Card Scroll Sync
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const activeEl = container.children[idx] as HTMLElement;
+      if (activeEl) {
+        container.scrollTo({
+          left: activeEl.offsetLeft - container.offsetWidth / 2 + activeEl.offsetWidth / 2,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [idx]);
+
   return (
     <section id="testimonials" className="py-24 lg:py-32 bg-surface relative overflow-hidden">
       {/* Background decorations */}
@@ -713,7 +763,10 @@ function Testimonials() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
-              className="relative bg-white border border-border p-10 lg:p-14 shadow-[0_20px_50px_rgba(15,76,129,0.04)] rounded-[6px] overflow-hidden"
+              className="relative bg-white border border-border p-10 lg:p-14 shadow-[0_20px_50px_rgba(15,76,129,0.04)] rounded-[6px] overflow-hidden cursor-grab active:cursor-grabbing select-none"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
             >
               <Quote size={80} strokeWidth={0.75} className="text-gold/10 absolute top-6 right-6 pointer-events-none" />
               
@@ -740,12 +793,15 @@ function Testimonials() {
           </Reveal>
 
           <Reveal className="lg:col-span-4" delay={0.1}>
-            <div className="flex lg:flex-col gap-3">
+            <div 
+              ref={scrollContainerRef}
+              className="flex lg:flex-col gap-3 overflow-x-auto pb-4 -mx-4 px-4 snap-x snap-mandatory no-scrollbar"
+            >
               {items.map((t, i) => (
                 <button
                   key={t.name}
                   onClick={() => setIdx(i)}
-                  className={`text-left border p-5 flex-1 lg:flex-none transition-all duration-300 cursor-pointer ${
+                  className={`text-left border p-5 snap-start shrink-0 min-w-[260px] sm:min-w-[300px] lg:min-w-0 flex-1 lg:flex-none transition-all duration-300 cursor-pointer ${
                     i === idx
                       ? "bg-primary border-primary text-white shadow-[0_10px_20px_rgba(15,76,129,0.15)] rounded-[6px]"
                       : "bg-white border-border text-ink hover:border-primary/30 hover:translate-x-1 rounded-[6px]"

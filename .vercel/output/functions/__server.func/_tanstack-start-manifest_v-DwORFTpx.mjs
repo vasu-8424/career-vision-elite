@@ -1,19 +1,19 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-BlluQrq8.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-DwORFTpx.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "D:/career vision/career-vision-elite/src/routes/__root.tsx",
 		children: ["/"],
-		preloads: ["/assets/index-C1yo2Wj3.js"],
+		preloads: ["/assets/index-rrBS0NVu.js"],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-C1yo2Wj3.js"
+			src: "/assets/index-rrBS0NVu.js"
 		} }]
 	},
 	"/": {
 		filePath: "D:/career vision/career-vision-elite/src/routes/index.tsx",
 		children: void 0,
-		preloads: ["/assets/routes-CNMc5g3Y.js"]
+		preloads: ["/assets/routes-Dqd-HcRx.js"]
 	}
 } });
 //#endregion
