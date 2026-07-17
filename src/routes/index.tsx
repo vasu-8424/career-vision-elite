@@ -70,6 +70,11 @@ function EnquiryPopup() {
 
   useEffect(() => {
     if (open) return;
+    
+    // Do not schedule the popup if the user has already submitted it
+    const isSubmitted = typeof window !== "undefined" && localStorage.getItem("enquiry_submitted") === "true";
+    if (isSubmitted) return;
+
     const timer = setTimeout(() => {
       setOpen(true);
     }, 7000);
@@ -78,6 +83,9 @@ function EnquiryPopup() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (typeof window !== "undefined") {
+      localStorage.setItem("enquiry_submitted", "true");
+    }
     toast.success("Inquiry sent successfully!");
     setOpen(false);
   };

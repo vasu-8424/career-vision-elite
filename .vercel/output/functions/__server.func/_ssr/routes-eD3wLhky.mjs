@@ -1,6 +1,6 @@
 import { a as __toCommonJS, c as require_react, l as require_react_dom, n as __esmMin, o as __toESM, r as __exportAll, s as require_jsx_runtime, t as __commonJSMin } from "./react-dom-Yn6n5m3J.mjs";
 import { n as hero_default, r as toast } from "./dist-CEPWaCOt.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-Ba_OQFR7.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-eD3wLhky.js
 var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
 var LayoutGroupContext = (0, import_react.createContext)({});
 /**
@@ -16622,6 +16622,7 @@ function EnquiryPopup() {
 	});
 	(0, import_react.useEffect)(() => {
 		if (open) return;
+		if (typeof window !== "undefined" && localStorage.getItem("enquiry_submitted") === "true") return;
 		const timer = setTimeout(() => {
 			setOpen(true);
 		}, 7e3);
@@ -16629,6 +16630,7 @@ function EnquiryPopup() {
 	}, [open]);
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		if (typeof window !== "undefined") localStorage.setItem("enquiry_submitted", "true");
 		toast.success("Inquiry sent successfully!");
 		setOpen(false);
 	};
