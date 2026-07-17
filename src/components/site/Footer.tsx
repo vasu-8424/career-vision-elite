@@ -76,9 +76,10 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-x py-8 flex flex-col items-center justify-center gap-4 text-xs text-white/40 text-center">
-          <div className="flex flex-col items-center gap-2">
-            <img src="/logo.png" alt="Staffarc Logo" className="h-6 w-auto opacity-75 hover:opacity-100 transition-opacity" />
-            <p className="font-medium tracking-wide">Made with Staffarc</p>
+          <div className="flex items-center justify-center gap-1.5 opacity-75 hover:opacity-100 transition-opacity">
+            <span>Made with</span>
+            <img src="/logo.png" alt="Staffarc Logo" className="h-3.5 w-auto" />
+            <span className="font-medium text-white/60">Staffarc</span>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-between w-full border-t border-white/5 pt-4 gap-3">
             <p>© 2026 Career Vision Educational Consultancy. All Rights Reserved.</p>

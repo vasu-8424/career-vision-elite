@@ -1,7 +1,7 @@
 import { c as require_react, l as require_react_dom, o as __toESM, s as require_jsx_runtime } from "./react-dom-Yn6n5m3J.mjs";
 import { D as isModuleNotFoundError, E as isDangerousProtocol, F as removeTrailingSlash, G as useIntersectionObserver, H as trimPathRight, I as replaceEqualDeep$1, K as useRouter, M as matchContext, N as reactUse, P as redirect, R as resolveManifestCssLink, S as getScriptPreloadAttrs, T as invariant, U as useForwardedRef, V as trimPathLeft, W as useHydrated, _ as escapeHtml, a as RouterCore, b as functionalUpdate$1, f as createNonReactiveMutableStore, g as dummyMatchContext, h as deepEqual, i as Outlet, j as joinPaths, p as createNonReactiveReadonlyStore, q as useStore, s as appendUniqueUserTags, v as exactPathTest, w as hasKeys, x as getAssetCrossOrigin, z as rootRouteId } from "./Match-D_3wfidc.mjs";
 import { n as hero_default, t as Toaster$1 } from "./dist-CEPWaCOt.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CdQWSPkc.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-ovooNRVJ.js
 var preloadWarning = "Error preloading route! ☝️";
 var BaseRoute = class {
 	get to() {
@@ -2827,7 +2827,7 @@ var QueryClientProvider = ({ client, children }) => {
 		children
 	});
 };
-var styles_default = "/assets/styles-vs84y1ch.css";
+var styles_default = "/assets/styles-DwjXgfkn.css";
 var Toaster = ({ ...props }) => {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Toaster$1, {
 		className: "toaster group",
@@ -2997,8 +2997,8 @@ var Route$1 = createRootRouteWithContext()({
 			},
 			{
 				rel: "icon",
-				href: "/logo.png",
-				type: "image/png"
+				href: "/favicon.svg",
+				type: "image/svg+xml"
 			},
 			{
 				rel: "preconnect",
@@ -3052,7 +3052,7 @@ function RootComponent() {
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Toaster, {})]
 	});
 }
-var $$splitComponentImporter = () => import("./routes-BhPU4Qgy.mjs");
+var $$splitComponentImporter = () => import("./routes-CgGZMmnB.mjs");
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter, "component") }).update({
 	id: "/",
 	path: "/",
