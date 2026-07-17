@@ -83,10 +83,33 @@ function EnquiryPopup() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.name.trim() || !formData.phone.trim()) {
+      toast.error("Please fill in all required fields.");
+      return;
+    }
+
     if (typeof window !== "undefined") {
       localStorage.setItem("enquiry_submitted", "true");
     }
-    toast.success("Inquiry sent successfully!");
+
+    toast.success("Opening WhatsApp to send your details...");
+
+    const text = `Hello Career Vision, I would like to make an inquiry. Here are my details:
+- Name: ${formData.name.trim()}
+- Phone: ${formData.phone.trim()}
+- Preferred Course: ${formData.course}`;
+
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/918639887319?text=${encodedText}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+    setFormData({
+      name: "",
+      phone: "",
+      course: "General Inquiry",
+    });
+
     setOpen(false);
   };
 
@@ -955,6 +978,10 @@ function Contact() {
     if (!formData.name.trim() || !formData.phone.trim()) {
       toast.error("Please fill in all required fields.");
       return;
+    }
+
+    if (typeof window !== "undefined") {
+      localStorage.setItem("enquiry_submitted", "true");
     }
 
     toast.success("Opening WhatsApp to send your details...");
