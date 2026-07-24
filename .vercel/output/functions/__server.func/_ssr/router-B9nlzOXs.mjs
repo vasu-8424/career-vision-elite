@@ -1,7 +1,7 @@
 import { c as require_react, l as require_react_dom, o as __toESM, s as require_jsx_runtime } from "./react-dom-Yn6n5m3J.mjs";
 import { D as isModuleNotFoundError, E as isDangerousProtocol, F as removeTrailingSlash, G as useIntersectionObserver, H as trimPathRight, I as replaceEqualDeep$1, K as useRouter, M as matchContext, N as reactUse, P as redirect, R as resolveManifestCssLink, S as getScriptPreloadAttrs, T as invariant, U as useForwardedRef, V as trimPathLeft, W as useHydrated, _ as escapeHtml, a as RouterCore, b as functionalUpdate$1, f as createNonReactiveMutableStore, g as dummyMatchContext, h as deepEqual, i as Outlet, j as joinPaths, p as createNonReactiveReadonlyStore, q as useStore, s as appendUniqueUserTags, v as exactPathTest, w as hasKeys, x as getAssetCrossOrigin, z as rootRouteId } from "./Match-D_3wfidc.mjs";
 import { n as hero_default, t as Toaster$1 } from "./dist-CEPWaCOt.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-bZ1g1PPR.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-B9nlzOXs.js
 var preloadWarning = "Error preloading route! ☝️";
 var BaseRoute = class {
 	get to() {
@@ -2827,7 +2827,7 @@ var QueryClientProvider = ({ client, children }) => {
 		children
 	});
 };
-var styles_default = "/assets/styles-DwjXgfkn.css";
+var styles_default = "/assets/styles-DA1JoLI2.css";
 var Toaster = ({ ...props }) => {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Toaster$1, {
 		className: "toaster group",
@@ -2972,6 +2972,10 @@ var Route$1 = createRootRouteWithContext()({
 				content: "Career Vision Educational Consultancy"
 			},
 			{
+				property: "og:image",
+				content: "/brand-logo.png"
+			},
+			{
 				name: "twitter:card",
 				content: "summary_large_image"
 			},
@@ -2982,6 +2986,10 @@ var Route$1 = createRootRouteWithContext()({
 			{
 				name: "twitter:description",
 				content: "Trusted admissions counselling for Engineering & Medical colleges in India."
+			},
+			{
+				name: "twitter:image",
+				content: "/brand-logo.png"
 			}
 		],
 		links: [
@@ -3067,7 +3075,7 @@ function RootComponent() {
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Toaster, {})]
 	});
 }
-var $$splitComponentImporter = () => import("./routes-CgGZMmnB.mjs");
+var $$splitComponentImporter = () => import("./routes-Cp6wtzL9.mjs");
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter, "component") }).update({
 	id: "/",
 	path: "/",

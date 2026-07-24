@@ -1,28 +1,18 @@
 import { motion, useInView, useMotionValue, useSpring, useTransform } from "motion/react";
 import { useEffect, useRef, type ReactNode } from "react";
 
+import logoImg from "../../assets/logo.png";
+
 /* ---------- Logo ---------- */
 export function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
-  const ink = variant === "dark" ? "#0F172A" : "#FFFFFF";
-  const brand = "#0F4C81";
   return (
-    <a href="#top" className="flex items-center gap-3 group" aria-label="Career Vision Educational Consultancy — home">
-      <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="40" height="40" fill={brand} />
-        {/* Graduation cap */}
-        <path d="M6 16 L20 10 L34 16 L20 22 Z" fill="white" />
-        <path d="M12 19 L12 26 C12 27.5 15.5 29 20 29 C24.5 29 28 27.5 28 26 L28 19" stroke="white" strokeWidth="1.5" fill="none" />
-        {/* Rising arrow */}
-        <path d="M32 16 L32 22 L30 22" stroke="white" strokeWidth="1.5" strokeLinecap="square" fill="none" />
-        <path d="M32 22 L35 25" stroke="white" strokeWidth="1.5" strokeLinecap="square" />
-      </svg>
-      <div className="flex flex-col leading-none">
-        <span className="font-display font-semibold text-[15px] tracking-tight" style={{ color: ink }}>
-          Career Vision
-        </span>
-        <span className="text-[10px] tracking-[0.18em] uppercase mt-1" style={{ color: variant === "dark" ? "#64748B" : "rgba(255,255,255,0.6)" }}>
-          Educational Consultancy
-        </span>
+    <a href="#top" className="flex items-center gap-2 group" aria-label="Career Vision Educational Consultancy — home">
+      <div className={`rounded-lg transition-transform group-hover:scale-[1.02] ${variant === "light" ? "bg-white p-1.5 shadow-sm" : ""}`}>
+        <img
+          src={logoImg}
+          alt="Career Vision — Turning ambitions into achievements"
+          className="h-12 md:h-[54px] w-auto object-contain"
+        />
       </div>
     </a>
   );

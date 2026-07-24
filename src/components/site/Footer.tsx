@@ -14,8 +14,8 @@ export function Footer() {
           </p>
           <div className="mt-8 flex items-center gap-3">
             {[
-              { Icon: Facebook, href: "https://facebook.com/careervisioneducation", label: "Facebook" },
-              { Icon: Instagram, href: "https://instagram.com/careervisioneducation", label: "Instagram" },
+              { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=61592316900657", label: "Facebook" },
+              { Icon: Instagram, href: "https://www.instagram.com/careervision.education/", label: "Instagram" },
               { Icon: Linkedin, href: "https://linkedin.com/company/careervisioneducation", label: "LinkedIn" },
             ].map(({ Icon, href, label }) => (
               <a

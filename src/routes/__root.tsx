@@ -75,9 +75,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "Your future begins with the right guidance — admissions counselling for India's top Engineering and Medical colleges." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Career Vision Educational Consultancy" },
+      { property: "og:image", content: "/brand-logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Career Vision Educational Consultancy" },
       { name: "twitter:description", content: "Trusted admissions counselling for Engineering & Medical colleges in India." },
+      { name: "twitter:image", content: "/brand-logo.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

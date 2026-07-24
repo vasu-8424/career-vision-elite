@@ -1,6 +1,6 @@
 import { a as __toCommonJS, c as require_react, l as require_react_dom, n as __esmMin, o as __toESM, r as __exportAll, s as require_jsx_runtime, t as __commonJSMin } from "./react-dom-Yn6n5m3J.mjs";
 import { n as hero_default, r as toast } from "./dist-CEPWaCOt.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CgGZMmnB.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-Cp6wtzL9.js
 var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
 var LayoutGroupContext = (0, import_react.createContext)({});
 /**
@@ -10309,60 +10309,20 @@ var X = createLucideIcon("x", [["path", {
 	d: "m6 6 12 12",
 	key: "d8bk6v"
 }]]);
+var logo_default = "/assets/logo-CTEJ_Qj2.png";
 function Logo({ variant = "dark" }) {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 		href: "#top",
-		className: "flex items-center gap-3 group",
+		className: "flex items-center gap-2 group",
 		"aria-label": "Career Vision Educational Consultancy — home",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
-			width: "36",
-			height: "36",
-			viewBox: "0 0 40 40",
-			fill: "none",
-			xmlns: "http://www.w3.org/2000/svg",
-			"aria-hidden": "true",
-			children: [
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
-					width: "40",
-					height: "40",
-					fill: "#0F4C81"
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
-					d: "M6 16 L20 10 L34 16 L20 22 Z",
-					fill: "white"
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
-					d: "M12 19 L12 26 C12 27.5 15.5 29 20 29 C24.5 29 28 27.5 28 26 L28 19",
-					stroke: "white",
-					strokeWidth: "1.5",
-					fill: "none"
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
-					d: "M32 16 L32 22 L30 22",
-					stroke: "white",
-					strokeWidth: "1.5",
-					strokeLinecap: "square",
-					fill: "none"
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
-					d: "M32 22 L35 25",
-					stroke: "white",
-					strokeWidth: "1.5",
-					strokeLinecap: "square"
-				})
-			]
-		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "flex flex-col leading-none",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-				className: "font-display font-semibold text-[15px] tracking-tight",
-				style: { color: variant === "dark" ? "#0F172A" : "#FFFFFF" },
-				children: "Career Vision"
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-				className: "text-[10px] tracking-[0.18em] uppercase mt-1",
-				style: { color: variant === "dark" ? "#64748B" : "rgba(255,255,255,0.6)" },
-				children: "Educational Consultancy"
-			})]
-		})]
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			className: `rounded-lg transition-transform group-hover:scale-[1.02] ${variant === "light" ? "bg-white p-1.5 shadow-sm" : ""}`,
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+				src: logo_default,
+				alt: "Career Vision — Turning ambitions into achievements",
+				className: "h-12 md:h-[54px] w-auto object-contain"
+			})
+		})
 	});
 }
 function Reveal({ children, delay = 0, y = 24, className, as = "div" }) {
@@ -10548,12 +10508,12 @@ function Footer() {
 							children: [
 								{
 									Icon: Facebook,
-									href: "https://facebook.com/careervisioneducation",
+									href: "https://www.facebook.com/profile.php?id=61592316900657",
 									label: "Facebook"
 								},
 								{
 									Icon: Instagram,
-									href: "https://instagram.com/careervisioneducation",
+									href: "https://www.instagram.com/careervision.education/",
 									label: "Instagram"
 								},
 								{
