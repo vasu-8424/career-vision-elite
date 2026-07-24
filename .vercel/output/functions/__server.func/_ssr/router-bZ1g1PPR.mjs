@@ -1,7 +1,7 @@
 import { c as require_react, l as require_react_dom, o as __toESM, s as require_jsx_runtime } from "./react-dom-Yn6n5m3J.mjs";
 import { D as isModuleNotFoundError, E as isDangerousProtocol, F as removeTrailingSlash, G as useIntersectionObserver, H as trimPathRight, I as replaceEqualDeep$1, K as useRouter, M as matchContext, N as reactUse, P as redirect, R as resolveManifestCssLink, S as getScriptPreloadAttrs, T as invariant, U as useForwardedRef, V as trimPathLeft, W as useHydrated, _ as escapeHtml, a as RouterCore, b as functionalUpdate$1, f as createNonReactiveMutableStore, g as dummyMatchContext, h as deepEqual, i as Outlet, j as joinPaths, p as createNonReactiveReadonlyStore, q as useStore, s as appendUniqueUserTags, v as exactPathTest, w as hasKeys, x as getAssetCrossOrigin, z as rootRouteId } from "./Match-D_3wfidc.mjs";
 import { n as hero_default, t as Toaster$1 } from "./dist-CEPWaCOt.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-ovooNRVJ.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-bZ1g1PPR.js
 var preloadWarning = "Error preloading route! ☝️";
 var BaseRoute = class {
 	get to() {
@@ -3032,7 +3032,16 @@ var Route$1 = createRootRouteWithContext()({
 					addressCountry: "IN"
 				}
 			})
-		}]
+		}, { children: `!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1275121591213945');
+fbq('track', 'PageView');` }]
 	}),
 	shellComponent: RootShell,
 	component: RootComponent,
@@ -3042,7 +3051,13 @@ var Route$1 = createRootRouteWithContext()({
 function RootShell({ children }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("html", {
 		lang: "en",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("head", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})] })]
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("head", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("noscript", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+			height: "1",
+			width: "1",
+			style: { display: "none" },
+			src: "https://www.facebook.com/tr?id=1275121591213945&ev=PageView&noscript=1",
+			alt: ""
+		}) })] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})] })]
 	});
 }
 function RootComponent() {
